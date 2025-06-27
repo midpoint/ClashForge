@@ -2622,6 +2622,8 @@ if __name__ == '__main__':
         "https://raw.githubusercontent.com/aiboboxx/clashfree/refs/heads/main/clash.yml",
         "https://raw.githubusercontent.com/ljlfct01/ljlfct01.github.io/refs/heads/main/节点",
         "https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/LogInfo.txt",
+        "https://github.com/mahdibland/V2RayAggregator/raw/refs/heads/master/Eternity.yml",
+        "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/refs/heads/master/LogInfo.txt",
         "https://raw.githubusercontent.com/wangyingbo/yb_clashgithub_sub/main/clash_sub.yml",
         "https://SOS.CMLiussss.net/auto",
         "https://sub.fqzsnai.ggff.net/auto",

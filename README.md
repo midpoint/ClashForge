@@ -1,5 +1,5 @@
 ## 在线演示
-https://cf.252035.xyz/
+http://cf.252035.xyz/
 
 ## 支持WebUI操作
 
@@ -31,4 +31,3 @@ https://github.com/user-attachments/assets/a1a377a2-e93e-461d-9915-7f7f4dd6ff36
 - https://github.com/MetaCubeX/mihomo/releases
 - https://github.com/fish2018/ClashForge/issues/11#issuecomment-2907599228 (如果需要自己实现反代catbox可以参考这里，提供Nginx和CF worker两种方式)
 
-[![Powered by DartNode](https://dartnode.com/branding/DN-Open-Source-sm.png)](https://dartnode.com "Powered by DartNode - Free VPS for Open Source")

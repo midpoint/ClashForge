@@ -18,7 +18,7 @@ https://github.com/user-attachments/assets/a1a377a2-e93e-461d-9915-7f7f4dd6ff36
 - 支持github文件名模糊匹配，{x}.yaml表示不确定文件名的yaml文件
 - 将所有获取的代理节点汇聚到一个配置文件里，自动去重，name重复自动添加随机后缀，分组`自动选择`、`故障转移`、`手动选择`，策略中排除了国内节点    
 - 支持全自动批量检测节点有效性，移除失效节点，并按延迟大小排序，无需人工介入（首次执行会自动下载mihomo最新release），自动移除异常节点，修复配置文件
-- 可以仅执行批量检测：`python3 ClashForge.py --check-only`（读取同目录 `clash_config.yaml`，用本机网络重新测延迟并重排序）
+- 可以仅执行批量检测：`python3 ClashForge.py --check-only`（读取同目录 `clash_config.yaml`，用本机网络重新测延迟并重排序，输出 CN 精选订阅 `clash_config_featured_cn.yaml`，不覆盖 CI 生成的配置文件）
 - 支持设置保留节点数（`LIMIT`，默认最多保留 10000 个）
 - 测速完成后额外生成精选订阅 `clash_config_featured.yaml`：只包含延迟最低的前 100 个可用节点（可用环境变量 `CLASHFORGE_FEATURED_LIMIT` 调整数量），分组和规则与主配置一致，可直接导入
 - 生成临时json配置，极大的提高了修复配置异常节点的效率，使用json格式处理几十万行的数据也非常快
@@ -81,6 +81,7 @@ GitHub Actions：在仓库 `Settings → Secrets and variables → Actions` 新�
 | `CLASHFORGE_LOG_URLS` | 空 | 设为 `1` 时日志输出完整订阅链接（默认脱敏） |
 | `CLASHFORGE_FEATURED_LIMIT` | `100` | 精选订阅节点数 |
 | `CLASHFORGE_FEATURED_FILE` | `clash_config_featured.yaml` | 精选订阅输出文件 |
+| `CLASHFORGE_FEATURED_CN_FILE` | `clash_config_featured_cn.yaml` | `--check-only` 的 CN 精选输出文件 |
 | `CLASHFORGE_FETCH_BUDGET` | `1500` | 订阅抓取阶段时间预算（秒） |
 | `CLASHFORGE_TEST_BUDGET` | `900` | 延迟测试阶段时间预算（秒） |
 | `CLASHFORGE_FETCH_WORKERS` | `10` | 订阅抓取并发数 |
@@ -105,10 +106,23 @@ GitHub Actions 的 `ubuntu-latest` 运行在境外，测延迟只覆盖「runner
    ```bash
    python3 ClashForge.py --check-only
    ```
-   它会用本机网络（及本机已下载的 mihomo）对 `clash_config.yaml` 全量重新测延迟，移除境内超时的节点、按境内延迟重排序，并重新生成 `clash_config_featured.yaml`。测完再导入客户端。
+   它会用本机网络（及本机已下载的 mihomo）对 `clash_config.yaml` 全量重新测延迟，移除境内超时的节点、按境内延迟重排序，并生成 CN 精选订阅 `clash_config_featured_cn.yaml`（不覆盖 `clash_config.yaml` 和 `clash_config_featured.yaml`）。测完再导入客户端。
 2. 如果希望 CI 提交的配置本身就是境内可达的，可以在一台境内服务器上部署 [self-hosted runner](https://docs.github.com/actions/hosting-your-own-runners) 运行同一个 workflow。
 3. 客户端里优先使用主配置的 `自动选择` / `故障转移` 组，它们会按健康检查自动切换到当时可用的节点；`clash_config_featured.yaml` 是按境外延迟选出的前 100 个，在境内的可用率不如本地复测后的结果。
 4. 免费节点在境内本来就不稳定，长期使用建议通过[付费/私密订阅](#付费私密订阅不进仓库)接入机场节点。
+
+## 定时任务（每 6 小时境内复测）
+
+仓库根目录的 `check.sh` 会：拉取远端最新的 `clash_config.yaml` → 用本机网络复测 → 生成 `clash_config_featured_cn.yaml` → 自动提交并推送到远端 main。脚本在临时 worktree 中运行，不受本地未提交改动影响；日志写入仓库根目录的 `check.log`。
+
+加入当前用户的 crontab（每 6 小时执行一次，避开整点）：
+
+```bash
+crontab -e
+23 */6 * * * /path/to/ClashForge/check.sh
+```
+
+脚本优先使用仓库下的 `.venv/bin/python`，并复用已下载的 `clash-linux` 内核。
 
 ## 测试
 ```bash

@@ -9,6 +9,9 @@ pyproject.toml
 uv.lock
 /src/
 
+# 定时复测日志
+check.log
+
 # 运行时生成/下载的产物
 clash_config.yaml.json
 clash-linux

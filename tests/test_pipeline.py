@@ -185,3 +185,26 @@ def test_template_groups_use_configured_test_url(cf):
     urls = {g["url"] for g in cf.clash_config_template["proxy-groups"] if "url" in g}
     # 自动选择/故障转移的健康检查都走同一个轻量测速地址
     assert urls == {cf.TEST_URL}
+
+
+def test_work_check_only_outputs_cn_featured_only(cf, monkeypatch):
+    calls = {}
+
+    def fake_start_clash(**kwargs):
+        calls["start"] = kwargs
+        return None
+
+    async def fake_proxy_clean(config_path=None, **kwargs):
+        calls["clean"] = {"config_path": config_path, **kwargs}
+
+    monkeypatch.setattr(cf, "start_clash", fake_start_clash)
+    monkeypatch.setattr(cf, "switch_proxy", lambda *a, **k: None)
+    monkeypatch.setattr(cf, "proxy_clean", fake_proxy_clean)
+
+    cf.work([], check=False, only_check=True)
+
+    assert calls["start"]["config_path"] == cf.CONFIG_FILE
+    # --check-only 不覆盖源配置，只输出 CN 精选
+    assert calls["clean"]["config_path"] == cf.CONFIG_FILE
+    assert calls["clean"]["save_config"] is False
+    assert calls["clean"]["featured_output"] == cf.CN_FEATURED_FILE

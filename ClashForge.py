@@ -91,6 +91,8 @@ JS_RENDER_BUDGET = int(os.environ.get('CLASHFORGE_JS_RENDER_BUDGET', 5 * 60))
 # 精选订阅：把延迟最低的前 N 个可用节点单独输出一份完整配置
 FEATURED_LIMIT = int(os.environ.get('CLASHFORGE_FEATURED_LIMIT', 100))
 FEATURED_FILE = os.environ.get('CLASHFORGE_FEATURED_FILE', 'clash_config_featured.yaml')
+# --check-only 在本机（境内）复测后输出 CN 专属精选订阅，不覆盖 CI 生成的配置
+CN_FEATURED_FILE = os.environ.get('CLASHFORGE_FEATURED_CN_FILE', 'clash_config_featured_cn.yaml')
 
 # 私密/付费订阅：从环境变量读取，避免写进仓库
 #   CLASHFORGE_PRIVATE_SUBSCRIPTIONS  一行一个订阅链接（|ss / |links 后缀照常可用）
@@ -2776,7 +2778,8 @@ async def test_group_proxies(clash_api: ClashAPI, proxies: List[str],
     return results
 
 
-async def proxy_clean(config_path: Optional[str] = None):
+async def proxy_clean(config_path: Optional[str] = None, save_config: bool = True,
+                      featured_output: str = FEATURED_FILE):
     # 更新全局配置
     delays = []
     global MAX_CONCURRENT_TESTS, TIMEOUT, CLASH_API_SECRET, LIMIT, CONFIG_FILE
@@ -2847,8 +2850,9 @@ async def proxy_clean(config_path: Optional[str] = None):
             for name in groups_to_test:
                 print(f"'{name}'已按延迟大小重新排序")
 
-            # 保存更新后的配置
-            config.save()
+            # 保存更新后的配置（--check-only 只输出 CN 精选，不覆盖源配置）
+            if save_config:
+                config.save()
 
             if SPEED_TEST:
                 # 测速
@@ -2863,10 +2867,11 @@ async def proxy_clean(config_path: Optional[str] = None):
                     rest = [n for n in group["proxies"] if n not in ordered]
                     group["proxies"] = ordered + rest
                 # 保存更新后的配置
-                config.save()
+                if save_config:
+                    config.save()
 
             # 单独输出一份只含延迟最低的前 N 个节点的精选订阅
-            generate_featured_config(config, valid_names)
+            generate_featured_config(config, valid_names, output=featured_output)
 
             # 显示总耗时
             total_time = (datetime.now() - start_time).total_seconds()
@@ -3185,7 +3190,12 @@ def work(links, check=False, allowed_types=[], only_check=False):
                 clash_process = start_clash(config_path=CONFIG_FILE if only_check else None)
                 # 切换节点到'节点选择-DIRECT'
                 switch_proxy('DIRECT')
-                asyncio.run(proxy_clean(CONFIG_FILE if only_check else None))
+                # 仅检测时只输出 CN 专属精选，不覆盖 clash_config.yaml / clash_config_featured.yaml
+                asyncio.run(proxy_clean(
+                    CONFIG_FILE if only_check else None,
+                    save_config=not only_check,
+                    featured_output=CN_FEATURED_FILE if only_check else FEATURED_FILE,
+                ))
                 print(f'批量检测完毕')
             except Exception as e:
                 print("Error calling Clash API:", e)
@@ -3207,7 +3217,8 @@ def parse_args(argv=None):
     parser.add_argument(
         '-c', '--check-only', action='store_true',
         help='跳过抓取和生成，仅用本机网络对现有 clash_config.yaml 重新测延迟、'
-             '移除失效节点并重排序（在中国境内使用时建议先执行一次）')
+             '移除失效节点并重排序，输出 CN 精选订阅 clash_config_featured_cn.yaml'
+             '（不覆盖 clash_config.yaml / clash_config_featured.yaml）')
     return parser.parse_args(argv)
 
 

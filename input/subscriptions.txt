@@ -2,6 +2,7 @@
 # 付费/私密订阅不要写在这里：
 #   export CLASHFORGE_PRIVATE_SUBSCRIPTIONS='https://...'  （多个用换行/逗号分隔）
 #   或放到 input/xxx_private.txt（已被 .gitignore 忽略）
+https://ghfast.top/https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/c.yaml
 https://c7dabe95.proxy-978.pages.dev/767b6340-96dc-4aa0-8013-a8af7513d920?clash
 https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/clash/naidounode.txt
 https://cdn.jsdelivr.net/gh/yangxiaoge/tvbox_cust@master/clash/Clash2.yml

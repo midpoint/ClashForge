@@ -32,35 +32,20 @@ dns:
     - 240.0.0.0/4
     - 0.0.0.0/32
 proxies:
-- cipher: aes-128-gcm
-  name: 🇺🇸US_12|451KB/s [2b322b68c292]
-  password: shadowsocks
-  port: 443
-  server: 156.146.38.169
+- name: 🇺🇸US_102
   type: ss
-  udp: true
-- cipher: aes-128-gcm
-  name: 🇺🇸US_71|1.3MB/s [44410bbbcb07]
-  password: shadowsocks
+  server: 149.22.95.183
   port: 443
-  server: 156.146.38.170
-  type: ss
-  udp: true
-- cipher: aes-128-gcm
-  name: 🇺🇸US_4|1.2MB/s [60b18e513b09]
+  cipher: aes-128-gcm
   password: shadowsocks
-  port: 443
-  server: 156.146.38.168
-  type: ss
   udp: true
-- cipher: aes-128-gcm
-  name: 🇺🇸US_33|1.2MB/s|A004-260618 [e4bee8339fae]
-  password: shadowsocks
+- name: 🇺🇸US_114
+  type: trojan
+  server: resources.findlocaljobnetworkandbuildcommunityconnections.com
   port: 443
-  server: 156.146.38.167
-  sub_tag: A004-260618
-  type: ss
-  udp: true
+  password: f0eb8c92ce8946aaba856569cff1a16b
+  sni: ''
+  skip-cert-verify: false
 - alpn:
   - http/1.1
   name: 🇺🇸US美国丨yoyapai.com_4
@@ -73,165 +58,35 @@ proxies:
   udp: true
   ws-opts:
     path: /assignment
-- name: 🇫🇷FR_147|389KB/s|M003-260806 [e107b3b8086f]
-  network: ws
-  packet-encoding: xudp
-  port: 8080
-  server: 188.114.97.6
-  sub_tag: M003-260806
-  type: vless
-  udp: true
-  uuid: 93fa8bdb-9cca-4a3e-8355-b7c12e4f595e
-  ws-opts:
-    early-data-header-name: Sec-WebSocket-Protocol
-    headers:
-      Host: fornewiran.ade-1000.workers.dev
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/67.0.3396.87 Safari/537.36
-    max-early-data: 2560
-    path: /vl/yLWNcuUuw1jlJpkDhGy
-  xudp: true
-- name: SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-107.151.182.253:8080
-  type: ssr
-  server: 107.151.182.253
-  port: 8080
-  password: 14fFPrbezE3HDZzsMOr6
-  cipher: rc4-md5
-  protocol: origin
-  obfs: plain
-- name: 🇺🇸 美国 | USA 4
-  server: 31.172.69.31
-  port: 8443
-  type: vless
-  uuid: 9c6e83fc-b755-4ad4-9b0a-14b610153d8f
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: H43_itYl9CE0AJiCktUfriENFmixY_MTHgX8slCrN2Q
-    short-id: a4e32c324d86cfdf
-  servername: www.samsung.com
-  client-fingerprint: qq
+- client-fingerprint: chrome
+  name: 🇺🇸US_517|882KB/s|A004-260618 [55d379d67daa]
   network: tcp
-  udp: true
-- cipher: rc4-md5
-  name: 🇺🇸US_371|927KB/s|A004-260618 [836b9e2c1c7b]
-  password: 14fFPrbezE3HDZzsMOr6
-  port: 8080
-  server: 107.151.182.253
-  sub_tag: A004-260618
-  type: ss
-  udp: true
-- cipher: rc4-md5
-  name: 🇺🇸US_246|888KB/s|A004-260618 [0e40b52615aa]
-  password: 14fFPrbezE3HDZzsMOr6
-  port: 8080
-  server: 107.151.182.197
-  sub_tag: A004-260618
-  type: ss
-  udp: true
-- encryption: none
-  name: 🇫🇷FR_280|525KB/s|M003-260806 [164ab767de0f]
-  network: ws
-  packet-encoding: xudp
-  port: 8080
-  server: 104.26.12.31
-  servername: ip.sb
-  sub_tag: M003-260806
-  type: vless
-  udp: true
-  uuid: 3e06b1db-2efb-446e-ba2d-68850dfd2f9d
-  ws-opts:
-    headers:
-      Host: bdfba-cool-tree-b580.v8fz4kbv.workers.dev
-      User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/70.0.3538.67 Safari/537.36
-    path: /
-  xudp: true
-- name: 🇫🇷FR_180|5.4MB/s|A004-260618 [c487a01be44a]
-  network: ws
-  packet-encoding: xudp
-  port: 8080
-  server: 188.114.97.6
-  sub_tag: A004-260618
-  type: vless
-  udp: true
-  uuid: 4c0b7280-76bb-495c-9c8b-f05712ebf805
-  ws-opts:
-    headers:
-      Host: youxuanku.kdns.fr
-      User-Agent: Mozilla/5.0 (Windows NT 6.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/57.0.2987.133 Safari/537.36
-    path: /
-  xudp: true
-- name: 🇫🇷FR_33|633KB/s|K001-260618 [14d7fbeff82d]
-  network: ws
-  packet-encoding: xudp
-  port: 2082
-  server: 104.18.35.86
-  servername: hhlfy.twiladaphne.ndjp.net
-  sub_tag: K001-260618
-  type: vless
-  udp: true
-  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
-  ws-opts:
-    headers:
-      Host: hhlfy.twiladaphne.ndjp.net
-      User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/70.0.3538.67 Safari/537.36
-    path: /fp
-  xudp: true
-- encryption: none
-  name: 🇫🇷FR_215|599KB/s|T001-260618 [22b587d3b95e]
-  network: ws
-  packet-encoding: xudp
-  port: 8080
-  server: 188.114.97.6
-  sub_tag: T001-260618
-  type: vless
-  udp: true
-  uuid: b9ede7a5-5b4b-4aee-ac37-2c307e587e47
-  ws-opts:
-    headers:
-      Host: courses.mftplus.qzz.io
-      User-Agent: Mozilla/5.0 (Windows NT 6.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/60.0.3112.90 Safari/537.36
-    path: /eyJqdW5rIjoidVkzQm1ROUg4dyIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
-  xudp: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-564P
-  type: vless
-  server: 188.114.98.112
-  port: 80
-  uuid: 0991a0c4-0ee5-4213-af89-7ad589f853f3
-  security: none
-  tls: false
-  sni: elenaaaaaaaaaa.cloudns.pro.
+  password: dba20dcb635e430fa4d3bfc303a149d2
+  port: 443
+  server: 216.106.186.32
   skip-cert-verify: false
-  network: ws
-  udp: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: ed2560
-    headers:
-      Host: elenaaaaaaaaaa.cloudns.pro.
-- name: 🇫🇷FR_60|623KB/s|A004-260618 [17e99393b3f0]
-  network: ws
-  packet-encoding: xudp
-  port: 2082
-  server: 104.19.95.153
+  sni: blog.findlocaljobnetworkandbuildcommunityconnections.com
   sub_tag: A004-260618
-  type: vless
+  type: trojan
   udp: true
-  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
-  ws-opts:
-    headers:
-      Host: hhlfy.twiladaphne.ndjp.net
-      User-Agent: Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko)
-        Chrome/70.0.3538.67 Safari/537.36
-    path: /
-  xudp: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-qNuu
+- name: 🔥Join+Telegram:@Farah_VPN🟣-PlSE
+  type: trojan
+  server: 216.106.186.66
+  port: 443
+  password: 242a3d8eee5e4ed1a6bfa4141d549a25
+  sni: www.findlocaljobnetworkandbuildcommunityconnections.com
+  skip-cert-verify: false
+- name: 🇺🇸US_153|750KB/s|R002-260618 [13dede6e3b21]
+  port: 443
+  server: 149.22.88.65
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🔥Join+Telegram:@Farah_VPN🟣-3tIa
   type: vless
-  server: 8.47.69.60
+  server: 104.18.37.127
   port: 443
   uuid: d342d11e-d224-4463-b982-532309285094
   security: tls
@@ -240,11 +95,176 @@ proxies:
   skip-cert-verify: false
   network: ws
   udp: true
-  client-fingerprint: unsafe
+  client-fingerprint: chrome
   ws-opts:
     path: /
     headers:
       Host: ccc.010304.xyz
+- name: 🇫🇷FR_296|1009KB/s|A004-260618 [5e81ddf17bb7]
+  network: ws
+  packet-encoding: xudp
+  port: 8080
+  server: 104.16.162.89
+  sub_tag: A004-260618
+  type: vless
+  udp: true
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  ws-opts:
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+      User-Agent: Mozilla/5.0 (Linux; Android 7.0; SM-G570M) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/70.0.3538.80 Mobile Safari/537.36
+    path: /sg-melbi
+  xudp: true
+- name: D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_0618cdac
+  password: None
+  port: 443
+  server: 172.64.68.89
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: 🇫🇷FR_96|1.8MB/s|R002-260618 [a676be7daa09]
+  port: 443
+  server: 172.64.69.89
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- encryption: none
+  name: 🇫🇷FR_283|369KB/s|M003-260806 [e8d5449d8645]
+  network: ws
+  packet-encoding: xudp
+  port: 8080
+  server: 104.26.13.31
+  servername: ip.sb
+  sub_tag: M003-260806
+  type: vless
+  udp: true
+  uuid: 3e06b1db-2efb-446e-ba2d-68850dfd2f9d
+  ws-opts:
+    headers:
+      Host: bdfba-cool-tree-b580.v8fz4kbv.workers.dev
+      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
+        Gecko) Chrome/54.0.2840.99 Safari/537.36
+    path: /
+  xudp: true
+- name: 🔥Join+Telegram:@Farah_VPN🟣-CyCO
+  type: vless
+  server: 172.66.154.57
+  port: 443
+  uuid: d342d11e-d224-4463-b982-532309285094
+  security: tls
+  tls: true
+  sni: ccc.010304.xyz
+  skip-cert-verify: false
+  network: ws
+  udp: true
+  ws-opts:
+    path: /
+    headers:
+      Host: ccc.010304.xyz
+- client-fingerprint: chrome
+  encryption: none
+  name: 🇫🇷FR_260|1.7MB/s|M003-260806 [e113f1b5e207]
+  network: ws
+  packet-encoding: xudp
+  port: 443
+  server: 172.67.222.62
+  servername: cf-vless-4cf55824.aimall.fr
+  sub_tag: M003-260806
+  tls: true
+  type: vless
+  udp: true
+  uuid: ea50b1a3-3a98-4c5e-a150-48ada40d68d7
+  ws-opts:
+    headers:
+      Host: cf-vless-4cf55824.aimall.fr
+      User-Agent: Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/70.0.3538.67 Safari/537.36
+    path: /connect
+  xudp: true
+- name: 🔥Join+Telegram:@Farah_VPN🟣-Sg5l
+  type: vless
+  server: 172.64.153.153
+  port: 443
+  uuid: d342d11e-d224-4463-b982-532309285094
+  security: tls
+  tls: true
+  sni: ccc.010304.xyz
+  skip-cert-verify: false
+  network: ws
+  udp: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /?Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
+    headers:
+      Host: ccc.010304.xyz
+- name: 🇫🇷FR_81|700KB/s|A004-260618 [112c999b4576]
+  network: ws
+  packet-encoding: xudp
+  port: 2082
+  server: 104.18.0.181
+  servername: hhlfy.twiladaphne.ndjp.net
+  sub_tag: A004-260618
+  type: vless
+  udp: true
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  ws-opts:
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+      User-Agent: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/60.0.3112.90 Safari/537.36
+    path: /fp
+  xudp: true
+- name: ❓未知丨yoyapai.com_59
+  network: ws
+  port: 443
+  server: 172.64.152.241
+  servername: ccc.010304.xyz
+  skip-cert-verify: false
+  tls: true
+  type: vless
+  udp: true
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+    path: /fp
+- name: 🇫🇷FR_34|592KB/s|A004-260618 [2a5963893dc1]
+  network: ws
+  packet-encoding: xudp
+  port: 2082
+  server: 104.17.162.11
+  sub_tag: A004-260618
+  type: vless
+  udp: true
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  ws-opts:
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/63.0.3239.132 Safari/537.36
+    path: /
+  xudp: true
+- client-fingerprint: chrome
+  name: 🇫🇷FR_150|814KB/s|M002-260618 [3d4b9f52f153]
+  network: ws
+  password: bpb-trojan
+  port: 443
+  server: 104.21.26.36
+  skip-cert-verify: false
+  sni: vless.herogoing.top
+  sub_tag: M002-260618
+  type: trojan
+  udp: true
+  ws-opts:
+    early-data-header-name: Sec-WebSocket-Protocol
+    headers:
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/62.0.3202.94 Safari/537.36
+    max-early-data: 2560
+    path: /tr
 - alpn:
   - h3
   - h2
@@ -268,11 +288,58 @@ proxies:
       Host: 1.proxy2.us.ci.
     max-early-data: 2560
     path: /
-- name: 🇫🇷FR_305|993KB/s|A004-260618 [400b67f9250b]
+- name: 🔥Join+Telegram:@Farah_VPN🟣-gAw2
+  type: vless
+  server: 104.18.47.73
+  port: 443
+  uuid: d342d11e-d224-4463-b982-532309285094
+  security: tls
+  tls: true
+  sni: ccc.010304.xyz
+  skip-cert-verify: false
+  network: ws
+  udp: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: ccc.010304.xyz
+- encryption: none
+  name: 🇫🇷FR_340|654KB/s|S004-260618 [4e3ddc5e9dce]
   network: ws
   packet-encoding: xudp
   port: 8080
-  server: 104.19.164.25
+  server: 172.64.150.43
+  servername: 'hhlfy.twiladaphne.ndjp.net '
+  sub_tag: S004-260618
+  type: vless
+  udp: true
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  ws-opts:
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+      User-Agent: Mozilla/5.0 (Linux; Android 7.1.2; Redmi 4X Build/N2G47H) AppleWebKit/537.36
+        (KHTML, like Gecko) Chrome/63.0.3239.111 Mobile Safari/537.36
+    path: /sg-melbi
+  xudp: true
+- type: vless
+  name: FR法国(mibei77.com 米贝节点分享)-39oj
+  server: 172.66.158.115
+  port: 8080
+  uuid: f8f5d3a5-54bd-4f52-9759-137bdbf950db
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: 23g-lively-resonance-96b9hsf.msc633k2.workers.dev
+- name: 🇫🇷FR_7|986KB/s|A004-260618 [00610bb44fe9]
+  network: ws
+  packet-encoding: xudp
+  port: 8080
+  server: 104.17.44.17
   sub_tag: A004-260618
   type: vless
   udp: true
@@ -280,87 +347,100 @@ proxies:
   ws-opts:
     headers:
       Host: hhlfy.twiladaphne.ndjp.net
-      User-Agent: Mozilla/5.0 (Linux; Android 8.0.0; FIG-LX3) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/70.0.3538.80 Mobile Safari/537.36
+      User-Agent: Mozilla/5.0 (X11; U; Linux x86_64; en-US) AppleWebKit/533.2 (KHTML,
+        like Gecko) Chrome/5.0.342.1 Safari/533.2
     path: /sg-melbi
   xudp: true
-- cipher: aes-256-gcm
-  name: 🇺🇸US_502|1.5MB/s|B007-260618 [54f449a1b321]
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 185.215.132.18
-  sub_tag: B007-260618
+- cipher: rc4-md5
+  name: 🇺🇸US_121|977KB/s|A004-260618 [19fe6b7745cb]
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 138.199.43.159
+  sub_tag: A004-260618
   type: ss
   udp: true
-- encryption: none
-  name: 🇫🇷FR_153|576KB/s|M003-260806 [215437d4d0a9]
+- client-fingerprint: chrome
+  name: 🇫🇷FR_77|1.2MB/s|S004-260618 [aa93cd83edf2]
   network: ws
   packet-encoding: xudp
-  port: 80
-  server: 172.66.170.172
-  sub_tag: M003-260806
+  port: 443
+  server: cf.877774.xyz
+  servername: ccc.010304.xyz
+  sub_tag: S004-260618
+  tls: true
   type: vless
   udp: true
-  uuid: e081da45-9fae-4687-9376-f9a6a0dbbe83
+  uuid: d342d11e-d224-4463-b982-532309285094
   ws-opts:
     headers:
-      Host: e33xr.qzz.io
-      User-Agent: Mozilla/5.0 (Windows; U; Windows NT 6.1; de-DE) AppleWebKit/534.17
-        (KHTML, like Gecko) Chrome/10.0.649.0 Safari/534.17
-    path: /id-amz
+      Host: ccc.010304.xyz
+      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
+        Gecko) Chrome/53.0.2785.143 Safari/537.36
+    path: /
   xudp: true
-- encryption: none
-  name: 🇫🇷FR_219|1.0MB/s|M003-260806 [e7b0db0c82e0]
+- client-fingerprint: chrome
+  encryption: none
+  name: 🇫🇷FR_333|766KB/s|S004-260618 [e18d86f96365]
+  network: ws
+  packet-encoding: xudp
+  port: 443
+  server: chatgpt.com
+  servername: ccc.010304.xyz
+  sub_tag: S004-260618
+  tls: true
+  type: vless
+  udp: true
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/64.0.3282.167 Safari/537.36
+    path: /
+  xudp: true
+- name: 🔥Join+Telegram:@Farah_VPN🟣-XP6c
+  type: vless
+  server: 88.216.69.253
+  port: 443
+  uuid: d342d11e-d224-4463-b982-532309285094
+  security: tls
+  tls: true
+  sni: ccc.010304.xyz
+  skip-cert-verify: false
+  network: ws
+  udp: true
+  client-fingerprint: unsafe
+  ws-opts:
+    path: /fp
+    headers:
+      Host: ccc.010304.xyz
+- client-fingerprint: chrome
+  name: '🇺🇸 美国 | USA #12'
+  network: ws
+  port: 443
+  server: 104.18.41.86
+  servername: ccc.010304.xyz
+  tls: true
+  type: vless
+  udp: true
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+    path: /
+- cipher: rc4-md5
+  name: 🇺🇸US_17|948KB/s|M003-260806 [6364b2c615d5]
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 23.251.121.242
+  sub_tag: M003-260806
+  type: ss
+  udp: true
+- name: 🇫🇷FR_8|654KB/s|A004-260618 [f3d97673f7a3]
   network: ws
   packet-encoding: xudp
   port: 8080
   server: 104.21.70.21
-  servername: fornewiran.ade-1000.workers.dev
-  sub_tag: M003-260806
-  type: vless
-  udp: true
-  uuid: 93fa8bdb-9cca-4a3e-8355-b7c12e4f595e
-  ws-opts:
-    early-data-header-name: Sec-WebSocket-Protocol
-    headers:
-      Host: fornewiran.ade-1000.workers.dev
-      User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-G532G Build/MMB29T) AppleWebKit/537.36
-        (KHTML, like Gecko) Chrome/63.0.3239.83 Mobile Safari/537.36
-    max-early-data: 2560
-    path: /vl/yLWNcuUuw1jlJpkDhGy
-  xudp: true
-- name: 🇺🇸US_150|907KB/s|R002-260618 [e971c1f60e14]
-  port: 443
-  server: 38.247.141.135
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- encryption: none
-  name: 🇫🇷FR_61|917KB/s|B007-260618 [230678643d29]
-  network: ws
-  packet-encoding: xudp
-  port: 8080
-  server: 104.18.35.86
-  servername: 'hhlfy.twiladaphne.ndjp.net '
-  sub_tag: B007-260618
-  type: vless
-  udp: true
-  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
-  ws-opts:
-    headers:
-      Host: hhlfy.twiladaphne.ndjp.net
-      User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/63.0.3239.84 Safari/537.36
-    path: /sg-melbi
-  xudp: true
-- name: 🇫🇷FR_29|1.1MB/s|A004-260618 [3842eaf34575]
-  network: ws
-  packet-encoding: xudp
-  port: 2082
-  server: 172.64.150.43
-  servername: hhlfy.twiladaphne.ndjp.net
   sub_tag: A004-260618
   type: vless
   udp: true
@@ -368,9 +448,43 @@ proxies:
   ws-opts:
     headers:
       Host: hhlfy.twiladaphne.ndjp.net
-      User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36
-        (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/70.0.3538.67 Safari/537.36
+    path: /fp
+  xudp: true
+- name: 🇫🇷FR_180|5.4MB/s|A004-260618 [c487a01be44a]
+  network: ws
+  packet-encoding: xudp
+  port: 8080
+  server: 188.114.97.6
+  sub_tag: A004-260618
+  type: vless
+  udp: true
+  uuid: 4c0b7280-76bb-495c-9c8b-f05712ebf805
+  ws-opts:
+    headers:
+      Host: youxuanku.kdns.fr
+      User-Agent: Mozilla/5.0 (Windows NT 6.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/57.0.2987.133 Safari/537.36
     path: /
+  xudp: true
+- encryption: none
+  name: 🇫🇷FR_259|1.4MB/s|B007-260618 [ce912aad4430]
+  network: ws
+  packet-encoding: xudp
+  port: 8080
+  server: 188.114.97.6
+  servername: cf-vless-4cf55824.aimall.fr
+  sub_tag: B007-260618
+  type: vless
+  udp: true
+  uuid: ea50b1a3-3a98-4c5e-a150-48ada40d68d7
+  ws-opts:
+    headers:
+      Host: cf-vless-4cf55824.aimall.fr
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/56.0.2924.87 Safari/537.36
+    path: /connect
   xudp: true
 - encryption: none
   name: 🇫🇷FR_65|534KB/s|B007-260618 [403ae48696dd]
@@ -390,9 +504,27 @@ proxies:
         like Gecko) Chrome/49.0.2623.112 Safari/537.36
     path: /fp
   xudp: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-xV1M
+- encryption: none
+  name: 🇫🇷FR_192|847KB/s|T001-260618 [5dd78972cd2e]
+  network: ws
+  packet-encoding: xudp
+  port: 8080
+  server: 104.21.70.21
+  servername: nautica-cff.kloningstrife002.workers.dev
+  sub_tag: T001-260618
   type: vless
-  server: 104.18.47.73
+  udp: true
+  uuid: fc60147e-76b8-4bc5-b691-90b2da79e3d2
+  ws-opts:
+    headers:
+      Host: nautica-cff.kloningstrife002.workers.dev
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/70.0.3538.102 Safari/537.36
+    path: /138.2.74.219-28616
+  xudp: true
+- name: 🔥Join+Telegram:@Farah_VPN🟣-T9wz
+  type: vless
+  server: 172.66.1.36
   port: 443
   uuid: d342d11e-d224-4463-b982-532309285094
   security: tls
@@ -401,10 +533,145 @@ proxies:
   skip-cert-verify: false
   network: ws
   udp: true
+  client-fingerprint: unsafe
   ws-opts:
     path: /
     headers:
       Host: ccc.010304.xyz
+- cipher: rc4-md5
+  name: 🇺🇸US_20|936KB/s|A004-260618 [26dae539cbdd]
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 107.155.57.11
+  sub_tag: A004-260618
+  type: ss
+  udp: true
+- client-fingerprint: chrome
+  name: 🇫🇷FR_19|824KB/s|M003-260806 [559dbbc484e4]
+  network: ws
+  packet-encoding: xudp
+  port: 443
+  server: 104.21.63.28
+  servername: youxuanku.kdns.fr
+  sub_tag: M003-260806
+  tls: true
+  type: vless
+  udp: true
+  uuid: 4c0b7280-76bb-495c-9c8b-f05712ebf805
+  ws-opts:
+    headers:
+      Host: youxuanku.kdns.fr
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/56.0.2924.87 Safari/537.36
+    path: /
+  xudp: true
+- encryption: none
+  name: 🇫🇷FR_237|3.4MB/s|T001-260618 [5e1a583b1d55]
+  network: ws
+  packet-encoding: xudp
+  port: 8080
+  server: 104.21.70.21
+  servername: cf-vless-4cf55824.aimall.fr
+  sub_tag: T001-260618
+  type: vless
+  udp: true
+  uuid: ea50b1a3-3a98-4c5e-a150-48ada40d68d7
+  ws-opts:
+    headers:
+      Host: cf-vless-4cf55824.aimall.fr
+      User-Agent: Mozilla/5.0 (Linux; Android 7.1.1; CPH1723 Build/N6F26Q) AppleWebKit/537.36
+        (KHTML, like Gecko) Chrome/61.0.3163.98 Mobile Safari/537.36
+    path: /connect
+  xudp: true
+- name: 🇫🇷FR_62|652KB/s|A004-260618 [b9eea0f0efd2]
+  network: ws
+  packet-encoding: xudp
+  port: 8080
+  server: 104.16.215.234
+  sub_tag: A004-260618
+  type: vless
+  udp: true
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  ws-opts:
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
+        Gecko) Chrome/34.0.1847.131 Safari/537.36
+    path: /fp=chrome
+  xudp: true
+- client-fingerprint: chrome
+  name: 🇫🇷FR_104|958KB/s|K001-260618 [2fbcfa066360]
+  network: ws
+  packet-encoding: xudp
+  port: 443
+  server: 104.26.4.2
+  servername: ccc.010304.xyz
+  sub_tag: K001-260618
+  tls: true
+  type: vless
+  udp: true
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+      User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/60.0.3112.90 Safari/537.36
+    path: /fp=chrome
+  xudp: true
+- client-fingerprint: chrome
+  encryption: none
+  name: 🇫🇷FR_144|524KB/s|M002-260618 [9e7ce0ce2248]
+  network: ws
+  packet-encoding: xudp
+  port: 443
+  server: 104.17.154.123
+  servername: ccc.010304.xyz
+  sub_tag: M002-260618
+  tls: true
+  type: vless
+  udp: true
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
+        Gecko) Chrome/31.0.1650.57 Safari/537.36
+    path: /
+  xudp: true
+- name: 🔥Join+Telegram:@Farah_VPN🟣-gPsx
+  type: vless
+  server: 104.19.173.68
+  port: 8080
+  uuid: 2500e602-671c-4654-a602-c518b7282167
+  security: none
+  tls: false
+  sni: ''
+  skip-cert-verify: false
+  network: ws
+  udp: true
+  ws-opts:
+    path: /
+    headers:
+      Host: 2639w-throbbing-band-3840.xphnn6jp.workers.dev
+- client-fingerprint: random
+  name: 🇫🇷FR_297|315KB/s|T001-260618 [17f4ce670ee5]
+  network: ws
+  packet-encoding: xudp
+  port: 2053
+  server: vl.cocopon.top
+  servername: vl.cocopon.top
+  sub_tag: T001-260618
+  tls: true
+  type: vless
+  udp: true
+  uuid: 44f06ad1-982c-4e03-849f-899c1c8dc14f
+  ws-opts:
+    headers:
+      Host: vl.cocopon.top
+      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
+        Gecko) Chrome/34.0.1847.131 Safari/537.36
+    path: /
+  xudp: true
 - client-fingerprint: chrome
   encryption: none
   name: 🇫🇷FR_30|1.4MB/s|S004-260618 [327a7da66112]
@@ -424,243 +691,6 @@ proxies:
       User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko)
         Chrome/41.0.2272.104 Safari/537.36
     path: /
-  xudp: true
-- name: 🇫🇷FR_308|793KB/s|A004-260618 [df2caff37b41]
-  network: ws
-  packet-encoding: xudp
-  port: 8080
-  server: 172.67.71.187
-  sub_tag: A004-260618
-  type: vless
-  udp: true
-  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
-  ws-opts:
-    headers:
-      Host: hhlfy.twiladaphne.ndjp.net
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/62.0.3202.94 Safari/537.36
-    path: /sg-melbi
-  xudp: true
-- client-fingerprint: chrome
-  encryption: none
-  name: 🇫🇷FR_169|507KB/s|M003-260806 [e88b48b7094f]
-  network: ws
-  packet-encoding: xudp
-  port: 443
-  server: 172.64.150.248
-  servername: powered-by-surena.configfarsi695fd01a94fe7.workers.dev
-  sub_tag: M003-260806
-  tls: true
-  type: vless
-  udp: true
-  uuid: 5dc15e15-f285-4a9d-959b-0e4fbdd77b63
-  ws-opts:
-    headers:
-      Host: powered-by-surena.configfarsi695fd01a94fe7.workers.dev
-      User-Agent: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko)
-        Chrome/49.0.2623.112 Safari/537.36
-    path: /
-  xudp: true
-- name: D🔴🇰🇷hos[🎬📺🎭🎪]_dokng.com_c023a1a4
-  network: ws
-  port: 2082
-  server: 104.16.231.20
-  servername: hhlfy.twiladaphne.ndjp.net
-  type: vless
-  udp: true
-  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
-  ws-opts:
-    headers:
-      Host: hhlfy.twiladaphne.ndjp.net
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/53.0.2785.143 Safari/537.36
-    path: ''
-  xudp: true
-- client-fingerprint: chrome
-  name: 🇫🇷FR_69|961KB/s|T001-260618 [344c8ef71da9]
-  network: ws
-  packet-encoding: xudp
-  port: 443
-  server: cf.130519.xyz
-  servername: ccc.010304.xyz
-  sub_tag: T001-260618
-  tls: true
-  type: vless
-  udp: true
-  uuid: d342d11e-d224-4463-b982-532309285094
-  ws-opts:
-    headers:
-      Host: ccc.010304.xyz
-      User-Agent: Mozilla/5.0 (X11; U; Linux x86_64; en-US) AppleWebKit/533.2 (KHTML,
-        like Gecko) Chrome/5.0.342.1 Safari/533.2
-    path: /
-  xudp: true
-- encryption: none
-  name: 🇫🇷FR_213|862KB/s|M003-260806 [7f2536c9f560]
-  network: ws
-  packet-encoding: xudp
-  port: 80
-  server: 104.20.28.233
-  sub_tag: M003-260806
-  type: vless
-  udp: true
-  uuid: e081da45-9fae-4687-9376-f9a6a0dbbe83
-  ws-opts:
-    headers:
-      Host: e33xr.qzz.io
-      User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; Redmi 4A Build/MMB29M; wv) AppleWebKit/537.36
-        (KHTML, like Gecko) Version/4.0 Chrome/60.0.3112.116 Mobile Safari/537.36
-    path: /id-amz
-  xudp: true
-- cipher: rc4-md5
-  name: 🇺🇸US_466|841KB/s|A004-260618 [d92318afee09]
-  password: 14fFPrbezE3HDZzsMOr6
-  port: 8080
-  server: 79.110.54.250
-  sub_tag: A004-260618
-  type: ss
-  udp: true
-- name: 🇫🇷FR_183|440KB/s|X001-260618 [fdf21aceabc1]
-  network: ws
-  packet-encoding: xudp
-  port: 8880
-  server: 23.227.60.30
-  sub_tag: X001-260618
-  type: vless
-  udp: true
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  ws-opts:
-    headers:
-      Host: vms.lifetime18.workers.dev
-      User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/60.0.3112.90 Safari/537.36
-    path: /
-  xudp: true
-- name: 🇫🇷FR_85|774KB/s|A004-260618 [b0afd74c4848]
-  network: ws
-  packet-encoding: xudp
-  port: 8080
-  server: 104.18.0.181
-  sub_tag: A004-260618
-  type: vless
-  udp: true
-  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
-  ws-opts:
-    headers:
-      Host: hhlfy.twiladaphne.ndjp.net
-      User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; CPH1607 Build/MMB29M; wv) AppleWebKit/537.36
-        (KHTML, like Gecko) Version/4.0 Chrome/63.0.3239.111 Mobile Safari/537.36
-    path: /
-  xudp: true
-- client-fingerprint: chrome
-  name: 🇫🇷FR_102|1.1MB/s|A001-260618 [fd6819c1f250]
-  network: ws
-  packet-encoding: xudp
-  port: 443
-  server: cf.090227.xyz
-  servername: ccc.010304.xyz
-  sub_tag: A001-260618
-  tls: true
-  type: vless
-  udp: true
-  uuid: d342d11e-d224-4463-b982-532309285094
-  ws-opts:
-    headers:
-      Host: ccc.010304.xyz
-      User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-G532M Build/MMB29T) AppleWebKit/537.36
-        (KHTML, like Gecko) Chrome/69.0.3497.100 Mobile Safari/537.36
-    path: /fp=chrome
-  xudp: true
-- alpn:
-  - http/1.1
-  client-fingerprint: unsafe
-  encryption: none
-  name: 🇫🇷FR_216|797KB/s|M003-260806 [ff288e219f2f]
-  network: ws
-  packet-encoding: xudp
-  port: 443
-  server: 188.114.97.6
-  servername: fornewiran.ade-1000.workers.dev
-  sub_tag: M003-260806
-  tls: true
-  type: vless
-  udp: true
-  uuid: 93fa8bdb-9cca-4a3e-8355-b7c12e4f595e
-  ws-opts:
-    early-data-header-name: Sec-WebSocket-Protocol
-    headers:
-      Host: fornewiran.ade-1000.workers.dev
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/57.0.2987.133 Safari/537.36
-    max-early-data: 2560
-    path: /vl/yLWNcuUuw1jlJpkDhGy
-  xudp: true
-- encryption: none
-  name: 🇫🇷FR_192|847KB/s|T001-260618 [5dd78972cd2e]
-  network: ws
-  packet-encoding: xudp
-  port: 8080
-  server: 104.21.70.21
-  servername: nautica-cff.kloningstrife002.workers.dev
-  sub_tag: T001-260618
-  type: vless
-  udp: true
-  uuid: fc60147e-76b8-4bc5-b691-90b2da79e3d2
-  ws-opts:
-    headers:
-      Host: nautica-cff.kloningstrife002.workers.dev
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/70.0.3538.102 Safari/537.36
-    path: /138.2.74.219-28616
-  xudp: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-7hJg
-  type: vmess
-  server: 43.130.35.53
-  port: 10087
-  uuid: 8e93b009-f1af-448a-b8ef-b110849a35f0
-  alterId: 0
-  cipher: auto
-  network: tcp
-  tls: false
-  sni: null
-  ws-opts: {}
-- name: 🔥Join+Telegram:@Farah_VPN🟣-xRF6
-  type: vless
-  server: 3h-unitedstates1.09vpn.com
-  port: 80
-  uuid: 18cf8db1-9f86-43f7-baa0-382efb7f2dfa
-  security: none
-  tls: false
-  sni: ''
-  skip-cert-verify: false
-  network: ws
-  udp: true
-  ws-opts:
-    path: /vless/
-    headers:
-      Host: 3h-unitedstates1.09vpn.com
-- alpn:
-  - http/1.1
-  client-fingerprint: unsafe
-  name: 🇫🇷FR_212|413KB/s|M003-260806 [84e5e98f7f0d]
-  network: ws
-  packet-encoding: xudp
-  port: 443
-  server: 188.114.97.6
-  servername: stf839dvvyog9d2qa4-b8z6ahgn7b7qi.pages.dev
-  sub_tag: M003-260806
-  tls: true
-  type: vless
-  udp: true
-  uuid: b2f2f9f2-1864-48ea-839b-22815faff1f1
-  ws-opts:
-    early-data-header-name: Sec-WebSocket-Protocol
-    headers:
-      Host: stf839dvvyog9d2qa4-b8z6ahgn7b7qi.pages.dev
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/70.0.3538.102 Safari/537.36
-    max-early-data: 2560
-    path: /9BozNyvQ8VdRvsYX
   xudp: true
 - client-fingerprint: chrome
   encryption: none
@@ -686,26 +716,6 @@ proxies:
   xudp: true
 - client-fingerprint: chrome
   encryption: none
-  name: 🇫🇷FR_144|524KB/s|M002-260618 [9e7ce0ce2248]
-  network: ws
-  packet-encoding: xudp
-  port: 443
-  server: 104.17.154.123
-  servername: ccc.010304.xyz
-  sub_tag: M002-260618
-  tls: true
-  type: vless
-  udp: true
-  uuid: d342d11e-d224-4463-b982-532309285094
-  ws-opts:
-    headers:
-      Host: ccc.010304.xyz
-      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
-        Gecko) Chrome/31.0.1650.57 Safari/537.36
-    path: /
-  xudp: true
-- client-fingerprint: chrome
-  encryption: none
   name: 🇫🇷FR_53|1.1MB/s|M002-260618 [adb72aeb485b]
   network: ws
   packet-encoding: xudp
@@ -725,289 +735,6 @@ proxies:
     path: /
   xudp: true
 - client-fingerprint: chrome
-  encryption: none
-  name: 🇫🇷FR_333|766KB/s|S004-260618 [e18d86f96365]
-  network: ws
-  packet-encoding: xudp
-  port: 443
-  server: chatgpt.com
-  servername: ccc.010304.xyz
-  sub_tag: S004-260618
-  tls: true
-  type: vless
-  udp: true
-  uuid: d342d11e-d224-4463-b982-532309285094
-  ws-opts:
-    headers:
-      Host: ccc.010304.xyz
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/64.0.3282.167 Safari/537.36
-    path: /
-  xudp: true
-- name: 🇫🇷FR_62|652KB/s|A004-260618 [b9eea0f0efd2]
-  network: ws
-  packet-encoding: xudp
-  port: 8080
-  server: 104.16.215.234
-  sub_tag: A004-260618
-  type: vless
-  udp: true
-  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
-  ws-opts:
-    headers:
-      Host: hhlfy.twiladaphne.ndjp.net
-      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
-        Gecko) Chrome/34.0.1847.131 Safari/537.36
-    path: /fp=chrome
-  xudp: true
-- client-fingerprint: chrome
-  name: 🇫🇷FR_198|917KB/s|M003-260806 [d19dcfbcba16]
-  network: ws
-  password: bpb-trojan
-  port: 443
-  server: 172.64.80.1
-  skip-cert-verify: false
-  sni: vless.herogoing.top
-  sub_tag: M003-260806
-  type: trojan
-  udp: true
-  ws-opts:
-    early-data-header-name: Sec-WebSocket-Protocol
-    headers:
-      User-Agent: Mozilla/5.0 (Linux; Android 7.1; Mi A1 Build/N2G47H) AppleWebKit/537.36
-        (KHTML, like Gecko) Chrome/58.0.3029.83 Mobile Safari/537.36
-    max-early-data: 2560
-    path: /tr
-- encryption: none
-  name: 🇫🇷FR_243|1.1MB/s|M003-260806 [0fce1ce2341d]
-  network: ws
-  packet-encoding: xudp
-  port: 8080
-  server: 172.67.75.172
-  sub_tag: M003-260806
-  type: vless
-  udp: true
-  uuid: 3e06b1db-2efb-446e-ba2d-68850dfd2f9d
-  ws-opts:
-    headers:
-      Host: bdfba-cool-tree-b580.v8fz4kbv.workers.dev
-      User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36
-        (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
-    path: /
-  xudp: true
-- name: 🇫🇷FR_34|592KB/s|A004-260618 [2a5963893dc1]
-  network: ws
-  packet-encoding: xudp
-  port: 2082
-  server: 104.17.162.11
-  sub_tag: A004-260618
-  type: vless
-  udp: true
-  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
-  ws-opts:
-    headers:
-      Host: hhlfy.twiladaphne.ndjp.net
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/63.0.3239.132 Safari/537.36
-    path: /
-  xudp: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-CBO6
-  type: vless
-  server: 104.19.173.68
-  port: 8080
-  uuid: 2500e602-671c-4654-a602-c518b7282167
-  security: none
-  tls: false
-  sni: ''
-  skip-cert-verify: false
-  network: ws
-  udp: true
-  ws-opts:
-    path: /
-    headers:
-      Host: 2639w-throbbing-band-3840.xphnn6jp.workers.dev
-- encryption: none
-  name: 🇫🇷FR_320|511KB/s|M003-260806 [5b9c987a5d38]
-  network: ws
-  packet-encoding: xudp
-  port: 8080
-  server: 104.18.26.94
-  servername: www.gov.se
-  sub_tag: M003-260806
-  type: vless
-  udp: true
-  uuid: 989d58b8-d2ea-4d28-b5ff-0f3cd078f2cf
-  ws-opts:
-    headers:
-      Host: sdf23g-billowing-moon-348e.mzm468gc.workers.dev
-      User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like
-        Gecko) Chrome/43.0.2357.65 Safari/537.36
-    path: /
-  xudp: true
-- encryption: none
-  name: 🇫🇷FR_237|3.4MB/s|T001-260618 [5e1a583b1d55]
-  network: ws
-  packet-encoding: xudp
-  port: 8080
-  server: 104.21.70.21
-  servername: cf-vless-4cf55824.aimall.fr
-  sub_tag: T001-260618
-  type: vless
-  udp: true
-  uuid: ea50b1a3-3a98-4c5e-a150-48ada40d68d7
-  ws-opts:
-    headers:
-      Host: cf-vless-4cf55824.aimall.fr
-      User-Agent: Mozilla/5.0 (Linux; Android 7.1.1; CPH1723 Build/N6F26Q) AppleWebKit/537.36
-        (KHTML, like Gecko) Chrome/61.0.3163.98 Mobile Safari/537.36
-    path: /connect
-  xudp: true
-- cipher: aes-256-gcm
-  name: 🇺🇸US_499|1.3MB/s|A004-260618 [959578925c29]
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 185.215.132.9
-  sub_tag: A004-260618
-  type: ss
-  udp: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-aFZm
-  type: vless
-  server: 88.216.69.253
-  port: 443
-  uuid: d342d11e-d224-4463-b982-532309285094
-  security: tls
-  tls: true
-  sni: ccc.010304.xyz
-  skip-cert-verify: false
-  network: ws
-  udp: true
-  client-fingerprint: unsafe
-  ws-opts:
-    path: /fp
-    headers:
-      Host: ccc.010304.xyz
-- alpn:
-  - http/1.1
-  client-fingerprint: unsafe
-  encryption: none
-  name: 🇫🇷FR_188|389KB/s|M003-260806 [e45677eb0821]
-  network: ws
-  packet-encoding: xudp
-  port: 443
-  server: 104.21.70.21
-  servername: fornewiran.ade-1000.workers.dev
-  sub_tag: M003-260806
-  tls: true
-  type: vless
-  udp: true
-  uuid: 93fa8bdb-9cca-4a3e-8355-b7c12e4f595e
-  ws-opts:
-    early-data-header-name: Sec-WebSocket-Protocol
-    headers:
-      Host: fornewiran.ade-1000.workers.dev
-      User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-G532M Build/MMB29T) AppleWebKit/537.36
-        (KHTML, like Gecko) Chrome/55.0.2883.91 Mobile Safari/537.36
-    max-early-data: 2560
-    path: /vl/yLWNcuUuw1jlJpkDhGy
-  xudp: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-Etl7
-  type: trojan
-  server: 66.163.114.166
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: blog.findconnectwithemployersandbuildprofessionalnetwork.com
-  skip-cert-verify: false
-- name: 🔥Join+Telegram:@Farah_VPN🟣-jZ1l
-  type: vless
-  server: 104.18.45.38
-  port: 443
-  uuid: d342d11e-d224-4463-b982-532309285094
-  security: tls
-  tls: true
-  sni: ccc.010304.xyz
-  skip-cert-verify: false
-  network: ws
-  udp: true
-  client-fingerprint: unsafe
-  ws-opts:
-    path: /fp
-    headers:
-      Host: ccc.010304.xyz
-- name: 🔥Join+Telegram:@Farah_VPN🟣-uUqT
-  type: trojan
-  server: 66.163.114.106
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: www.findconnectwithemployersandbuildprofessionalnetwork.com
-  skip-cert-verify: false
-- name: 🇫🇷FR_222|561KB/s|M001-260618 [5247b6a45f99]
-  network: ws
-  password: 2bcfbfba-b446-4ad5-93ad-72af9e008f61
-  port: 443
-  server: 104.21.88.77
-  skip-cert-verify: false
-  sni: blackshadow.dpdns.org
-  sub_tag: M001-260618
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      Host: blackshadow.dpdns.org
-    path: /195.123.218.174-443
-- client-fingerprint: chrome
-  name: 🇫🇷FR_77|1.2MB/s|S004-260618 [aa93cd83edf2]
-  network: ws
-  packet-encoding: xudp
-  port: 443
-  server: cf.877774.xyz
-  servername: ccc.010304.xyz
-  sub_tag: S004-260618
-  tls: true
-  type: vless
-  udp: true
-  uuid: d342d11e-d224-4463-b982-532309285094
-  ws-opts:
-    headers:
-      Host: ccc.010304.xyz
-      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
-        Gecko) Chrome/53.0.2785.143 Safari/537.36
-    path: /
-  xudp: true
-- name: 美国 802
-  type: vless
-  network: ws
-  server: 162.159.149.63
-  port: 443
-  uuid: 66969b2e-5e49-4750-9419-167d4bb64c07
-  servername: wallweb11.wallwebc992h7.workers.dev
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: wallweb11.wallwebc992h7.workers.dev
-    path: /
-- client-fingerprint: chrome
-  name: 🇫🇷FR_195|881KB/s|M003-260806 [25ab2c375486]
-  network: ws
-  password: bpb-trojan
-  port: 443
-  server: 172.67.135.88
-  skip-cert-verify: false
-  sni: vless.herogoing.top
-  sub_tag: M003-260806
-  type: trojan
-  udp: true
-  ws-opts:
-    early-data-header-name: Sec-WebSocket-Protocol
-    headers:
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/47.0.2526.106 Safari/537.36
-    max-early-data: 2560
-    path: /tr
-- client-fingerprint: chrome
   name: 🇫🇷FR_328|784KB/s|M003-260806 [5653cc93d7bc]
   network: ws
   packet-encoding: xudp
@@ -1026,19 +753,77 @@ proxies:
         like Gecko) Chrome/65.0.3325.181 Safari/537.36
     path: /
   xudp: true
-- cipher: aes-256-gcm
-  name: 🇺🇸US_480|1.9MB/s|A004-260618 [bd1e79add0e4]
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 185.230.230.18
-  sub_tag: A004-260618
-  type: ss
-  udp: true
-- name: 🇫🇷FR_8|654KB/s|A004-260618 [f3d97673f7a3]
+- name: SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-107.151.182.253:8080
+  type: ssr
+  server: 107.151.182.253
+  port: 8080
+  password: 14fFPrbezE3HDZzsMOr6
+  cipher: rc4-md5
+  protocol: origin
+  obfs: plain
+- encryption: none
+  name: 🇫🇷FR_280|525KB/s|M003-260806 [164ab767de0f]
   network: ws
   packet-encoding: xudp
   port: 8080
-  server: 104.21.70.21
+  server: 104.26.12.31
+  servername: ip.sb
+  sub_tag: M003-260806
+  type: vless
+  udp: true
+  uuid: 3e06b1db-2efb-446e-ba2d-68850dfd2f9d
+  ws-opts:
+    headers:
+      Host: bdfba-cool-tree-b580.v8fz4kbv.workers.dev
+      User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/70.0.3538.67 Safari/537.36
+    path: /
+  xudp: true
+- name: 🇫🇷FR_44|4.5MB/s|R002-260618 [39873ef4d996]
+  port: 443
+  server: 172.64.68.89
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- alpn:
+  - http/1.1
+  client-fingerprint: chrome
+  encryption: none
+  name: 🇫🇷FR_176|1.2MB/s|B007-260618 [39e764cc5f1e]
+  network: ws
+  packet-encoding: xudp
+  port: 443
+  server: 172.66.47.45
+  servername: EZAcCESS-pROjECt-F62c30.PAGES.dEv
+  sub_tag: B007-260618
+  tls: true
+  type: vless
+  udp: true
+  uuid: e56059f1-5a1a-4d0a-a2d0-58ecb4eb2f3f
+  ws-opts:
+    early-data-header-name: Sec-WebSocket-Protocol
+    headers:
+      Host: ezaccess-project-f62c30.pages.dev
+      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
+        Gecko) Chrome/46.0.2490.80 Safari/537.36
+    max-early-data: 2560
+    path: /eyJqdW5rIjoiZWlPODVjTnhnaSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
+  xudp: true
+- cipher: rc4-md5
+  name: 🇺🇸US_371|927KB/s|A004-260618 [836b9e2c1c7b]
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 107.151.182.253
+  sub_tag: A004-260618
+  type: ss
+  udp: true
+- name: 🇫🇷FR_60|623KB/s|A004-260618 [17e99393b3f0]
+  network: ws
+  packet-encoding: xudp
+  port: 2082
+  server: 104.19.95.153
   sub_tag: A004-260618
   type: vless
   udp: true
@@ -1046,53 +831,116 @@ proxies:
   ws-opts:
     headers:
       Host: hhlfy.twiladaphne.ndjp.net
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/70.0.3538.67 Safari/537.36
-    path: /fp
+      User-Agent: Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/70.0.3538.67 Safari/537.36
+    path: /
   xudp: true
-- client-fingerprint: unsafe
-  encryption: none
-  name: 🇫🇷FR_202|986KB/s|M003-260806 [085dc8dc1671]
+- client-fingerprint: chrome
+  name: 🇫🇷FR_301|1.0MB/s|A004-260618 [e62e8b4a49ad]
   network: ws
   packet-encoding: xudp
   port: 443
-  server: 188.114.97.6
-  servername: all.speedtest03.ccwu.cc
+  server: 172.66.47.123
+  servername: web-tomcat.pages.dev
+  sub_tag: A004-260618
+  tls: true
+  type: vless
+  udp: true
+  uuid: 2cf94f4d-9d5b-49ca-81a3-ddc0529a2dac
+  ws-opts:
+    headers:
+      Host: web-tomcat.pages.dev
+      User-Agent: Mozilla/5.0 (Linux; Android 6.0; MYA-L22 Build/HUAWEIMYA-L22) AppleWebKit/537.36
+        (KHTML, like Gecko) Chrome/62.0.3202.84 Mobile Safari/537.36
+    path: /
+  xudp: true
+- name: 🔥Join+Telegram:@Farah_VPN🟣-f0Od
+  type: vless
+  server: 104.18.45.38
+  port: 443
+  uuid: d342d11e-d224-4463-b982-532309285094
+  security: tls
+  tls: true
+  sni: ccc.010304.xyz
+  skip-cert-verify: false
+  network: ws
+  udp: true
+  client-fingerprint: unsafe
+  ws-opts:
+    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=2560
+    headers:
+      Host: ccc.010304.xyz
+- cipher: rc4-md5
+  name: 🇺🇸US_246|888KB/s|A004-260618 [0e40b52615aa]
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 107.151.182.197
+  sub_tag: A004-260618
+  type: ss
+  udp: true
+- client-fingerprint: chrome
+  name: 🇫🇷FR_291|1.2MB/s|M003-260806 [2786d2bd9936]
+  network: ws
+  packet-encoding: xudp
+  port: 443
+  server: 172.67.74.90
+  servername: cvhpyn.pages.dev
   sub_tag: M003-260806
   tls: true
   type: vless
   udp: true
-  uuid: 3ccba794-1c6d-48a8-acf2-f5caf0e69d86
+  uuid: a4a951b9-901d-4db8-8a7d-6df82c4b5c23
   ws-opts:
     headers:
-      Host: all.speedtest03.ccwu.cc
-      User-Agent: Mozilla/5.0 (Windows NT 6.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/55.0.2883.87 Safari/537.36
+      Host: cvhpyn.pages.dev
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/47.0.2526.106 Safari/537.36
+    path: /fp=chrome
+  xudp: true
+- client-fingerprint: chrome
+  name: 🇫🇷FR_252|620KB/s|C002-260622 [a37c3136b0ed]
+  network: ws
+  packet-encoding: xudp
+  port: 443
+  server: 162.159.153.4
+  servername: rAyAn-007.mAxImA.DpDnS.OrG
+  sub_tag: C002-260622
+  tls: true
+  type: vless
+  udp: true
+  uuid: f2a73750-3087-48ff-a763-1348c15dce68
+  ws-opts:
+    headers:
+      Host: rAyAn-007.mAxImA.DpDnS.OrG
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/65.0.3325.181 Safari/537.36
     path: /
   xudp: true
 - encryption: none
-  name: 🇫🇷FR_225|721KB/s [0d3a12b925d2]
+  name: 🇫🇷FR_219|1.0MB/s|M003-260806 [e7b0db0c82e0]
   network: ws
   packet-encoding: xudp
-  port: 8880
-  server: 45.131.211.30
+  port: 8080
+  server: 104.21.70.21
+  servername: fornewiran.ade-1000.workers.dev
+  sub_tag: M003-260806
   type: vless
   udp: true
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  uuid: 93fa8bdb-9cca-4a3e-8355-b7c12e4f595e
   ws-opts:
     early-data-header-name: Sec-WebSocket-Protocol
     headers:
-      Host: vms.lifetime06.workers.dev
-      User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko)
-        Chrome/56.0.2924.87 Safari/537.36
+      Host: fornewiran.ade-1000.workers.dev
+      User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-G532G Build/MMB29T) AppleWebKit/537.36
+        (KHTML, like Gecko) Chrome/63.0.3239.83 Mobile Safari/537.36
     max-early-data: 2560
-    path: /
+    path: /vl/yLWNcuUuw1jlJpkDhGy
   xudp: true
-- name: 🇫🇷FR_81|700KB/s|A004-260618 [112c999b4576]
+- name: 🇫🇷FR_29|1.1MB/s|A004-260618 [3842eaf34575]
   network: ws
   packet-encoding: xudp
   port: 2082
-  server: 104.18.0.181
+  server: 172.64.150.43
   servername: hhlfy.twiladaphne.ndjp.net
   sub_tag: A004-260618
   type: vless
@@ -1101,58 +949,235 @@ proxies:
   ws-opts:
     headers:
       Host: hhlfy.twiladaphne.ndjp.net
-      User-Agent: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/60.0.3112.90 Safari/537.36
-    path: /fp
+      User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36
+        (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36
+    path: /
   xudp: true
-- client-fingerprint: unsafe
-  encryption: none
-  name: 🇫🇷FR_246|2.9MB/s|M003-260806 [717e4d973618]
+- client-fingerprint: chrome
+  name: 🇫🇷FR_302|3.3MB/s|A004-260618 [436825c450f9]
   network: ws
   packet-encoding: xudp
   port: 443
-  server: 188.114.97.6
-  servername: youxuanku.kdns.fr
-  sub_tag: M003-260806
+  server: 172.66.44.133
+  servername: web-tomcat.pages.dev
+  sub_tag: A004-260618
   tls: true
   type: vless
   udp: true
-  uuid: 4c0b7280-76bb-495c-9c8b-f05712ebf805
+  uuid: 2cf94f4d-9d5b-49ca-81a3-ddc0529a2dac
   ws-opts:
     headers:
-      Host: youxuanku.kdns.fr
-      User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/70.0.3538.110 Safari/537.36
+      Host: web-tomcat.pages.dev
+      User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/534.7
+        (KHTML, like Gecko) Chrome/7.0.517.44 Safari/534.7
     path: /
   xudp: true
-- name: 🇫🇷FR_204|539KB/s|M001-260618 [afce004c32e6]
-  network: ws
-  password: 容解析错误trojan://2bcfbfba-b446-4ad5-93ad-72af9e008f61
+- name: 🔥Join+Telegram:@Farah_VPN🟣-PiUW
+  type: vless
+  server: 8.47.69.60
   port: 443
-  server: blackshadow.dpdns.org
+  uuid: d342d11e-d224-4463-b982-532309285094
+  security: tls
+  tls: true
+  sni: ccc.010304.xyz
   skip-cert-verify: false
-  sni: blackshadow.dpdns.org
-  sub_tag: M001-260618
-  type: trojan
+  network: ws
   udp: true
+  client-fingerprint: unsafe
+  ws-opts:
+    path: /
+    headers:
+      Host: ccc.010304.xyz
+- name: 美国 050
+  type: vless
+  network: ws
+  server: 190.93.244.166
+  port: 2096
+  uuid: b2853d19-fada-44dc-8d44-967d1af122e0
+  servername: wQa3mioJJR8fYoZhIui--su3-UCG1GDx.pages.DEv
+  tls: true
+  udp: true
+  client-fingerprint: chrome
   ws-opts:
     headers:
-      Host: blackshadow.dpdns.org
-    path: /%2F195.123.218.174-443
-- client-fingerprint: unsafe
+      Host: wqa3miojjr8fyozhiui--su3-ucg1gdx.pages.dev
+    path: /eyJqdW5rIjoiWmFzVk5rd2siLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjpbIlsyYTAyOjg5ODoxNDY6NjQ6Ol0iXX0=
+- client-fingerprint: chrome
   encryption: none
-  name: '🏳[www.v2nodes.com] vless- #15'
+  name: 🇫🇷FR_231|731KB/s|B007-260618 [5986e2ee48df]
   network: ws
+  packet-encoding: xudp
   port: 443
-  server: 104.21.70.21
+  server: 104.17.3.81
   servername: nautica-cff.kloningstrife002.workers.dev
+  sub_tag: B007-260618
   tls: true
   type: vless
+  udp: true
   uuid: fc60147e-76b8-4bc5-b691-90b2da79e3d2
   ws-opts:
     headers:
       Host: nautica-cff.kloningstrife002.workers.dev
+      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
+        Gecko) Chrome/48.0.2564.116 Safari/537.36
     path: /138.2.74.219-28616
+  xudp: true
+- encryption: none
+  name: 🇫🇷FR_213|862KB/s|M003-260806 [7f2536c9f560]
+  network: ws
+  packet-encoding: xudp
+  port: 80
+  server: 104.20.28.233
+  sub_tag: M003-260806
+  type: vless
+  udp: true
+  uuid: e081da45-9fae-4687-9376-f9a6a0dbbe83
+  ws-opts:
+    headers:
+      Host: e33xr.qzz.io
+      User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; Redmi 4A Build/MMB29M; wv) AppleWebKit/537.36
+        (KHTML, like Gecko) Version/4.0 Chrome/60.0.3112.116 Mobile Safari/537.36
+    path: /id-amz
+  xudp: true
+- name: 🇫🇷FR_228|627KB/s|C002-260622 [abec1861ea64]
+  network: ws
+  packet-encoding: xudp
+  port: 8880
+  server: 103.116.7.30
+  sub_tag: C002-260622
+  type: vless
+  udp: true
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  ws-opts:
+    headers:
+      Host: vms.lifetime35.workers.dev
+      User-Agent: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/60.0.3112.90 Safari/537.36
+    path: /
+  xudp: true
+- name: 🇫🇷FR_305|993KB/s|A004-260618 [400b67f9250b]
+  network: ws
+  packet-encoding: xudp
+  port: 8080
+  server: 104.19.164.25
+  sub_tag: A004-260618
+  type: vless
+  udp: true
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  ws-opts:
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+      User-Agent: Mozilla/5.0 (Linux; Android 8.0.0; FIG-LX3) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/70.0.3538.80 Mobile Safari/537.36
+    path: /sg-melbi
+  xudp: true
+- name: US美国(mibei77.com 米贝节点分享)_45
+  network: ws
+  port: 8880
+  server: 92.53.189.40
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  ws-opts:
+    headers:
+      Host: vms.lifetime19.workers.dev
+    path: /
+- encryption: none
+  name: 🇫🇷FR_243|1.1MB/s|M003-260806 [0fce1ce2341d]
+  network: ws
+  packet-encoding: xudp
+  port: 8080
+  server: 172.67.75.172
+  sub_tag: M003-260806
+  type: vless
+  udp: true
+  uuid: 3e06b1db-2efb-446e-ba2d-68850dfd2f9d
+  ws-opts:
+    headers:
+      Host: bdfba-cool-tree-b580.v8fz4kbv.workers.dev
+      User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36
+        (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
+    path: /
+  xudp: true
+- encryption: none
+  name: 🇫🇷FR_61|917KB/s|B007-260618 [230678643d29]
+  network: ws
+  packet-encoding: xudp
+  port: 8080
+  server: 104.18.35.86
+  servername: 'hhlfy.twiladaphne.ndjp.net '
+  sub_tag: B007-260618
+  type: vless
+  udp: true
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  ws-opts:
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
+      User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/63.0.3239.84 Safari/537.36
+    path: /sg-melbi
+  xudp: true
+- client-fingerprint: chrome
+  name: 🇫🇷FR_185|401KB/s|M003-260806 [96a228d2bc1d]
+  network: ws
+  password: 19877587-ed94-4033-88cd-4ac50a5e8718
+  port: 443
+  server: 104.18.153.182
+  skip-cert-verify: false
+  sni: dimskiee.biz.id
+  sub_tag: M003-260806
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      User-Agent: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/62.0.3202.89 Safari/537.36
+    path: /WangCai-8
+- name: 🔥Join+Telegram:@Farah_VPN🟣-z9AP
+  type: vless
+  server: 154.83.2.50
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  security: none
+  tls: false
+  sni: ''
+  skip-cert-verify: false
+  network: ws
+  udp: true
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: vms.lifetime28.workers.dev
+- cipher: rc4-md5
+  name: 🇺🇸US_94|999KB/s|M003-260806 [112d3ee5d9f2]
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 107.155.57.51
+  sub_tag: M003-260806
+  type: ss
+  udp: true
+- client-fingerprint: chrome
+  encryption: none
+  name: 🇫🇷FR_299|1.3MB/s|X001-260618 [1879ac4299bc]
+  network: ws
+  packet-encoding: xudp
+  port: 443
+  server: 172.67.160.192
+  servername: nuclear.us.kg
+  sub_tag: X001-260618
+  tls: true
+  type: vless
+  udp: true
+  uuid: 2bcfbfba-b446-4ad5-93ad-72af9e008f61
+  ws-opts:
+    headers:
+      Host: nuclear.us.kg
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/68.0.3440.106 Safari/537.36
+    path: /free/103.101.153.32:443
+  xudp: true
 - client-fingerprint: chrome
   name: 🇫🇷FR_220|523KB/s|T001-260618 [1fd507d5b3a1]
   network: ws
@@ -1172,47 +1197,236 @@ proxies:
         like Gecko) Chrome/55.0.2883.87 Safari/537.36
     path: /id-pusat
   xudp: true
-- client-fingerprint: chrome
-  name: 🇫🇷FR_150|814KB/s|M002-260618 [3d4b9f52f153]
-  network: ws
-  password: bpb-trojan
-  port: 443
-  server: 104.21.26.36
-  skip-cert-verify: false
-  sni: vless.herogoing.top
-  sub_tag: M002-260618
-  type: trojan
+- cipher: rc4-md5
+  name: 🇺🇸US_81|917KB/s|M003-260806 [2d3c6b97d127]
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 79.110.53.169
+  sub_tag: M003-260806
+  type: ss
   udp: true
+- name: 🇫🇷FR_146|1.0MB/s|C002-260622 [bde3e82343de]
+  network: ws
+  packet-encoding: xudp
+  port: 8880
+  server: 192.0.54.30
+  sub_tag: C002-260622
+  type: vless
+  udp: true
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   ws-opts:
-    early-data-header-name: Sec-WebSocket-Protocol
     headers:
+      Host: vms.lifetime35.workers.dev
+      User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36
+        (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36
+    path: /
+  xudp: true
+- name: 🇫🇷FR_308|793KB/s|A004-260618 [df2caff37b41]
+  network: ws
+  packet-encoding: xudp
+  port: 8080
+  server: 172.67.71.187
+  sub_tag: A004-260618
+  type: vless
+  udp: true
+  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+  ws-opts:
+    headers:
+      Host: hhlfy.twiladaphne.ndjp.net
       User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
         like Gecko) Chrome/62.0.3202.94 Safari/537.36
-    max-early-data: 2560
-    path: /tr
+    path: /sg-melbi
+  xudp: true
+- type: vless
+  name: FR法国(mibei77.com 米贝节点分享) (2)
+  server: 45.194.53.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: vms.lifetime19.workers.dev
+- name: 🇬🇧GB英国丨yoyapai.com_3
+  network: ws
+  port: 8880
+  server: 89.117.112.30
+  skip-cert-verify: false
+  tls: false
+  type: vless
+  udp: true
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  ws-opts:
+    headers:
+      Host: vms.lifetime11.workers.dev
+    path: /
+- cipher: rc4-md5
+  name: 🇺🇸US_466|841KB/s|A004-260618 [d92318afee09]
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 79.110.54.250
+  sub_tag: A004-260618
+  type: ss
+  udp: true
 - client-fingerprint: chrome
   encryption: none
-  name: 🇫🇷FR_168|613KB/s|M003-260806 [cdf596cfc3eb]
+  name: 🇫🇷FR_200|978KB/s [f91f8159ead9]
   network: ws
   packet-encoding: xudp
   port: 443
-  server: 172.64.145.94
-  servername: powered-by-surena.configfarsi695fd01a94fe7.workers.dev
+  server: 104.18.0.1
+  servername: all.speedtest03.ccwu.cc
+  tls: true
+  type: vless
+  udp: true
+  uuid: 3ccba794-1c6d-48a8-acf2-f5caf0e69d86
+  ws-opts:
+    headers:
+      Host: all.speedtest03.ccwu.cc
+      User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/533.4
+        (KHTML, like Gecko) Chrome/5.0.375.99 Safari/533.4
+    path: /
+  xudp: true
+- client-fingerprint: chrome
+  name: 🇫🇷FR_322|744KB/s|A001-260618 [19a68365cca1]
+  network: ws
+  packet-encoding: xudp
+  port: 443
+  server: 104.18.40.100
+  servername: ccc.010304.xyz
+  sub_tag: A001-260618
+  tls: true
+  type: vless
+  udp: true
+  uuid: d342d11e-d224-4463-b982-532309285094
+  ws-opts:
+    headers:
+      Host: ccc.010304.xyz
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/45.0.2454.93 Safari/537.36
+    path: /fp=chrome
+  xudp: true
+- alterId: 0
+  cipher: auto
+  name: 🇺🇸US_28|1.1MB/s|A004-260618 [1b7912caedd7]
+  network: tcp
+  packet-encoding: xudp
+  port: 18000
+  server: 84.17.41.2
+  servername: 84.17.41.2
+  skip-cert-verify: false
+  sub_tag: A004-260618
+  tls: false
+  type: vmess
+  udp: true
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  xudp: true
+- encryption: none
+  name: 🇫🇷FR_153|576KB/s|M003-260806 [215437d4d0a9]
+  network: ws
+  packet-encoding: xudp
+  port: 80
+  server: 172.66.170.172
+  sub_tag: M003-260806
+  type: vless
+  udp: true
+  uuid: e081da45-9fae-4687-9376-f9a6a0dbbe83
+  ws-opts:
+    headers:
+      Host: e33xr.qzz.io
+      User-Agent: Mozilla/5.0 (Windows; U; Windows NT 6.1; de-DE) AppleWebKit/534.17
+        (KHTML, like Gecko) Chrome/10.0.649.0 Safari/534.17
+    path: /id-amz
+  xudp: true
+- client-fingerprint: chrome
+  encryption: none
+  name: 🇫🇷FR_255|580KB/s|M003-260806 [5a0095e09ee8]
+  network: ws
+  packet-encoding: xudp
+  port: 443
+  server: 162.159.152.4
+  servername: rAyAn-007.mAxImA.DpDnS.OrG
   sub_tag: M003-260806
   tls: true
   type: vless
   udp: true
-  uuid: 5dc15e15-f285-4a9d-959b-0e4fbdd77b63
+  uuid: f2a73750-3087-48ff-a763-1348c15dce68
   ws-opts:
     headers:
-      Host: powered-by-surena.configfarsi695fd01a94fe7.workers.dev
+      Host: rAyAn-007.mAxImA.DpDnS.OrG
       User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/64.0.3282.186 Safari/537.36
+        like Gecko) Chrome/70.0.3538.110 Safari/537.36
     path: /
   xudp: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-j2p5
+- name: D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_09c15836
+  password: ''
+  port: 22222
+  server: 64.118.155.2
+  skip-cert-verify: true
+  type: http
+  udp: true
+  username: ''
+- type: vless
+  name: ❓未知丨yoyapai.com (82)
+  server: 185.162.229.40
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  udp: true
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime61.workers.dev
+- alterId: '0'
+  cipher: auto
+  name: 🇺🇸US_117|1.0MB/s|C002-260622 [36581dfe601e]
+  network: raw
+  packet-encoding: xudp
+  port: 18000
+  server: 169.197.142.22
+  skip-cert-verify: false
+  sub_tag: C002-260622
+  tls: false
+  type: vmess
+  udp: true
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  xudp: true
+- alpn:
+  - http/1.1
+  client-fingerprint: ios
+  name: 🇫🇷FR_182|639KB/s|T001-260618 [c9822d795dce]
+  network: ws
+  packet-encoding: xudp
+  port: 2083
+  server: 104.18.1.1
+  servername: vlsovip.1d.mom
+  sub_tag: T001-260618
+  tls: true
   type: vless
-  server: 104.21.221.158
+  udp: true
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
+  ws-opts:
+    headers:
+      Host: vlsovip.1d.mom
+      User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/66.0.3359.117 Safari/537.36
+    path: /socks5=888:888@hkip.1d.mom:1080
+  xudp: true
+- name: D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_3f6db8c8
+  password: None
+  port: 8443
+  server: 44.229.69.166
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: 🔥Join+Telegram:@Farah_VPN🟣-BdYy
+  type: vless
+  server: 104.18.35.15
   port: 443
   uuid: d342d11e-d224-4463-b982-532309285094
   security: tls
@@ -1221,12 +1435,12 @@ proxies:
   skip-cert-verify: false
   network: ws
   udp: true
-  client-fingerprint: unsafe
+  client-fingerprint: chrome
   ws-opts:
-    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=2560
+    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=512
     headers:
       Host: ccc.010304.xyz
-- name: 🔥Join+Telegram:@Farah_VPN🟣-73rV
+- name: 🔥Join+Telegram:@Farah_VPN🟣-ns8o
   type: vless
   server: 104.18.35.86
   port: 443
@@ -1241,125 +1455,34 @@ proxies:
     path: /eyJqdW5rIjoiZWhuWFFGNWRISXBjSmRGWSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
     headers:
       Host: 0Ee6wOQz4W8W0cDqiTgq6XZ-q0o9r6o9.merTEssWAgGEr08.WoRKErs.dEv
-- name: 🇫🇷FR_42|1.2MB/s|A004-260618 [0701766ba629]
-  network: ws
-  packet-encoding: xudp
-  port: 8080
-  server: 188.114.97.6
-  sub_tag: A004-260618
-  type: vless
+- name: 🔥Join+Telegram:@Farah_VPN🟣-YdZn
+  type: ss
+  server: 103.11.76.248
+  port: 28679
+  cipher: 2022-blake3-aes-128-gcm
+  password: NzJlOTQ5NWYtM2ZkYi00Cg==
   udp: true
-  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
-  ws-opts:
-    headers:
-      Host: hhlfy.twiladaphne.ndjp.net
-      User-Agent: Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.7
-        (KHTML, like Gecko) Chrome/7.0.517.44 Safari/534.7
-    path: /sg-melbi
-  xudp: true
+- name: 🇺🇸US_337|447KB/s|R002-260618 [3a4399d91e76]
+  port: 8443
+  server: 35.84.133.236
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
 - alpn:
+  - h3
+  - h2
   - http/1.1
   client-fingerprint: chrome
   encryption: none
-  name: 🇫🇷FR_194|532KB/s|M003-260806 [20eda3cc5991]
+  name: 🇫🇷FR_266|1.1MB/s|B007-260618 [d1c7416440ca]
   network: ws
   packet-encoding: xudp
   port: 443
-  server: 104.25.5.52
-  servername: FORnEwIRAn.ADE-1000.worKeRS.dev
-  sub_tag: M003-260806
-  tls: true
-  type: vless
-  udp: true
-  uuid: 93fa8bdb-9cca-4a3e-8355-b7c12e4f595e
-  ws-opts:
-    early-data-header-name: Sec-WebSocket-Protocol
-    headers:
-      Host: fornewiran.ade-1000.workers.dev
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/62.0.3202.89 Safari/537.36
-    max-early-data: 2560
-    path: /vl/yLWNcuUuw1jlJpkDhGy
-  xudp: true
-- client-fingerprint: chrome
-  name: 🇫🇷FR_179|1.1MB/s|C002-260622 [55d7f737921d]
-  network: ws
-  password: 19877587-ed94-4033-88cd-4ac50a5e8718
-  port: 443
-  server: 104.16.148.5
-  skip-cert-verify: false
-  sni: dimskiee.biz.id
-  sub_tag: C002-260622
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      User-Agent: Mozilla/5.0 (Linux; Android 7.0; SM-J710F Build/NRD90M) AppleWebKit/537.36
-        (KHTML, like Gecko) Chrome/62.0.3202.84 Mobile Safari/537.36
-    path: /WangCai-8
-- name: 🔥Join+Telegram:@Farah_VPN🟣-hF4L
-  type: trojan
-  server: 66.163.114.114
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: learn.findconnectwithemployersandbuildprofessionalnetwork.com
-  skip-cert-verify: false
-- name: 🇺🇸US_89
-  type: vmess
-  server: 67.220.95.3
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: auto
-  network: tcp
-  tls: false
-  sni: ''
-  ws-opts: {}
-- client-fingerprint: chrome
-  name: 🇫🇷FR_104|958KB/s|K001-260618 [2fbcfa066360]
-  network: ws
-  packet-encoding: xudp
-  port: 443
-  server: 104.26.4.2
-  servername: ccc.010304.xyz
-  sub_tag: K001-260618
-  tls: true
-  type: vless
-  udp: true
-  uuid: d342d11e-d224-4463-b982-532309285094
-  ws-opts:
-    headers:
-      Host: ccc.010304.xyz
-      User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/60.0.3112.90 Safari/537.36
-    path: /fp=chrome
-  xudp: true
-- encryption: none
-  name: 🇫🇷FR_177|702KB/s|C002-260622 [886f8a5e3ac9]
-  network: ws
-  packet-encoding: xudp
-  port: 8880
-  server: 173.245.49.30
-  sub_tag: C002-260622
-  type: vless
-  udp: true
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  ws-opts:
-    headers:
-      Host: vms.lifetime36.workers.dev
-      User-Agent: Mozilla/5.0 (Linux; Android 4.4.2; SM-G7102 Build/KOT49H) AppleWebKit/537.36
-        (KHTML, like Gecko) Chrome/62.0.3202.84 Mobile Safari/537.36
-    path: /
-  xudp: true
-- client-fingerprint: chrome
-  encryption: none
-  name: 🇫🇷FR_260|1.7MB/s|M003-260806 [e113f1b5e207]
-  network: ws
-  packet-encoding: xudp
-  port: 443
-  server: 172.67.222.62
+  server: 104.18.1.1
   servername: cf-vless-4cf55824.aimall.fr
-  sub_tag: M003-260806
+  sub_tag: B007-260618
   tls: true
   type: vless
   udp: true
@@ -1367,172 +1490,58 @@ proxies:
   ws-opts:
     headers:
       Host: cf-vless-4cf55824.aimall.fr
-      User-Agent: Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko)
-        Chrome/70.0.3538.67 Safari/537.36
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/70.0.3538.67 Safari/537.36
     path: /connect
   xudp: true
-- cipher: aes-256-gcm
-  name: 🇺🇸US_15|1.8MB/s|A004-260618 [efbcc8a70025]
-  password: kDWvXYZoTBcGkC4
-  port: 8882
-  server: 15.204.233.41
-  sub_tag: A004-260618
-  type: ss
-  udp: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-gzMB
-  type: ss
-  server: 103.11.76.248
-  port: 28679
-  cipher: 2022-blake3-aes-128-gcm
-  password: NzJlOTQ5NWYtM2ZkYi00Cg==
-  udp: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-3weQ
-  type: trojan
-  server: 66.163.114.132
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: courses.findconnectwithemployersandbuildprofessionalnetwork.com
-  skip-cert-verify: false
-- name: 🇺🇦UA_78
-  type: ss
-  server: 37.19.198.160
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-- name: 🇺🇦UA_79
-  type: ss
-  server: 37.19.198.243
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-- alpn:
-  - http/1.1
-  client-fingerprint: unsafe
-  encryption: none
-  name: 🇫🇷FR_234|500KB/s|M003-260806 [db992a3db76e]
+- name: D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_cd3eedf9
+  password: None
+  port: 8443
+  server: 44.248.167.117
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: 🇫🇷FR_184|499KB/s|M003-260806 [0ba554b4fd5d]
   network: ws
   packet-encoding: xudp
-  port: 443
-  server: 188.114.97.6
-  servername: ezaccess-project-f62c30.pages.dev
+  port: 8880
+  server: 89.117.112.40
   sub_tag: M003-260806
-  tls: true
   type: vless
   udp: true
-  uuid: e56059f1-5a1a-4d0a-a2d0-58ecb4eb2f3f
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   ws-opts:
     headers:
-      Host: ezaccess-project-f62c30.pages.dev
-      User-Agent: Mozilla/5.0 (Linux; Android 7.1.1; CPH1723 Build/N6F26Q) AppleWebKit/537.36
-        (KHTML, like Gecko) Chrome/61.0.3163.98 Mobile Safari/537.36
-    path: /eyJqdW5rIjoiZWlPODVjTnhnaSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=
+      Host: vms.lifetime11.workers.dev
+      User-Agent: Mozilla/5.0 (Linux; Android 7.0; TRT-LX3 Build/HUAWEITRT-LX3) AppleWebKit/537.36
+        (KHTML, like Gecko) Chrome/69.0.3497.100 Mobile Safari/537.36
+    path: /
   xudp: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-GspA
-  type: ss
-  server: 216.128.153.186
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: gWXhRbGoI53aSRV8fv9alMwr
-  udp: true
-- encryption: none
-  name: 🇫🇷FR_340|654KB/s|S004-260618 [4e3ddc5e9dce]
-  network: ws
-  packet-encoding: xudp
-  port: 8080
-  server: 172.64.150.43
-  servername: 'hhlfy.twiladaphne.ndjp.net '
-  sub_tag: S004-260618
-  type: vless
-  udp: true
-  uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
-  ws-opts:
-    headers:
-      Host: hhlfy.twiladaphne.ndjp.net
-      User-Agent: Mozilla/5.0 (Linux; Android 7.1.2; Redmi 4X Build/N2G47H) AppleWebKit/537.36
-        (KHTML, like Gecko) Chrome/63.0.3239.111 Mobile Safari/537.36
-    path: /sg-melbi
-  xudp: true
-- client-fingerprint: chrome
-  name: 🇫🇷FR_314|540KB/s|T001-260618 [76d92ddcc754]
-  network: ws
-  packet-encoding: xudp
-  port: 443
-  server: 104.18.33.141
-  servername: kclx.eu.org
-  sub_tag: T001-260618
-  tls: true
-  type: vless
-  udp: true
-  uuid: 0575005f-0ba9-4d6d-85e0-4a6a8cbafc1b
-  ws-opts:
-    headers:
-      Host: kclx.eu.org
-      User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/534.3
-        (KHTML, like Gecko) Chrome/6.0.472.63 Safari/534.3
-    path: /154.16.10.34-8080
-  xudp: true
-- cipher: aes-256-gcm
-  name: 🇺🇸US_60|1.3MB/s|B007-260618 [7ac86dd8cd10]
-  password: XKFKl2rULjIp74
-  port: 8008
-  server: 15.204.247.175
-  sub_tag: B007-260618
-  type: ss
-  udp: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-e86l
-  type: vless
-  server: 188.114.97.6
-  port: 443
-  uuid: 63ec2a82-e47c-4782-a89e-9aca2baf17ef
-  security: tls
-  tls: true
-  sni: quiz.int.vidio.com.ex33r.eu.cc
-  skip-cert-verify: false
-  network: ws
-  udp: true
-  ws-opts:
-    path: /id-pusat
-    headers:
-      Host: quiz.int.vidio.com.ex33r.eu.cc
-- name: 🇺🇦UA_77
-  type: ss
-  server: 37.19.198.244
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-- cipher: rc4-md5
-  name: 🇺🇸US_81|917KB/s|M003-260806 [2d3c6b97d127]
-  password: 14fFPrbezE3HDZzsMOr6
-  port: 8080
-  server: 79.110.53.169
-  sub_tag: M003-260806
-  type: ss
-  udp: true
-- name: 🇺🇸US_335|854KB/s|R002-260618 [f6ef7c53e70b]
-  port: 443
-  server: 23.133.176.14
+- name: 🇺🇸US_46|590KB/s|R002-260618 [2688a0364bb4]
+  port: 8443
+  server: 44.229.69.166
   skip-cert-verify: true
   sub_tag: R002-260618
   tls: true
   type: http
   udp: true
-- name: 美国 050
-  type: vless
+- encryption: none
+  name: 🇫🇷FR_154|1.1MB/s|C002-260622 [f38806c74042]
   network: ws
-  server: 190.93.244.166
-  port: 2096
-  uuid: b2853d19-fada-44dc-8d44-967d1af122e0
-  servername: wQa3mioJJR8fYoZhIui--su3-UCG1GDx.pages.DEv
-  tls: true
+  packet-encoding: xudp
+  port: 8880
+  server: 104.129.164.30
+  sub_tag: C002-260622
+  type: vless
   udp: true
-  client-fingerprint: chrome
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
   ws-opts:
     headers:
-      Host: wqa3miojjr8fyozhiui--su3-ucg1gdx.pages.dev
-    path: /eyJqdW5rIjoiWmFzVk5rd2siLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjpbIlsyYTAyOjg5ODoxNDY6NjQ6Ol0iXX0=
+      Host: vms.lifetime40.workers.dev
+      User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; CPH1607 Build/MMB29M; wv) AppleWebKit/537.36
+        (KHTML, like Gecko) Version/4.0 Chrome/63.0.3239.111 Mobile Safari/537.36
+    path: /
+  xudp: true
 proxy-groups:
 - name: 节点选择
   type: select
@@ -1545,106 +1554,106 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇺🇸US_12|451KB/s [2b322b68c292]
-  - 🇺🇸US_71|1.3MB/s [44410bbbcb07]
-  - 🇺🇸US_4|1.2MB/s [60b18e513b09]
-  - 🇺🇸US_33|1.2MB/s|A004-260618 [e4bee8339fae]
+  - 🇺🇸US_102
+  - 🇺🇸US_114
   - 🇺🇸US美国丨yoyapai.com_4
-  - 🇫🇷FR_147|389KB/s|M003-260806 [e107b3b8086f]
-  - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-107.151.182.253:8080
-  - 🇺🇸 美国 | USA 4
-  - 🇺🇸US_371|927KB/s|A004-260618 [836b9e2c1c7b]
-  - 🇺🇸US_246|888KB/s|A004-260618 [0e40b52615aa]
-  - 🇫🇷FR_280|525KB/s|M003-260806 [164ab767de0f]
-  - 🇫🇷FR_180|5.4MB/s|A004-260618 [c487a01be44a]
-  - 🇫🇷FR_33|633KB/s|K001-260618 [14d7fbeff82d]
-  - 🇫🇷FR_215|599KB/s|T001-260618 [22b587d3b95e]
-  - 🔥Join+Telegram:@Farah_VPN🟣-564P
-  - 🇫🇷FR_60|623KB/s|A004-260618 [17e99393b3f0]
-  - 🔥Join+Telegram:@Farah_VPN🟣-qNuu
-  - 🇫🇷FR_20|726KB/s|R002-260618 [5e89fefb461a]
-  - 🇫🇷FR_305|993KB/s|A004-260618 [400b67f9250b]
-  - 🇺🇸US_502|1.5MB/s|B007-260618 [54f449a1b321]
-  - 🇫🇷FR_153|576KB/s|M003-260806 [215437d4d0a9]
-  - 🇫🇷FR_219|1.0MB/s|M003-260806 [e7b0db0c82e0]
-  - 🇺🇸US_150|907KB/s|R002-260618 [e971c1f60e14]
-  - 🇫🇷FR_61|917KB/s|B007-260618 [230678643d29]
-  - 🇫🇷FR_29|1.1MB/s|A004-260618 [3842eaf34575]
-  - 🇫🇷FR_65|534KB/s|B007-260618 [403ae48696dd]
-  - 🔥Join+Telegram:@Farah_VPN🟣-xV1M
-  - 🇫🇷FR_30|1.4MB/s|S004-260618 [327a7da66112]
-  - 🇫🇷FR_308|793KB/s|A004-260618 [df2caff37b41]
-  - 🇫🇷FR_169|507KB/s|M003-260806 [e88b48b7094f]
-  - D🔴🇰🇷hos[🎬📺🎭🎪]_dokng.com_c023a1a4
-  - 🇫🇷FR_69|961KB/s|T001-260618 [344c8ef71da9]
-  - 🇫🇷FR_213|862KB/s|M003-260806 [7f2536c9f560]
-  - 🇺🇸US_466|841KB/s|A004-260618 [d92318afee09]
-  - 🇫🇷FR_183|440KB/s|X001-260618 [fdf21aceabc1]
-  - 🇫🇷FR_85|774KB/s|A004-260618 [b0afd74c4848]
-  - 🇫🇷FR_102|1.1MB/s|A001-260618 [fd6819c1f250]
-  - 🇫🇷FR_216|797KB/s|M003-260806 [ff288e219f2f]
-  - 🇫🇷FR_192|847KB/s|T001-260618 [5dd78972cd2e]
-  - 🔥Join+Telegram:@Farah_VPN🟣-7hJg
-  - 🔥Join+Telegram:@Farah_VPN🟣-xRF6
-  - 🇫🇷FR_212|413KB/s|M003-260806 [84e5e98f7f0d]
-  - 🇫🇷FR_258|854KB/s|M003-260806 [8ca1084572fe]
-  - 🇫🇷FR_144|524KB/s|M002-260618 [9e7ce0ce2248]
-  - 🇫🇷FR_53|1.1MB/s|M002-260618 [adb72aeb485b]
-  - 🇫🇷FR_333|766KB/s|S004-260618 [e18d86f96365]
-  - 🇫🇷FR_62|652KB/s|A004-260618 [b9eea0f0efd2]
-  - 🇫🇷FR_198|917KB/s|M003-260806 [d19dcfbcba16]
-  - 🇫🇷FR_243|1.1MB/s|M003-260806 [0fce1ce2341d]
-  - 🇫🇷FR_34|592KB/s|A004-260618 [2a5963893dc1]
-  - 🔥Join+Telegram:@Farah_VPN🟣-CBO6
-  - 🇫🇷FR_320|511KB/s|M003-260806 [5b9c987a5d38]
-  - 🇫🇷FR_237|3.4MB/s|T001-260618 [5e1a583b1d55]
-  - 🇺🇸US_499|1.3MB/s|A004-260618 [959578925c29]
-  - 🔥Join+Telegram:@Farah_VPN🟣-aFZm
-  - 🇫🇷FR_188|389KB/s|M003-260806 [e45677eb0821]
-  - 🔥Join+Telegram:@Farah_VPN🟣-Etl7
-  - 🔥Join+Telegram:@Farah_VPN🟣-jZ1l
-  - 🔥Join+Telegram:@Farah_VPN🟣-uUqT
-  - 🇫🇷FR_222|561KB/s|M001-260618 [5247b6a45f99]
-  - 🇫🇷FR_77|1.2MB/s|S004-260618 [aa93cd83edf2]
-  - 美国 802
-  - 🇫🇷FR_195|881KB/s|M003-260806 [25ab2c375486]
-  - 🇫🇷FR_328|784KB/s|M003-260806 [5653cc93d7bc]
-  - 🇺🇸US_480|1.9MB/s|A004-260618 [bd1e79add0e4]
-  - 🇫🇷FR_8|654KB/s|A004-260618 [f3d97673f7a3]
-  - 🇫🇷FR_202|986KB/s|M003-260806 [085dc8dc1671]
-  - 🇫🇷FR_225|721KB/s [0d3a12b925d2]
-  - 🇫🇷FR_81|700KB/s|A004-260618 [112c999b4576]
-  - 🇫🇷FR_246|2.9MB/s|M003-260806 [717e4d973618]
-  - 🇫🇷FR_204|539KB/s|M001-260618 [afce004c32e6]
-  - '🏳[www.v2nodes.com] vless- #15'
-  - 🇫🇷FR_220|523KB/s|T001-260618 [1fd507d5b3a1]
-  - 🇫🇷FR_150|814KB/s|M002-260618 [3d4b9f52f153]
-  - 🇫🇷FR_168|613KB/s|M003-260806 [cdf596cfc3eb]
-  - 🔥Join+Telegram:@Farah_VPN🟣-j2p5
-  - 🔥Join+Telegram:@Farah_VPN🟣-73rV
-  - 🇫🇷FR_42|1.2MB/s|A004-260618 [0701766ba629]
-  - 🇫🇷FR_194|532KB/s|M003-260806 [20eda3cc5991]
-  - 🇫🇷FR_179|1.1MB/s|C002-260622 [55d7f737921d]
-  - 🔥Join+Telegram:@Farah_VPN🟣-hF4L
-  - 🇺🇸US_89
-  - 🇫🇷FR_104|958KB/s|K001-260618 [2fbcfa066360]
-  - 🇫🇷FR_177|702KB/s|C002-260622 [886f8a5e3ac9]
+  - 🇺🇸US_517|882KB/s|A004-260618 [55d379d67daa]
+  - 🔥Join+Telegram:@Farah_VPN🟣-PlSE
+  - 🇺🇸US_153|750KB/s|R002-260618 [13dede6e3b21]
+  - 🔥Join+Telegram:@Farah_VPN🟣-3tIa
+  - 🇫🇷FR_296|1009KB/s|A004-260618 [5e81ddf17bb7]
+  - D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_0618cdac
+  - 🇫🇷FR_96|1.8MB/s|R002-260618 [a676be7daa09]
+  - 🇫🇷FR_283|369KB/s|M003-260806 [e8d5449d8645]
+  - 🔥Join+Telegram:@Farah_VPN🟣-CyCO
   - 🇫🇷FR_260|1.7MB/s|M003-260806 [e113f1b5e207]
-  - 🇺🇸US_15|1.8MB/s|A004-260618 [efbcc8a70025]
-  - 🔥Join+Telegram:@Farah_VPN🟣-gzMB
-  - 🔥Join+Telegram:@Farah_VPN🟣-3weQ
-  - 🇺🇦UA_78
-  - 🇺🇦UA_79
-  - 🇫🇷FR_234|500KB/s|M003-260806 [db992a3db76e]
-  - 🔥Join+Telegram:@Farah_VPN🟣-GspA
+  - 🔥Join+Telegram:@Farah_VPN🟣-Sg5l
+  - 🇫🇷FR_81|700KB/s|A004-260618 [112c999b4576]
+  - ❓未知丨yoyapai.com_59
+  - 🇫🇷FR_34|592KB/s|A004-260618 [2a5963893dc1]
+  - 🇫🇷FR_150|814KB/s|M002-260618 [3d4b9f52f153]
+  - 🇫🇷FR_20|726KB/s|R002-260618 [5e89fefb461a]
+  - 🔥Join+Telegram:@Farah_VPN🟣-gAw2
   - 🇫🇷FR_340|654KB/s|S004-260618 [4e3ddc5e9dce]
-  - 🇫🇷FR_314|540KB/s|T001-260618 [76d92ddcc754]
-  - 🇺🇸US_60|1.3MB/s|B007-260618 [7ac86dd8cd10]
-  - 🔥Join+Telegram:@Farah_VPN🟣-e86l
-  - 🇺🇦UA_77
-  - 🇺🇸US_81|917KB/s|M003-260806 [2d3c6b97d127]
-  - 🇺🇸US_335|854KB/s|R002-260618 [f6ef7c53e70b]
+  - FR法国(mibei77.com 米贝节点分享)-39oj
+  - 🇫🇷FR_7|986KB/s|A004-260618 [00610bb44fe9]
+  - 🇺🇸US_121|977KB/s|A004-260618 [19fe6b7745cb]
+  - 🇫🇷FR_77|1.2MB/s|S004-260618 [aa93cd83edf2]
+  - 🇫🇷FR_333|766KB/s|S004-260618 [e18d86f96365]
+  - 🔥Join+Telegram:@Farah_VPN🟣-XP6c
+  - '🇺🇸 美国 | USA #12'
+  - 🇺🇸US_17|948KB/s|M003-260806 [6364b2c615d5]
+  - 🇫🇷FR_8|654KB/s|A004-260618 [f3d97673f7a3]
+  - 🇫🇷FR_180|5.4MB/s|A004-260618 [c487a01be44a]
+  - 🇫🇷FR_259|1.4MB/s|B007-260618 [ce912aad4430]
+  - 🇫🇷FR_65|534KB/s|B007-260618 [403ae48696dd]
+  - 🇫🇷FR_192|847KB/s|T001-260618 [5dd78972cd2e]
+  - 🔥Join+Telegram:@Farah_VPN🟣-T9wz
+  - 🇺🇸US_20|936KB/s|A004-260618 [26dae539cbdd]
+  - 🇫🇷FR_19|824KB/s|M003-260806 [559dbbc484e4]
+  - 🇫🇷FR_237|3.4MB/s|T001-260618 [5e1a583b1d55]
+  - 🇫🇷FR_62|652KB/s|A004-260618 [b9eea0f0efd2]
+  - 🇫🇷FR_104|958KB/s|K001-260618 [2fbcfa066360]
+  - 🇫🇷FR_144|524KB/s|M002-260618 [9e7ce0ce2248]
+  - 🔥Join+Telegram:@Farah_VPN🟣-gPsx
+  - 🇫🇷FR_297|315KB/s|T001-260618 [17f4ce670ee5]
+  - 🇫🇷FR_30|1.4MB/s|S004-260618 [327a7da66112]
+  - 🇫🇷FR_258|854KB/s|M003-260806 [8ca1084572fe]
+  - 🇫🇷FR_53|1.1MB/s|M002-260618 [adb72aeb485b]
+  - 🇫🇷FR_328|784KB/s|M003-260806 [5653cc93d7bc]
+  - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-107.151.182.253:8080
+  - 🇫🇷FR_280|525KB/s|M003-260806 [164ab767de0f]
+  - 🇫🇷FR_44|4.5MB/s|R002-260618 [39873ef4d996]
+  - 🇫🇷FR_176|1.2MB/s|B007-260618 [39e764cc5f1e]
+  - 🇺🇸US_371|927KB/s|A004-260618 [836b9e2c1c7b]
+  - 🇫🇷FR_60|623KB/s|A004-260618 [17e99393b3f0]
+  - 🇫🇷FR_301|1.0MB/s|A004-260618 [e62e8b4a49ad]
+  - 🔥Join+Telegram:@Farah_VPN🟣-f0Od
+  - 🇺🇸US_246|888KB/s|A004-260618 [0e40b52615aa]
+  - 🇫🇷FR_291|1.2MB/s|M003-260806 [2786d2bd9936]
+  - 🇫🇷FR_252|620KB/s|C002-260622 [a37c3136b0ed]
+  - 🇫🇷FR_219|1.0MB/s|M003-260806 [e7b0db0c82e0]
+  - 🇫🇷FR_29|1.1MB/s|A004-260618 [3842eaf34575]
+  - 🇫🇷FR_302|3.3MB/s|A004-260618 [436825c450f9]
+  - 🔥Join+Telegram:@Farah_VPN🟣-PiUW
   - 美国 050
+  - 🇫🇷FR_231|731KB/s|B007-260618 [5986e2ee48df]
+  - 🇫🇷FR_213|862KB/s|M003-260806 [7f2536c9f560]
+  - 🇫🇷FR_228|627KB/s|C002-260622 [abec1861ea64]
+  - 🇫🇷FR_305|993KB/s|A004-260618 [400b67f9250b]
+  - US美国(mibei77.com 米贝节点分享)_45
+  - 🇫🇷FR_243|1.1MB/s|M003-260806 [0fce1ce2341d]
+  - 🇫🇷FR_61|917KB/s|B007-260618 [230678643d29]
+  - 🇫🇷FR_185|401KB/s|M003-260806 [96a228d2bc1d]
+  - 🔥Join+Telegram:@Farah_VPN🟣-z9AP
+  - 🇺🇸US_94|999KB/s|M003-260806 [112d3ee5d9f2]
+  - 🇫🇷FR_299|1.3MB/s|X001-260618 [1879ac4299bc]
+  - 🇫🇷FR_220|523KB/s|T001-260618 [1fd507d5b3a1]
+  - 🇺🇸US_81|917KB/s|M003-260806 [2d3c6b97d127]
+  - 🇫🇷FR_146|1.0MB/s|C002-260622 [bde3e82343de]
+  - 🇫🇷FR_308|793KB/s|A004-260618 [df2caff37b41]
+  - FR法国(mibei77.com 米贝节点分享) (2)
+  - 🇬🇧GB英国丨yoyapai.com_3
+  - 🇺🇸US_466|841KB/s|A004-260618 [d92318afee09]
+  - 🇫🇷FR_200|978KB/s [f91f8159ead9]
+  - 🇫🇷FR_322|744KB/s|A001-260618 [19a68365cca1]
+  - 🇺🇸US_28|1.1MB/s|A004-260618 [1b7912caedd7]
+  - 🇫🇷FR_153|576KB/s|M003-260806 [215437d4d0a9]
+  - 🇫🇷FR_255|580KB/s|M003-260806 [5a0095e09ee8]
+  - D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_09c15836
+  - ❓未知丨yoyapai.com (82)
+  - 🇺🇸US_117|1.0MB/s|C002-260622 [36581dfe601e]
+  - 🇫🇷FR_182|639KB/s|T001-260618 [c9822d795dce]
+  - D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_3f6db8c8
+  - 🔥Join+Telegram:@Farah_VPN🟣-BdYy
+  - 🔥Join+Telegram:@Farah_VPN🟣-ns8o
+  - 🔥Join+Telegram:@Farah_VPN🟣-YdZn
+  - 🇺🇸US_337|447KB/s|R002-260618 [3a4399d91e76]
+  - 🇫🇷FR_266|1.1MB/s|B007-260618 [d1c7416440ca]
+  - D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_cd3eedf9
+  - 🇫🇷FR_184|499KB/s|M003-260806 [0ba554b4fd5d]
+  - 🇺🇸US_46|590KB/s|R002-260618 [2688a0364bb4]
+  - 🇫🇷FR_154|1.1MB/s|C002-260622 [f38806c74042]
   url: http://www.pinterest.com
   interval: 300
   tolerance: 50
@@ -1652,211 +1661,211 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇺🇸US_12|451KB/s [2b322b68c292]
-  - 🇺🇸US_71|1.3MB/s [44410bbbcb07]
-  - 🇺🇸US_4|1.2MB/s [60b18e513b09]
-  - 🇺🇸US_33|1.2MB/s|A004-260618 [e4bee8339fae]
+  - 🇺🇸US_102
+  - 🇺🇸US_114
   - 🇺🇸US美国丨yoyapai.com_4
-  - 🇫🇷FR_147|389KB/s|M003-260806 [e107b3b8086f]
-  - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-107.151.182.253:8080
-  - 🇺🇸 美国 | USA 4
-  - 🇺🇸US_371|927KB/s|A004-260618 [836b9e2c1c7b]
-  - 🇺🇸US_246|888KB/s|A004-260618 [0e40b52615aa]
-  - 🇫🇷FR_280|525KB/s|M003-260806 [164ab767de0f]
-  - 🇫🇷FR_180|5.4MB/s|A004-260618 [c487a01be44a]
-  - 🇫🇷FR_33|633KB/s|K001-260618 [14d7fbeff82d]
-  - 🇫🇷FR_215|599KB/s|T001-260618 [22b587d3b95e]
-  - 🔥Join+Telegram:@Farah_VPN🟣-564P
-  - 🇫🇷FR_60|623KB/s|A004-260618 [17e99393b3f0]
-  - 🔥Join+Telegram:@Farah_VPN🟣-qNuu
-  - 🇫🇷FR_20|726KB/s|R002-260618 [5e89fefb461a]
-  - 🇫🇷FR_305|993KB/s|A004-260618 [400b67f9250b]
-  - 🇺🇸US_502|1.5MB/s|B007-260618 [54f449a1b321]
-  - 🇫🇷FR_153|576KB/s|M003-260806 [215437d4d0a9]
-  - 🇫🇷FR_219|1.0MB/s|M003-260806 [e7b0db0c82e0]
-  - 🇺🇸US_150|907KB/s|R002-260618 [e971c1f60e14]
-  - 🇫🇷FR_61|917KB/s|B007-260618 [230678643d29]
-  - 🇫🇷FR_29|1.1MB/s|A004-260618 [3842eaf34575]
-  - 🇫🇷FR_65|534KB/s|B007-260618 [403ae48696dd]
-  - 🔥Join+Telegram:@Farah_VPN🟣-xV1M
-  - 🇫🇷FR_30|1.4MB/s|S004-260618 [327a7da66112]
-  - 🇫🇷FR_308|793KB/s|A004-260618 [df2caff37b41]
-  - 🇫🇷FR_169|507KB/s|M003-260806 [e88b48b7094f]
-  - D🔴🇰🇷hos[🎬📺🎭🎪]_dokng.com_c023a1a4
-  - 🇫🇷FR_69|961KB/s|T001-260618 [344c8ef71da9]
-  - 🇫🇷FR_213|862KB/s|M003-260806 [7f2536c9f560]
-  - 🇺🇸US_466|841KB/s|A004-260618 [d92318afee09]
-  - 🇫🇷FR_183|440KB/s|X001-260618 [fdf21aceabc1]
-  - 🇫🇷FR_85|774KB/s|A004-260618 [b0afd74c4848]
-  - 🇫🇷FR_102|1.1MB/s|A001-260618 [fd6819c1f250]
-  - 🇫🇷FR_216|797KB/s|M003-260806 [ff288e219f2f]
-  - 🇫🇷FR_192|847KB/s|T001-260618 [5dd78972cd2e]
-  - 🔥Join+Telegram:@Farah_VPN🟣-7hJg
-  - 🔥Join+Telegram:@Farah_VPN🟣-xRF6
-  - 🇫🇷FR_212|413KB/s|M003-260806 [84e5e98f7f0d]
-  - 🇫🇷FR_258|854KB/s|M003-260806 [8ca1084572fe]
-  - 🇫🇷FR_144|524KB/s|M002-260618 [9e7ce0ce2248]
-  - 🇫🇷FR_53|1.1MB/s|M002-260618 [adb72aeb485b]
-  - 🇫🇷FR_333|766KB/s|S004-260618 [e18d86f96365]
-  - 🇫🇷FR_62|652KB/s|A004-260618 [b9eea0f0efd2]
-  - 🇫🇷FR_198|917KB/s|M003-260806 [d19dcfbcba16]
-  - 🇫🇷FR_243|1.1MB/s|M003-260806 [0fce1ce2341d]
-  - 🇫🇷FR_34|592KB/s|A004-260618 [2a5963893dc1]
-  - 🔥Join+Telegram:@Farah_VPN🟣-CBO6
-  - 🇫🇷FR_320|511KB/s|M003-260806 [5b9c987a5d38]
-  - 🇫🇷FR_237|3.4MB/s|T001-260618 [5e1a583b1d55]
-  - 🇺🇸US_499|1.3MB/s|A004-260618 [959578925c29]
-  - 🔥Join+Telegram:@Farah_VPN🟣-aFZm
-  - 🇫🇷FR_188|389KB/s|M003-260806 [e45677eb0821]
-  - 🔥Join+Telegram:@Farah_VPN🟣-Etl7
-  - 🔥Join+Telegram:@Farah_VPN🟣-jZ1l
-  - 🔥Join+Telegram:@Farah_VPN🟣-uUqT
-  - 🇫🇷FR_222|561KB/s|M001-260618 [5247b6a45f99]
-  - 🇫🇷FR_77|1.2MB/s|S004-260618 [aa93cd83edf2]
-  - 美国 802
-  - 🇫🇷FR_195|881KB/s|M003-260806 [25ab2c375486]
-  - 🇫🇷FR_328|784KB/s|M003-260806 [5653cc93d7bc]
-  - 🇺🇸US_480|1.9MB/s|A004-260618 [bd1e79add0e4]
-  - 🇫🇷FR_8|654KB/s|A004-260618 [f3d97673f7a3]
-  - 🇫🇷FR_202|986KB/s|M003-260806 [085dc8dc1671]
-  - 🇫🇷FR_225|721KB/s [0d3a12b925d2]
-  - 🇫🇷FR_81|700KB/s|A004-260618 [112c999b4576]
-  - 🇫🇷FR_246|2.9MB/s|M003-260806 [717e4d973618]
-  - 🇫🇷FR_204|539KB/s|M001-260618 [afce004c32e6]
-  - '🏳[www.v2nodes.com] vless- #15'
-  - 🇫🇷FR_220|523KB/s|T001-260618 [1fd507d5b3a1]
-  - 🇫🇷FR_150|814KB/s|M002-260618 [3d4b9f52f153]
-  - 🇫🇷FR_168|613KB/s|M003-260806 [cdf596cfc3eb]
-  - 🔥Join+Telegram:@Farah_VPN🟣-j2p5
-  - 🔥Join+Telegram:@Farah_VPN🟣-73rV
-  - 🇫🇷FR_42|1.2MB/s|A004-260618 [0701766ba629]
-  - 🇫🇷FR_194|532KB/s|M003-260806 [20eda3cc5991]
-  - 🇫🇷FR_179|1.1MB/s|C002-260622 [55d7f737921d]
-  - 🔥Join+Telegram:@Farah_VPN🟣-hF4L
-  - 🇺🇸US_89
-  - 🇫🇷FR_104|958KB/s|K001-260618 [2fbcfa066360]
-  - 🇫🇷FR_177|702KB/s|C002-260622 [886f8a5e3ac9]
+  - 🇺🇸US_517|882KB/s|A004-260618 [55d379d67daa]
+  - 🔥Join+Telegram:@Farah_VPN🟣-PlSE
+  - 🇺🇸US_153|750KB/s|R002-260618 [13dede6e3b21]
+  - 🔥Join+Telegram:@Farah_VPN🟣-3tIa
+  - 🇫🇷FR_296|1009KB/s|A004-260618 [5e81ddf17bb7]
+  - D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_0618cdac
+  - 🇫🇷FR_96|1.8MB/s|R002-260618 [a676be7daa09]
+  - 🇫🇷FR_283|369KB/s|M003-260806 [e8d5449d8645]
+  - 🔥Join+Telegram:@Farah_VPN🟣-CyCO
   - 🇫🇷FR_260|1.7MB/s|M003-260806 [e113f1b5e207]
-  - 🇺🇸US_15|1.8MB/s|A004-260618 [efbcc8a70025]
-  - 🔥Join+Telegram:@Farah_VPN🟣-gzMB
-  - 🔥Join+Telegram:@Farah_VPN🟣-3weQ
-  - 🇺🇦UA_78
-  - 🇺🇦UA_79
-  - 🇫🇷FR_234|500KB/s|M003-260806 [db992a3db76e]
-  - 🔥Join+Telegram:@Farah_VPN🟣-GspA
+  - 🔥Join+Telegram:@Farah_VPN🟣-Sg5l
+  - 🇫🇷FR_81|700KB/s|A004-260618 [112c999b4576]
+  - ❓未知丨yoyapai.com_59
+  - 🇫🇷FR_34|592KB/s|A004-260618 [2a5963893dc1]
+  - 🇫🇷FR_150|814KB/s|M002-260618 [3d4b9f52f153]
+  - 🇫🇷FR_20|726KB/s|R002-260618 [5e89fefb461a]
+  - 🔥Join+Telegram:@Farah_VPN🟣-gAw2
   - 🇫🇷FR_340|654KB/s|S004-260618 [4e3ddc5e9dce]
-  - 🇫🇷FR_314|540KB/s|T001-260618 [76d92ddcc754]
-  - 🇺🇸US_60|1.3MB/s|B007-260618 [7ac86dd8cd10]
-  - 🔥Join+Telegram:@Farah_VPN🟣-e86l
-  - 🇺🇦UA_77
-  - 🇺🇸US_81|917KB/s|M003-260806 [2d3c6b97d127]
-  - 🇺🇸US_335|854KB/s|R002-260618 [f6ef7c53e70b]
+  - FR法国(mibei77.com 米贝节点分享)-39oj
+  - 🇫🇷FR_7|986KB/s|A004-260618 [00610bb44fe9]
+  - 🇺🇸US_121|977KB/s|A004-260618 [19fe6b7745cb]
+  - 🇫🇷FR_77|1.2MB/s|S004-260618 [aa93cd83edf2]
+  - 🇫🇷FR_333|766KB/s|S004-260618 [e18d86f96365]
+  - 🔥Join+Telegram:@Farah_VPN🟣-XP6c
+  - '🇺🇸 美国 | USA #12'
+  - 🇺🇸US_17|948KB/s|M003-260806 [6364b2c615d5]
+  - 🇫🇷FR_8|654KB/s|A004-260618 [f3d97673f7a3]
+  - 🇫🇷FR_180|5.4MB/s|A004-260618 [c487a01be44a]
+  - 🇫🇷FR_259|1.4MB/s|B007-260618 [ce912aad4430]
+  - 🇫🇷FR_65|534KB/s|B007-260618 [403ae48696dd]
+  - 🇫🇷FR_192|847KB/s|T001-260618 [5dd78972cd2e]
+  - 🔥Join+Telegram:@Farah_VPN🟣-T9wz
+  - 🇺🇸US_20|936KB/s|A004-260618 [26dae539cbdd]
+  - 🇫🇷FR_19|824KB/s|M003-260806 [559dbbc484e4]
+  - 🇫🇷FR_237|3.4MB/s|T001-260618 [5e1a583b1d55]
+  - 🇫🇷FR_62|652KB/s|A004-260618 [b9eea0f0efd2]
+  - 🇫🇷FR_104|958KB/s|K001-260618 [2fbcfa066360]
+  - 🇫🇷FR_144|524KB/s|M002-260618 [9e7ce0ce2248]
+  - 🔥Join+Telegram:@Farah_VPN🟣-gPsx
+  - 🇫🇷FR_297|315KB/s|T001-260618 [17f4ce670ee5]
+  - 🇫🇷FR_30|1.4MB/s|S004-260618 [327a7da66112]
+  - 🇫🇷FR_258|854KB/s|M003-260806 [8ca1084572fe]
+  - 🇫🇷FR_53|1.1MB/s|M002-260618 [adb72aeb485b]
+  - 🇫🇷FR_328|784KB/s|M003-260806 [5653cc93d7bc]
+  - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-107.151.182.253:8080
+  - 🇫🇷FR_280|525KB/s|M003-260806 [164ab767de0f]
+  - 🇫🇷FR_44|4.5MB/s|R002-260618 [39873ef4d996]
+  - 🇫🇷FR_176|1.2MB/s|B007-260618 [39e764cc5f1e]
+  - 🇺🇸US_371|927KB/s|A004-260618 [836b9e2c1c7b]
+  - 🇫🇷FR_60|623KB/s|A004-260618 [17e99393b3f0]
+  - 🇫🇷FR_301|1.0MB/s|A004-260618 [e62e8b4a49ad]
+  - 🔥Join+Telegram:@Farah_VPN🟣-f0Od
+  - 🇺🇸US_246|888KB/s|A004-260618 [0e40b52615aa]
+  - 🇫🇷FR_291|1.2MB/s|M003-260806 [2786d2bd9936]
+  - 🇫🇷FR_252|620KB/s|C002-260622 [a37c3136b0ed]
+  - 🇫🇷FR_219|1.0MB/s|M003-260806 [e7b0db0c82e0]
+  - 🇫🇷FR_29|1.1MB/s|A004-260618 [3842eaf34575]
+  - 🇫🇷FR_302|3.3MB/s|A004-260618 [436825c450f9]
+  - 🔥Join+Telegram:@Farah_VPN🟣-PiUW
   - 美国 050
+  - 🇫🇷FR_231|731KB/s|B007-260618 [5986e2ee48df]
+  - 🇫🇷FR_213|862KB/s|M003-260806 [7f2536c9f560]
+  - 🇫🇷FR_228|627KB/s|C002-260622 [abec1861ea64]
+  - 🇫🇷FR_305|993KB/s|A004-260618 [400b67f9250b]
+  - US美国(mibei77.com 米贝节点分享)_45
+  - 🇫🇷FR_243|1.1MB/s|M003-260806 [0fce1ce2341d]
+  - 🇫🇷FR_61|917KB/s|B007-260618 [230678643d29]
+  - 🇫🇷FR_185|401KB/s|M003-260806 [96a228d2bc1d]
+  - 🔥Join+Telegram:@Farah_VPN🟣-z9AP
+  - 🇺🇸US_94|999KB/s|M003-260806 [112d3ee5d9f2]
+  - 🇫🇷FR_299|1.3MB/s|X001-260618 [1879ac4299bc]
+  - 🇫🇷FR_220|523KB/s|T001-260618 [1fd507d5b3a1]
+  - 🇺🇸US_81|917KB/s|M003-260806 [2d3c6b97d127]
+  - 🇫🇷FR_146|1.0MB/s|C002-260622 [bde3e82343de]
+  - 🇫🇷FR_308|793KB/s|A004-260618 [df2caff37b41]
+  - FR法国(mibei77.com 米贝节点分享) (2)
+  - 🇬🇧GB英国丨yoyapai.com_3
+  - 🇺🇸US_466|841KB/s|A004-260618 [d92318afee09]
+  - 🇫🇷FR_200|978KB/s [f91f8159ead9]
+  - 🇫🇷FR_322|744KB/s|A001-260618 [19a68365cca1]
+  - 🇺🇸US_28|1.1MB/s|A004-260618 [1b7912caedd7]
+  - 🇫🇷FR_153|576KB/s|M003-260806 [215437d4d0a9]
+  - 🇫🇷FR_255|580KB/s|M003-260806 [5a0095e09ee8]
+  - D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_09c15836
+  - ❓未知丨yoyapai.com (82)
+  - 🇺🇸US_117|1.0MB/s|C002-260622 [36581dfe601e]
+  - 🇫🇷FR_182|639KB/s|T001-260618 [c9822d795dce]
+  - D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_3f6db8c8
+  - 🔥Join+Telegram:@Farah_VPN🟣-BdYy
+  - 🔥Join+Telegram:@Farah_VPN🟣-ns8o
+  - 🔥Join+Telegram:@Farah_VPN🟣-YdZn
+  - 🇺🇸US_337|447KB/s|R002-260618 [3a4399d91e76]
+  - 🇫🇷FR_266|1.1MB/s|B007-260618 [d1c7416440ca]
+  - D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_cd3eedf9
+  - 🇫🇷FR_184|499KB/s|M003-260806 [0ba554b4fd5d]
+  - 🇺🇸US_46|590KB/s|R002-260618 [2688a0364bb4]
+  - 🇫🇷FR_154|1.1MB/s|C002-260622 [f38806c74042]
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - 🇺🇸US_12|451KB/s [2b322b68c292]
-  - 🇺🇸US_71|1.3MB/s [44410bbbcb07]
-  - 🇺🇸US_4|1.2MB/s [60b18e513b09]
-  - 🇺🇸US_33|1.2MB/s|A004-260618 [e4bee8339fae]
+  - 🇺🇸US_102
+  - 🇺🇸US_114
   - 🇺🇸US美国丨yoyapai.com_4
-  - 🇫🇷FR_147|389KB/s|M003-260806 [e107b3b8086f]
-  - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-107.151.182.253:8080
-  - 🇺🇸 美国 | USA 4
-  - 🇺🇸US_371|927KB/s|A004-260618 [836b9e2c1c7b]
-  - 🇺🇸US_246|888KB/s|A004-260618 [0e40b52615aa]
-  - 🇫🇷FR_280|525KB/s|M003-260806 [164ab767de0f]
-  - 🇫🇷FR_180|5.4MB/s|A004-260618 [c487a01be44a]
-  - 🇫🇷FR_33|633KB/s|K001-260618 [14d7fbeff82d]
-  - 🇫🇷FR_215|599KB/s|T001-260618 [22b587d3b95e]
-  - 🔥Join+Telegram:@Farah_VPN🟣-564P
-  - 🇫🇷FR_60|623KB/s|A004-260618 [17e99393b3f0]
-  - 🔥Join+Telegram:@Farah_VPN🟣-qNuu
-  - 🇫🇷FR_20|726KB/s|R002-260618 [5e89fefb461a]
-  - 🇫🇷FR_305|993KB/s|A004-260618 [400b67f9250b]
-  - 🇺🇸US_502|1.5MB/s|B007-260618 [54f449a1b321]
-  - 🇫🇷FR_153|576KB/s|M003-260806 [215437d4d0a9]
-  - 🇫🇷FR_219|1.0MB/s|M003-260806 [e7b0db0c82e0]
-  - 🇺🇸US_150|907KB/s|R002-260618 [e971c1f60e14]
-  - 🇫🇷FR_61|917KB/s|B007-260618 [230678643d29]
-  - 🇫🇷FR_29|1.1MB/s|A004-260618 [3842eaf34575]
-  - 🇫🇷FR_65|534KB/s|B007-260618 [403ae48696dd]
-  - 🔥Join+Telegram:@Farah_VPN🟣-xV1M
-  - 🇫🇷FR_30|1.4MB/s|S004-260618 [327a7da66112]
-  - 🇫🇷FR_308|793KB/s|A004-260618 [df2caff37b41]
-  - 🇫🇷FR_169|507KB/s|M003-260806 [e88b48b7094f]
-  - D🔴🇰🇷hos[🎬📺🎭🎪]_dokng.com_c023a1a4
-  - 🇫🇷FR_69|961KB/s|T001-260618 [344c8ef71da9]
-  - 🇫🇷FR_213|862KB/s|M003-260806 [7f2536c9f560]
-  - 🇺🇸US_466|841KB/s|A004-260618 [d92318afee09]
-  - 🇫🇷FR_183|440KB/s|X001-260618 [fdf21aceabc1]
-  - 🇫🇷FR_85|774KB/s|A004-260618 [b0afd74c4848]
-  - 🇫🇷FR_102|1.1MB/s|A001-260618 [fd6819c1f250]
-  - 🇫🇷FR_216|797KB/s|M003-260806 [ff288e219f2f]
-  - 🇫🇷FR_192|847KB/s|T001-260618 [5dd78972cd2e]
-  - 🔥Join+Telegram:@Farah_VPN🟣-7hJg
-  - 🔥Join+Telegram:@Farah_VPN🟣-xRF6
-  - 🇫🇷FR_212|413KB/s|M003-260806 [84e5e98f7f0d]
-  - 🇫🇷FR_258|854KB/s|M003-260806 [8ca1084572fe]
-  - 🇫🇷FR_144|524KB/s|M002-260618 [9e7ce0ce2248]
-  - 🇫🇷FR_53|1.1MB/s|M002-260618 [adb72aeb485b]
-  - 🇫🇷FR_333|766KB/s|S004-260618 [e18d86f96365]
-  - 🇫🇷FR_62|652KB/s|A004-260618 [b9eea0f0efd2]
-  - 🇫🇷FR_198|917KB/s|M003-260806 [d19dcfbcba16]
-  - 🇫🇷FR_243|1.1MB/s|M003-260806 [0fce1ce2341d]
-  - 🇫🇷FR_34|592KB/s|A004-260618 [2a5963893dc1]
-  - 🔥Join+Telegram:@Farah_VPN🟣-CBO6
-  - 🇫🇷FR_320|511KB/s|M003-260806 [5b9c987a5d38]
-  - 🇫🇷FR_237|3.4MB/s|T001-260618 [5e1a583b1d55]
-  - 🇺🇸US_499|1.3MB/s|A004-260618 [959578925c29]
-  - 🔥Join+Telegram:@Farah_VPN🟣-aFZm
-  - 🇫🇷FR_188|389KB/s|M003-260806 [e45677eb0821]
-  - 🔥Join+Telegram:@Farah_VPN🟣-Etl7
-  - 🔥Join+Telegram:@Farah_VPN🟣-jZ1l
-  - 🔥Join+Telegram:@Farah_VPN🟣-uUqT
-  - 🇫🇷FR_222|561KB/s|M001-260618 [5247b6a45f99]
-  - 🇫🇷FR_77|1.2MB/s|S004-260618 [aa93cd83edf2]
-  - 美国 802
-  - 🇫🇷FR_195|881KB/s|M003-260806 [25ab2c375486]
-  - 🇫🇷FR_328|784KB/s|M003-260806 [5653cc93d7bc]
-  - 🇺🇸US_480|1.9MB/s|A004-260618 [bd1e79add0e4]
-  - 🇫🇷FR_8|654KB/s|A004-260618 [f3d97673f7a3]
-  - 🇫🇷FR_202|986KB/s|M003-260806 [085dc8dc1671]
-  - 🇫🇷FR_225|721KB/s [0d3a12b925d2]
-  - 🇫🇷FR_81|700KB/s|A004-260618 [112c999b4576]
-  - 🇫🇷FR_246|2.9MB/s|M003-260806 [717e4d973618]
-  - 🇫🇷FR_204|539KB/s|M001-260618 [afce004c32e6]
-  - '🏳[www.v2nodes.com] vless- #15'
-  - 🇫🇷FR_220|523KB/s|T001-260618 [1fd507d5b3a1]
-  - 🇫🇷FR_150|814KB/s|M002-260618 [3d4b9f52f153]
-  - 🇫🇷FR_168|613KB/s|M003-260806 [cdf596cfc3eb]
-  - 🔥Join+Telegram:@Farah_VPN🟣-j2p5
-  - 🔥Join+Telegram:@Farah_VPN🟣-73rV
-  - 🇫🇷FR_42|1.2MB/s|A004-260618 [0701766ba629]
-  - 🇫🇷FR_194|532KB/s|M003-260806 [20eda3cc5991]
-  - 🇫🇷FR_179|1.1MB/s|C002-260622 [55d7f737921d]
-  - 🔥Join+Telegram:@Farah_VPN🟣-hF4L
-  - 🇺🇸US_89
-  - 🇫🇷FR_104|958KB/s|K001-260618 [2fbcfa066360]
-  - 🇫🇷FR_177|702KB/s|C002-260622 [886f8a5e3ac9]
+  - 🇺🇸US_517|882KB/s|A004-260618 [55d379d67daa]
+  - 🔥Join+Telegram:@Farah_VPN🟣-PlSE
+  - 🇺🇸US_153|750KB/s|R002-260618 [13dede6e3b21]
+  - 🔥Join+Telegram:@Farah_VPN🟣-3tIa
+  - 🇫🇷FR_296|1009KB/s|A004-260618 [5e81ddf17bb7]
+  - D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_0618cdac
+  - 🇫🇷FR_96|1.8MB/s|R002-260618 [a676be7daa09]
+  - 🇫🇷FR_283|369KB/s|M003-260806 [e8d5449d8645]
+  - 🔥Join+Telegram:@Farah_VPN🟣-CyCO
   - 🇫🇷FR_260|1.7MB/s|M003-260806 [e113f1b5e207]
-  - 🇺🇸US_15|1.8MB/s|A004-260618 [efbcc8a70025]
-  - 🔥Join+Telegram:@Farah_VPN🟣-gzMB
-  - 🔥Join+Telegram:@Farah_VPN🟣-3weQ
-  - 🇺🇦UA_78
-  - 🇺🇦UA_79
-  - 🇫🇷FR_234|500KB/s|M003-260806 [db992a3db76e]
-  - 🔥Join+Telegram:@Farah_VPN🟣-GspA
+  - 🔥Join+Telegram:@Farah_VPN🟣-Sg5l
+  - 🇫🇷FR_81|700KB/s|A004-260618 [112c999b4576]
+  - ❓未知丨yoyapai.com_59
+  - 🇫🇷FR_34|592KB/s|A004-260618 [2a5963893dc1]
+  - 🇫🇷FR_150|814KB/s|M002-260618 [3d4b9f52f153]
+  - 🇫🇷FR_20|726KB/s|R002-260618 [5e89fefb461a]
+  - 🔥Join+Telegram:@Farah_VPN🟣-gAw2
   - 🇫🇷FR_340|654KB/s|S004-260618 [4e3ddc5e9dce]
-  - 🇫🇷FR_314|540KB/s|T001-260618 [76d92ddcc754]
-  - 🇺🇸US_60|1.3MB/s|B007-260618 [7ac86dd8cd10]
-  - 🔥Join+Telegram:@Farah_VPN🟣-e86l
-  - 🇺🇦UA_77
-  - 🇺🇸US_81|917KB/s|M003-260806 [2d3c6b97d127]
-  - 🇺🇸US_335|854KB/s|R002-260618 [f6ef7c53e70b]
+  - FR法国(mibei77.com 米贝节点分享)-39oj
+  - 🇫🇷FR_7|986KB/s|A004-260618 [00610bb44fe9]
+  - 🇺🇸US_121|977KB/s|A004-260618 [19fe6b7745cb]
+  - 🇫🇷FR_77|1.2MB/s|S004-260618 [aa93cd83edf2]
+  - 🇫🇷FR_333|766KB/s|S004-260618 [e18d86f96365]
+  - 🔥Join+Telegram:@Farah_VPN🟣-XP6c
+  - '🇺🇸 美国 | USA #12'
+  - 🇺🇸US_17|948KB/s|M003-260806 [6364b2c615d5]
+  - 🇫🇷FR_8|654KB/s|A004-260618 [f3d97673f7a3]
+  - 🇫🇷FR_180|5.4MB/s|A004-260618 [c487a01be44a]
+  - 🇫🇷FR_259|1.4MB/s|B007-260618 [ce912aad4430]
+  - 🇫🇷FR_65|534KB/s|B007-260618 [403ae48696dd]
+  - 🇫🇷FR_192|847KB/s|T001-260618 [5dd78972cd2e]
+  - 🔥Join+Telegram:@Farah_VPN🟣-T9wz
+  - 🇺🇸US_20|936KB/s|A004-260618 [26dae539cbdd]
+  - 🇫🇷FR_19|824KB/s|M003-260806 [559dbbc484e4]
+  - 🇫🇷FR_237|3.4MB/s|T001-260618 [5e1a583b1d55]
+  - 🇫🇷FR_62|652KB/s|A004-260618 [b9eea0f0efd2]
+  - 🇫🇷FR_104|958KB/s|K001-260618 [2fbcfa066360]
+  - 🇫🇷FR_144|524KB/s|M002-260618 [9e7ce0ce2248]
+  - 🔥Join+Telegram:@Farah_VPN🟣-gPsx
+  - 🇫🇷FR_297|315KB/s|T001-260618 [17f4ce670ee5]
+  - 🇫🇷FR_30|1.4MB/s|S004-260618 [327a7da66112]
+  - 🇫🇷FR_258|854KB/s|M003-260806 [8ca1084572fe]
+  - 🇫🇷FR_53|1.1MB/s|M002-260618 [adb72aeb485b]
+  - 🇫🇷FR_328|784KB/s|M003-260806 [5653cc93d7bc]
+  - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-107.151.182.253:8080
+  - 🇫🇷FR_280|525KB/s|M003-260806 [164ab767de0f]
+  - 🇫🇷FR_44|4.5MB/s|R002-260618 [39873ef4d996]
+  - 🇫🇷FR_176|1.2MB/s|B007-260618 [39e764cc5f1e]
+  - 🇺🇸US_371|927KB/s|A004-260618 [836b9e2c1c7b]
+  - 🇫🇷FR_60|623KB/s|A004-260618 [17e99393b3f0]
+  - 🇫🇷FR_301|1.0MB/s|A004-260618 [e62e8b4a49ad]
+  - 🔥Join+Telegram:@Farah_VPN🟣-f0Od
+  - 🇺🇸US_246|888KB/s|A004-260618 [0e40b52615aa]
+  - 🇫🇷FR_291|1.2MB/s|M003-260806 [2786d2bd9936]
+  - 🇫🇷FR_252|620KB/s|C002-260622 [a37c3136b0ed]
+  - 🇫🇷FR_219|1.0MB/s|M003-260806 [e7b0db0c82e0]
+  - 🇫🇷FR_29|1.1MB/s|A004-260618 [3842eaf34575]
+  - 🇫🇷FR_302|3.3MB/s|A004-260618 [436825c450f9]
+  - 🔥Join+Telegram:@Farah_VPN🟣-PiUW
   - 美国 050
+  - 🇫🇷FR_231|731KB/s|B007-260618 [5986e2ee48df]
+  - 🇫🇷FR_213|862KB/s|M003-260806 [7f2536c9f560]
+  - 🇫🇷FR_228|627KB/s|C002-260622 [abec1861ea64]
+  - 🇫🇷FR_305|993KB/s|A004-260618 [400b67f9250b]
+  - US美国(mibei77.com 米贝节点分享)_45
+  - 🇫🇷FR_243|1.1MB/s|M003-260806 [0fce1ce2341d]
+  - 🇫🇷FR_61|917KB/s|B007-260618 [230678643d29]
+  - 🇫🇷FR_185|401KB/s|M003-260806 [96a228d2bc1d]
+  - 🔥Join+Telegram:@Farah_VPN🟣-z9AP
+  - 🇺🇸US_94|999KB/s|M003-260806 [112d3ee5d9f2]
+  - 🇫🇷FR_299|1.3MB/s|X001-260618 [1879ac4299bc]
+  - 🇫🇷FR_220|523KB/s|T001-260618 [1fd507d5b3a1]
+  - 🇺🇸US_81|917KB/s|M003-260806 [2d3c6b97d127]
+  - 🇫🇷FR_146|1.0MB/s|C002-260622 [bde3e82343de]
+  - 🇫🇷FR_308|793KB/s|A004-260618 [df2caff37b41]
+  - FR法国(mibei77.com 米贝节点分享) (2)
+  - 🇬🇧GB英国丨yoyapai.com_3
+  - 🇺🇸US_466|841KB/s|A004-260618 [d92318afee09]
+  - 🇫🇷FR_200|978KB/s [f91f8159ead9]
+  - 🇫🇷FR_322|744KB/s|A001-260618 [19a68365cca1]
+  - 🇺🇸US_28|1.1MB/s|A004-260618 [1b7912caedd7]
+  - 🇫🇷FR_153|576KB/s|M003-260806 [215437d4d0a9]
+  - 🇫🇷FR_255|580KB/s|M003-260806 [5a0095e09ee8]
+  - D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_09c15836
+  - ❓未知丨yoyapai.com (82)
+  - 🇺🇸US_117|1.0MB/s|C002-260622 [36581dfe601e]
+  - 🇫🇷FR_182|639KB/s|T001-260618 [c9822d795dce]
+  - D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_3f6db8c8
+  - 🔥Join+Telegram:@Farah_VPN🟣-BdYy
+  - 🔥Join+Telegram:@Farah_VPN🟣-ns8o
+  - 🔥Join+Telegram:@Farah_VPN🟣-YdZn
+  - 🇺🇸US_337|447KB/s|R002-260618 [3a4399d91e76]
+  - 🇫🇷FR_266|1.1MB/s|B007-260618 [d1c7416440ca]
+  - D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_cd3eedf9
+  - 🇫🇷FR_184|499KB/s|M003-260806 [0ba554b4fd5d]
+  - 🇺🇸US_46|590KB/s|R002-260618 [2688a0364bb4]
+  - 🇫🇷FR_154|1.1MB/s|C002-260622 [f38806c74042]
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT

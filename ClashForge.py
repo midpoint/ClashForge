@@ -60,6 +60,17 @@ headers = {
     'User-Agent': 'Clash Verge/1.7.7'
 }
 
+# GitHub API 认证：CI 里由 Actions 注入内置 GITHUB_TOKEN（匿名限额 60 次/小时，
+# 共享 runner IP 下经常 403）；本地未设置时按匿名请求处理
+GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN') or os.environ.get('GH_TOKEN')
+
+
+def github_api_headers():
+    api_headers = {'Accept': 'application/vnd.github+json'}
+    if GITHUB_TOKEN:
+        api_headers['Authorization'] = f'Bearer {GITHUB_TOKEN}'
+    return api_headers
+
 # Clash 配置文件的基础结构
 clash_config_template = {
     "port": 7890,
@@ -1906,9 +1917,16 @@ def handle_clash_error(error_message, config_file_path):
 
 # 下载最新mihomo
 def download_and_extract_latest_release():
+    os_type = platform.system().lower()
+    new_name = f"clash-{os_type}" if os_type != "windows" else "clash.exe"
+
+    # 已存在二进制则直接复用，避免无谓的 API 调用（CI 上有配额限制）
+    if os.path.exists(new_name):
+        return
+
     url = "https://api.github.com/repos/MetaCubeX/mihomo/releases/latest"
     try:
-        response = requests.get(url, timeout=FETCH_TIMEOUT)
+        response = requests.get(url, timeout=FETCH_TIMEOUT, headers=github_api_headers())
         response.raise_for_status()
         data = response.json()
     except (requests.RequestException, ValueError) as e:
@@ -1916,20 +1934,14 @@ def download_and_extract_latest_release():
         return
 
     assets = data.get("assets", [])
-    os_type = platform.system().lower()
     targets = {
         "darwin": "mihomo-darwin-amd64-compatible",
         "linux": "mihomo-linux-amd64-compatible",
         "windows": "mihomo-windows-amd64-compatible"
     }
 
-    # 确定下载链接和新名称
+    # 确定下载链接
     download_url = None
-    new_name = f"clash-{os_type}" if os_type != "windows" else "clash.exe"
-
-    # 检查是否已存在二进制文件
-    if os.path.exists(new_name):
-        return
 
     for asset in assets:
         name = asset.get("name", "")
@@ -2566,7 +2578,7 @@ def get_github_filename(github_url, file_suffix):
     path_part = re.sub(r'\{x\}' + re.escape(file_suffix) + '(?:/|$)', '', path_part)
     api_url = f"https://api.github.com/repos/{owner}/{repo}/contents/{path_part}"
 
-    response = requests.get(api_url, timeout=FETCH_TIMEOUT)
+    response = requests.get(api_url, timeout=FETCH_TIMEOUT, headers=github_api_headers())
     if response.status_code != 200:
         raise Exception(f"GitHub API请求失败: {response.status_code}")
 

@@ -2,38 +2,52 @@ name: ClashForge
 
 on:
   schedule:
-   - cron: '0 7-22/5 * * *'
-  push:
-    paths-ignore:
-      - '**'
+    - cron: '0 7-22/5 * * *'
   workflow_dispatch:
+
+# 使用仓库内置的 GITHUB_TOKEN 提交，不再依赖手动维护的 secrets.BOT
+# （PAT 过期/被撤销会让 checkout 直接失败，见 2026-02-19 起的所有运行记录）
+permissions:
+  contents: write
+
+# 同一时间只跑一个实例，避免手动触发与定时任务并发推送冲突
+concurrency:
+  group: clashforge-generate
+  cancel-in-progress: false
 
 jobs:
   run_demo_actions:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          # 转到 Settings > Secrets and variables > Actions
-          # 点击 New repository secret，添加 Secret，名称为 BOT，输入你的token
-          token: ${{ secrets.BOT }}
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.10.10'
+          python-version: '3.10'
+          cache: 'pip'
 
       - name: Install requirements.txt
         run: |
           pip install -r ./requirements.txt
+
       - name: Run ClashForge.py
         run: python ClashForge.py
+        env:
+          # 提高 api.github.com 的调用配额（匿名 60 次/小时，共享 runner IP 很容易 403）
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit and push file
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add clash_config.yaml
-          git commit -m "update" || echo "No changes to commit"
-          git push https://${{ secrets.BOT }}:x-oauth-basic@github.com/${GITHUB_REPOSITORY}.git
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "update"
+          git pull --rebase --autostash
+          git push

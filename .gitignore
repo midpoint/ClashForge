@@ -2,3 +2,10 @@ __pycache__/
 *.pyc
 .venv/
 venv/
+
+# 运行时生成/下载的产物
+clash_config.yaml.json
+clash-linux
+clash-darwin
+clash.exe
+mihomo-*.gz

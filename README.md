@@ -19,6 +19,7 @@ https://github.com/user-attachments/assets/a1a377a2-e93e-461d-9915-7f7f4dd6ff36
 - 支持全自动批量检测节点有效性，移除失效节点，并按延迟大小排序，无需人工介入（首次执行会自动下载mihomo最新release），自动移除异常节点，修复配置文件
 - 可以仅执行批量检测(配置文件名为同目录的clash_config.yaml)
 - 支持设置保留节点数，默认保留100个延迟最小的节点
+- 测速完成后额外生成精选订阅 `clash_config_featured.yaml`：只包含延迟最低的前 100 个可用节点（可用环境变量 `CLASHFORGE_FEATURED_LIMIT` 调整数量），分组和规则与主配置一致，可直接导入
 - 生成临时json配置，极大的提高了修复配置异常节点的效率，使用json格式处理几十万行的数据也非常快
 - 支持测试节点下载速度，按下载速度排序，默认只测试前30个节点(每个节点测试5秒)
 - 新增`WebUI.py`，运行方式`python3 -m streamlit run WebUI.py`，打开浏览器访问 `http://localhost:8501`

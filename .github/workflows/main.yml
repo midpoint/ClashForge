@@ -48,6 +48,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add clash_config.yaml
+          if [ -f clash_config_featured.yaml ]; then
+            git add clash_config_featured.yaml
+          fi
           if git diff --cached --quiet; then
             echo "No changes to commit"
             exit 0

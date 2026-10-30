@@ -84,6 +84,10 @@ FETCH_WORKERS = int(os.environ.get('CLASHFORGE_FETCH_WORKERS', 10))
 MAX_JS_RENDERS = int(os.environ.get('CLASHFORGE_MAX_JS_RENDERS', 8))
 JS_RENDER_BUDGET = int(os.environ.get('CLASHFORGE_JS_RENDER_BUDGET', 5 * 60))
 
+# 精选订阅：把延迟最低的前 N 个可用节点单独输出一份完整配置
+FEATURED_LIMIT = int(os.environ.get('CLASHFORGE_FEATURED_LIMIT', 100))
+FEATURED_FILE = os.environ.get('CLASHFORGE_FEATURED_FILE', 'clash_config_featured.yaml')
+
 # Clash 配置文件的基础结构
 clash_config_template = {
     "port": 7890,
@@ -2539,6 +2543,44 @@ class ClashConfig:
             raise OSError(f"保存配置文件失败: {e}") from e
 
 
+def generate_featured_config(config: 'ClashConfig', valid_names: List[str],
+                             limit: int = FEATURED_LIMIT,
+                             output: str = FEATURED_FILE) -> Optional[str]:
+    """取延迟最低的前 limit 个可用节点，生成一份独立可用的精选订阅配置。
+
+    valid_names 需已按延迟升序排列（apply_results 的返回值即如此）。
+    返回写出的文件路径；没有可用节点时返回 None 且不落盘。
+    """
+    proxy_by_name = {p.get("name"): p for p in config.config.get("proxies", [])}
+    top_names = [n for n in valid_names if n in proxy_by_name][:limit]
+    if not top_names:
+        print("没有可用节点，跳过精选订阅生成")
+        return None
+
+    all_node_names = set(proxy_by_name)
+    featured = copy.deepcopy(config.config)
+    # 节点列表按延迟从低到高排列
+    featured["proxies"] = [copy.deepcopy(proxy_by_name[name]) for name in top_names]
+
+    for group in featured.get("proxy-groups", []):
+        members = group.get("proxies", [])
+        member_set = set(members)
+        # 只保留入围的节点并保持延迟顺序；组名 / DIRECT / REJECT 等非节点成员原样保留
+        node_members = [n for n in top_names if n in member_set]
+        other_members = [m for m in members if m not in all_node_names]
+        group["proxies"] = node_members + other_members
+
+    try:
+        with open(output, 'w', encoding='utf-8') as f:
+            yaml.dump(featured, f, allow_unicode=True, sort_keys=False)
+    except OSError as e:
+        print(f"保存精选订阅失败: {e}")
+        return None
+
+    print(f"已生成精选订阅 {output}：延迟最低的 {len(top_names)} 个节点")
+    return output
+
+
 # 打印测试结果摘要
 def print_test_summary(group_name: str, results: List[ProxyTestResult]):
     """打印测试结果摘要"""
@@ -2684,6 +2726,9 @@ async def proxy_clean():
                     group["proxies"] = ordered + rest
                 # 保存更新后的配置
                 config.save()
+
+            # 单独输出一份只含延迟最低的前 N 个节点的精选订阅
+            generate_featured_config(config, valid_names)
 
             # 显示总耗时
             total_time = (datetime.now() - start_time).total_seconds()

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # !/usr/bin/env python3
 import base64
+import concurrent.futures
 import copy
 import multiprocessing
 import queue
@@ -70,6 +71,18 @@ def github_api_headers():
     if GITHUB_TOKEN:
         api_headers['Authorization'] = f'Bearer {GITHUB_TOKEN}'
     return api_headers
+
+
+# ---------------- 流水线时间预算 ----------------
+# GitHub Actions 的 job 有硬性超时。历史实现是串行抓取约 60 个订阅源，
+# 单个源最坏要等 FETCH_TIMEOUT(30s) + JS 渲染(30s)，再叠加 7000+ 节点的延迟检测，
+# 很容易顶到 1 小时上限被 runner 直接 kill（日志里不会有任何结果）。
+# 这里改成：并发抓取 + 每个阶段独立的预算，超预算时带着已有结果继续走完流程。
+FETCH_BUDGET = int(os.environ.get('CLASHFORGE_FETCH_BUDGET', 25 * 60))
+TEST_BUDGET = int(os.environ.get('CLASHFORGE_TEST_BUDGET', 15 * 60))
+FETCH_WORKERS = int(os.environ.get('CLASHFORGE_FETCH_WORKERS', 10))
+MAX_JS_RENDERS = int(os.environ.get('CLASHFORGE_MAX_JS_RENDERS', 8))
+JS_RENDER_BUDGET = int(os.environ.get('CLASHFORGE_JS_RENDER_BUDGET', 5 * 60))
 
 # Clash 配置文件的基础结构
 clash_config_template = {
@@ -1577,58 +1590,100 @@ def match_nodes(text):
 
 
 # link非代理协议时(https)，请求url解析
-def process_url(url):
-    """返回 (内容列表, 是否为yaml配置)。任何失败路径都返回 ([], False)，绝不返回 None"""
-    isyaml = False
+def _fetch_url_content(url):
+    """抓取订阅内容；失败返回 None（不抛异常）"""
     try:
-        # 发送GET请求
         response = requests.get(url, headers=headers, verify=False,
                                 allow_redirects=True, timeout=FETCH_TIMEOUT)
         if response.status_code != 200:
             print(f"Failed to retrieve data from {url}, status code: {response.status_code}")
-            return [], isyaml
-
-        content = response.content.decode('utf-8', errors='ignore')
-        if 'proxies:' in content:
-            # GitHub raw 之类的外层 <pre> 包装，统一用正则剥掉
-            content = re.sub(r'<pre[^>]*>', '', content).replace('</pre>', '')
-            try:
-                yaml_data = yaml.safe_load(content)
-            except yaml.YAMLError as e:
-                print(f"YAML 解析失败 {url}: {e}")
-                yaml_data = None
-            if isinstance(yaml_data, dict) and yaml_data.get('proxies'):
-                return yaml_data['proxies'], True
-            if yaml_data is not None:
-                return [], isyaml
-            # YAML 解析失败时继续尝试 base64 / JS 渲染，而不是直接放弃这个源
-
-        # 尝试Base64解码（内容必须像订阅，避免把 HTML 误判成 base64 垃圾）
-        decoded_content = _decode_base64_text(content)
-        if decoded_content and ('://' in decoded_content or 'proxies:' in decoded_content):
-            return urllib.parse.unquote(decoded_content).splitlines(), isyaml
-
-        # 页面需要 JS 渲染
-        text = js_render(url)
-        if 'external-controller' in text:
-            try:
-                yaml_data = yaml.safe_load(text)
-            except Exception:
-                yaml_data = match_nodes(text)
-            if isinstance(yaml_data, dict) and yaml_data.get('proxies'):
-                return yaml_data['proxies'], True
-            return [], isyaml
-
-        pattern = r'([A-Za-z0-9_+/\-]+={0,2})'
-        matches = re.findall(pattern, text)
-        stdout = matches[-1] if matches else ''
-        decoded_content = _decode_base64_text(stdout)
-        if decoded_content:
-            return decoded_content.splitlines(), isyaml
-        return [], isyaml
+            return None
+        return response.content.decode('utf-8', errors='ignore')
     except Exception as e:
         print(f"An error occurred while requesting {url}: {e}")
-        return [], isyaml
+        return None
+
+
+def _parse_url_content(content, url=''):
+    """解析订阅响应体，返回 (nodes, isyaml, needs_js_render)"""
+    if 'proxies:' in content:
+        # GitHub raw 之类的外层 <pre> 包装，统一用正则剥掉
+        content = re.sub(r'<pre[^>]*>', '', content).replace('</pre>', '')
+        try:
+            yaml_data = yaml.safe_load(content)
+        except yaml.YAMLError as e:
+            print(f"YAML 解析失败 {url}: {e}")
+            yaml_data = None
+        if isinstance(yaml_data, dict) and yaml_data.get('proxies'):
+            return yaml_data['proxies'], True, False
+        if yaml_data is not None:
+            return [], False, False
+        # YAML 解析失败时继续尝试 base64 / JS 渲染，而不是直接放弃这个源
+
+    # 尝试Base64解码（内容必须像订阅，避免把 HTML 误判成 base64 垃圾）
+    decoded_content = _decode_base64_text(content)
+    if decoded_content and ('://' in decoded_content or 'proxies:' in decoded_content):
+        return urllib.parse.unquote(decoded_content).splitlines(), False, False
+
+    # 纯文本链接列表（很多 .txt 订阅源每行一条代理链接），无需再走 JS 渲染
+    if '://' in content:
+        text_nodes = []
+        for line in content.splitlines():
+            node = parse_proxy_link(line.strip())
+            if node:
+                text_nodes.append(node)
+        if text_nodes:
+            return text_nodes, False, False
+
+    # 静态内容再渲染也是同一份文本，先按“渲染后”的逻辑提取一次 base64 订阅块
+    candidate_nodes, candidate_yaml = _parse_rendered_text(content)
+    if candidate_yaml:
+        return candidate_nodes, True, False
+    if candidate_nodes:
+        parsed = [n for n in (parse_proxy_link(line) for line in candidate_nodes
+                              if isinstance(line, str)) if n]
+        if parsed:
+            return parsed, False, False
+
+    # 只有 HTML 页面（多半是 JS 挑战页）才值得启动浏览器
+    head = content[:4096].lower()
+    return [], False, ('<html' in head or '<script' in head)
+
+
+def _parse_rendered_text(text):
+    """解析 JS 渲染后的页面，返回 (nodes, isyaml)"""
+    if 'external-controller' in text:
+        try:
+            yaml_data = yaml.safe_load(text)
+        except Exception:
+            yaml_data = match_nodes(text)
+        if isinstance(yaml_data, dict) and yaml_data.get('proxies'):
+            return yaml_data['proxies'], True
+        return [], False
+
+    pattern = r'([A-Za-z0-9_+/\-]+={0,2})'
+    matches = re.findall(pattern, text)
+    stdout = matches[-1] if matches else ''
+    decoded_content = _decode_base64_text(stdout)
+    if decoded_content:
+        return decoded_content.splitlines(), False
+    return [], False
+
+
+def process_url(url):
+    """返回 (内容列表, 是否为yaml配置)。任何失败路径都返回 ([], False)，绝不返回 None"""
+    content = _fetch_url_content(url)
+    if content is None:
+        return [], False
+    nodes, isyaml, needs_render = _parse_url_content(content, url)
+    if not needs_render:
+        return nodes, isyaml
+    try:
+        text = js_render(url)
+    except Exception as e:
+        print(f"JS 渲染失败 {url}: {e}")
+        return [], False
+    return _parse_rendered_text(text)
 
 
 # 解析不同的代理链接
@@ -1746,10 +1801,55 @@ def handle_links(new_links, resolve_name_conflicts):
             print(f"处理链接失败: {type(e).__name__}: {e}")
 
 
+def _handle_link_job(link):
+    """抓取并解析单个订阅链接（线程池执行，不碰 js_render）。
+
+    返回 (url, nodes, needs_js_render, elapsed)；nodes 为节点 dict 列表，
+    needs_js_render=True 时由主线程在渲染阶段补抓。
+    """
+    start = time.monotonic()
+    url = link
+    try:
+        if '|ss' in link:
+            url = link.replace('|ss', '')
+            return url, parse_ss_sub(url), False, time.monotonic() - start
+
+        is_md = '|links' in link or '.md' in link
+        url = link.replace('|links', '')
+        if '{' in url:
+            url = resolve_template_url(url)
+
+        content = _fetch_url_content(url)
+        if content is None:
+            return url, [], False, time.monotonic() - start
+
+        # .md/README 里的纯文本代理链接（旧实现会再抓一次，这里复用同一份响应）
+        md_nodes = []
+        if is_md:
+            pattern = r'(?:vless|vmess|trojan|hysteria2|hy2|ss):\/\/[^#\s]*(?:#[^\s]*)?'
+            for md_link in re.findall(pattern, urllib.parse.unquote(content)):
+                node = parse_proxy_link(md_link)
+                if node:
+                    md_nodes.append(node)
+
+        nodes, _isyaml, needs_render = _parse_url_content(content, url)
+        if isinstance(nodes, list) and nodes and isinstance(nodes[0], str):
+            nodes = [n for n in (parse_proxy_link(line) for line in nodes) if n]
+        if md_nodes:
+            # 纯文本列表与 md 正则可能命中同一节点，这里先按 server/port/凭据去重
+            nodes = deduplicate_proxies(list(nodes) + md_nodes)
+        return url, nodes, needs_render, time.monotonic() - start
+    except Exception as e:
+        print(f"处理链接失败 {link[:60]}: {type(e).__name__}: {e}")
+        return url, [], False, time.monotonic() - start
+
+
 # 生成 Clash 配置文件
 def generate_clash_config(links, load_nodes):
     now = datetime.now()
     print(f"当前时间: {now}\n---")
+    phase_start = time.monotonic()
+    fetch_deadline = phase_start + max(0, FETCH_BUDGET)
 
     final_nodes = []
     existing_names = set()  # 存储所有节点名字以检查重复
@@ -1778,36 +1878,89 @@ def generate_clash_config(links, load_nodes):
                 node = {**node, "name": f"{node.get('server')}:{node.get('port')}"}
             resolve_name_conflicts(node)
 
+    # 1) 代理链接直接解析，不联网；订阅链接收集起来走并发抓取
+    url_links = []
     for link in links:
         if link.startswith(("hysteria2://", "hy2://", "trojan://", "ss://", "vless://", "vmess://")):
             node = parse_proxy_link(link)
-            if not node:
-                continue
-            resolve_name_conflicts(node)
+            if node:
+                resolve_name_conflicts(node)
         else:
-            if '|links' in link or '.md' in link:
-                link = link.replace('|links', '')
-                new_links = parse_md_link(link)
-                handle_links(new_links, resolve_name_conflicts)
-            if '|ss' in link:
-                link = link.replace('|ss', '')
-                new_links = parse_ss_sub(link)
-                for node in new_links:
-                    resolve_name_conflicts(node)
-            if '{' in link:
-                link = resolve_template_url(link)
-            print(f'当前正在处理link: {link}')
-            # 处理非特定协议的链接
+            url_links.append(link)
+
+    # 2) 并发抓取订阅链接；到预算就停，用已经拿到的节点继续
+    handled = []
+    if url_links:
+        budget = fetch_deadline - time.monotonic()
+        if budget <= 0:
+            print(f"[时间预算] 抓取预算已耗尽，跳过 {len(url_links)} 个订阅链接")
+        else:
+            workers = max(1, min(FETCH_WORKERS, len(url_links)))
+            print(f"并发抓取 {len(url_links)} 个订阅链接（并发 {workers}，预算 {budget:.0f}s）")
+            executor = concurrent.futures.ThreadPoolExecutor(max_workers=workers)
+            futures = [executor.submit(_handle_link_job, link) for link in url_links]
+            done, pending = concurrent.futures.wait(futures, timeout=budget)
+            for future in pending:
+                future.cancel()
+            executor.shutdown(wait=True, cancel_futures=True)
+            if pending:
+                print(f"[时间预算] 抓取到达 {FETCH_BUDGET}s 上限，{len(pending)} 个链接未完成")
+            # 按提交顺序收集，节点顺序稳定
+            for future in futures:
+                if future in done and not future.cancelled():
+                    try:
+                        handled.append(future.result())
+                    except Exception as e:
+                        print(f"抓取任务失败: {type(e).__name__}: {e}")
+
+            slowest = sorted(((elapsed, url) for url, _, _, elapsed in handled), reverse=True)[:5]
+            summary = f"[耗时] 抓取阶段 {time.monotonic() - phase_start:.0f}s"
+            if slowest:
+                summary += "，最慢: " + ", ".join(f"{url} {elapsed:.0f}s" for elapsed, url in slowest)
+            print(summary)
+
+    # 3) 解析抓取结果；需要 JS 渲染的链接留到下一步
+    render_urls = []
+    for url, nodes, needs_render, _elapsed in handled:
+        for node in nodes:
+            if isinstance(node, dict):
+                resolve_name_conflicts(node)
+            elif isinstance(node, str):
+                parsed = parse_proxy_link(node)
+                if parsed:
+                    resolve_name_conflicts(parsed)
+        if needs_render:
+            render_urls.append(url)
+
+    # 4) JS 渲染：独立预算 + 数量上限，避免 pyppeteer 拖垮整条流水线
+    if render_urls:
+        render_budget = min(JS_RENDER_BUDGET, max(0.0, fetch_deadline - time.monotonic()))
+        render_start = time.monotonic()
+        rendered = 0
+        print(f"需要 JS 渲染的链接 {len(render_urls)} 个，本阶段预算 {render_budget:.0f}s，"
+              f"最多渲染 {MAX_JS_RENDERS} 个")
+        for url in render_urls[:MAX_JS_RENDERS]:
+            left = min(render_budget - (time.monotonic() - render_start),
+                       fetch_deadline - time.monotonic())
+            if left < 5:
+                print("[时间预算] JS 渲染阶段结束")
+                break
             try:
-                new_links, isyaml = process_url(link)
+                text = js_render(url, timeout=int(min(JS_RENDER_TIMEOUT, left)))
             except Exception as e:
-                print(f"error: {e}")
+                print(f"JS 渲染失败 {url}: {e}")
                 continue
-            if isyaml:
-                for node in new_links:
+            nodes, _isyaml = _parse_rendered_text(text)
+            for node in nodes:
+                if isinstance(node, dict):
                     resolve_name_conflicts(node)
-            else:
-                handle_links(new_links, resolve_name_conflicts)
+                elif isinstance(node, str):
+                    parsed = parse_proxy_link(node)
+                    if parsed:
+                        resolve_name_conflicts(parsed)
+            rendered += 1
+        print(f"[耗时] JS 渲染 {rendered}/{len(render_urls)} 个，{time.monotonic() - render_start:.0f}s")
+
     final_nodes = deduplicate_proxies(final_nodes)
 
     # 组内节点按加入顺序去重（不用 set，保序且只遍历一次）
@@ -2414,22 +2567,35 @@ def print_test_summary(group_name: str, results: List[ProxyTestResult]):
 
 
 # 测试一组代理节点
-async def test_group_proxies(clash_api: ClashAPI, proxies: List[str]) -> List[ProxyTestResult]:
-    """测试一组代理节点"""
+async def test_group_proxies(clash_api: ClashAPI, proxies: List[str],
+                             timeout: Optional[float] = None) -> List[ProxyTestResult]:
+    """测试一组代理节点；timeout 到点后取消剩余任务，返回已完成的部分"""
     print(f"开始测试 {len(proxies)} 个节点 (最大并发: {MAX_CONCURRENT_TESTS})")
 
-    # 创建所有测试任务
-    tasks = [clash_api.test_proxy_delay(proxy_name) for proxy_name in proxies]
+    # 持有 task 引用，超时时才能真正取消排队中的请求
+    tasks = [asyncio.ensure_future(clash_api.test_proxy_delay(proxy_name)) for proxy_name in proxies]
+    loop = asyncio.get_running_loop()
+    deadline = None if timeout is None else loop.time() + max(0.0, timeout)
 
     # 使用进度显示执行所有任务
     results = []
-    for future in asyncio.as_completed(tasks):
-        result = await future
-        results.append(result)
-        # 显示进度
-        done = len(results)
-        total = len(tasks)
-        print(f"\r进度: {done}/{total} ({done / total * 100:.1f}%)", end="", flush=True)
+    try:
+        for future in asyncio.as_completed(tasks):
+            result = await future
+            results.append(result)
+            # 显示进度
+            done = len(results)
+            total = len(tasks)
+            print(f"\r进度: {done}/{total} ({done / total * 100:.1f}%)", end="", flush=True)
+            if deadline is not None and loop.time() >= deadline:
+                print(f"\n[时间预算] 延迟测试到达 {timeout:.0f}s 上限，已完成 {done}/{total} 个节点")
+                break
+    finally:
+        pending = [task for task in tasks if not task.done()]
+        for task in pending:
+            task.cancel()
+        if pending:
+            await asyncio.gather(*pending, return_exceptions=True)
 
     return results
 
@@ -2462,6 +2628,7 @@ async def proxy_clean():
 
     # 开始测试
     start_time = datetime.now()
+    test_start = time.monotonic()
 
     # 创建支持多端口的API实例
     async with ClashAPI(CLASH_API_HOST, CLASH_API_PORTS, CLASH_API_SECRET) as clash_api:
@@ -2479,8 +2646,13 @@ async def proxy_clean():
             if not proxies:
                 print(f"策略组 '{group_name}' 中没有代理节点")
                 return
-            # 测试该组的所有节点
-            results = await test_group_proxies(clash_api, proxies)
+            # 测试该组的所有节点；到时间预算就停，用已测完的结果继续
+            budget_left = TEST_BUDGET - (time.monotonic() - test_start)
+            if budget_left <= 0:
+                print("[时间预算] 延迟检测预算已耗尽，保留原配置")
+                return delays
+            print(f"[时间预算] 延迟检测可用 {budget_left:.0f}s")
+            results = await test_group_proxies(clash_api, proxies, timeout=budget_left)
             all_test_results.extend(results)
             # 打印测试结果摘要
             delays = print_test_summary(group_name, results)

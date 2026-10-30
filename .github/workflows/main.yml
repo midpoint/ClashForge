@@ -19,6 +19,10 @@ jobs:
   run_demo_actions:
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    env:
+      # 脚本内部的阶段预算（秒）：到点会带着已有结果继续走完并保存，不会被 runner 直接 kill
+      CLASHFORGE_FETCH_BUDGET: '1500'
+      CLASHFORGE_TEST_BUDGET: '900'
     steps:
       - name: Checkout code
         uses: actions/checkout@v4

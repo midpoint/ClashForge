@@ -27,6 +27,7 @@ import gzip
 import shutil
 import platform
 import os
+import argparse
 from datetime import datetime
 from asyncio import Semaphore
 import ssl
@@ -38,19 +39,22 @@ warnings.filterwarnings('ignore')
 from requests_html import HTMLSession
 import psutil
 
-# TEST_URL = "http://www.gstatic.com/generate_204"
-TEST_URL = "http://www.pinterest.com"
+# 延迟测试/健康检查目标：用轻量的 204 接口，页面体积小、全球可达性好，
+# 避免像 Pinterest 首页那样因页面加载和地区限制产生误判
+TEST_URL = os.environ.get('CLASHFORGE_TEST_URL', 'http://www.gstatic.com/generate_204')
 CLASH_API_PORTS = [9090]
 CLASH_API_HOST = "127.0.0.1"
 CLASH_API_SECRET = ""
-TIMEOUT = 3
+# 单个节点的测延迟超时（秒）；境内网络到海外节点抖动大时可调高
+TIMEOUT = int(os.environ.get('CLASHFORGE_TEST_TIMEOUT', 3))
 # 抓取订阅源/文件的网络超时（连接, 读取），防止单个源挂起拖死整条流水线
 FETCH_TIMEOUT = (5, 30)
 # 存储所有节点的速度测试结果
 SPEED_TEST = False
 SPEED_TEST_LIMIT = 5  # 只测试前30个节点的下行速度，每个节点测试5秒
 results_speed = []
-MAX_CONCURRENT_TESTS = 100
+# 测延迟并发数；家庭宽带/路由器较弱时调低（如 20-30）可减少误判超时
+MAX_CONCURRENT_TESTS = int(os.environ.get('CLASHFORGE_TEST_CONCURRENCY', 100))
 LIMIT = 10000  # 最多保留LIMIT个节点
 CONFIG_FILE = 'clash_config.yaml'
 INPUT = "input"  # 从文件中加载代理节点，支持yaml/yml、txt(每条代理链接占一行)
@@ -153,8 +157,7 @@ clash_config_template = {
             "type": "url-test",
             "exclude-filter": "(?i)中国|China|CN|电信|移动|联通",
             "proxies": [],
-            # "url": "http://www.gstatic.com/generate_204",
-            "url": "http://www.pinterest.com",
+            "url": TEST_URL,
             "interval": 300,
             "tolerance": 50
         },
@@ -163,7 +166,7 @@ clash_config_template = {
             "type": "fallback",
             "exclude-filter": "(?i)中国|China|CN|电信|移动|联通",
             "proxies": [],
-            "url": "http://www.gstatic.com/generate_204",
+            "url": TEST_URL,
             "interval": 300
         },
         {
@@ -2333,7 +2336,7 @@ def kill_clash():
     # print(f"未找到 Clash 进程 ({system})")
 
 
-def start_clash(max_attempts=20, startup_timeout=3):
+def start_clash(max_attempts=20, startup_timeout=3, config_path: Optional[str] = None):
     """启动 mihomo，返回进程对象；失败达到 max_attempts 次后返回 None（而不是无限重启）"""
     download_and_extract_latest_release()
     system_platform = platform.system().lower()
@@ -2351,7 +2354,11 @@ def start_clash(max_attempts=20, startup_timeout=3):
     ensure_executable(clash_binary)
 
     global CONFIG_FILE
-    CONFIG_FILE = f'{CONFIG_FILE}.json' if os.path.exists(f'{CONFIG_FILE}.json') else CONFIG_FILE
+    if config_path:
+        # 显式指定（--check-only 用 yaml），避免被上次运行残留的 .json 劫持
+        CONFIG_FILE = config_path
+    else:
+        CONFIG_FILE = f'{CONFIG_FILE}.json' if os.path.exists(f'{CONFIG_FILE}.json') else CONFIG_FILE
 
     for attempt in range(1, max_attempts + 1):
         # stderr 并入 stdout，用同一个读取线程消费，避免管道写满后子进程阻塞
@@ -2769,11 +2776,15 @@ async def test_group_proxies(clash_api: ClashAPI, proxies: List[str],
     return results
 
 
-async def proxy_clean():
+async def proxy_clean(config_path: Optional[str] = None):
     # 更新全局配置
     delays = []
     global MAX_CONCURRENT_TESTS, TIMEOUT, CLASH_API_SECRET, LIMIT, CONFIG_FILE
-    CONFIG_FILE = f'{CONFIG_FILE}.json' if os.path.exists(f'{CONFIG_FILE}.json') else CONFIG_FILE
+    if config_path:
+        # 显式指定时按指定文件测试（--check-only 用 yaml，避免被上次运行残留的 .json 劫持）
+        CONFIG_FILE = config_path
+    else:
+        CONFIG_FILE = f'{CONFIG_FILE}.json' if os.path.exists(f'{CONFIG_FILE}.json') else CONFIG_FILE
     print(f"===================节点批量检测基本信息======================")
     print(f"配置文件: {CONFIG_FILE}")
     print(f"API 端口: {CLASH_API_PORTS[0]}")
@@ -3170,10 +3181,11 @@ def work(links, check=False, allowed_types=[], only_check=False):
             try:
                 # 启动clash
                 print(f"===================启动clash并初始化配置======================")
-                clash_process = start_clash()
+                # 仅检测时强制读 yaml，忽略上次运行残留的 clash_config.yaml.json
+                clash_process = start_clash(config_path=CONFIG_FILE if only_check else None)
                 # 切换节点到'节点选择-DIRECT'
                 switch_proxy('DIRECT')
-                asyncio.run(proxy_clean())
+                asyncio.run(proxy_clean(CONFIG_FILE if only_check else None))
                 print(f'批量检测完毕')
             except Exception as e:
                 print("Error calling Clash API:", e)
@@ -3190,8 +3202,19 @@ def work(links, check=False, allowed_types=[], only_check=False):
         sys.exit(1)
 
 
+def parse_args(argv=None):
+    parser = argparse.ArgumentParser(description='ClashForge: 聚合订阅并批量检测节点延迟')
+    parser.add_argument(
+        '-c', '--check-only', action='store_true',
+        help='跳过抓取和生成，仅用本机网络对现有 clash_config.yaml 重新测延迟、'
+             '移除失效节点并重排序（在中国境内使用时建议先执行一次）')
+    return parser.parse_args(argv)
+
+
 if __name__ == '__main__':
     # 订阅链接来自 input/*.txt（公开源，见 input/subscriptions.txt）
     # 和 CLASHFORGE_PRIVATE_SUBSCRIPTIONS / *_private.txt（付费源，不进仓库），
     # 这里不再硬编码任何订阅链接。
-    work([], check=True, only_check=False, allowed_types=["ss", "hysteria2", "hy2", "vless", "vmess", "trojan"])
+    args = parse_args()
+    work([], check=not args.check_only, only_check=args.check_only,
+         allowed_types=["ss", "hysteria2", "hy2", "vless", "vmess", "trojan"])

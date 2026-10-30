@@ -173,3 +173,15 @@ def test_test_group_proxies_stops_at_deadline(cf):
     # 第一条结果返回后才发现超预算，最多多等一个请求；但不会把两个都测完
     assert len(results) <= 1
     assert time.monotonic() - start < 1.5
+
+
+def test_check_only_cli_flag(cf):
+    assert cf.parse_args([]).check_only is False
+    assert cf.parse_args(["--check-only"]).check_only is True
+    assert cf.parse_args(["-c"]).check_only is True
+
+
+def test_template_groups_use_configured_test_url(cf):
+    urls = {g["url"] for g in cf.clash_config_template["proxy-groups"] if "url" in g}
+    # 自动选择/故障转移的健康检查都走同一个轻量测速地址
+    assert urls == {cf.TEST_URL}

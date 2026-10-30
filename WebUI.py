@@ -13,7 +13,7 @@ import streamlit.components.v1 as components
 # 导入ClashForge模块
 from ClashForge import (
     generate_clash_config, merge_lists, switch_proxy,
-    filter_by_types_alt, read_txt_files, read_yaml_files,
+    filter_by_types_alt, read_txt_files, read_yaml_files, read_private_links,
     start_clash, proxy_clean, kill_clash,
     ClashConfig, download_and_extract_latest_release,
     upload_and_generate_urls, TIMEOUT
@@ -501,18 +501,21 @@ with tab1:
                 
                 # 添加删除文件功能
                 if st.button("清空input文件夹", key="clear_input_folder"):
+                    kept = {"subscriptions.txt"}  # 公开订阅源是仓库文件，不随清空删除
                     for file in files:
+                        if file in kept:
+                            continue
                         try:
                             os.remove(os.path.join("input", file))
                         except Exception as e:
                             st.error(f"删除文件 {file} 失败: {str(e)}")
-                    
+
                     # 清除保存状态
                     for key in list(st.session_state.keys()):
                         if key.startswith("saved_"):
                             del st.session_state[key]
-                            
-                    st.success("成功清空input文件夹")
+
+                    st.success("成功清空input文件夹（保留 subscriptions.txt）")
                     st.rerun()
             else:
                 st.info("input文件夹中没有配置文件")
@@ -567,7 +570,14 @@ with tab1:
         
         #### GitHub 模糊匹配
         - `https://raw.githubusercontent.com/user/repo/main/{x}.yaml` - 匹配任意yaml文件
-        
+
+        #### 私密/付费订阅
+        不要把付费订阅写进仓库，改用以下任一方式，启动时会自动合并：
+        - 环境变量 `CLASHFORGE_PRIVATE_SUBSCRIPTIONS`（多个用换行/逗号分隔）
+        - 环境变量 `CLASHFORGE_PRIVATE_SUBSCRIPTIONS_FILE` 指向仓库外的 txt
+        - `input/` 目录下以 `_private.txt` 结尾的文件（已被 .gitignore 忽略）
+        日志里订阅链接默认脱敏（只保留域名），需要完整链接调试时设置 `CLASHFORGE_LOG_URLS=1`
+
         #### 示例
         ```
         https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/clash/naidounode.txt
@@ -682,7 +692,9 @@ with tab1:
                 # 读取链接
                 progress_bar.progress(0.3)
                 txt_links = capture_output(read_txt_files, folder_path="input") or []
-                all_links = capture_output(merge_lists, txt_links, links) or links
+                # 付费订阅走环境变量 / 私有文件，不进仓库
+                private_links = capture_output(read_private_links, "input") or []
+                all_links = capture_output(merge_lists, txt_links, private_links, links) or links
                 
                 # 阶段2：生成配置
                 progress_text.text("生成配置文件中...")

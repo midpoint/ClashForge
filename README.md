@@ -7,7 +7,8 @@ https://github.com/user-attachments/assets/a1a377a2-e93e-461d-9915-7f7f4dd6ff36
 
 ## 功能
 - 将`hysteria2://|hy2://`、`trojan://`、`ss://`、`vless://`、`vmess://`协议链接转换为clash可用的代理节点配置
-- 支持从`input`目录下的所有txt文档中按行读取代理链接(每条代理链接占一行)
+- 支持从`input`目录下的所有txt文档中按行读取代理链接(每条代理链接占一行)；公开订阅源已移到 `input/subscriptions.txt`
+- 付费/私密订阅不写入仓库：从环境变量 `CLASHFORGE_PRIVATE_SUBSCRIPTIONS`（换行/逗号分隔）、`CLASHFORGE_PRIVATE_SUBSCRIPTIONS_FILE` 指定的仓库外文件，或 `input/*_private.txt` 读取；CI 中使用仓库 Secret，日志中的订阅链接默认脱敏
 - 支持从`input`目录下的所有yaml/yml读取proxies  
 - 支持指定代理类型过滤，指定参数allowed_types=['ss']
 - 支持从订阅源提取代理节点，支持订阅源类型:clash、v2ray、trojan、vmess、vless、ss源(链接需以"|ss"结尾)

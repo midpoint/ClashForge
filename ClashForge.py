@@ -88,6 +88,14 @@ JS_RENDER_BUDGET = int(os.environ.get('CLASHFORGE_JS_RENDER_BUDGET', 5 * 60))
 FEATURED_LIMIT = int(os.environ.get('CLASHFORGE_FEATURED_LIMIT', 100))
 FEATURED_FILE = os.environ.get('CLASHFORGE_FEATURED_FILE', 'clash_config_featured.yaml')
 
+# 私密/付费订阅：从环境变量读取，避免写进仓库
+#   CLASHFORGE_PRIVATE_SUBSCRIPTIONS  一行一个订阅链接（|ss / |links 后缀照常可用）
+#   CLASHFORGE_PRIVATE_SUBSCRIPTIONS_FILE  也可以指向仓库之外的一个 txt 文件
+PRIVATE_LINKS_ENV = 'CLASHFORGE_PRIVATE_SUBSCRIPTIONS'
+PRIVATE_LINKS_FILE_ENV = 'CLASHFORGE_PRIVATE_SUBSCRIPTIONS_FILE'
+# 订阅链接可能自带凭据（token 参数、机场密钥等），日志里只打印脱敏后的形式
+LOG_MASK_URLS = os.environ.get('CLASHFORGE_LOG_URLS', '').strip().lower() not in ('1', 'true', 'yes')
+
 # Clash 配置文件的基础结构
 clash_config_template = {
     "port": 7890,
@@ -1459,7 +1467,7 @@ def parse_ss_sub(link):
         response.raise_for_status()
         data = response.json()
     except (requests.RequestException, ValueError) as e:
-        print(f"请求错误: {e}")
+        print(f"请求错误: {mask_error(e, link)}")
         return []
 
     if not isinstance(data, list):
@@ -1491,7 +1499,7 @@ def parse_md_link(link):
         return matches
 
     except requests.RequestException as e:
-        print(f"请求错误: {e}")
+        print(f"请求错误: {mask_error(e, link)}")
         return []
 
 
@@ -1538,12 +1546,12 @@ def js_render(url, timeout=JS_RENDER_TIMEOUT):
         proc.join(5)
         _kill_orphan_chromium()
         _drain_queue(result_queue)
-        raise TimeoutError(f"JS 渲染超时（{timeout}s）: {url}")
+        raise TimeoutError(f"JS 渲染超时（{timeout}s）: {log_url(url)}")
 
     try:
         text = result_queue.get_nowait()
     except queue.Empty:
-        raise RuntimeError(f"JS 渲染子进程未返回结果（退出码 {proc.exitcode}）: {url}")
+        raise RuntimeError(f"JS 渲染子进程未返回结果（退出码 {proc.exitcode}）: {log_url(url)}")
     finally:
         _drain_queue(result_queue)
         proc.join(1)
@@ -1600,11 +1608,11 @@ def _fetch_url_content(url):
         response = requests.get(url, headers=headers, verify=False,
                                 allow_redirects=True, timeout=FETCH_TIMEOUT)
         if response.status_code != 200:
-            print(f"Failed to retrieve data from {url}, status code: {response.status_code}")
+            print(f"Failed to retrieve data from {log_url(url)}, status code: {response.status_code}")
             return None
         return response.content.decode('utf-8', errors='ignore')
     except Exception as e:
-        print(f"An error occurred while requesting {url}: {e}")
+        print(f"An error occurred while requesting {log_url(url)}: {mask_error(e, url)}")
         return None
 
 
@@ -1616,7 +1624,7 @@ def _parse_url_content(content, url=''):
         try:
             yaml_data = yaml.safe_load(content)
         except yaml.YAMLError as e:
-            print(f"YAML 解析失败 {url}: {e}")
+            print(f"YAML 解析失败 {log_url(url)}: {mask_error(e)}")
             yaml_data = None
         if isinstance(yaml_data, dict) and yaml_data.get('proxies'):
             return yaml_data['proxies'], True, False
@@ -1685,7 +1693,7 @@ def process_url(url):
     try:
         text = js_render(url)
     except Exception as e:
-        print(f"JS 渲染失败 {url}: {e}")
+        print(f"JS 渲染失败 {log_url(url)}: {mask_error(e, url)}")
         return [], False
     return _parse_rendered_text(text)
 
@@ -1743,16 +1751,12 @@ def add_random_suffix(name, existing_names):
 
 # 从指定目录下的txt读取代理链接
 def read_txt_files(folder_path):
-    all_lines = []  # 用于存储所有文件的行
+    """读取目录下所有 txt 的链接。
 
-    # 使用 glob 获取指定文件夹下的所有 txt 文件
-    txt_files = glob.glob(os.path.join(folder_path, '*.txt'))
-
-    for file_path in txt_files:
-        with open(file_path, 'r', encoding='utf-8') as file:
-            # 读取文件内容并按行存入数组
-            lines = file.readlines()
-            all_lines.extend(line.strip() for line in lines)  # 去除每行的换行符并添加到数组中
+    每行一个订阅链接或代理链接，支持 # 注释；
+    以 _private.txt 结尾的文件（付费订阅）不在这里读取，见 read_private_links()。
+    """
+    all_lines = read_link_files(folder_path)
     if all_lines:
         print(f'加载【{folder_path}】目录下所有txt中节点')
     return all_lines
@@ -1789,6 +1793,129 @@ def filter_by_types_alt(allowed_types, nodes):
 # 合并links列表
 def merge_lists(*lists):
     return [item for item in chain.from_iterable(lists) if item != '']
+
+
+def mask_url(url):
+    """日志脱敏：保留主机名，隐藏 token、路径与查询串中的敏感部分"""
+    try:
+        parts = urllib.parse.urlsplit(str(url))
+    except ValueError:
+        return '<url>'
+    host = parts.hostname or ''
+    if parts.port:
+        host = f"{host}:{parts.port}"
+    if not host:
+        return '<url>'
+    tail = '…' if (parts.path not in ('', '/') or parts.query) else ''
+    return f"{parts.scheme}://{host}/{tail}"
+
+
+def log_url(url):
+    """按 LOG_MASK_URLS 决定日志里输出原始链接还是脱敏链接"""
+    return mask_url(url) if LOG_MASK_URLS else url
+
+
+def mask_error(error, url=''):
+    """把异常文本里可能带出的订阅链接/token 一起去掉。
+
+    requests 的异常会把 url 的 path/query 原样拼进消息，例如
+    ``...: Max retries exceeded with url: /sub?token=SECRET``，
+    只遮住前缀 URL 不够，这里连异常里的 url 片段一起替换。
+    """
+    text = str(error)
+    if not LOG_MASK_URLS:
+        return text
+    if url:
+        text = text.replace(url, log_url(url))
+    text = re.sub(r"(url:\s*)\S+", r"\1<masked>", text)
+    return text
+
+
+_PROXY_SCHEMES = ("hysteria2://", "hy2://", "trojan://", "ss://", "vless://", "vmess://")
+# 这些后缀是 ClashForge 自己的解析指令，不属于 URL 本身；读取时仍要整体保留
+_LINK_SUFFIXES = ('|ss', '|links')
+
+
+def _clean_link_line(line):
+    """清洗订阅文件里的一行：去 BOM/空白，跳过注释"""
+    line = line.replace('﻿', '').strip()
+    if not line or line.startswith('#'):
+        return ''
+    return line
+
+
+def split_private_links(value):
+    """把环境变量里的订阅链接拆成列表，支持换行、逗号、分号分隔"""
+    links = []
+    for chunk in re.split(r'[\r\n,;]+', value or ''):
+        link = _clean_link_line(chunk)
+        if link:
+            links.append(link)
+    return links
+
+
+def read_link_files(folder_path, private_only=False):
+    """从目录下的 *.txt 读取订阅/节点链接（每行一个，支持 # 注释）。
+
+    private_only=True 时只读取 *_private.txt（用于不进仓库的付费订阅）。
+    """
+    links = []
+    pattern = '*_private.txt' if private_only else '*.txt'
+    for file_path in sorted(glob.glob(os.path.join(folder_path, pattern))):
+        if private_only is False and file_path.endswith('_private.txt'):
+            # 私密订阅只在显式请求时读取，避免和公开订阅混在一起被误提交
+            continue
+        try:
+            with open(file_path, 'r', encoding='utf-8-sig') as file:
+                for line in file:
+                    link = _clean_link_line(line)
+                    if link:
+                        links.append(link)
+        except OSError as e:
+            print(f"读取 {file_path} 失败: {e}")
+    return links
+
+
+def read_private_links(folder_path=INPUT):
+    """私密订阅：环境变量 + 可选的仓库外文件。
+
+    优先级：环境变量（CLASHFORGE_PRIVATE_SUBSCRIPTIONS）→ 文件
+    （CLASHFORGE_PRIVATE_SUBSCRIPTIONS_FILE）→ input/*_private.txt。
+    三者都会有则不重复合并。
+    """
+    links = []
+    env_value = os.environ.get(PRIVATE_LINKS_ENV, '')
+    env_links = split_private_links(env_value)
+    if env_links:
+        print(f"从环境变量 {PRIVATE_LINKS_ENV} 读取到 {len(env_links)} 条私密订阅")
+        links.extend(env_links)
+
+    file_path = os.environ.get(PRIVATE_LINKS_FILE_ENV, '').strip()
+    if file_path and os.path.exists(file_path):
+        try:
+            with open(file_path, 'r', encoding='utf-8-sig') as f:
+                file_links = [_clean_link_line(line) for line in f]
+            file_links = [link for link in file_links if link]
+        except OSError as e:
+            print(f"读取私密订阅文件失败: {e}")
+            file_links = []
+        if file_links:
+            print(f"从文件 {file_path} 读取到 {len(file_links)} 条私密订阅")
+            links.extend(file_links)
+    elif file_path:
+        print(f"私密订阅文件不存在: {file_path}")
+
+    private_file_links = read_link_files(folder_path, private_only=True)
+    if private_file_links:
+        print(f"从【{folder_path}】下的 *_private.txt 读取到 {len(private_file_links)} 条私密订阅")
+    links.extend(private_file_links)
+
+    seen, unique = set(), []
+    for link in links:
+        if link not in seen:
+            seen.add(link)
+            unique.append(link)
+    return unique
 
 
 def handle_links(new_links, resolve_name_conflicts):
@@ -1844,7 +1971,7 @@ def _handle_link_job(link):
             nodes = deduplicate_proxies(list(nodes) + md_nodes)
         return url, nodes, needs_render, time.monotonic() - start
     except Exception as e:
-        print(f"处理链接失败 {link[:60]}: {type(e).__name__}: {e}")
+        print(f"处理链接失败 {log_url(link)}: {type(e).__name__}: {mask_error(e, link)}")
         return url, [], False, time.monotonic() - start
 
 
@@ -1915,12 +2042,12 @@ def generate_clash_config(links, load_nodes):
                     try:
                         handled.append(future.result())
                     except Exception as e:
-                        print(f"抓取任务失败: {type(e).__name__}: {e}")
+                        print(f"抓取任务失败: {type(e).__name__}: {mask_error(e)}")
 
             slowest = sorted(((elapsed, url) for url, _, _, elapsed in handled), reverse=True)[:5]
             summary = f"[耗时] 抓取阶段 {time.monotonic() - phase_start:.0f}s"
             if slowest:
-                summary += "，最慢: " + ", ".join(f"{url} {elapsed:.0f}s" for elapsed, url in slowest)
+                summary += "，最慢: " + ", ".join(f"{log_url(url)} {elapsed:.0f}s" for elapsed, url in slowest)
             print(summary)
 
     # 3) 解析抓取结果；需要 JS 渲染的链接留到下一步
@@ -1952,7 +2079,7 @@ def generate_clash_config(links, load_nodes):
             try:
                 text = js_render(url, timeout=int(min(JS_RENDER_TIMEOUT, left)))
             except Exception as e:
-                print(f"JS 渲染失败 {url}: {e}")
+                print(f"JS 渲染失败 {log_url(url)}: {mask_error(e, url)}")
                 continue
             nodes, _isyaml = _parse_rendered_text(text)
             for node in nodes:
@@ -3033,7 +3160,8 @@ def work(links, check=False, allowed_types=[], only_check=False):
             load_nodes = read_yaml_files(folder_path=INPUT)
             if allowed_types:
                 load_nodes = filter_by_types_alt(allowed_types, nodes=load_nodes)
-            links = merge_lists(read_txt_files(folder_path=INPUT), links)
+            # 公开链接 + input/*.txt + 环境变量/私有文件里的付费订阅
+            links = merge_lists(read_txt_files(folder_path=INPUT), read_private_links(INPUT), links)
             if links or load_nodes:
                 generate_clash_config(links, load_nodes)
 
@@ -3063,64 +3191,7 @@ def work(links, check=False, allowed_types=[], only_check=False):
 
 
 if __name__ == '__main__':
-    links = [
-        "https://c7dabe95.proxy-978.pages.dev/767b6340-96dc-4aa0-8013-a8af7513d920?clash",
-        "https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/clash/naidounode.txt",
-        "https://cdn.jsdelivr.net/gh/yangxiaoge/tvbox_cust@master/clash/Clash2.yml",
-        "https://gy.xiaozi.us.kg/sub?token=lzj666",
-        "https://igdux.top/5Hna",
-        "https://mxlsub.me/newfull",
-        "https://proxypool.link/ss/sub|ss",
-        "https://proxypool.link/trojan/sub",
-        "https://proxypool.link/vmess/sub",
-        "https://raw.githubusercontent.com/Q3dlaXpoaQ/V2rayN_Clash_Node_Getter/refs/heads/main/APIs/sc0.yaml",
-        "https://raw.githubusercontent.com/Q3dlaXpoaQ/V2rayN_Clash_Node_Getter/refs/heads/main/APIs/sc1.yaml",
-        "https://raw.githubusercontent.com/Q3dlaXpoaQ/V2rayN_Clash_Node_Getter/refs/heads/main/APIs/sc2.yaml",
-        "https://raw.githubusercontent.com/Q3dlaXpoaQ/V2rayN_Clash_Node_Getter/refs/heads/main/APIs/sc3.yaml",
-        "https://raw.githubusercontent.com/Q3dlaXpoaQ/V2rayN_Clash_Node_Getter/refs/heads/main/APIs/sc4.yaml",
-        "https://raw.githubusercontent.com/Roywaller/clash_subscription/refs/heads/main/clash_subscription.txt",
-        "https://raw.githubusercontent.com/Ruk1ng001/freeSub/main/clash.yaml",
-        "https://raw.githubusercontent.com/SoliSpirit/v2ray-configs/main/all_configs.txt",
-        "https://raw.githubusercontent.com/a2470982985/getNode/main/clash.yaml",
-        "https://raw.githubusercontent.com/aiboboxx/clashfree/refs/heads/main/clash.yml",
-        "https://raw.githubusercontent.com/aiboboxx/v2rayfree/refs/heads/main/README.md",
-        "https://raw.githubusercontent.com/anaer/Sub/refs/heads/main/clash.yaml",
-        "https://raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.yml",
-        "https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/clash.yml",
-        "https://raw.githubusercontent.com/firefoxmmx2/v2rayshare_subcription/refs/heads/main/subscription/clash_sub.yaml",
-        "https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/c.yaml",
-        "https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml",
-        "https://raw.githubusercontent.com/leetomlee123/freenode/refs/heads/main/README.md",
-        "https://raw.githubusercontent.com/ljlfct01/ljlfct01.github.io/refs/heads/main/节点",
-        "https://raw.githubusercontent.com/mahdibland/SSAggregator/master/sub/sub_merge_yaml.yml",
-        "https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.yml",
-        "https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/LogInfo.txt",
-        "https://raw.githubusercontent.com/mai19950/clashgithub_com/refs/heads/main/site",
-        "https://raw.githubusercontent.com/mfbpn/tg_mfbpn_sub/main/trial.yaml",
-        "https://raw.githubusercontent.com/mfuu/v2ray/master/clash.yaml",
-        "https://raw.githubusercontent.com/mgit0001/test_clash/refs/heads/main/heima.txt",
-        "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.meta.yml",
-        "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.yml",
-        "https://raw.githubusercontent.com/Pawdroid/Free-servers/refs/heads/main/sub",
-        "https://raw.githubusercontent.com/ripaojiedian/freenode/main/clash",
-        "https://raw.githubusercontent.com/shahidbhutta/Clash/refs/heads/main/Router",
-        "https://raw.githubusercontent.com/skka3134/Free-servers/refs/heads/main/README.md",
-        "https://raw.githubusercontent.com/snakem982/proxypool/main/source/clash-meta.yaml",
-        "https://raw.githubusercontent.com/vxiaov/free_proxies/main/clash/clash.provider.yaml",
-        "https://raw.githubusercontent.com/xiaoji235/airport-free/refs/heads/main/clash/naidounode.txt",
-        "https://raw.githubusercontent.com/zhangkaiitugithub/passcro/main/speednodes.yaml",
-        "https://raw.githubusercontent.com/aiboboxx/clashfree/refs/heads/main/clash.yml",
-        "https://raw.githubusercontent.com/ljlfct01/ljlfct01.github.io/refs/heads/main/节点",
-        "https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/LogInfo.txt",
-        "https://github.com/mahdibland/V2RayAggregator/raw/refs/heads/master/Eternity.yml",
-        "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/refs/heads/master/LogInfo.txt",
-        "https://SOS.CMLiussss.net/auto",
-        "https://sub.fqzsnai.ggff.net/auto",
-        "https://sub.mikeone.ggff.net/sub?token=6e300fe82f12874e439b76693aa179fb",
-        "https://sub.reajason.eu.org/clash.yaml",
-        "https://v1.mk/HuaplNe",
-        "https://www.freeclashnode.com/uploads/{Y}/{m}/0-{Ymd}.yaml",
-        "https://www.freeclashnode.com/uploads/{Y}/{m}/1-{Ymd}.yaml",
-        "https://zrf.zrf.me/zrf"
-    ]
-    work(links, check=True, only_check=False, allowed_types=["ss", "hysteria2", "hy2", "vless", "vmess", "trojan"])
+    # 订阅链接来自 input/*.txt（公开源，见 input/subscriptions.txt）
+    # 和 CLASHFORGE_PRIVATE_SUBSCRIPTIONS / *_private.txt（付费源，不进仓库），
+    # 这里不再硬编码任何订阅链接。
+    work([], check=True, only_check=False, allowed_types=["ss", "hysteria2", "hy2", "vless", "vmess", "trojan"])

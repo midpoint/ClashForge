@@ -42,6 +42,8 @@ jobs:
         env:
           # 提高 api.github.com 的调用配额（匿名 60 次/小时，共享 runner IP 很容易 403）
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # 付费/私密订阅放在仓库 Secret 里，不写进任何文件；未配置时为空，脚本自动跳过
+          CLASHFORGE_PRIVATE_SUBSCRIPTIONS: ${{ secrets.CLASHFORGE_PRIVATE_SUBSCRIPTIONS }}
 
       - name: Commit and push file
         run: |

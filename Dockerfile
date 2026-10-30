@@ -8,7 +8,7 @@ ADD ClashForge.py .
 ADD clash-linux .
 ADD requirements.txt .
 ADD WebUI.py .
-RUN mkdir input
+ADD input/subscriptions.txt ./input/subscriptions.txt
 
 # 安装依赖
 RUN pip3 install -r requirements.txt && \

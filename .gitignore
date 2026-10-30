@@ -9,3 +9,10 @@ clash-linux
 clash-darwin
 clash.exe
 mihomo-*.gz
+
+# 付费/私密订阅：只允许公开源进仓库
+input/*_private.txt
+input/*secret*.txt
+input/*.yaml
+input/*.yml
+!input/subscriptions.txt

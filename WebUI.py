@@ -8,7 +8,6 @@ import pandas as pd
 import yaml
 import requests
 import json
-import glob
 import streamlit.components.v1 as components
 
 # 导入ClashForge模块
@@ -17,7 +16,7 @@ from ClashForge import (
     filter_by_types_alt, read_txt_files, read_yaml_files,
     start_clash, proxy_clean, kill_clash,
     ClashConfig, download_and_extract_latest_release,
-    upload_and_generate_urls
+    upload_and_generate_urls, TIMEOUT
 )
 
 def capture_output(func, *args, **kwargs):
@@ -143,80 +142,6 @@ def show_scrolling_tips():
     </div>
     """, unsafe_allow_html=True)
 
-# 完善配置文件清理函数
-def cleanup_config_files():
-    """清理所有clash配置文件，包括带有多重后缀的文件"""
-    settings = load_settings()
-    settings["delays"] = []
-    settings["speed"] = {
-        "results": [],
-        "group_name": "",
-        "node_count": 0
-    }
-    settings["subscription_links"] = {}  # 清空订阅链接
-    save_settings(settings)
-    # 清理所有clash_config开头的配置文件
-    config_files = glob.glob("clash_config*")
-    cleaned_count = 0
-    
-    for file_path in config_files:
-        try:
-            os.remove(file_path)
-            cleaned_count += 1
-        except Exception as e:
-            print(f"删除文件 {file_path} 失败: {str(e)}")
-    
-    return cleaned_count
-
-# 去重函数
-def remove_duplicate_proxies(config):
-    """移除配置中的重复代理节点并更新代理组"""
-    if not config or "proxies" not in config:
-        return config
-    
-    # 第一步：去除proxies列表中的重复节点
-    unique_proxies = []
-    proxy_names = set()
-    duplicate_count = 0
-    
-    for proxy in config["proxies"]:
-        if "name" in proxy and proxy["name"] not in proxy_names:
-            proxy_names.add(proxy["name"])
-            unique_proxies.append(proxy)
-        else:
-            duplicate_count += 1
-    
-    config["proxies"] = unique_proxies
-    
-    # 第二步：处理proxy-groups中的重复节点引用
-    if "proxy-groups" in config:
-        for group in config["proxy-groups"]:
-            if "proxies" in group:
-                # 为每个组去重
-                unique_group_proxies = []
-                added_proxies = set()
-                group_duplicate_count = 0
-                
-                for proxy_name in group["proxies"]:
-                    # 如果节点名称不在已添加集合中，且是DIRECT/REJECT或存在于主proxies列表中
-                    if proxy_name not in added_proxies:
-                        if (proxy_name in ["DIRECT", "REJECT"] or 
-                            proxy_name in proxy_names or
-                            proxy_name in [g["name"] for g in config["proxy-groups"] if "name" in g]):
-                            unique_group_proxies.append(proxy_name)
-                            added_proxies.add(proxy_name)
-                    else:
-                        group_duplicate_count += 1
-                
-                if group_duplicate_count > 0:
-                    print(f"从组 '{group['name']}' 中移除了 {group_duplicate_count} 个重复节点引用")
-                group["proxies"] = unique_group_proxies
-    
-    if duplicate_count > 0:
-        print(f"从主节点列表中移除了 {duplicate_count} 个重复节点")
-    
-    return config
-
 # 设置文件路径
 SETTINGS_FILE = "settings.json"
 
@@ -243,12 +168,19 @@ def save_settings(settings):
     except Exception as e:
         print(f"保存设置文件出错: {e}")
 
+# 局部更新设置：先读最新内容再写回，避免用旧字典覆盖其他键
+def update_settings(**kwargs):
+    settings = load_settings()
+    settings.update(kwargs)
+    save_settings(settings)
+    return settings
+
 # 保存测速结果
 def save_speed_test_results(results, group_name, node_count):
     try:
         settings = load_settings()
         speed = {
-            "results": results, 
+            "results": results,
             "group_name": group_name,
             "node_count": node_count
         }
@@ -270,34 +202,60 @@ def load_speed_test_results():
 
 # 自定义配置生成函数
 def custom_generate_clash_config(links, nodes=None):
-    """包装generate_clash_config函数"""
-    # 先清理所有旧配置文件
-    cleanup_config_files()
-    
-    # 调用原始函数生成配置
-    result = capture_output(generate_clash_config,links,nodes)
-    
+    """生成新配置；失败时恢复旧配置，避免一次拉取失败把可用配置删掉"""
+    config_files = ("clash_config.yaml", "clash_config.yaml.json")
+    backups = {}
+    for name in config_files:
+        if os.path.exists(name):
+            with open(name, 'rb') as f:
+                backups[name] = f.read()
+
+    try:
+        result = capture_output(generate_clash_config, links, nodes or [])
+    except Exception:
+        for name, data in backups.items():
+            with open(name, 'wb') as f:
+                f.write(data)
+        raise
+
+    # 生成失败时 generate_clash_config 不会写文件，恢复旧配置
+    if not os.path.exists("clash_config.yaml") and backups:
+        for name, data in backups.items():
+            with open(name, 'wb') as f:
+                f.write(data)
+        print("新配置未生成，已恢复上一次的配置文件")
+    elif os.path.exists("clash_config.yaml"):
+        # 配置已更新，之前的订阅链接失效
+        update_settings(subscription_links={})
+
     return result
 
 
+# 本地 mihomo 的 HTTP 代理，测速必须走它才能测到节点本身
+LOCAL_PROXIES = {
+    "http": "http://127.0.0.1:7890",
+    "https": "http://127.0.0.1:7890",
+}
+
+
 def test_proxy_speed(proxy_name, test_url="https://speed.cloudflare.com/__down?bytes=100000000", timeout=5):
-    """测试代理下载速度"""
+    """测试代理下载速度（走本地 mihomo 代理）"""
     try:
         print(f"开始测试节点: {proxy_name}")
-        
+
         # 测试延迟
         start_time = time.time()
         delay_url = "https://www.gstatic.com/generate_204"
-        resp = requests.get(delay_url, timeout=3)  # 延迟测试固定用3秒超时
+        requests.get(delay_url, timeout=TIMEOUT, proxies=LOCAL_PROXIES)  # 延迟测试固定用3秒超时
         delay = int((time.time() - start_time) * 1000)  # 毫秒
-        
+
         # 测试下载速度 (使用指定的时间段)
         start_time = time.time()
         total_length = 0
         download_time = 0
-        
+
         # 使用流式请求，这样我们可以控制下载时间
-        with requests.get(test_url, stream=True, timeout=10) as resp:
+        with requests.get(test_url, stream=True, timeout=10, proxies=LOCAL_PROXIES) as resp:
             if resp.status_code != 200:
                 print(f"测速请求失败: {resp.status_code}")
                 return {"speed": 0, "delay": delay}
@@ -381,13 +339,26 @@ def _stop_clash(rerun=True):
                 st.rerun()
         except Exception as e:
             print(f"停止 Clash 失败: {str(e)}")
-    
+
     # 如果进程对象不可用，尝试使用 PID
     kill_clash()
     st.session_state.clash_process = None
     st.session_state.clash_running = False
     if rerun:
         st.rerun()
+
+def _reconcile_clash_state():
+    """mihomo 可能自行崩溃；发现进程已退出时同步刷新界面状态"""
+    if not st.session_state.clash_running:
+        return
+    proc = st.session_state.clash_process
+    if proc is not None and proc.poll() is not None:
+        st.session_state.clash_process = None
+        st.session_state.clash_running = False
+    elif proc is None and not is_clash_running():
+        st.session_state.clash_running = False
+
+_reconcile_clash_state()
 
 # 合并数据
 def merge_node_data(data, delays):
@@ -554,9 +525,8 @@ with tab1:
     def on_text_change():
         # 当文本区域值发生变化时被调用
         links_list = [link.strip() for link in st.session_state.proxy_links_input.split("\n") if link.strip()]
-        settings["proxy_links"] = links_list
-        # 自动保存到设置文件
-        save_settings(settings)
+        # 只更新 proxy_links，避免用旧字典覆盖其他设置
+        update_settings(proxy_links=links_list)
     
     # 创建文本输入并绑定到会话状态和回调函数
     proxy_links = st.text_area(
@@ -681,8 +651,6 @@ with tab1:
         _stop_clash()
     if st.session_state.show_greeting:
         st.session_state.show_greeting = False
-        # 清理所有旧配置文件
-        cleanup_config_files()
         # 重新加载设置，确保使用最新保存的链接
         settings = load_settings()
         links = [link.strip() for link in settings["proxy_links"] if link.strip()]
@@ -736,14 +704,12 @@ with tab1:
                         progress_bar.progress(0.7)
                         try:
                             switch_proxy('DIRECT')
-                            st.session_state.delays = capture_output(asyncio.run, proxy_clean())
-                            settings["delays"] = st.session_state.delays
-                            save_settings(settings)
+                            st.session_state.delays = capture_output(asyncio.run, proxy_clean()) or []
+                            update_settings(delays=st.session_state.delays)
                         except Exception as e:
                             print(f"proxy_clean 失败: {str(e)}")
                             st.session_state.delays = []
-                            settings["delays"] = []
-                            save_settings(settings)
+                            update_settings(delays=[])
                         finally:
                             switch_proxy('DIRECT')
                     # 完成
@@ -916,18 +882,14 @@ with tab2:
                                             "延迟 (ms)": result.get("delay", 0)
                                         })
                                         sorted_proxy_names.append(result["name"])
-                                    # 排序好的节点名放入clash_config.yaml的group-proxies
-                                    new_list = sorted_proxy_names.copy()
-                                    added_elements = set(new_list)
-                                    group_proxies = config.get_group_proxies(selected_group)
-                                    for item in group_proxies:
-                                        if item not in added_elements:
-                                            new_list.append(item)
-                                            added_elements.add(item) 
-                                    for group_name in group_names:
-                                        for group in config.proxy_groups:
-                                            if group["name"] == group_name:
-                                                group["proxies"] = new_list
+                                    # 只重排当前测速组的节点，其他组保持原样
+                                    group = next((g for g in config.proxy_groups
+                                                  if g["name"] == selected_group), None)
+                                    if group is not None:
+                                        original = group.get("proxies", [])
+                                        ordered = [n for n in sorted_proxy_names if n in original]
+                                        rest = [n for n in original if n not in ordered]
+                                        group["proxies"] = ordered + rest
                                     config.save()
 
                                     # 将结果存储到会话状态
@@ -1202,10 +1164,11 @@ with tab3:
             file_type = "yaml" if selected_config.endswith(".yaml") else "json"
             
             edited_content = st.text_area(
-                "配置内容（直接编辑）", 
+                "配置内容（直接编辑）",
                 value=config_content,
                 height=500,
-                key="config_editor"
+                # 用文件名做 key：切换文件时自动加载对应内容，而不是沿用上一个文件
+                key=f"config_editor_{selected_config}"
             )
             
             # 尝试验证YAML/JSON格式
@@ -1280,27 +1243,24 @@ with tab3:
                     # 处理保存按钮点击
                     if save_clicked:
                         try:
-                            # 额外的格式化处理
-                            if file_type == "yaml" and is_valid:
-                                # 将YAML重新格式化保存
-                                yaml_data = yaml.safe_load(edited_content)
+                            # 解析后同时写 yaml 与 json，避免两份配置分叉
+                            if file_type == "yaml":
+                                data = yaml.safe_load(edited_content)
                                 with open(selected_config, 'w', encoding='utf-8') as f:
-                                    yaml.dump(yaml_data, f, default_flow_style=False, sort_keys=False, allow_unicode=True)
-                            elif file_type == "json" and is_valid:
-                                # 将JSON重新格式化保存
-                                json_data = json.loads(edited_content)
-                                with open(selected_config, 'w', encoding='utf-8') as f:
-                                    json.dump(json_data, f, ensure_ascii=False, indent=2)
+                                    yaml.dump(data, f, default_flow_style=False, sort_keys=False, allow_unicode=True)
+                                with open(f'{selected_config}.json', 'w', encoding='utf-8') as f:
+                                    json.dump(data, f, ensure_ascii=False, indent=2)
                             else:
-                                # 直接保存文本
+                                data = json.loads(edited_content)
                                 with open(selected_config, 'w', encoding='utf-8') as f:
-                                    f.write(edited_content)
-                            
+                                    json.dump(data, f, ensure_ascii=False, indent=2)
+                                yaml_path = selected_config[:-5] if selected_config.endswith('.json') else f'{selected_config}.yaml'
+                                with open(yaml_path, 'w', encoding='utf-8') as f:
+                                    yaml.dump(data, f, default_flow_style=False, sort_keys=False, allow_unicode=True)
+
                             # 清空订阅链接，因为配置已经修改
-                            settings = load_settings()
-                            settings["subscription_links"] = {}
-                            save_settings(settings)
-                            
+                            update_settings(subscription_links={})
+
                             st.success("配置已保存并且订阅链接已重置")
                             st.rerun()  # 重新加载页面以反映变化
                         except Exception as e:

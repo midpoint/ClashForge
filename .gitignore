@@ -3,6 +3,12 @@ __pycache__/
 .venv/
 venv/
 
+# uv 本地测试环境（uv init 生成，不入库）
+.python-version
+pyproject.toml
+uv.lock
+/src/
+
 # 运行时生成/下载的产物
 clash_config.yaml.json
 clash-linux

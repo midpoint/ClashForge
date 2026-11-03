@@ -26,6 +26,7 @@ import zipfile
 import gzip
 import shutil
 import platform
+import tempfile
 import os
 import argparse
 from datetime import datetime
@@ -1757,6 +1758,76 @@ def deduplicate_proxies(proxies_list):
     return unique_proxies
 
 
+class _QuotedString(str):
+    """YAML 中强制加引号的字符串，避免被 mihomo 的 YAML 解析器当成数字。"""
+
+
+def _represent_quoted_string(dumper, data):
+    return dumper.represent_scalar('tag:yaml.org,2002:str', str(data), style="'")
+
+
+# yaml.dump 默认使用 Dumper；SafeDumper 单独注册，保证两种写法行为一致
+yaml.add_representer(_QuotedString, _represent_quoted_string)
+yaml.add_representer(_QuotedString, _represent_quoted_string, Dumper=yaml.SafeDumper)
+
+
+_HEX_RE = re.compile(r'^[0-9a-fA-F]+$')
+
+
+def normalize_reality_short_id(value):
+    """规整 REALITY short-id，返回强制加引号的十六进制字符串。
+
+    mihomo 用 Go 的 YAML 解析器，`short-id: 08` 会被读成数字 8，
+    转成字符串 "8" 后长度为奇数，报 "invalid REALITY short ID"。
+    PyYAML 不把 08 当成整数，生成 YAML 时不会自动加引号，所以这里显式处理。
+    """
+    if value is None:
+        return value
+    text = str(value).strip()
+    if _HEX_RE.fullmatch(text) and len(text) % 2:
+        text = '0' + text
+    return _QuotedString(text)
+
+
+def normalize_reality_options(config):
+    """规整配置中所有 REALITY short-id，原地修改并返回 config。"""
+    for proxy in config.get('proxies') or []:
+        if not isinstance(proxy, dict):
+            continue
+        reality = proxy.get('reality-opts')
+        if isinstance(reality, dict) and 'short-id' in reality:
+            reality['short-id'] = normalize_reality_short_id(reality['short-id'])
+    return config
+
+
+def load_config_file(config_path):
+    """按扩展名读取 YAML/JSON 配置。"""
+    with open(config_path, 'r', encoding='utf-8') as file:
+        if config_path.endswith('.json'):
+            return json.load(file)
+        return yaml.safe_load(file)
+
+
+def prepare_mihomo_config(config_path):
+    """生成一份供 mihomo 使用的临时 YAML，不改动源配置。
+
+    远端 CI 生成的 clash_config.yaml 可能带有 `short-id: 08` 这样的写法，
+    mihomo 解析失败会拒绝启动。这里提前规整并写到临时文件，调用方负责删除。
+    """
+    config = load_config_file(config_path)
+    if not isinstance(config, dict):
+        raise ValueError(f"配置文件内容不是有效的映射: {config_path}")
+    normalize_reality_options(config)
+    fd, temp_path = tempfile.mkstemp(prefix='clashforge-mihomo-', suffix='.yaml')
+    try:
+        with os.fdopen(fd, 'w', encoding='utf-8') as file:
+            yaml.dump(config, file, allow_unicode=True, sort_keys=False)
+    except Exception:
+        os.unlink(temp_path)
+        raise
+    return temp_path
+
+
 # 出现节点name相同时，加上4位随机字符串
 def add_random_suffix(name, existing_names):
     # 生成4位随机字符串
@@ -2122,6 +2193,7 @@ def generate_clash_config(links, load_nodes):
         if group["name"] in ("自动选择", "故障转移", "手动选择"):
             group["proxies"] = list(group_names)
     config["proxies"] = final_nodes
+    normalize_reality_options(config)
 
     if config["proxies"]:
         global CONFIG_FILE
@@ -2176,7 +2248,6 @@ def ensure_executable(file_path):
 # 处理 Clash 配置错误，解析错误信息并更新配置文件
 def handle_clash_error(error_message, config_file_path):
     start_time = time.time()
-    config_file_path = f'{config_file_path}.json' if os.path.exists(f'{config_file_path}.json') else config_file_path
 
     proxy_index_match = re.search(r'proxy (\d+):', error_message)
     if not proxy_index_match:
@@ -2185,19 +2256,25 @@ def handle_clash_error(error_message, config_file_path):
     problem_index = int(proxy_index_match.group(1))
 
     try:
-        # 读取配置文件
-        with open(config_file_path, 'r', encoding='utf-8') as file:
-            config = json.load(file)
+        # 按扩展名读取：--check-only 传入的是 YAML，不能再按 JSON 解析
+        config = load_config_file(config_file_path)
+        proxies = config.get('proxies') or []
+        if not 0 <= problem_index < len(proxies):
+            print(f"配置修复失败：proxy 索引 {problem_index} 超出范围（共 {len(proxies)} 个节点）")
+            return False
 
         # 获取要删除的节点的name
-        problem_proxy_name = config['proxies'][problem_index]['name']
+        problem_proxy_name = proxies[problem_index].get('name', f'#{problem_index}')
         # 删除问题节点
-        del config['proxies'][problem_index]
+        del proxies[problem_index]
 
         # 从所有proxy-groups中删除该节点引用（逐组独立修改，不要共用同一个列表对象）
         for group in config.get("proxy-groups", []):
             if problem_proxy_name in group.get("proxies", []):
                 group["proxies"] = [p for p in group["proxies"] if p != problem_proxy_name]
+
+        # 顺手规整其余 REALITY short-id，避免下次又因 `short-id: 08` 这类写法失败
+        normalize_reality_options(config)
 
         # 同时修正 yaml 副本，避免两份配置分叉（WebUI/下次生成读的是 yaml）
         if config_file_path.endswith('.json'):
@@ -2698,6 +2775,7 @@ class ClashConfig:
     def save(self):
         """保存配置到文件（yaml 与 json 同步写入）"""
         yaml_cfg = self.yaml_path
+        normalize_reality_options(self.config)
         try:
             with open(yaml_cfg, 'w', encoding='utf-8') as f:
                 yaml.dump(self.config, f, allow_unicode=True, sort_keys=False)
@@ -2736,6 +2814,7 @@ def generate_featured_config(config: 'ClashConfig', valid_names: List[str],
         other_members = [m for m in members if m not in all_node_names]
         group["proxies"] = node_members + other_members
 
+    normalize_reality_options(featured)
     try:
         with open(output, 'w', encoding='utf-8') as f:
             yaml.dump(featured, f, allow_unicode=True, sort_keys=False)
@@ -3305,16 +3384,22 @@ def work(links, check=False, allowed_types=[], only_check=False, speed_test=Fals
 
         if check or only_check:
             clash_process = None
+            mihomo_config = None
             try:
+                # --check-only 先规整 REALITY short-id 并写临时 YAML：
+                # 远端生成的配置里 `short-id: 08` 会让 mihomo 直接拒绝启动，
+                # 同时避免修复过程中覆盖源配置
+                if only_check:
+                    mihomo_config = prepare_mihomo_config(CONFIG_FILE)
                 # 启动clash
                 print(f"===================启动clash并初始化配置======================")
                 # 仅检测时强制读 yaml，忽略上次运行残留的 clash_config.yaml.json
-                clash_process = start_clash(config_path=CONFIG_FILE if only_check else None)
+                clash_process = start_clash(config_path=mihomo_config if only_check else None)
                 # 切换节点到'节点选择-DIRECT'
                 switch_proxy('DIRECT')
                 # 仅检测时只输出 CN 专属精选，不覆盖 clash_config.yaml / clash_config_featured.yaml
                 asyncio.run(proxy_clean(
-                    CONFIG_FILE if only_check else None,
+                    mihomo_config if only_check else None,
                     save_config=not only_check,
                     featured_output=CN_FEATURED_FILE if only_check else FEATURED_FILE,
                     speed_test=speed_test,
@@ -3327,6 +3412,11 @@ def work(links, check=False, allowed_types=[], only_check=False, speed_test=Fals
                 print(f'关闭Clash API')
                 if clash_process is not None:
                     clash_process.kill()
+                if mihomo_config:
+                    try:
+                        os.unlink(mihomo_config)
+                    except OSError:
+                        pass
 
     except KeyboardInterrupt:
         print("\n用户中断执行")

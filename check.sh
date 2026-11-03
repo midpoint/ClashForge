@@ -46,17 +46,34 @@ if [ -f "$ROOT/clash-linux" ]; then
 fi
 
 cd "$WORKTREE"
+# 先删掉远端仓库里已提交的旧结果：测试失败时文件不存在，脚本会报错退出，
+# 而不是把旧文件误当成本轮结果
+rm -f clash_config_featured_cn.yaml clash_config_featured_speed_cn.yaml
+
 "$PY" ClashForge.py --check-only --speed-test
 
-CN_FILES=()
-for f in clash_config_featured_cn.yaml clash_config_featured_speed_cn.yaml; do
-  if [ -s "$f" ]; then
-    CN_FILES+=("$f")
-  fi
-done
-if [ ${#CN_FILES[@]} -eq 0 ]; then
-  echo "错误：未生成 CN 精选订阅"
+LATENCY_OK=1
+SPEED_OK=1
+if [ ! -s clash_config_featured_cn.yaml ]; then
+  echo "错误：未生成 CN 延迟精选 clash_config_featured_cn.yaml"
+  LATENCY_OK=0
+fi
+if [ ! -s clash_config_featured_speed_cn.yaml ]; then
+  echo "警告：未生成 CN 测速精选 clash_config_featured_speed_cn.yaml"
+  SPEED_OK=0
+fi
+if [ "$LATENCY_OK" != 1 ]; then
   exit 1
+fi
+
+# 测速失败时恢复旧的测速文件，避免工作区残留删除状态影响后面的 rebase
+if [ "$SPEED_OK" != 1 ]; then
+  git checkout -- clash_config_featured_speed_cn.yaml 2>/dev/null || true
+fi
+
+CN_FILES=(clash_config_featured_cn.yaml)
+if [ "$SPEED_OK" = 1 ]; then
+  CN_FILES+=(clash_config_featured_speed_cn.yaml)
 fi
 
 git add "${CN_FILES[@]}"
@@ -83,3 +100,7 @@ if [ "$ok" != 1 ]; then
   exit 1
 fi
 echo "已推送：${CN_FILES[*]}"
+# 测速是可选增强：Cloudflare 限流等临时失败不影响延迟精选，保留远端旧测速文件
+if [ "$SPEED_OK" != 1 ]; then
+  echo "警告：本轮未生成测速精选，远端旧文件保持不变"
+fi

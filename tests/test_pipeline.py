@@ -1,4 +1,6 @@
 import asyncio
+import json
+import os
 import threading
 import time
 
@@ -187,9 +189,11 @@ def test_template_groups_use_configured_test_url(cf):
     assert urls == {cf.TEST_URL}
 
 
-def test_work_check_only_outputs_cn_featured_only(cf, monkeypatch):
+def test_work_check_only_outputs_cn_featured_only(cf, monkeypatch, tmp_path):
     calls = {}
+    sanitized = str(tmp_path / "mihomo.yaml")
     monkeypatch.setattr(cf, "SPEED_TEST_ENABLED", False)
+    monkeypatch.setattr(cf, "prepare_mihomo_config", lambda path: sanitized)
 
     def fake_start_clash(**kwargs):
         calls["start"] = kwargs
@@ -204,9 +208,10 @@ def test_work_check_only_outputs_cn_featured_only(cf, monkeypatch):
 
     cf.work([], check=False, only_check=True)
 
-    assert calls["start"]["config_path"] == cf.CONFIG_FILE
+    # 启动和测试都使用规整后的临时 YAML，不再直接读源配置
+    assert calls["start"]["config_path"] == sanitized
     # --check-only 不覆盖源配置，只输出 CN 精选
-    assert calls["clean"]["config_path"] == cf.CONFIG_FILE
+    assert calls["clean"]["config_path"] == sanitized
     assert calls["clean"]["save_config"] is False
     assert calls["clean"]["featured_output"] == cf.CN_FEATURED_FILE
     assert calls["clean"]["speed_test"] is False
@@ -216,6 +221,7 @@ def test_work_check_only_outputs_cn_featured_only(cf, monkeypatch):
 def test_work_speed_test_passes_cn_speed_output(cf, monkeypatch):
     calls = {}
 
+    monkeypatch.setattr(cf, "prepare_mihomo_config", lambda path: "sanitized.yaml")
     monkeypatch.setattr(cf, "start_clash", lambda **kwargs: None)
     monkeypatch.setattr(cf, "switch_proxy", lambda *a, **k: None)
 
@@ -243,3 +249,64 @@ def test_speed_featured_sorts_and_filters(cf, monkeypatch):
     names = cf.test_speed_featured(["a", "b", "c"], proxy_port=7890, duration=1, budget=10)
 
     assert names == ["c", "a"]
+
+
+def test_normalize_reality_short_id_forces_yaml_string(cf):
+    # mihomo 用 Go YAML：不加引号的 08 会变数字 8，导致奇数长度而解析失败
+    dumped = yaml.safe_dump({"short-id": cf.normalize_reality_short_id("08")})
+    assert "short-id: '08'" in dumped
+    # 奇数长度补零，偶数长度保持不变
+    assert cf.normalize_reality_short_id("8") == "08"
+    assert cf.normalize_reality_short_id("1234") == "1234"
+    assert cf.normalize_reality_short_id(None) is None
+
+
+def test_prepare_mihomo_config_does_not_touch_source(cf, tmp_path):
+    source = tmp_path / "clash_config.yaml"
+    source.write_text(yaml.dump({
+        "proxies": [{
+            "name": "r", "type": "vless", "server": "1.1.1.1", "port": 443,
+            "reality-opts": {"public-key": "k", "short-id": "08"},
+        }],
+        "proxy-groups": [], "rules": ["MATCH,DIRECT"],
+    }, allow_unicode=True), encoding="utf-8")
+    original = source.read_text(encoding="utf-8")
+    assert "short-id: 08" in original
+
+    prepared = cf.prepare_mihomo_config(str(source))
+    try:
+        text = open(prepared, encoding="utf-8").read()
+        assert "short-id: '08'" in text
+        assert yaml.safe_load(text)["proxies"][0]["reality-opts"]["short-id"] == "08"
+    finally:
+        os.unlink(prepared)
+
+    assert source.read_text(encoding="utf-8") == original
+
+
+def test_handle_clash_error_repairs_yaml_without_stale_json(cf, tmp_path):
+    yaml_path = tmp_path / "clash_config.yaml"
+    yaml_path.write_text(yaml.dump({
+        "proxies": [
+            {"name": "a", "type": "ss", "server": "1.1.1.1", "port": 1},
+            {"name": "b", "type": "ss", "server": "2.2.2.2", "port": 2},
+        ],
+        "proxy-groups": [{"name": "g", "type": "select", "proxies": ["a", "b", "DIRECT"]}],
+        "rules": ["MATCH,g"],
+    }, allow_unicode=True), encoding="utf-8")
+    # 残留的 .json 不能劫持 YAML 模式的修复
+    json_path = tmp_path / "clash_config.yaml.json"
+    json_path.write_text(json.dumps({"proxies": [{"name": "old"}]}), encoding="utf-8")
+
+    assert cf.handle_clash_error(
+        "Parse config error: proxy 0: invalid REALITY short ID", str(yaml_path))
+
+    repaired = yaml.safe_load(yaml_path.read_text(encoding="utf-8"))
+    assert [p["name"] for p in repaired["proxies"]] == ["b"]
+    assert repaired["proxy-groups"][0]["proxies"] == ["b", "DIRECT"]
+    assert json.loads(json_path.read_text(encoding="utf-8"))["proxies"][0]["name"] == "old"
+
+    # 越界索引不应误删节点
+    assert cf.handle_clash_error(
+        "Parse config error: proxy 99: invalid REALITY short ID", str(yaml_path)) is False
+    assert len(yaml.safe_load(yaml_path.read_text(encoding="utf-8"))["proxies"]) == 1

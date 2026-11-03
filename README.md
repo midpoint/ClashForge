@@ -123,7 +123,7 @@ GitHub Actions 的 `ubuntu-latest` 运行在境外，测延迟只覆盖「runner
 
 ## 定时任务（每 6 小时境内复测）
 
-仓库根目录的 `check.sh` 会：拉取远端最新的 `clash_config.yaml` → 用本机网络复测 → 生成 `clash_config_featured_cn.yaml` 和 `clash_config_featured_speed_cn.yaml` → 自动提交并推送到远端 main。脚本在临时 worktree 中运行，不受本地未提交改动影响；日志写入仓库根目录的 `check.log`。
+仓库根目录的 `check.sh` 会：拉取远端最新的 `clash_config.yaml` → 用本机网络复测 → 生成 `clash_config_featured_cn.yaml` 和 `clash_config_featured_speed_cn.yaml` → 自动提交并推送到远端 main。脚本在临时 worktree 中运行，不受本地未提交改动影响；日志写入仓库根目录的 `check.log`。测速阶段受 Cloudflare 限流等影响失败时，会保留远端旧的测速精选，延迟精选照常更新。
 
 加入当前用户的 crontab（每 6 小时执行一次，避开整点）：
 

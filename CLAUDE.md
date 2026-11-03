@@ -10,7 +10,8 @@
 - 仅用本机网络复测现有 `clash_config.yaml`：`python3 ClashForge.py --check-only`
   - 只输出 `clash_config_featured_cn.yaml`（境内延迟最低的前 100 个节点）
   - 不覆盖 `clash_config.yaml` / `clash_config_featured.yaml`
-- 定时复测：`check.sh`（crontab `23 */6 * * *`）。它在临时 worktree 中基于 `origin/main` 运行，只把 `clash_config_featured_cn.yaml` 提交并推送；日志写入 `check.log`。
+  - 加 `--speed-test` 会再对延迟前 30 个节点做 5 秒真实下载测速，输出 `clash_config_featured_speed_cn.yaml`
+- 定时复测：`check.sh`（crontab `23 */6 * * *`）。它在临时 worktree 中基于 `origin/main` 运行，把 `clash_config_featured_cn.yaml` 和 `clash_config_featured_speed_cn.yaml` 提交并推送；日志写入 `check.log`。
 
 ## 订阅来源约定
 - 公开订阅：`input/subscriptions.txt`（或 `input/*.txt`），一行一个链接，`#` 开头为注释。

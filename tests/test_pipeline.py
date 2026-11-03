@@ -189,6 +189,7 @@ def test_template_groups_use_configured_test_url(cf):
 
 def test_work_check_only_outputs_cn_featured_only(cf, monkeypatch):
     calls = {}
+    monkeypatch.setattr(cf, "SPEED_TEST_ENABLED", False)
 
     def fake_start_clash(**kwargs):
         calls["start"] = kwargs
@@ -208,3 +209,37 @@ def test_work_check_only_outputs_cn_featured_only(cf, monkeypatch):
     assert calls["clean"]["config_path"] == cf.CONFIG_FILE
     assert calls["clean"]["save_config"] is False
     assert calls["clean"]["featured_output"] == cf.CN_FEATURED_FILE
+    assert calls["clean"]["speed_test"] is False
+    assert calls["clean"]["speed_output"] == cf.CN_SPEED_FEATURED_FILE
+
+
+def test_work_speed_test_passes_cn_speed_output(cf, monkeypatch):
+    calls = {}
+
+    monkeypatch.setattr(cf, "start_clash", lambda **kwargs: None)
+    monkeypatch.setattr(cf, "switch_proxy", lambda *a, **k: None)
+
+    async def fake_proxy_clean(config_path=None, **kwargs):
+        calls["clean"] = kwargs
+
+    monkeypatch.setattr(cf, "proxy_clean", fake_proxy_clean)
+
+    cf.work([], only_check=True, speed_test=True)
+
+    assert calls["clean"]["speed_test"] is True
+    assert calls["clean"]["speed_output"] == cf.CN_SPEED_FEATURED_FILE
+
+
+def test_speed_test_cli_flag(cf):
+    assert cf.parse_args([]).speed_test is False
+    assert cf.parse_args(["--speed-test"]).speed_test is True
+    assert cf.parse_args(["-s"]).speed_test is True
+
+
+def test_speed_featured_sorts_and_filters(cf, monkeypatch):
+    speeds = {"a": 1.5, "b": 0.0, "c": 3.0}
+    monkeypatch.setattr(cf, "measure_proxy_speed", lambda name, **kwargs: speeds[name])
+
+    names = cf.test_speed_featured(["a", "b", "c"], proxy_port=7890, duration=1, budget=10)
+
+    assert names == ["c", "a"]

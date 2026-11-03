@@ -46,14 +46,20 @@ if [ -f "$ROOT/clash-linux" ]; then
 fi
 
 cd "$WORKTREE"
-"$PY" ClashForge.py --check-only
+"$PY" ClashForge.py --check-only --speed-test
 
-if [ ! -s clash_config_featured_cn.yaml ]; then
-  echo "错误：未生成 clash_config_featured_cn.yaml"
+CN_FILES=()
+for f in clash_config_featured_cn.yaml clash_config_featured_speed_cn.yaml; do
+  if [ -s "$f" ]; then
+    CN_FILES+=("$f")
+  fi
+done
+if [ ${#CN_FILES[@]} -eq 0 ]; then
+  echo "错误：未生成 CN 精选订阅"
   exit 1
 fi
 
-git add clash_config_featured_cn.yaml
+git add "${CN_FILES[@]}"
 if git diff --cached --quiet; then
   echo "CN 精选订阅没有变化，无需推送"
   exit 0
@@ -76,4 +82,4 @@ if [ "$ok" != 1 ]; then
   echo "错误：推送 CN 精选订阅失败"
   exit 1
 fi
-echo "已推送 clash_config_featured_cn.yaml"
+echo "已推送：${CN_FILES[*]}"

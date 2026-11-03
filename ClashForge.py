@@ -53,6 +53,21 @@ FETCH_TIMEOUT = (5, 30)
 SPEED_TEST = False
 SPEED_TEST_LIMIT = 5  # 只测试前30个节点的下行速度，每个节点测试5秒
 results_speed = []
+
+# 可选测速精选：对延迟最低的前 N 个节点做真实下载测速，按速度排序输出精选订阅
+#   命令行开关：--speed-test（或环境变量 CLASHFORGE_SPEED_TEST=1）
+SPEED_TEST_ENABLED = os.environ.get('CLASHFORGE_SPEED_TEST', '').strip().lower() in ('1', 'true', 'yes')
+SPEED_TEST_NODES = int(os.environ.get('CLASHFORGE_SPEED_TEST_NODES', 30))
+SPEED_TEST_DURATION = int(os.environ.get('CLASHFORGE_SPEED_TEST_DURATION', 5))
+SPEED_TEST_BUDGET = int(os.environ.get('CLASHFORGE_SPEED_TEST_BUDGET', 900))
+SPEED_TEST_CONNECT_TIMEOUT = int(os.environ.get('CLASHFORGE_SPEED_TEST_CONNECT_TIMEOUT', 10))
+SPEED_TEST_URL = os.environ.get(
+    'CLASHFORGE_SPEED_TEST_URL',
+    'https://speed.cloudflare.com/__down?bytes=50000000',
+)
+SPEED_FEATURED_FILE = os.environ.get('CLASHFORGE_SPEED_FEATURED_FILE', 'clash_config_featured_speed.yaml')
+CN_SPEED_FEATURED_FILE = os.environ.get(
+    'CLASHFORGE_SPEED_FEATURED_CN_FILE', 'clash_config_featured_speed_cn.yaml')
 # 测延迟并发数；家庭宽带/路由器较弱时调低（如 20-30）可减少误判超时
 MAX_CONCURRENT_TESTS = int(os.environ.get('CLASHFORGE_TEST_CONCURRENCY', 100))
 LIMIT = 10000  # 最多保留LIMIT个节点
@@ -2444,6 +2459,20 @@ def switch_proxy(proxy_name='DIRECT'):
         return {"status": "error", "message": str(e)}
 
 
+def select_proxy_member(group_name: str, proxy_name: str) -> bool:
+    """把指定的 select 组切换到某个成员；成功返回 True。"""
+    url = (f"http://{CLASH_API_HOST}:{CLASH_API_PORTS[0]}/proxies/"
+           f"{urllib.parse.quote(group_name, safe='')}")
+    try:
+        response = requests.put(url, json={"name": proxy_name}, timeout=5)
+        if response.status_code == 204:
+            return True
+        print(f"切换 {group_name} -> {proxy_name} 失败: HTTP {response.status_code}")
+    except Exception as e:
+        print(f"切换 {group_name} -> {proxy_name} 失败: {e}")
+    return False
+
+
 # 调用ClashAPI
 class ClashAPI:
     def __init__(self, host: str, ports: List[int], secret: str = ""):
@@ -2681,10 +2710,11 @@ class ClashConfig:
 
 def generate_featured_config(config: 'ClashConfig', valid_names: List[str],
                              limit: int = FEATURED_LIMIT,
-                             output: str = FEATURED_FILE) -> Optional[str]:
-    """取延迟最低的前 limit 个可用节点，生成一份独立可用的精选订阅配置。
+                             output: str = FEATURED_FILE,
+                             sort_label: str = '延迟最低') -> Optional[str]:
+    """取 valid_names 前 limit 个节点，生成一份独立可用的精选订阅配置。
 
-    valid_names 需已按延迟升序排列（apply_results 的返回值即如此）。
+    valid_names 由调用方按需要的顺序排好（延迟升序或速度降序）。
     返回写出的文件路径；没有可用节点时返回 None 且不落盘。
     """
     proxy_by_name = {p.get("name"): p for p in config.config.get("proxies", [])}
@@ -2695,7 +2725,7 @@ def generate_featured_config(config: 'ClashConfig', valid_names: List[str],
 
     all_node_names = set(proxy_by_name)
     featured = copy.deepcopy(config.config)
-    # 节点列表按延迟从低到高排列
+    # 节点列表按调用方给定的顺序排列（延迟升序 / 速度降序）
     featured["proxies"] = [copy.deepcopy(proxy_by_name[name]) for name in top_names]
 
     for group in featured.get("proxy-groups", []):
@@ -2713,7 +2743,7 @@ def generate_featured_config(config: 'ClashConfig', valid_names: List[str],
         print(f"保存精选订阅失败: {e}")
         return None
 
-    print(f"已生成精选订阅 {output}：延迟最低的 {len(top_names)} 个节点")
+    print(f"已生成精选订阅 {output}：{sort_label}的 {len(top_names)} 个节点")
     return output
 
 
@@ -2779,7 +2809,8 @@ async def test_group_proxies(clash_api: ClashAPI, proxies: List[str],
 
 
 async def proxy_clean(config_path: Optional[str] = None, save_config: bool = True,
-                      featured_output: str = FEATURED_FILE):
+                      featured_output: str = FEATURED_FILE, speed_test: bool = False,
+                      speed_output: str = SPEED_FEATURED_FILE):
     # 更新全局配置
     delays = []
     global MAX_CONCURRENT_TESTS, TIMEOUT, CLASH_API_SECRET, LIMIT, CONFIG_FILE
@@ -2872,6 +2903,19 @@ async def proxy_clean(config_path: Optional[str] = None, save_config: bool = Tru
 
             # 单独输出一份只含延迟最低的前 N 个节点的精选订阅
             generate_featured_config(config, valid_names, output=featured_output)
+
+            # 可选：对延迟最低的前 N 个节点做真实下载测速，按速度排序再输出一份精选
+            if speed_test:
+                print('\n===================节点下载测速======================\n')
+                proxy_port = config.config.get('mixed-port') or config.config.get('port', 7890)
+                speed_names = test_speed_featured(valid_names[:SPEED_TEST_NODES], proxy_port)
+                if speed_names:
+                    generate_featured_config(config, speed_names, output=speed_output,
+                                             sort_label='速度最快')
+                else:
+                    print("没有测到有效下载速度，跳过测速精选")
+                # 测速过程中切换过节点选择，恢复为 DIRECT
+                switch_proxy('DIRECT')
 
             # 显示总耗时
             total_time = (datetime.now() - start_time).total_seconds()
@@ -3097,6 +3141,83 @@ def test_proxy_speed(proxy_name):
     return speed / 1024 / 1024  # 返回 MB/s
 
 
+def measure_proxy_speed(proxy_name: str, proxy_port: int = 7890,
+                        duration: int = SPEED_TEST_DURATION,
+                        url: str = SPEED_TEST_URL) -> float:
+    """通过本地代理端口真实下载 duration 秒，返回 MB/s。"""
+    # 节点选择 → 手动选择，再把手动选择切到目标节点；否则请求会走自动选择的节点
+    if not select_proxy_member('节点选择', '手动选择'):
+        return 0.0
+    if not select_proxy_member('手动选择', proxy_name):
+        return 0.0
+    proxies = {
+        "http": f"http://127.0.0.1:{proxy_port}",
+        "https": f"http://127.0.0.1:{proxy_port}",
+    }
+    start = None
+    total = 0
+    for attempt in (1, 2):
+        start = None
+        total = 0
+        try:
+            with requests.get(url, stream=True, proxies=proxies,
+                              headers={'Cache-Control': 'no-cache'},
+                              timeout=(SPEED_TEST_CONNECT_TIMEOUT, max(5, duration))) as response:
+                if response.status_code == 429 and attempt == 1:
+                    print(f"\n[限速] {proxy_name} 返回 429，3s 后重试")
+                    time.sleep(3)
+                    continue
+                response.raise_for_status()
+                # 连接/TLS 握手不计入下载时间，只统计拿到响应头之后的吞吐
+                start = time.monotonic()
+                for chunk in response.iter_content(chunk_size=64 * 1024):
+                    total += len(chunk)
+                    if time.monotonic() - start >= duration:
+                        break
+            break
+        except requests.HTTPError as e:
+            status = e.response.status_code if e.response is not None else None
+            if status == 429 and attempt == 1:
+                print(f"\n[限速] {proxy_name} 返回 429，3s 后重试")
+                time.sleep(3)
+                continue
+            print(f"\n测速失败 {proxy_name}: {mask_error(e)}")
+            break
+        except Exception as e:
+            print(f"\n测速失败 {proxy_name}: {mask_error(e)}")
+            break
+    if start is None:
+        return 0.0
+    elapsed = time.monotonic() - start
+    return total / elapsed / 1024 / 1024 if elapsed > 0 else 0.0
+
+
+def test_speed_featured(proxy_names: List[str], proxy_port: int = 7890,
+                        duration: int = SPEED_TEST_DURATION,
+                        budget: int = SPEED_TEST_BUDGET) -> List[str]:
+    """逐个测下载速度（共享一个代理选择器，只能串行），返回按速度降序的节点名。"""
+    deadline = time.monotonic() + budget
+    results = []
+    total = len(proxy_names)
+    for index, name in enumerate(proxy_names, 1):
+        remaining = deadline - time.monotonic()
+        if remaining < 1:
+            print(f"\n[时间预算] 测速预算 {budget}s 已用完，跳过剩余 {total - index + 1} 个节点")
+            break
+        print(f"\r正在测速节点【{index}/{total}】: {name}", flush=True, end='')
+        each = max(1, int(min(duration, remaining)))
+        speed = measure_proxy_speed(name, proxy_port=proxy_port, duration=each, url=SPEED_TEST_URL)
+        results.append((name, speed))
+    print("\r" + " " * 60 + "\r", end='')
+
+    valid = sorted((item for item in results if item[1] > 0), key=lambda item: item[1], reverse=True)
+    if valid:
+        print("节点速度统计:")
+        for i, (name, speed) in enumerate(valid[:LIMIT], 1):
+            print(f"{i}. {name}: {speed:.2f} MB/s")
+    return [name for name, _ in valid]
+
+
 def upload_and_generate_urls(file_path=CONFIG_FILE):
     # api_url = "https://catbox.moe/user/api.php"
     # api_url = "https://f2.252035.xyz/user/api.php"
@@ -3170,7 +3291,8 @@ def upload_and_generate_urls(file_path=CONFIG_FILE):
     return result
 
 
-def work(links, check=False, allowed_types=[], only_check=False):
+def work(links, check=False, allowed_types=[], only_check=False, speed_test=False):
+    speed_test = speed_test or SPEED_TEST_ENABLED
     try:
         if not only_check:
             load_nodes = read_yaml_files(folder_path=INPUT)
@@ -3195,6 +3317,8 @@ def work(links, check=False, allowed_types=[], only_check=False):
                     CONFIG_FILE if only_check else None,
                     save_config=not only_check,
                     featured_output=CN_FEATURED_FILE if only_check else FEATURED_FILE,
+                    speed_test=speed_test,
+                    speed_output=CN_SPEED_FEATURED_FILE if only_check else SPEED_FEATURED_FILE,
                 ))
                 print(f'批量检测完毕')
             except Exception as e:
@@ -3219,6 +3343,10 @@ def parse_args(argv=None):
         help='跳过抓取和生成，仅用本机网络对现有 clash_config.yaml 重新测延迟、'
              '移除失效节点并重排序，输出 CN 精选订阅 clash_config_featured_cn.yaml'
              '（不覆盖 clash_config.yaml / clash_config_featured.yaml）')
+    parser.add_argument(
+        '-s', '--speed-test', action='store_true',
+        help='对延迟最低的前 N 个节点做真实下载测速，额外输出按速度排序的精选订阅'
+             '（检查模式为 clash_config_featured_speed_cn.yaml）')
     return parser.parse_args(argv)
 
 
@@ -3228,4 +3356,5 @@ if __name__ == '__main__':
     # 这里不再硬编码任何订阅链接。
     args = parse_args()
     work([], check=not args.check_only, only_check=args.check_only,
+         speed_test=args.speed_test,
          allowed_types=["ss", "hysteria2", "hy2", "vless", "vmess", "trojan"])

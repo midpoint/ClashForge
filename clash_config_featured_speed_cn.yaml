@@ -32,67 +32,13 @@ dns:
     - 240.0.0.0/4
     - 0.0.0.0/32
 proxies:
-- name: 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
-  port: 3128
-  server: 119.28.24.235
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇫🇷FR_16|6.7MB/s|R002-260618 [a676be7daa09]
-  port: 443
-  server: 172.64.69.89
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: ios
-  encryption: none
-  name: 🇫🇷FR_88|1.3MB/s|R002-260618 [5e89fefb461a]
-  network: ws
-  packet-encoding: xudp
-  port: 2087
-  server: 104.18.1.1
-  servername: 1.proxy2.us.ci.
-  sub_tag: R002-260618
-  tls: true
-  type: vless
-  udp: true
-  uuid: 4859c235-2530-4062-9a0b-ea859cbbf861
-  ws-opts:
-    early-data-header-name: Sec-WebSocket-Protocol
-    headers:
-      Host: 1.proxy2.us.ci.
-    max-early-data: 2560
-    path: /
-- name: 🇳🇿NZ_81
+- name: 🇳🇿NZ_80
   type: ss
-  server: 202.50.253.45
+  server: 202.50.253.99
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
-- client-fingerprint: chrome
-  name: U⚪🏳️ukn_dokng.com_79f3708c
-  network: ws
-  password: HutaoCloud
-  port: 11543
-  server: 185.220.238.77
-  skip-cert-verify: true
-  sni: 185.220.238.77
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36
-        (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36
-    path: /api
 - name: C🟠🇯🇵hos[🎬📺🎭🎪]_dokng.com_55d2834c
   password: 'null'
   port: 40583
@@ -101,28 +47,29 @@ proxies:
   tls: true
   type: http
   username: 'null'
-- name: 🇳🇿NZ_78
-  type: ss
-  server: 202.50.253.18
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-- name: 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
-  password: None
-  port: 443
-  server: 129.153.93.183
+- name: 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
+  port: 3128
+  server: 119.28.24.235
   skip-cert-verify: true
   sub_tag: P002-260618
   tls: true
   type: http
   udp: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-aTI9
+- name: 🇳🇿NZ_85
   type: ss
-  server: 13.140.83.153
-  port: 1080
-  cipher: chacha20-ietf-poly1305
-  password: 4IxReHOucKiwvosjoRXlLLpu20Pso-rZ
+  server: 202.50.253.63
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+- name: 🇳🇱NL_156|904KB/s|R002-260618 [511bc38da784]
+  port: 443
+  server: 185.140.209.235
+  skip-cert-verify: true
+  sni: 482c8436a1f7c908b48a1757abb5dd79-ce85c45206570905.apache-iv.com
+  sub_tag: R002-260618
+  tls: true
+  type: http
   udp: true
 - name: 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
   password: gs4BXwT6SW
@@ -133,16 +80,7 @@ proxies:
   type: http
   udp: true
   username: fQ67Dpe5dU
-- name: 🇺🇸US_275|805KB/s|R002-260618 [f3757137fc03]
-  port: 443
-  server: 129.153.93.183
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇩🇪DE_144|1.4MB/s|R002-260618 [97393c4aef2c]
-  password: 'null'
+- name: 🇩🇪DE_37|4.4MB/s|R002-260618 [008d816457ca]
   port: 443
   server: 116.202.172.99
   skip-cert-verify: true
@@ -150,7 +88,19 @@ proxies:
   tls: true
   type: http
   udp: true
-  username: 'null'
+- name: 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
+  password: None
+  port: 443
+  server: 129.153.93.183
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: D🔴🇯🇵hos[🤖📺🎭🎪]_dokng.com_1b81f86d
+  port: 10808
+  server: 101.36.104.46
+  type: socks5
 proxy-groups:
 - name: 节点选择
   type: select
@@ -163,18 +113,15 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
-  - 🇫🇷FR_16|6.7MB/s|R002-260618 [a676be7daa09]
-  - 🇫🇷FR_88|1.3MB/s|R002-260618 [5e89fefb461a]
-  - 🇳🇿NZ_81
-  - U⚪🏳️ukn_dokng.com_79f3708c
+  - 🇳🇿NZ_80
   - C🟠🇯🇵hos[🎬📺🎭🎪]_dokng.com_55d2834c
-  - 🇳🇿NZ_78
-  - 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
-  - 🔥Join+Telegram:@Farah_VPN🟣-aTI9
+  - 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
+  - 🇳🇿NZ_85
+  - 🇳🇱NL_156|904KB/s|R002-260618 [511bc38da784]
   - 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
-  - 🇺🇸US_275|805KB/s|R002-260618 [f3757137fc03]
-  - 🇩🇪DE_144|1.4MB/s|R002-260618 [97393c4aef2c]
+  - 🇩🇪DE_37|4.4MB/s|R002-260618 [008d816457ca]
+  - 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
+  - D🔴🇯🇵hos[🤖📺🎭🎪]_dokng.com_1b81f86d
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
@@ -182,35 +129,29 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
-  - 🇫🇷FR_16|6.7MB/s|R002-260618 [a676be7daa09]
-  - 🇫🇷FR_88|1.3MB/s|R002-260618 [5e89fefb461a]
-  - 🇳🇿NZ_81
-  - U⚪🏳️ukn_dokng.com_79f3708c
+  - 🇳🇿NZ_80
   - C🟠🇯🇵hos[🎬📺🎭🎪]_dokng.com_55d2834c
-  - 🇳🇿NZ_78
-  - 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
-  - 🔥Join+Telegram:@Farah_VPN🟣-aTI9
+  - 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
+  - 🇳🇿NZ_85
+  - 🇳🇱NL_156|904KB/s|R002-260618 [511bc38da784]
   - 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
-  - 🇺🇸US_275|805KB/s|R002-260618 [f3757137fc03]
-  - 🇩🇪DE_144|1.4MB/s|R002-260618 [97393c4aef2c]
+  - 🇩🇪DE_37|4.4MB/s|R002-260618 [008d816457ca]
+  - 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
+  - D🔴🇯🇵hos[🤖📺🎭🎪]_dokng.com_1b81f86d
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
-  - 🇫🇷FR_16|6.7MB/s|R002-260618 [a676be7daa09]
-  - 🇫🇷FR_88|1.3MB/s|R002-260618 [5e89fefb461a]
-  - 🇳🇿NZ_81
-  - U⚪🏳️ukn_dokng.com_79f3708c
+  - 🇳🇿NZ_80
   - C🟠🇯🇵hos[🎬📺🎭🎪]_dokng.com_55d2834c
-  - 🇳🇿NZ_78
-  - 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
-  - 🔥Join+Telegram:@Farah_VPN🟣-aTI9
+  - 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
+  - 🇳🇿NZ_85
+  - 🇳🇱NL_156|904KB/s|R002-260618 [511bc38da784]
   - 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
-  - 🇺🇸US_275|805KB/s|R002-260618 [f3757137fc03]
-  - 🇩🇪DE_144|1.4MB/s|R002-260618 [97393c4aef2c]
+  - 🇩🇪DE_37|4.4MB/s|R002-260618 [008d816457ca]
+  - 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
+  - D🔴🇯🇵hos[🤖📺🎭🎪]_dokng.com_1b81f86d
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT

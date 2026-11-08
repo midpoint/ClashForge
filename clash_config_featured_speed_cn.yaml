@@ -32,13 +32,19 @@ dns:
     - 240.0.0.0/4
     - 0.0.0.0/32
 proxies:
-- name: 🇳🇿NZ_80
-  type: ss
-  server: 202.50.253.99
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
+- name: 🇺🇸US_8|3.8MB/s
+  port: 58764
+  server: 118.184.140.90
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: U⚪🏳️ukn[🎬📺🎭🎪]_dokng.com_12c6f9c9
+  password: None
+  port: 31343
+  server: 120.232.204.58
+  skip-cert-verify: true
+  tls: true
+  type: http
 - name: C🟠🇯🇵hos[🎬📺🎭🎪]_dokng.com_55d2834c
   password: 'null'
   port: 40583
@@ -47,26 +53,42 @@ proxies:
   tls: true
   type: http
   username: 'null'
-- name: 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
-  port: 3128
-  server: 119.28.24.235
+- name: 🇫🇷FR_56|4.0MB/s|P002-260618 [8342ff3bd32d]
+  password: None
+  port: 443
+  server: 172.64.68.89
   skip-cert-verify: true
   sub_tag: P002-260618
   tls: true
   type: http
   udp: true
-- name: 🇳🇿NZ_85
-  type: ss
-  server: 202.50.253.63
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-- name: 🇳🇱NL_156|904KB/s|R002-260618 [511bc38da784]
+- name: 🇫🇷FR_62|1.7MB/s|R002-260618 [39873ef4d996]
   port: 443
-  server: 185.140.209.235
+  server: 172.64.68.89
   skip-cert-verify: true
-  sni: 482c8436a1f7c908b48a1757abb5dd79-ce85c45206570905.apache-iv.com
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- client-fingerprint: chrome
+  name: U⚪🏳️ukn_dokng.com_79f3708c
+  network: ws
+  password: HutaoCloud
+  port: 11543
+  server: 185.220.238.77
+  skip-cert-verify: true
+  sni: 185.220.238.77
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36
+        (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36
+    path: /api
+- name: 🇫🇷FR_16|6.7MB/s|R002-260618 [a676be7daa09]
+  port: 443
+  server: 172.64.69.89
+  skip-cert-verify: true
   sub_tag: R002-260618
   tls: true
   type: http
@@ -80,27 +102,40 @@ proxies:
   type: http
   udp: true
   username: fQ67Dpe5dU
-- name: 🇩🇪DE_37|4.4MB/s|R002-260618 [008d816457ca]
+- client-fingerprint: chrome
+  name: A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7
+  network: ws
   port: 443
-  server: 116.202.172.99
+  server: 60.248.219.53
+  servername: ty986gfazs.cainiaohub.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
+  ws-opts:
+    headers:
+      Host: ty986gfazs.cainiaohub.xyz
+    path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
+- name: 日本 - 東京都 - 1
+  server: 45.12.89.202
+  type: ss
+  country: 🇺🇸US
+  port: 443
+  password: 1f24d145bf7c877f7e3140b7918eb9cd804b1576a96596f9
+  cipher: chacha20-ietf-poly1305
+  delay: 304
+- name: D🔴🇭🇰hos[🎬📺🎭🔍]_dokng.com_ff9ee1ab
+  port: 443
+  server: 43.155.62.157
+  type: http
+- name: 🇩🇪DE_7|1.8MB/s|R002-260618 [ba686855c77a]
+  port: 443
+  server: 87.106.223.158
   skip-cert-verify: true
   sub_tag: R002-260618
   tls: true
   type: http
   udp: true
-- name: 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
-  password: None
-  port: 443
-  server: 129.153.93.183
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-- name: D🔴🇯🇵hos[🤖📺🎭🎪]_dokng.com_1b81f86d
-  port: 10808
-  server: 101.36.104.46
-  type: socks5
 proxy-groups:
 - name: 节点选择
   type: select
@@ -113,15 +148,18 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇳🇿NZ_80
+  - 🇺🇸US_8|3.8MB/s
+  - U⚪🏳️ukn[🎬📺🎭🎪]_dokng.com_12c6f9c9
   - C🟠🇯🇵hos[🎬📺🎭🎪]_dokng.com_55d2834c
-  - 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
-  - 🇳🇿NZ_85
-  - 🇳🇱NL_156|904KB/s|R002-260618 [511bc38da784]
+  - 🇫🇷FR_56|4.0MB/s|P002-260618 [8342ff3bd32d]
+  - 🇫🇷FR_62|1.7MB/s|R002-260618 [39873ef4d996]
+  - U⚪🏳️ukn_dokng.com_79f3708c
+  - 🇫🇷FR_16|6.7MB/s|R002-260618 [a676be7daa09]
   - 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
-  - 🇩🇪DE_37|4.4MB/s|R002-260618 [008d816457ca]
-  - 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
-  - D🔴🇯🇵hos[🤖📺🎭🎪]_dokng.com_1b81f86d
+  - A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7
+  - 日本 - 東京都 - 1
+  - D🔴🇭🇰hos[🎬📺🎭🔍]_dokng.com_ff9ee1ab
+  - 🇩🇪DE_7|1.8MB/s|R002-260618 [ba686855c77a]
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
@@ -129,29 +167,35 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇳🇿NZ_80
+  - 🇺🇸US_8|3.8MB/s
+  - U⚪🏳️ukn[🎬📺🎭🎪]_dokng.com_12c6f9c9
   - C🟠🇯🇵hos[🎬📺🎭🎪]_dokng.com_55d2834c
-  - 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
-  - 🇳🇿NZ_85
-  - 🇳🇱NL_156|904KB/s|R002-260618 [511bc38da784]
+  - 🇫🇷FR_56|4.0MB/s|P002-260618 [8342ff3bd32d]
+  - 🇫🇷FR_62|1.7MB/s|R002-260618 [39873ef4d996]
+  - U⚪🏳️ukn_dokng.com_79f3708c
+  - 🇫🇷FR_16|6.7MB/s|R002-260618 [a676be7daa09]
   - 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
-  - 🇩🇪DE_37|4.4MB/s|R002-260618 [008d816457ca]
-  - 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
-  - D🔴🇯🇵hos[🤖📺🎭🎪]_dokng.com_1b81f86d
+  - A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7
+  - 日本 - 東京都 - 1
+  - D🔴🇭🇰hos[🎬📺🎭🔍]_dokng.com_ff9ee1ab
+  - 🇩🇪DE_7|1.8MB/s|R002-260618 [ba686855c77a]
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - 🇳🇿NZ_80
+  - 🇺🇸US_8|3.8MB/s
+  - U⚪🏳️ukn[🎬📺🎭🎪]_dokng.com_12c6f9c9
   - C🟠🇯🇵hos[🎬📺🎭🎪]_dokng.com_55d2834c
-  - 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
-  - 🇳🇿NZ_85
-  - 🇳🇱NL_156|904KB/s|R002-260618 [511bc38da784]
+  - 🇫🇷FR_56|4.0MB/s|P002-260618 [8342ff3bd32d]
+  - 🇫🇷FR_62|1.7MB/s|R002-260618 [39873ef4d996]
+  - U⚪🏳️ukn_dokng.com_79f3708c
+  - 🇫🇷FR_16|6.7MB/s|R002-260618 [a676be7daa09]
   - 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
-  - 🇩🇪DE_37|4.4MB/s|R002-260618 [008d816457ca]
-  - 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
-  - D🔴🇯🇵hos[🤖📺🎭🎪]_dokng.com_1b81f86d
+  - A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7
+  - 日本 - 東京都 - 1
+  - D🔴🇭🇰hos[🎬📺🎭🔍]_dokng.com_ff9ee1ab
+  - 🇩🇪DE_7|1.8MB/s|R002-260618 [ba686855c77a]
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT

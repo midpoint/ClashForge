@@ -40,14 +40,14 @@ proxies:
   tls: true
   type: http
   udp: true
-- name: 🇺🇸 US_88
-  type: ss
-  server: 154.36.158.197
-  port: 8388
-  cipher: aes-256-gcm
-  password: BeaUf9c0AEWH40Pu
-  udp: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-1OVA
+- name: C🟠🇭🇰hos[📺🔍]_dokng.com_099454ad
+  password: '111'
+  port: 11211
+  server: 47.243.173.50
+  skip-cert-verify: true
+  type: socks5
+  username: '111'
+- name: 🔥Join+Telegram:@Farah_VPN🟣-BYlu
   type: vmess
   server: 39.108.113.127
   port: 10086
@@ -61,6 +61,111 @@ proxies:
     path: ''
     headers:
       Host: ''
+- name: U⚪🏳️ukn[🎬📺🎭🎪]_dokng.com_12c6f9c9
+  password: None
+  port: 31343
+  server: 120.232.204.58
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_ee2b07ac
+  password: VDJjbE0wUWxNMFE2Og
+  port: 1090
+  server: 121.169.46.116
+  type: socks5
+  udp: true
+  username: VDJjbE0wUWxNMFE2Og
+- name: 🇫🇷 法国 | FRA
+  server: 13.36.165.6
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- client-fingerprint: chrome
+  name: A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7
+  network: ws
+  port: 443
+  server: 60.248.219.53
+  servername: ty986gfazs.cainiaohub.xyz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
+  ws-opts:
+    headers:
+      Host: ty986gfazs.cainiaohub.xyz
+    path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
+- name: 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
+  password: gs4BXwT6SW
+  port: 10988
+  server: 154.26.192.123
+  sub_tag: R002-260618
+  tls: false
+  type: http
+  udp: true
+  username: fQ67Dpe5dU
+- name: 🇳🇿NZ_74
+  type: ss
+  server: 202.50.253.18
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+- name: 🇳🇿NZ_72
+  type: ss
+  server: 202.50.253.90
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+- name: 🇳🇿NZ_73
+  type: ss
+  server: 202.50.253.72
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+- name: 🇳🇿NZ_71
+  type: ss
+  server: 202.50.253.36
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+- name: U⚪🏳️ukn_dokng.com_fa20483d
+  port: 999
+  server: 82.152.138.127
+  type: http
+- name: 🇯🇵JP_25|237KB/s|P002-260618 [43c1eca10f42]
+  port: 343
+  server: 133.18.200.207
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇳🇿NZ_75
+  type: ss
+  server: 202.50.253.99
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+- name: D🔴🇯🇵hos[🎬🤖📺🎭]_dokng.com_5802486e
+  port: 10808
+  server: 101.36.104.239
+  type: socks5
+- name: 🇩🇪DE_144|1.4MB/s|R002-260618 [97393c4aef2c]
+  password: 'null'
+  port: 443
+  server: 116.202.172.99
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  username: 'null'
 - name: C🟠🇭🇰hos_dokng.com_db363b3a
   password: admin
   port: 8899
@@ -68,83 +173,32 @@ proxies:
   skip-cert-verify: true
   type: socks5
   username: admin
-- client-fingerprint: chrome
-  name: U⚪🏳️ukn_dokng.com_79f3708c
-  network: ws
-  password: HutaoCloud
-  port: 11543
-  server: 185.220.238.77
+- name: 🇳🇱NL_173|2.2MB/s|P002-260618 [cb3b6268d982]
+  password: None
+  port: 9002
+  server: 84.17.47.148
   skip-cert-verify: true
-  sni: 185.220.238.77
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36
-        (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36
-    path: /api
-- name: 🇳🇿NZ_73
-  type: ss
-  server: 202.50.253.45
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-- name: 🇳🇿NZ_80
-  type: ss
-  server: 202.50.253.99
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-- name: 🇳🇿NZ_74
-  type: ss
-  server: 202.50.253.81
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-- name: 🇳🇿NZ_78
-  type: ss
-  server: 202.50.253.18
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-- name: 🇳🇿NZ_76
-  type: ss
-  server: 202.50.253.90
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-- name: 🇳🇿NZ_81
-  type: ss
-  server: 202.50.253.36
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-- name: 美国 - 亚特兰大 - 2
-  server: 118.184.140.90
-  port: 58764
-  type: http
+  sub_tag: P002-260618
   tls: true
-  skip-cert-verify: true
-  delay: 571
-- name: 🇳🇿NZ_75
-  type: ss
-  server: 202.50.253.72
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  type: http
   udp: true
-- name: 🇳🇿NZ_79
-  type: ss
-  server: 202.50.253.27
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: 🇳🇱NL_108|3.5MB/s|R002-260618 [95f78e841f29]
+  password: 'null'
+  port: 9002
+  server: 84.17.47.125
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  username: 'null'
+- name: 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
+  port: 8443
+  server: 54.190.176.228
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
   udp: true
 - name: 🇺🇸US_19|89KB/s|R002-260618 [39215ca34ddc]
   port: 443
@@ -154,208 +208,25 @@ proxies:
   tls: true
   type: http
   udp: true
-- name: C🟠🇳🇱hos[🎬🤖📺🎭]_dokng.com_20704a3e
-  password: None
+- name: D🔴🇨🇿hos[🎬🤖📺🎭]_dokng.com_9e50c1e6
+  password: ''
   port: 443
-  server: 149.36.51.129
+  server: 185.216.35.66
   skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-- name: 🇯🇵JP_7|258KB/s|P002-260618 [6c3b615333c9]
-  password: None
-  port: 343
-  server: 133.18.200.207
-  skip-cert-verify: true
-  sub_tag: P002-260618
   tls: true
   type: http
   udp: true
-- name: 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
-  password: None
-  port: 443
-  server: 129.153.93.183
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇺🇸US_275|805KB/s|R002-260618 [f3757137fc03]
-  port: 443
-  server: 129.153.93.183
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
-  port: 8443
-  server: 54.190.176.228
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: D🔴🇩🇪hos[🎬🤖📺🎭]_dokng.com_46d7d8b2
-  password: null
-  port: 443
-  server: 87.249.132.97
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-- name: 🇳🇱NL_107|2.9MB/s|P002-260618 [6aa08aa36e29]
-  password: None
-  port: 23856
-  server: 51.159.225.196
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇳🇱NL_204|587KB/s|P002-260618 [3f76c0832d7c]
-  port: 443
-  server: 149.36.51.129
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-- name: D🔴🇩🇪hos[🎬🤖📺🎭]_dokng.com_cb6cfa3e
-  password: null
+  username: ''
+- name: A🟢🇩🇪res[🎬🤖📺🎭]_dokng.com_df239572
   port: 9443
-  server: 87.249.132.97
+  server: 79.127.156.177
   skip-cert-verify: true
   tls: true
   type: http
-  username: null
-- name: 🇳🇱NL_190|3.3MB/s|P002-260618 [111aaa619f5f]
-  password: None
-  port: 9002
-  server: 84.17.47.123
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
 - name: 🇫🇷FR_56|4.0MB/s|P002-260618 [8342ff3bd32d]
   password: None
   port: 443
   server: 172.64.68.89
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇳🇱NL_178|5.4MB/s|R002-260618 [ecbc8201cfbb]
-  password: 'null'
-  port: 9002
-  server: 84.17.47.149
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  username: 'null'
-- name: 🇮🇪IE_1|4.2MB/s|K001-260618 [9484e3e833d4]
-  password: None
-  port: 443
-  server: 34.249.214.108
-  skip-cert-verify: true
-  sub_tag: K001-260618
-  tls: true
-  type: http
-  udp: true
-  username: ''
-- name: D🔴🇬🇧hos[📺🎪✨✈️]_dokng.com_47ca507b
-  password: None
-  port: 9443
-  server: 84.17.50.129
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: 🇳🇱NL_116|652KB/s|R002-260618 [8befcd8cfe66]
-  port: 443
-  server: 185.246.153.42
-  skip-cert-verify: true
-  sni: 482c8436a1f7c908b48a1757abb5dd79-3791fb4df2db250b.apache-iv.com
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇫🇷FR_115|1019KB/s|R002-260618 [2f6c342a7a47]
-  port: 443
-  server: 149.102.245.65
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: D🔴🇩🇪hos[🤖📺🎭🎪]_dokng.com_dcd1a64f
-  password: null
-  port: 443
-  server: 152.233.20.206
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-- name: 🇳🇱NL_149|3.3MB/s|R002-260618 [bcf20a2004d6]
-  port: 23856
-  server: 51.159.225.196
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: C🟠🇳🇱hos[🎬🤖📺🎭]_dokng.com_93f6101c
-  password: None
-  port: 9443
-  server: 149.36.51.161
-  skip-cert-verify: true
-  sub_tag: K001-260618
-  tls: true
-  type: http
-  udp: true
-  username: ''
-- name: 🇩🇪DE_47|1.5MB/s|R002-260618 [a3a509939ec6]
-  password: None
-  port: 443
-  server: 87.249.132.97
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇳🇱NL_138|3.1MB/s [faaf59d2e35f]
-  password: 'null'
-  port: 9002
-  server: 84.17.47.148
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  username: 'null'
-- name: 🇩🇪DE_15|967KB/s|R002-260618 [ff2fb2f0667e]
-  port: 443
-  server: 149.36.50.129
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇮🇪IE_9|4.7MB/s|R002-260618 [42e1acae4056]
-  password: 'null'
-  port: 443
-  server: 34.249.214.108
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  username: 'null'
-- name: 🇯🇵JP_25|237KB/s|P002-260618 [43c1eca10f42]
-  port: 343
-  server: 133.18.200.207
   skip-cert-verify: true
   sub_tag: P002-260618
   tls: true
@@ -369,407 +240,9 @@ proxies:
   tls: true
   type: http
   udp: true
-- name: 🇧🇪BE_1|1.5MB/s|R002-260618 [25500d055da0]
-  password: None
-  port: 443
-  server: 146.70.176.242
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇳🇱NL_36|3.4MB/s|R002-260618 [f955e95e696e]
-  port: 9002
-  server: 84.17.47.149
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇳🇱NL_129|1.0MB/s|R002-260618 [f239ce5903e1]
-  port: 9002
-  server: 84.17.47.125
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇺🇸US_216|319KB/s|R002-260618 [535e13772931]
-  password: 'null'
-  port: 443
-  server: 38.28.193.188
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  username: 'null'
-- name: 🇳🇱NL_127|6.3MB/s|R002-260618 [02e64b2794c6]
-  port: 9002
-  server: 84.17.47.150
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇫🇷FR_101|2.7MB/s|K001-260618 [9609525282db]
-  password: None
-  port: 443
-  server: 82.66.235.221
-  skip-cert-verify: true
-  sub_tag: K001-260618
-  tls: true
-  type: http
-  udp: true
-  username: ''
-- name: 🇫🇷FR_78|2.6MB/s|R002-260618 [bb26c3f0d560]
-  port: 443
-  server: 82.66.235.221
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇩🇪DE_30|2.7MB/s|R002-260618 [eb56d2944297]
-  port: 9002
-  server: 158.173.154.5
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇺🇸US_209|400KB/s|R002-260618 [f485c49773a6]
-  password: e4b72b531a2d10900519
-  port: 443
-  server: 162.243.146.243
-  sni: a2f392f3.acsnet.co
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  username: testuser1
-- name: 🇬🇧GB_27|1.0MB/s|P002-260618 [07696f627098]
-  password: None
-  port: 443
-  server: 212.102.63.31
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇫🇷FR_24|1.8MB/s|K001-260618 [af44a4a293e5]
-  password: None
-  port: 8081
-  server: 31.32.19.111
-  skip-cert-verify: true
-  sub_tag: K001-260618
-  tls: true
-  type: http
-  udp: true
-  username: ''
 - name: 🇫🇷FR_84|1.1MB/s|R002-260618 [e5d47e171534]
   port: 9443
   server: 138.199.47.247
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇳🇱NL_76|5.6MB/s|P002-260618 [441de0340377]
-  password: None
-  port: 9002
-  server: 84.17.47.125
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇱🇺LU_1|774KB/s|R002-260618 [a23f6ba6c1b1]
-  port: 443
-  server: 185.221.132.242
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: D🔴🇷🇸hos[🎬🤖📺🎭]_dokng.com_cf7fb79e
-  port: 443
-  server: 146.70.221.34
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: 🇨🇿CZ_2|1.1MB/s|P002-260618 [6bf0a578c364]
-  password: None
-  port: 443
-  server: 185.216.35.66
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇮🇪IE_3|652KB/s|R002-260618 [5a0dd59f90fc]
-  port: 9443
-  server: 149.88.96.12
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇳🇱NL_104|5.1MB/s|P002-260618 [d77b65a8fb8a]
-  password: None
-  port: 443
-  server: 51.158.243.91
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇬🇧GB_14|1.1MB/s|R002-260618 [789ca315c621]
-  port: 9443
-  server: 84.17.50.214
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇨🇭CH_2|2.2MB/s
-  password: None
-  port: 9443
-  server: 149.88.27.33
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: 🇭🇷HR_2|1.2MB/s|R002-260618 [117c7e706dc7]
-  port: 443
-  server: 154.47.29.161
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: B🟡🇺🇸biz[🎬🤖📺🎭]_dokng.com_895424c2
-  port: 443
-  server: 12.202.180.118
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: C🟠🇩🇪hos[🤖📺🎭🎪]_dokng.com_2b514860
-  password: null
-  port: 443
-  server: 149.36.50.157
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-- name: 🇲🇽MX_4|466KB/s|R002-260618 [fc7c075ec4e0]
-  port: 443
-  server: 45.134.9.41
-  skip-cert-verify: true
-  sni: 991cc80f13caf81d3426ddebb2da7f49-240d6105b6ef86f0.apache-iv.com
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇩🇪DE_7|1.8MB/s|R002-260618 [ba686855c77a]
-  port: 443
-  server: 87.106.223.158
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇫🇷FR_38|1.1MB/s|R002-260618 [df04adae01b8]
-  port: 8081
-  server: 31.32.19.111
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: D🔴🇱🇺hos[🎬🤖📺🎭]_dokng.com_c2e321d8
-  password: null
-  port: 443
-  server: 185.221.132.226
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-- name: 🇺🇸US_180|207KB/s|R002-260618 [4832540fa4bc]
-  port: 443
-  server: 38.28.193.1
-  skip-cert-verify: true
-  sni: 38.28.193.1
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇮🇪IE_2|1.0MB/s|R002-260618 [ad7d5a110359]
-  port: 443
-  server: 18.200.158.139
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇮🇪IE_7|1.5MB/s|P002-260618 [a9fa895b6a85]
-  password: None
-  port: 9443
-  server: 149.88.96.12
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇩🇪DE_25|3.2MB/s|R002-260618 [92abb46579b9]
-  port: 443
-  server: 159.69.94.125
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: D🔴🇬🇧hos[🎬🤖📺🎭]_dokng.com_566b18be
-  password: null
-  port: 443
-  server: 212.102.63.61
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: null
-- name: 🇩🇪DE_101|1.5MB/s|K001-260618 [4d53191135c0]
-  password: None
-  port: 443
-  server: 79.127.156.177
-  skip-cert-verify: true
-  sub_tag: K001-260618
-  tls: true
-  type: http
-  udp: true
-  username: ''
-- name: 🇩🇪DE_130|2.7MB/s|P002-260618 [a1fdb42c66f3]
-  password: None
-  port: 9002
-  server: 158.173.154.4
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇳🇱NL_85|5.6MB/s|K001-260618 [378b1d5ed2ba]
-  password: 'null'
-  port: 9002
-  server: 84.17.47.147
-  skip-cert-verify: true
-  sub_tag: K001-260618
-  tls: true
-  type: http
-  udp: true
-  username: 'null'
-- name: D🔴🇨🇿hos[🎬🤖📺🎭]_dokng.com_9e50c1e6
-  password: ''
-  port: 443
-  server: 185.216.35.66
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  username: ''
-- name: 🇳🇱NL_118|1.7MB/s|R002-260618 [e8525c922acc]
-  port: 9443
-  server: 149.36.51.157
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇨🇭CH_48|1.1MB/s [2579f7044e34]
-  password: ''
-  port: 9443
-  server: 149.88.27.46
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  username: ''
-- name: 🇨🇭CH_9|605KB/s|P002-260618 [58b636345fb8]
-  password: None
-  port: 9443
-  server: 37.120.213.210
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇮🇪IE_6|1.3MB/s|K001-260618 [ebe2b193bdbc]
-  password: None
-  port: 443
-  server: 18.200.158.139
-  skip-cert-verify: true
-  sub_tag: K001-260618
-  tls: true
-  type: http
-  udp: true
-  username: ''
-- name: D🔴🇷🇸hos[🎬🤖📺🎭]_dokng.com_11a27838
-  password: ''
-  port: 443
-  server: 146.70.221.18
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: ''
-- name: 🇺🇸US_219|217KB/s|R002-260618 [a4d3572ae220]
-  port: 443
-  server: 38.28.193.188
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇩🇪DE_8|2.7MB/s
-  password: 'null'
-  port: 9002
-  server: 158.173.154.2
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: 'null'
-- name: A🟢🇩🇪res[🎬🤖📺🎭]_dokng.com_df239572
-  port: 9443
-  server: 79.127.156.177
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: 🇫🇷FR_25|1.6MB/s|K001-260618 [fb2a86c79033]
-  password: None
-  port: 9443
-  server: 213.139.9.142
-  skip-cert-verify: true
-  sub_tag: K001-260618
-  tls: true
-  type: http
-  udp: true
-  username: ''
-- name: 🇩🇪DE_51|5.2MB/s|P002-260618 [c242c75d0a6f]
-  password: None
-  port: 443
-  server: 213.109.163.119
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇵🇱PL_16|751KB/s|R002-260618 [096fe5ac3f15]
-  port: 443
-  server: 37.120.156.18
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇳🇱NL_153|6.8MB/s|R002-260618 [e136058b2502]
-  port: 443
-  server: 51.158.243.91
   skip-cert-verify: true
   sub_tag: R002-260618
   tls: true
@@ -789,69 +262,504 @@ proxies:
   skip-cert-verify: true
   tls: true
   type: http
-- name: D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_73f7e688
+- name: 🇳🇱NL_127|6.3MB/s|R002-260618 [02e64b2794c6]
+  port: 9002
+  server: 84.17.47.150
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: C🟠🇩🇪hos[🤖📺🎭🎪]_dokng.com_2b514860
   password: null
   port: 443
-  server: 38.247.141.135
+  server: 149.36.50.157
   skip-cert-verify: true
   tls: true
   type: http
   username: null
-- name: 🇩🇪DE_9|3.4MB/s
-  password: 'null'
+- name: 🇩🇪DE_46|506KB/s|P002-260618 [3ddd56489581]
+  password: None
+  port: 443
+  server: 149.36.50.1
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇩🇪DE_56|900KB/s|P002-260618 [a01dd6dcc5e0]
+  password: None
   port: 443
   server: 87.106.223.158
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇯🇵JP_7|258KB/s|P002-260618 [6c3b615333c9]
+  password: None
+  port: 343
+  server: 133.18.200.207
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- client-fingerprint: chrome
+  name: U⚪🏳️ukn_dokng.com_79f3708c
+  network: ws
+  password: HutaoCloud
+  port: 11543
+  server: 185.220.238.77
+  skip-cert-verify: true
+  sni: 185.220.238.77
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36
+        (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36
+    path: /api
+- name: A🟢🇬🇧res[🎬🤖📺🎭]_dokng.com_01f49dd6
+  password: None
+  port: 9443
+  server: 84.17.50.214
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_10614c05
+  password: 'null'
+  port: 8443
+  server: 44.248.167.117
   skip-cert-verify: true
   tls: true
   type: http
   username: 'null'
-- name: 🇩🇪DE_115|1.5MB/s|K001-260618 [8ac2b0d2624d]
-  password: ''
-  port: 9052
-  server: 157.90.113.23
-  skip-cert-verify: true
-  sub_tag: K001-260618
-  type: socks5
-  udp: true
-  username: ''
-- name: 🇺🇸US_303|691KB/s|R002-260618 [8cd4e6e1fb45]
-  port: 443
-  server: 121.127.34.82
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇺🇸US_91|1009KB/s|R002-260618 [f6ef7c53e70b]
-  port: 443
-  server: 23.133.176.14
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇬🇧GB_9|981KB/s|R002-260618 [b402a03388fc]
-  port: 443
-  server: 37.120.233.18
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇳🇱NL_166|3.2MB/s|R002-260618 [565ec6032e34]
+- name: 🇳🇱NL_193|3.3MB/s|P002-260618 [95c96fb6d441]
+  password: None
   port: 9002
   server: 84.17.47.126
   skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇩🇪DE_36|4.4MB/s|R002-260618 [f8f3f9b23979]
+  port: 443
+  server: 213.109.163.119
+  skip-cert-verify: true
   sub_tag: R002-260618
   tls: true
   type: http
   udp: true
-- name: 🇳🇱NL_200|5.7MB/s|P002-260618 [f84dd5f92876]
+- name: 🇺🇸US_43|992KB/s|P002-260618 [69335dd6b551]
   password: None
-  port: 9002
-  server: 84.17.47.147
+  port: 443
+  server: 23.133.176.14
   skip-cert-verify: true
   sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇧🇪BE_1|1.5MB/s|R002-260618 [25500d055da0]
+  password: None
+  port: 443
+  server: 146.70.176.242
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇳🇱NL_109|2.5MB/s|R002-260618 [aee8d229a5b3]
+  port: 9002
+  server: 84.17.47.124
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇨🇭CH_48|1.1MB/s [2579f7044e34]
+  password: ''
+  port: 9443
+  server: 149.88.27.46
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  username: ''
+- name: 🇩🇪DE_7|1.8MB/s|R002-260618 [ba686855c77a]
+  port: 443
+  server: 87.106.223.158
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: D🔴🇩🇰hos_dokng.com_58da35c6
+  password: null
+  port: 9443
+  server: 185.245.84.50
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- name: C🟠🇵🇹hos[🤖📺🎭🎪]_dokng.com_1db5bd58
+  password: None
+  port: 443
+  server: 149.22.86.14
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- name: 🇬🇧GB_28|688KB/s|P002-260618 [bfd3763bfc45]
+  password: None
+  port: 443
+  server: 84.17.50.193
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇺🇸US_216|319KB/s|R002-260618 [535e13772931]
+  password: 'null'
+  port: 443
+  server: 38.28.193.188
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  username: 'null'
+- name: 🇮🇪IE_6|1.3MB/s|K001-260618 [ebe2b193bdbc]
+  password: None
+  port: 443
+  server: 18.200.158.139
+  skip-cert-verify: true
+  sub_tag: K001-260618
+  tls: true
+  type: http
+  udp: true
+  username: ''
+- name: 🇺🇸US_276|532KB/s|R002-260618 [42475c556145]
+  port: 443
+  server: 12.202.180.10
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇳🇱NL_107|2.9MB/s|P002-260618 [6aa08aa36e29]
+  password: None
+  port: 23856
+  server: 51.159.225.196
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: C🟠🇩🇪hos[🤖📺🎭🎪]_dokng.com_5ed03181
+  password: null
+  port: 443
+  server: 149.36.50.1
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- name: 🇭🇷HR_1|220KB/s|R002-260618 [1616bd87aa96]
+  port: 443
+  server: 154.47.29.174
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇩🇪DE_32|2.4MB/s|R002-260618 [711ff06169bb]
+  port: 9002
+  server: 158.173.154.1
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇩🇪DE_101|1.5MB/s|K001-260618 [4d53191135c0]
+  password: None
+  port: 443
+  server: 79.127.156.177
+  skip-cert-verify: true
+  sub_tag: K001-260618
+  tls: true
+  type: http
+  udp: true
+  username: ''
+- name: 🇫🇷FR_69|2.1MB/s|R002-260618 [e9b65e97ef66]
+  port: 8090
+  server: 80.124.109.22
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇳🇱NL_168|1.1MB/s|R002-260618 [11147645fc19]
+  password: 'null'
+  port: 443
+  server: 103.97.88.154
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  username: 'null'
+- name: 🇳🇱NL_153|6.8MB/s|R002-260618 [e136058b2502]
+  port: 443
+  server: 51.158.243.91
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: D🔴🇷🇸hos[🎬🤖📺🎭]_dokng.com_11a27838
+  password: ''
+  port: 443
+  server: 146.70.221.18
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: ''
+- name: 🇳🇱NL_125|99KB/s|R002-260618 [212db84ab5aa]
+  port: 443
+  server: 103.97.88.154
+  skip-cert-verify: true
+  sni: 4a8c2906c96058315dffbc2b0e7ff19b-98005bea43f9ac33.apache-iv.com
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇫🇷FR_101|2.7MB/s|K001-260618 [9609525282db]
+  password: None
+  port: 443
+  server: 82.66.235.221
+  skip-cert-verify: true
+  sub_tag: K001-260618
+  tls: true
+  type: http
+  udp: true
+  username: ''
+- name: D🔴🇸🇪hos[🎬🤖📺🎪]_dokng.com_a76b8647
+  password: None
+  port: 443
+  server: 146.70.242.146
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- name: 🇸🇪SE_5|427KB/s|P002-260618 [d0e4839081bd]
+  password: None
+  port: 443
+  server: 146.70.242.130
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇳🇱NL_136|5.6MB/s|R002-260618 [cf19808e163e]
+  port: 9002
+  server: 84.17.47.148
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇳🇱NL_124|5.9MB/s|P002-260618 [a1a43e85b47a]
+  password: None
+  port: 9002
+  server: 84.17.47.146
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇦🇱AL_3|1.0MB/s|K001-260618 [eff7a552152d]
+  password: ''
+  port: 9443
+  server: 31.171.155.210
+  skip-cert-verify: true
+  sub_tag: K001-260618
+  tls: true
+  type: http
+  udp: true
+  username: ''
+- name: D🔴🇮🇹hos[🎬🤖📺🎭]_dokng.com_b28387d2
+  port: 443
+  server: 185.183.105.146
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: 🇱🇻LV_10|539KB/s|P002-260618 [62197c9c62e8]
+  password: None
+  port: 443
+  server: 109.248.149.34
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_e14a79a6
+  password: null
+  port: 443
+  server: 68.235.56.59
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- name: 🇱🇻LV_8|886KB/s|R002-260618 [60e5a6f0e8e7]
+  password: None
+  port: 443
+  server: 109.248.147.66
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇦🇹AT_2|1.1MB/s|P002-260618 [eeaf8effdcb8]
+  password: None
+  port: 443
+  server: 146.70.244.18
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_96845fbf
+  password: None
+  port: 443
+  server: 198.44.135.27
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: 🇵🇱PL_2|1.2MB/s|R002-260618 [fc1b5675487f]
+  port: 443
+  server: 91.92.250.33
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: D🔴🇭🇷hos[🤖📺🎭🎪]_dokng.com_842b3339
+  password: None
+  port: 443
+  server: 154.47.29.174
+  skip-cert-verify: true
+  sub_tag: K001-260618
+  tls: true
+  type: http
+  udp: true
+  username: ''
+- name: 🇨🇭CH_9|605KB/s|P002-260618 [58b636345fb8]
+  password: None
+  port: 9443
+  server: 37.120.213.210
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: C🟠🇱🇺hos[🎬🤖📺🎭]_dokng.com_d227b762
+  password: None
+  port: 9443
+  server: 185.221.132.226
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: 🇺🇸US_433|734KB/s|K001-260618 [d3f40b887165]
+  password: None
+  port: 443
+  server: 12.202.180.118
+  skip-cert-verify: true
+  sub_tag: K001-260618
+  tls: true
+  type: http
+  udp: true
+  username: ''
+- name: 🇳🇱NL_36|3.4MB/s|R002-260618 [f955e95e696e]
+  port: 9002
+  server: 84.17.47.149
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇬🇧GB_14|1.1MB/s|R002-260618 [789ca315c621]
+  port: 9443
+  server: 84.17.50.214
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: D🔴🇩🇪hos[🎬🤖📺🎭]_dokng.com_cb6cfa3e
+  password: null
+  port: 9443
+  server: 87.249.132.97
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- name: 🇺🇸US_325|771KB/s|R002-260618 [fbfa57386da4]
+  port: 443
+  server: 216.107.139.82
+  skip-cert-verify: true
+  sni: 991cc80f13caf81d3426ddebb2da7f49-92ff472ddc24e5b7.apache-iv.com
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇳🇴NO_2|416KB/s|R002-260618 [65242b970d88]
+  port: 9443
+  server: 146.70.170.210
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇺🇸US_180|207KB/s|R002-260618 [4832540fa4bc]
+  port: 443
+  server: 38.28.193.1
+  skip-cert-verify: true
+  sni: 38.28.193.1
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇳🇱NL_104|5.1MB/s|P002-260618 [d77b65a8fb8a]
+  password: None
+  port: 443
+  server: 51.158.243.91
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇩🇪DE_17|861KB/s|R002-260618 [32dd9bd31301]
+  port: 443
+  server: 213.177.229.161
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: D🔴🇭🇺hos[🎬🤖📺🎭]_dokng.com_58d0afef
+  password: None
+  port: 443
+  server: 146.70.203.18
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- name: 🇩🇪DE_12|1.4MB/s|R002-260618 [a4490dd932b1]
+  port: 443
+  server: 217.92.132.233
+  skip-cert-verify: true
+  sub_tag: R002-260618
   tls: true
   type: http
   udp: true
@@ -863,13 +771,111 @@ proxies:
   tls: true
   type: http
   udp: true
-- name: 🇺🇸US_15|2.2MB/s
+- name: 🇨🇿CZ_1|1.3MB/s
   password: None
-  port: 443
-  server: 12.202.180.10
+  port: 9443
+  server: 152.233.16.174
   skip-cert-verify: true
   tls: true
   type: http
+- name: A🟢🇨🇦res[🎬🤖📺🎭]_dokng.com_832debfd
+  password: null
+  port: 443
+  server: 206.223.183.21
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- name: D🔴🇬🇧hos[🎬🤖📺🎭]_dokng.com_566b18be
+  password: null
+  port: 443
+  server: 212.102.63.61
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: null
+- name: C🟠🇮🇱hos[📺🎭🎪🔍]_dokng.com_b9fb82b7
+  password: None
+  port: 443
+  server: 169.150.248.17
+  skip-cert-verify: true
+  sub_tag: K001-260618
+  tls: true
+  type: http
+  udp: true
+  username: ''
+- name: 🇸🇪SE_8|620KB/s|R002-260618 [f52a0c7d7002]
+  port: 443
+  server: 79.142.77.63
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇬🇷GR_2|576KB/s|P002-260618 [9860957ab6cf]
+  password: None
+  port: 443
+  server: 149.22.85.78
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇺🇸US_469|702KB/s|R002-260618 [7ac6844fa31b]
+  port: 443
+  server: 149.88.21.129
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇫🇷FR_184|2.5MB/s|R002-260618 [b2efde442758]
+  password: 'null'
+  port: 6103
+  server: 87.98.174.157
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  username: 'null'
+- name: 🇩🇪DE_114|8.2MB/s [57c1bd082802]
+  password: 'null'
+  port: 443
+  server: 193.233.75.115
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  username: 'null'
+- name: 🇷🇴RO_36|1.1MB/s|R002-260618 [955230628083]
+  password: 'null'
+  port: 9002
+  server: 193.176.84.26
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  username: 'null'
+- name: 🇪🇪EE_2|468KB/s|R002-260618 [6b8ca055dfef]
+  port: 9443
+  server: 192.159.101.174
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇷🇴RO_80|1.8MB/s|R002-260618 [87cf0d33a9e0]
+  password: 'null'
+  port: 9002
+  server: 193.176.84.19
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  username: 'null'
 proxy-groups:
 - name: 节点选择
   type: select
@@ -883,105 +889,105 @@ proxy-groups:
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
   - 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
-  - 🇺🇸 US_88
-  - 🔥Join+Telegram:@Farah_VPN🟣-1OVA
-  - C🟠🇭🇰hos_dokng.com_db363b3a
-  - U⚪🏳️ukn_dokng.com_79f3708c
-  - 🇳🇿NZ_73
-  - 🇳🇿NZ_80
+  - C🟠🇭🇰hos[📺🔍]_dokng.com_099454ad
+  - 🔥Join+Telegram:@Farah_VPN🟣-BYlu
+  - U⚪🏳️ukn[🎬📺🎭🎪]_dokng.com_12c6f9c9
+  - D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_ee2b07ac
+  - 🇫🇷 法国 | FRA
+  - A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7
+  - 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
   - 🇳🇿NZ_74
-  - 🇳🇿NZ_78
-  - 🇳🇿NZ_76
-  - 🇳🇿NZ_81
-  - 美国 - 亚特兰大 - 2
-  - 🇳🇿NZ_75
-  - 🇳🇿NZ_79
-  - 🇺🇸US_19|89KB/s|R002-260618 [39215ca34ddc]
-  - C🟠🇳🇱hos[🎬🤖📺🎭]_dokng.com_20704a3e
-  - 🇯🇵JP_7|258KB/s|P002-260618 [6c3b615333c9]
-  - 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
-  - 🇺🇸US_275|805KB/s|R002-260618 [f3757137fc03]
-  - 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
-  - D🔴🇩🇪hos[🎬🤖📺🎭]_dokng.com_46d7d8b2
-  - 🇳🇱NL_107|2.9MB/s|P002-260618 [6aa08aa36e29]
-  - 🇳🇱NL_204|587KB/s|P002-260618 [3f76c0832d7c]
-  - D🔴🇩🇪hos[🎬🤖📺🎭]_dokng.com_cb6cfa3e
-  - 🇳🇱NL_190|3.3MB/s|P002-260618 [111aaa619f5f]
-  - 🇫🇷FR_56|4.0MB/s|P002-260618 [8342ff3bd32d]
-  - 🇳🇱NL_178|5.4MB/s|R002-260618 [ecbc8201cfbb]
-  - 🇮🇪IE_1|4.2MB/s|K001-260618 [9484e3e833d4]
-  - D🔴🇬🇧hos[📺🎪✨✈️]_dokng.com_47ca507b
-  - 🇳🇱NL_116|652KB/s|R002-260618 [8befcd8cfe66]
-  - 🇫🇷FR_115|1019KB/s|R002-260618 [2f6c342a7a47]
-  - D🔴🇩🇪hos[🤖📺🎭🎪]_dokng.com_dcd1a64f
-  - 🇳🇱NL_149|3.3MB/s|R002-260618 [bcf20a2004d6]
-  - C🟠🇳🇱hos[🎬🤖📺🎭]_dokng.com_93f6101c
-  - 🇩🇪DE_47|1.5MB/s|R002-260618 [a3a509939ec6]
-  - 🇳🇱NL_138|3.1MB/s [faaf59d2e35f]
-  - 🇩🇪DE_15|967KB/s|R002-260618 [ff2fb2f0667e]
-  - 🇮🇪IE_9|4.7MB/s|R002-260618 [42e1acae4056]
+  - 🇳🇿NZ_72
+  - 🇳🇿NZ_73
+  - 🇳🇿NZ_71
+  - U⚪🏳️ukn_dokng.com_fa20483d
   - 🇯🇵JP_25|237KB/s|P002-260618 [43c1eca10f42]
-  - 🇫🇷FR_62|1.7MB/s|R002-260618 [39873ef4d996]
-  - 🇧🇪BE_1|1.5MB/s|R002-260618 [25500d055da0]
-  - 🇳🇱NL_36|3.4MB/s|R002-260618 [f955e95e696e]
-  - 🇳🇱NL_129|1.0MB/s|R002-260618 [f239ce5903e1]
-  - 🇺🇸US_216|319KB/s|R002-260618 [535e13772931]
-  - 🇳🇱NL_127|6.3MB/s|R002-260618 [02e64b2794c6]
-  - 🇫🇷FR_101|2.7MB/s|K001-260618 [9609525282db]
-  - 🇫🇷FR_78|2.6MB/s|R002-260618 [bb26c3f0d560]
-  - 🇩🇪DE_30|2.7MB/s|R002-260618 [eb56d2944297]
-  - 🇺🇸US_209|400KB/s|R002-260618 [f485c49773a6]
-  - 🇬🇧GB_27|1.0MB/s|P002-260618 [07696f627098]
-  - 🇫🇷FR_24|1.8MB/s|K001-260618 [af44a4a293e5]
-  - 🇫🇷FR_84|1.1MB/s|R002-260618 [e5d47e171534]
-  - 🇳🇱NL_76|5.6MB/s|P002-260618 [441de0340377]
-  - 🇱🇺LU_1|774KB/s|R002-260618 [a23f6ba6c1b1]
-  - D🔴🇷🇸hos[🎬🤖📺🎭]_dokng.com_cf7fb79e
-  - 🇨🇿CZ_2|1.1MB/s|P002-260618 [6bf0a578c364]
-  - 🇮🇪IE_3|652KB/s|R002-260618 [5a0dd59f90fc]
-  - 🇳🇱NL_104|5.1MB/s|P002-260618 [d77b65a8fb8a]
-  - 🇬🇧GB_14|1.1MB/s|R002-260618 [789ca315c621]
-  - 🇨🇭CH_2|2.2MB/s
-  - 🇭🇷HR_2|1.2MB/s|R002-260618 [117c7e706dc7]
-  - B🟡🇺🇸biz[🎬🤖📺🎭]_dokng.com_895424c2
-  - C🟠🇩🇪hos[🤖📺🎭🎪]_dokng.com_2b514860
-  - 🇲🇽MX_4|466KB/s|R002-260618 [fc7c075ec4e0]
-  - 🇩🇪DE_7|1.8MB/s|R002-260618 [ba686855c77a]
-  - 🇫🇷FR_38|1.1MB/s|R002-260618 [df04adae01b8]
-  - D🔴🇱🇺hos[🎬🤖📺🎭]_dokng.com_c2e321d8
-  - 🇺🇸US_180|207KB/s|R002-260618 [4832540fa4bc]
-  - 🇮🇪IE_2|1.0MB/s|R002-260618 [ad7d5a110359]
-  - 🇮🇪IE_7|1.5MB/s|P002-260618 [a9fa895b6a85]
-  - 🇩🇪DE_25|3.2MB/s|R002-260618 [92abb46579b9]
-  - D🔴🇬🇧hos[🎬🤖📺🎭]_dokng.com_566b18be
-  - 🇩🇪DE_101|1.5MB/s|K001-260618 [4d53191135c0]
-  - 🇩🇪DE_130|2.7MB/s|P002-260618 [a1fdb42c66f3]
-  - 🇳🇱NL_85|5.6MB/s|K001-260618 [378b1d5ed2ba]
+  - 🇳🇿NZ_75
+  - D🔴🇯🇵hos[🎬🤖📺🎭]_dokng.com_5802486e
+  - 🇩🇪DE_144|1.4MB/s|R002-260618 [97393c4aef2c]
+  - C🟠🇭🇰hos_dokng.com_db363b3a
+  - 🇳🇱NL_173|2.2MB/s|P002-260618 [cb3b6268d982]
+  - 🇳🇱NL_108|3.5MB/s|R002-260618 [95f78e841f29]
+  - 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
+  - 🇺🇸US_19|89KB/s|R002-260618 [39215ca34ddc]
   - D🔴🇨🇿hos[🎬🤖📺🎭]_dokng.com_9e50c1e6
-  - 🇳🇱NL_118|1.7MB/s|R002-260618 [e8525c922acc]
-  - 🇨🇭CH_48|1.1MB/s [2579f7044e34]
-  - 🇨🇭CH_9|605KB/s|P002-260618 [58b636345fb8]
-  - 🇮🇪IE_6|1.3MB/s|K001-260618 [ebe2b193bdbc]
-  - D🔴🇷🇸hos[🎬🤖📺🎭]_dokng.com_11a27838
-  - 🇺🇸US_219|217KB/s|R002-260618 [a4d3572ae220]
-  - 🇩🇪DE_8|2.7MB/s
   - A🟢🇩🇪res[🎬🤖📺🎭]_dokng.com_df239572
-  - 🇫🇷FR_25|1.6MB/s|K001-260618 [fb2a86c79033]
-  - 🇩🇪DE_51|5.2MB/s|P002-260618 [c242c75d0a6f]
-  - 🇵🇱PL_16|751KB/s|R002-260618 [096fe5ac3f15]
-  - 🇳🇱NL_153|6.8MB/s|R002-260618 [e136058b2502]
+  - 🇫🇷FR_56|4.0MB/s|P002-260618 [8342ff3bd32d]
+  - 🇫🇷FR_62|1.7MB/s|R002-260618 [39873ef4d996]
+  - 🇫🇷FR_84|1.1MB/s|R002-260618 [e5d47e171534]
   - 🇮🇪IE_5|4.4MB/s|R002-260618 [28e6899e674e]
   - C🟠🇫🇷hos[🎬🤖📺🎪]_dokng.com_789dbb5c
-  - D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_73f7e688
-  - 🇩🇪DE_9|3.4MB/s
-  - 🇩🇪DE_115|1.5MB/s|K001-260618 [8ac2b0d2624d]
-  - 🇺🇸US_303|691KB/s|R002-260618 [8cd4e6e1fb45]
-  - 🇺🇸US_91|1009KB/s|R002-260618 [f6ef7c53e70b]
-  - 🇬🇧GB_9|981KB/s|R002-260618 [b402a03388fc]
-  - 🇳🇱NL_166|3.2MB/s|R002-260618 [565ec6032e34]
-  - 🇳🇱NL_200|5.7MB/s|P002-260618 [f84dd5f92876]
+  - 🇳🇱NL_127|6.3MB/s|R002-260618 [02e64b2794c6]
+  - C🟠🇩🇪hos[🤖📺🎭🎪]_dokng.com_2b514860
+  - 🇩🇪DE_46|506KB/s|P002-260618 [3ddd56489581]
+  - 🇩🇪DE_56|900KB/s|P002-260618 [a01dd6dcc5e0]
+  - 🇯🇵JP_7|258KB/s|P002-260618 [6c3b615333c9]
+  - U⚪🏳️ukn_dokng.com_79f3708c
+  - A🟢🇬🇧res[🎬🤖📺🎭]_dokng.com_01f49dd6
+  - D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_10614c05
+  - 🇳🇱NL_193|3.3MB/s|P002-260618 [95c96fb6d441]
+  - 🇩🇪DE_36|4.4MB/s|R002-260618 [f8f3f9b23979]
+  - 🇺🇸US_43|992KB/s|P002-260618 [69335dd6b551]
+  - 🇧🇪BE_1|1.5MB/s|R002-260618 [25500d055da0]
+  - 🇳🇱NL_109|2.5MB/s|R002-260618 [aee8d229a5b3]
+  - 🇨🇭CH_48|1.1MB/s [2579f7044e34]
+  - 🇩🇪DE_7|1.8MB/s|R002-260618 [ba686855c77a]
+  - D🔴🇩🇰hos_dokng.com_58da35c6
+  - C🟠🇵🇹hos[🤖📺🎭🎪]_dokng.com_1db5bd58
+  - 🇬🇧GB_28|688KB/s|P002-260618 [bfd3763bfc45]
+  - 🇺🇸US_216|319KB/s|R002-260618 [535e13772931]
+  - 🇮🇪IE_6|1.3MB/s|K001-260618 [ebe2b193bdbc]
+  - 🇺🇸US_276|532KB/s|R002-260618 [42475c556145]
+  - 🇳🇱NL_107|2.9MB/s|P002-260618 [6aa08aa36e29]
+  - C🟠🇩🇪hos[🤖📺🎭🎪]_dokng.com_5ed03181
+  - 🇭🇷HR_1|220KB/s|R002-260618 [1616bd87aa96]
+  - 🇩🇪DE_32|2.4MB/s|R002-260618 [711ff06169bb]
+  - 🇩🇪DE_101|1.5MB/s|K001-260618 [4d53191135c0]
+  - 🇫🇷FR_69|2.1MB/s|R002-260618 [e9b65e97ef66]
+  - 🇳🇱NL_168|1.1MB/s|R002-260618 [11147645fc19]
+  - 🇳🇱NL_153|6.8MB/s|R002-260618 [e136058b2502]
+  - D🔴🇷🇸hos[🎬🤖📺🎭]_dokng.com_11a27838
+  - 🇳🇱NL_125|99KB/s|R002-260618 [212db84ab5aa]
+  - 🇫🇷FR_101|2.7MB/s|K001-260618 [9609525282db]
+  - D🔴🇸🇪hos[🎬🤖📺🎪]_dokng.com_a76b8647
+  - 🇸🇪SE_5|427KB/s|P002-260618 [d0e4839081bd]
+  - 🇳🇱NL_136|5.6MB/s|R002-260618 [cf19808e163e]
+  - 🇳🇱NL_124|5.9MB/s|P002-260618 [a1a43e85b47a]
+  - 🇦🇱AL_3|1.0MB/s|K001-260618 [eff7a552152d]
+  - D🔴🇮🇹hos[🎬🤖📺🎭]_dokng.com_b28387d2
+  - 🇱🇻LV_10|539KB/s|P002-260618 [62197c9c62e8]
+  - D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_e14a79a6
+  - 🇱🇻LV_8|886KB/s|R002-260618 [60e5a6f0e8e7]
+  - 🇦🇹AT_2|1.1MB/s|P002-260618 [eeaf8effdcb8]
+  - D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_96845fbf
+  - 🇵🇱PL_2|1.2MB/s|R002-260618 [fc1b5675487f]
+  - D🔴🇭🇷hos[🤖📺🎭🎪]_dokng.com_842b3339
+  - 🇨🇭CH_9|605KB/s|P002-260618 [58b636345fb8]
+  - C🟠🇱🇺hos[🎬🤖📺🎭]_dokng.com_d227b762
+  - 🇺🇸US_433|734KB/s|K001-260618 [d3f40b887165]
+  - 🇳🇱NL_36|3.4MB/s|R002-260618 [f955e95e696e]
+  - 🇬🇧GB_14|1.1MB/s|R002-260618 [789ca315c621]
+  - D🔴🇩🇪hos[🎬🤖📺🎭]_dokng.com_cb6cfa3e
+  - 🇺🇸US_325|771KB/s|R002-260618 [fbfa57386da4]
+  - 🇳🇴NO_2|416KB/s|R002-260618 [65242b970d88]
+  - 🇺🇸US_180|207KB/s|R002-260618 [4832540fa4bc]
+  - 🇳🇱NL_104|5.1MB/s|P002-260618 [d77b65a8fb8a]
+  - 🇩🇪DE_17|861KB/s|R002-260618 [32dd9bd31301]
+  - D🔴🇭🇺hos[🎬🤖📺🎭]_dokng.com_58d0afef
+  - 🇩🇪DE_12|1.4MB/s|R002-260618 [a4490dd932b1]
   - 🇵🇹PT_2|405KB/s|R002-260618 [85927a0ef05f]
-  - 🇺🇸US_15|2.2MB/s
+  - 🇨🇿CZ_1|1.3MB/s
+  - A🟢🇨🇦res[🎬🤖📺🎭]_dokng.com_832debfd
+  - D🔴🇬🇧hos[🎬🤖📺🎭]_dokng.com_566b18be
+  - C🟠🇮🇱hos[📺🎭🎪🔍]_dokng.com_b9fb82b7
+  - 🇸🇪SE_8|620KB/s|R002-260618 [f52a0c7d7002]
+  - 🇬🇷GR_2|576KB/s|P002-260618 [9860957ab6cf]
+  - 🇺🇸US_469|702KB/s|R002-260618 [7ac6844fa31b]
+  - 🇫🇷FR_184|2.5MB/s|R002-260618 [b2efde442758]
+  - 🇩🇪DE_114|8.2MB/s [57c1bd082802]
+  - 🇷🇴RO_36|1.1MB/s|R002-260618 [955230628083]
+  - 🇪🇪EE_2|468KB/s|R002-260618 [6b8ca055dfef]
+  - 🇷🇴RO_80|1.8MB/s|R002-260618 [87cf0d33a9e0]
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
@@ -990,210 +996,210 @@ proxy-groups:
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
   - 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
-  - 🇺🇸 US_88
-  - 🔥Join+Telegram:@Farah_VPN🟣-1OVA
-  - C🟠🇭🇰hos_dokng.com_db363b3a
-  - U⚪🏳️ukn_dokng.com_79f3708c
-  - 🇳🇿NZ_73
-  - 🇳🇿NZ_80
+  - C🟠🇭🇰hos[📺🔍]_dokng.com_099454ad
+  - 🔥Join+Telegram:@Farah_VPN🟣-BYlu
+  - U⚪🏳️ukn[🎬📺🎭🎪]_dokng.com_12c6f9c9
+  - D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_ee2b07ac
+  - 🇫🇷 法国 | FRA
+  - A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7
+  - 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
   - 🇳🇿NZ_74
-  - 🇳🇿NZ_78
-  - 🇳🇿NZ_76
-  - 🇳🇿NZ_81
-  - 美国 - 亚特兰大 - 2
-  - 🇳🇿NZ_75
-  - 🇳🇿NZ_79
-  - 🇺🇸US_19|89KB/s|R002-260618 [39215ca34ddc]
-  - C🟠🇳🇱hos[🎬🤖📺🎭]_dokng.com_20704a3e
-  - 🇯🇵JP_7|258KB/s|P002-260618 [6c3b615333c9]
-  - 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
-  - 🇺🇸US_275|805KB/s|R002-260618 [f3757137fc03]
-  - 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
-  - D🔴🇩🇪hos[🎬🤖📺🎭]_dokng.com_46d7d8b2
-  - 🇳🇱NL_107|2.9MB/s|P002-260618 [6aa08aa36e29]
-  - 🇳🇱NL_204|587KB/s|P002-260618 [3f76c0832d7c]
-  - D🔴🇩🇪hos[🎬🤖📺🎭]_dokng.com_cb6cfa3e
-  - 🇳🇱NL_190|3.3MB/s|P002-260618 [111aaa619f5f]
-  - 🇫🇷FR_56|4.0MB/s|P002-260618 [8342ff3bd32d]
-  - 🇳🇱NL_178|5.4MB/s|R002-260618 [ecbc8201cfbb]
-  - 🇮🇪IE_1|4.2MB/s|K001-260618 [9484e3e833d4]
-  - D🔴🇬🇧hos[📺🎪✨✈️]_dokng.com_47ca507b
-  - 🇳🇱NL_116|652KB/s|R002-260618 [8befcd8cfe66]
-  - 🇫🇷FR_115|1019KB/s|R002-260618 [2f6c342a7a47]
-  - D🔴🇩🇪hos[🤖📺🎭🎪]_dokng.com_dcd1a64f
-  - 🇳🇱NL_149|3.3MB/s|R002-260618 [bcf20a2004d6]
-  - C🟠🇳🇱hos[🎬🤖📺🎭]_dokng.com_93f6101c
-  - 🇩🇪DE_47|1.5MB/s|R002-260618 [a3a509939ec6]
-  - 🇳🇱NL_138|3.1MB/s [faaf59d2e35f]
-  - 🇩🇪DE_15|967KB/s|R002-260618 [ff2fb2f0667e]
-  - 🇮🇪IE_9|4.7MB/s|R002-260618 [42e1acae4056]
+  - 🇳🇿NZ_72
+  - 🇳🇿NZ_73
+  - 🇳🇿NZ_71
+  - U⚪🏳️ukn_dokng.com_fa20483d
   - 🇯🇵JP_25|237KB/s|P002-260618 [43c1eca10f42]
-  - 🇫🇷FR_62|1.7MB/s|R002-260618 [39873ef4d996]
-  - 🇧🇪BE_1|1.5MB/s|R002-260618 [25500d055da0]
-  - 🇳🇱NL_36|3.4MB/s|R002-260618 [f955e95e696e]
-  - 🇳🇱NL_129|1.0MB/s|R002-260618 [f239ce5903e1]
-  - 🇺🇸US_216|319KB/s|R002-260618 [535e13772931]
-  - 🇳🇱NL_127|6.3MB/s|R002-260618 [02e64b2794c6]
-  - 🇫🇷FR_101|2.7MB/s|K001-260618 [9609525282db]
-  - 🇫🇷FR_78|2.6MB/s|R002-260618 [bb26c3f0d560]
-  - 🇩🇪DE_30|2.7MB/s|R002-260618 [eb56d2944297]
-  - 🇺🇸US_209|400KB/s|R002-260618 [f485c49773a6]
-  - 🇬🇧GB_27|1.0MB/s|P002-260618 [07696f627098]
-  - 🇫🇷FR_24|1.8MB/s|K001-260618 [af44a4a293e5]
-  - 🇫🇷FR_84|1.1MB/s|R002-260618 [e5d47e171534]
-  - 🇳🇱NL_76|5.6MB/s|P002-260618 [441de0340377]
-  - 🇱🇺LU_1|774KB/s|R002-260618 [a23f6ba6c1b1]
-  - D🔴🇷🇸hos[🎬🤖📺🎭]_dokng.com_cf7fb79e
-  - 🇨🇿CZ_2|1.1MB/s|P002-260618 [6bf0a578c364]
-  - 🇮🇪IE_3|652KB/s|R002-260618 [5a0dd59f90fc]
-  - 🇳🇱NL_104|5.1MB/s|P002-260618 [d77b65a8fb8a]
-  - 🇬🇧GB_14|1.1MB/s|R002-260618 [789ca315c621]
-  - 🇨🇭CH_2|2.2MB/s
-  - 🇭🇷HR_2|1.2MB/s|R002-260618 [117c7e706dc7]
-  - B🟡🇺🇸biz[🎬🤖📺🎭]_dokng.com_895424c2
-  - C🟠🇩🇪hos[🤖📺🎭🎪]_dokng.com_2b514860
-  - 🇲🇽MX_4|466KB/s|R002-260618 [fc7c075ec4e0]
-  - 🇩🇪DE_7|1.8MB/s|R002-260618 [ba686855c77a]
-  - 🇫🇷FR_38|1.1MB/s|R002-260618 [df04adae01b8]
-  - D🔴🇱🇺hos[🎬🤖📺🎭]_dokng.com_c2e321d8
-  - 🇺🇸US_180|207KB/s|R002-260618 [4832540fa4bc]
-  - 🇮🇪IE_2|1.0MB/s|R002-260618 [ad7d5a110359]
-  - 🇮🇪IE_7|1.5MB/s|P002-260618 [a9fa895b6a85]
-  - 🇩🇪DE_25|3.2MB/s|R002-260618 [92abb46579b9]
-  - D🔴🇬🇧hos[🎬🤖📺🎭]_dokng.com_566b18be
-  - 🇩🇪DE_101|1.5MB/s|K001-260618 [4d53191135c0]
-  - 🇩🇪DE_130|2.7MB/s|P002-260618 [a1fdb42c66f3]
-  - 🇳🇱NL_85|5.6MB/s|K001-260618 [378b1d5ed2ba]
+  - 🇳🇿NZ_75
+  - D🔴🇯🇵hos[🎬🤖📺🎭]_dokng.com_5802486e
+  - 🇩🇪DE_144|1.4MB/s|R002-260618 [97393c4aef2c]
+  - C🟠🇭🇰hos_dokng.com_db363b3a
+  - 🇳🇱NL_173|2.2MB/s|P002-260618 [cb3b6268d982]
+  - 🇳🇱NL_108|3.5MB/s|R002-260618 [95f78e841f29]
+  - 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
+  - 🇺🇸US_19|89KB/s|R002-260618 [39215ca34ddc]
   - D🔴🇨🇿hos[🎬🤖📺🎭]_dokng.com_9e50c1e6
-  - 🇳🇱NL_118|1.7MB/s|R002-260618 [e8525c922acc]
-  - 🇨🇭CH_48|1.1MB/s [2579f7044e34]
-  - 🇨🇭CH_9|605KB/s|P002-260618 [58b636345fb8]
-  - 🇮🇪IE_6|1.3MB/s|K001-260618 [ebe2b193bdbc]
-  - D🔴🇷🇸hos[🎬🤖📺🎭]_dokng.com_11a27838
-  - 🇺🇸US_219|217KB/s|R002-260618 [a4d3572ae220]
-  - 🇩🇪DE_8|2.7MB/s
   - A🟢🇩🇪res[🎬🤖📺🎭]_dokng.com_df239572
-  - 🇫🇷FR_25|1.6MB/s|K001-260618 [fb2a86c79033]
-  - 🇩🇪DE_51|5.2MB/s|P002-260618 [c242c75d0a6f]
-  - 🇵🇱PL_16|751KB/s|R002-260618 [096fe5ac3f15]
-  - 🇳🇱NL_153|6.8MB/s|R002-260618 [e136058b2502]
+  - 🇫🇷FR_56|4.0MB/s|P002-260618 [8342ff3bd32d]
+  - 🇫🇷FR_62|1.7MB/s|R002-260618 [39873ef4d996]
+  - 🇫🇷FR_84|1.1MB/s|R002-260618 [e5d47e171534]
   - 🇮🇪IE_5|4.4MB/s|R002-260618 [28e6899e674e]
   - C🟠🇫🇷hos[🎬🤖📺🎪]_dokng.com_789dbb5c
-  - D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_73f7e688
-  - 🇩🇪DE_9|3.4MB/s
-  - 🇩🇪DE_115|1.5MB/s|K001-260618 [8ac2b0d2624d]
-  - 🇺🇸US_303|691KB/s|R002-260618 [8cd4e6e1fb45]
-  - 🇺🇸US_91|1009KB/s|R002-260618 [f6ef7c53e70b]
-  - 🇬🇧GB_9|981KB/s|R002-260618 [b402a03388fc]
-  - 🇳🇱NL_166|3.2MB/s|R002-260618 [565ec6032e34]
-  - 🇳🇱NL_200|5.7MB/s|P002-260618 [f84dd5f92876]
+  - 🇳🇱NL_127|6.3MB/s|R002-260618 [02e64b2794c6]
+  - C🟠🇩🇪hos[🤖📺🎭🎪]_dokng.com_2b514860
+  - 🇩🇪DE_46|506KB/s|P002-260618 [3ddd56489581]
+  - 🇩🇪DE_56|900KB/s|P002-260618 [a01dd6dcc5e0]
+  - 🇯🇵JP_7|258KB/s|P002-260618 [6c3b615333c9]
+  - U⚪🏳️ukn_dokng.com_79f3708c
+  - A🟢🇬🇧res[🎬🤖📺🎭]_dokng.com_01f49dd6
+  - D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_10614c05
+  - 🇳🇱NL_193|3.3MB/s|P002-260618 [95c96fb6d441]
+  - 🇩🇪DE_36|4.4MB/s|R002-260618 [f8f3f9b23979]
+  - 🇺🇸US_43|992KB/s|P002-260618 [69335dd6b551]
+  - 🇧🇪BE_1|1.5MB/s|R002-260618 [25500d055da0]
+  - 🇳🇱NL_109|2.5MB/s|R002-260618 [aee8d229a5b3]
+  - 🇨🇭CH_48|1.1MB/s [2579f7044e34]
+  - 🇩🇪DE_7|1.8MB/s|R002-260618 [ba686855c77a]
+  - D🔴🇩🇰hos_dokng.com_58da35c6
+  - C🟠🇵🇹hos[🤖📺🎭🎪]_dokng.com_1db5bd58
+  - 🇬🇧GB_28|688KB/s|P002-260618 [bfd3763bfc45]
+  - 🇺🇸US_216|319KB/s|R002-260618 [535e13772931]
+  - 🇮🇪IE_6|1.3MB/s|K001-260618 [ebe2b193bdbc]
+  - 🇺🇸US_276|532KB/s|R002-260618 [42475c556145]
+  - 🇳🇱NL_107|2.9MB/s|P002-260618 [6aa08aa36e29]
+  - C🟠🇩🇪hos[🤖📺🎭🎪]_dokng.com_5ed03181
+  - 🇭🇷HR_1|220KB/s|R002-260618 [1616bd87aa96]
+  - 🇩🇪DE_32|2.4MB/s|R002-260618 [711ff06169bb]
+  - 🇩🇪DE_101|1.5MB/s|K001-260618 [4d53191135c0]
+  - 🇫🇷FR_69|2.1MB/s|R002-260618 [e9b65e97ef66]
+  - 🇳🇱NL_168|1.1MB/s|R002-260618 [11147645fc19]
+  - 🇳🇱NL_153|6.8MB/s|R002-260618 [e136058b2502]
+  - D🔴🇷🇸hos[🎬🤖📺🎭]_dokng.com_11a27838
+  - 🇳🇱NL_125|99KB/s|R002-260618 [212db84ab5aa]
+  - 🇫🇷FR_101|2.7MB/s|K001-260618 [9609525282db]
+  - D🔴🇸🇪hos[🎬🤖📺🎪]_dokng.com_a76b8647
+  - 🇸🇪SE_5|427KB/s|P002-260618 [d0e4839081bd]
+  - 🇳🇱NL_136|5.6MB/s|R002-260618 [cf19808e163e]
+  - 🇳🇱NL_124|5.9MB/s|P002-260618 [a1a43e85b47a]
+  - 🇦🇱AL_3|1.0MB/s|K001-260618 [eff7a552152d]
+  - D🔴🇮🇹hos[🎬🤖📺🎭]_dokng.com_b28387d2
+  - 🇱🇻LV_10|539KB/s|P002-260618 [62197c9c62e8]
+  - D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_e14a79a6
+  - 🇱🇻LV_8|886KB/s|R002-260618 [60e5a6f0e8e7]
+  - 🇦🇹AT_2|1.1MB/s|P002-260618 [eeaf8effdcb8]
+  - D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_96845fbf
+  - 🇵🇱PL_2|1.2MB/s|R002-260618 [fc1b5675487f]
+  - D🔴🇭🇷hos[🤖📺🎭🎪]_dokng.com_842b3339
+  - 🇨🇭CH_9|605KB/s|P002-260618 [58b636345fb8]
+  - C🟠🇱🇺hos[🎬🤖📺🎭]_dokng.com_d227b762
+  - 🇺🇸US_433|734KB/s|K001-260618 [d3f40b887165]
+  - 🇳🇱NL_36|3.4MB/s|R002-260618 [f955e95e696e]
+  - 🇬🇧GB_14|1.1MB/s|R002-260618 [789ca315c621]
+  - D🔴🇩🇪hos[🎬🤖📺🎭]_dokng.com_cb6cfa3e
+  - 🇺🇸US_325|771KB/s|R002-260618 [fbfa57386da4]
+  - 🇳🇴NO_2|416KB/s|R002-260618 [65242b970d88]
+  - 🇺🇸US_180|207KB/s|R002-260618 [4832540fa4bc]
+  - 🇳🇱NL_104|5.1MB/s|P002-260618 [d77b65a8fb8a]
+  - 🇩🇪DE_17|861KB/s|R002-260618 [32dd9bd31301]
+  - D🔴🇭🇺hos[🎬🤖📺🎭]_dokng.com_58d0afef
+  - 🇩🇪DE_12|1.4MB/s|R002-260618 [a4490dd932b1]
   - 🇵🇹PT_2|405KB/s|R002-260618 [85927a0ef05f]
-  - 🇺🇸US_15|2.2MB/s
+  - 🇨🇿CZ_1|1.3MB/s
+  - A🟢🇨🇦res[🎬🤖📺🎭]_dokng.com_832debfd
+  - D🔴🇬🇧hos[🎬🤖📺🎭]_dokng.com_566b18be
+  - C🟠🇮🇱hos[📺🎭🎪🔍]_dokng.com_b9fb82b7
+  - 🇸🇪SE_8|620KB/s|R002-260618 [f52a0c7d7002]
+  - 🇬🇷GR_2|576KB/s|P002-260618 [9860957ab6cf]
+  - 🇺🇸US_469|702KB/s|R002-260618 [7ac6844fa31b]
+  - 🇫🇷FR_184|2.5MB/s|R002-260618 [b2efde442758]
+  - 🇩🇪DE_114|8.2MB/s [57c1bd082802]
+  - 🇷🇴RO_36|1.1MB/s|R002-260618 [955230628083]
+  - 🇪🇪EE_2|468KB/s|R002-260618 [6b8ca055dfef]
+  - 🇷🇴RO_80|1.8MB/s|R002-260618 [87cf0d33a9e0]
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
   - 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
-  - 🇺🇸 US_88
-  - 🔥Join+Telegram:@Farah_VPN🟣-1OVA
-  - C🟠🇭🇰hos_dokng.com_db363b3a
-  - U⚪🏳️ukn_dokng.com_79f3708c
-  - 🇳🇿NZ_73
-  - 🇳🇿NZ_80
+  - C🟠🇭🇰hos[📺🔍]_dokng.com_099454ad
+  - 🔥Join+Telegram:@Farah_VPN🟣-BYlu
+  - U⚪🏳️ukn[🎬📺🎭🎪]_dokng.com_12c6f9c9
+  - D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_ee2b07ac
+  - 🇫🇷 法国 | FRA
+  - A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7
+  - 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
   - 🇳🇿NZ_74
-  - 🇳🇿NZ_78
-  - 🇳🇿NZ_76
-  - 🇳🇿NZ_81
-  - 美国 - 亚特兰大 - 2
-  - 🇳🇿NZ_75
-  - 🇳🇿NZ_79
-  - 🇺🇸US_19|89KB/s|R002-260618 [39215ca34ddc]
-  - C🟠🇳🇱hos[🎬🤖📺🎭]_dokng.com_20704a3e
-  - 🇯🇵JP_7|258KB/s|P002-260618 [6c3b615333c9]
-  - 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
-  - 🇺🇸US_275|805KB/s|R002-260618 [f3757137fc03]
-  - 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
-  - D🔴🇩🇪hos[🎬🤖📺🎭]_dokng.com_46d7d8b2
-  - 🇳🇱NL_107|2.9MB/s|P002-260618 [6aa08aa36e29]
-  - 🇳🇱NL_204|587KB/s|P002-260618 [3f76c0832d7c]
-  - D🔴🇩🇪hos[🎬🤖📺🎭]_dokng.com_cb6cfa3e
-  - 🇳🇱NL_190|3.3MB/s|P002-260618 [111aaa619f5f]
-  - 🇫🇷FR_56|4.0MB/s|P002-260618 [8342ff3bd32d]
-  - 🇳🇱NL_178|5.4MB/s|R002-260618 [ecbc8201cfbb]
-  - 🇮🇪IE_1|4.2MB/s|K001-260618 [9484e3e833d4]
-  - D🔴🇬🇧hos[📺🎪✨✈️]_dokng.com_47ca507b
-  - 🇳🇱NL_116|652KB/s|R002-260618 [8befcd8cfe66]
-  - 🇫🇷FR_115|1019KB/s|R002-260618 [2f6c342a7a47]
-  - D🔴🇩🇪hos[🤖📺🎭🎪]_dokng.com_dcd1a64f
-  - 🇳🇱NL_149|3.3MB/s|R002-260618 [bcf20a2004d6]
-  - C🟠🇳🇱hos[🎬🤖📺🎭]_dokng.com_93f6101c
-  - 🇩🇪DE_47|1.5MB/s|R002-260618 [a3a509939ec6]
-  - 🇳🇱NL_138|3.1MB/s [faaf59d2e35f]
-  - 🇩🇪DE_15|967KB/s|R002-260618 [ff2fb2f0667e]
-  - 🇮🇪IE_9|4.7MB/s|R002-260618 [42e1acae4056]
+  - 🇳🇿NZ_72
+  - 🇳🇿NZ_73
+  - 🇳🇿NZ_71
+  - U⚪🏳️ukn_dokng.com_fa20483d
   - 🇯🇵JP_25|237KB/s|P002-260618 [43c1eca10f42]
-  - 🇫🇷FR_62|1.7MB/s|R002-260618 [39873ef4d996]
-  - 🇧🇪BE_1|1.5MB/s|R002-260618 [25500d055da0]
-  - 🇳🇱NL_36|3.4MB/s|R002-260618 [f955e95e696e]
-  - 🇳🇱NL_129|1.0MB/s|R002-260618 [f239ce5903e1]
-  - 🇺🇸US_216|319KB/s|R002-260618 [535e13772931]
-  - 🇳🇱NL_127|6.3MB/s|R002-260618 [02e64b2794c6]
-  - 🇫🇷FR_101|2.7MB/s|K001-260618 [9609525282db]
-  - 🇫🇷FR_78|2.6MB/s|R002-260618 [bb26c3f0d560]
-  - 🇩🇪DE_30|2.7MB/s|R002-260618 [eb56d2944297]
-  - 🇺🇸US_209|400KB/s|R002-260618 [f485c49773a6]
-  - 🇬🇧GB_27|1.0MB/s|P002-260618 [07696f627098]
-  - 🇫🇷FR_24|1.8MB/s|K001-260618 [af44a4a293e5]
-  - 🇫🇷FR_84|1.1MB/s|R002-260618 [e5d47e171534]
-  - 🇳🇱NL_76|5.6MB/s|P002-260618 [441de0340377]
-  - 🇱🇺LU_1|774KB/s|R002-260618 [a23f6ba6c1b1]
-  - D🔴🇷🇸hos[🎬🤖📺🎭]_dokng.com_cf7fb79e
-  - 🇨🇿CZ_2|1.1MB/s|P002-260618 [6bf0a578c364]
-  - 🇮🇪IE_3|652KB/s|R002-260618 [5a0dd59f90fc]
-  - 🇳🇱NL_104|5.1MB/s|P002-260618 [d77b65a8fb8a]
-  - 🇬🇧GB_14|1.1MB/s|R002-260618 [789ca315c621]
-  - 🇨🇭CH_2|2.2MB/s
-  - 🇭🇷HR_2|1.2MB/s|R002-260618 [117c7e706dc7]
-  - B🟡🇺🇸biz[🎬🤖📺🎭]_dokng.com_895424c2
-  - C🟠🇩🇪hos[🤖📺🎭🎪]_dokng.com_2b514860
-  - 🇲🇽MX_4|466KB/s|R002-260618 [fc7c075ec4e0]
-  - 🇩🇪DE_7|1.8MB/s|R002-260618 [ba686855c77a]
-  - 🇫🇷FR_38|1.1MB/s|R002-260618 [df04adae01b8]
-  - D🔴🇱🇺hos[🎬🤖📺🎭]_dokng.com_c2e321d8
-  - 🇺🇸US_180|207KB/s|R002-260618 [4832540fa4bc]
-  - 🇮🇪IE_2|1.0MB/s|R002-260618 [ad7d5a110359]
-  - 🇮🇪IE_7|1.5MB/s|P002-260618 [a9fa895b6a85]
-  - 🇩🇪DE_25|3.2MB/s|R002-260618 [92abb46579b9]
-  - D🔴🇬🇧hos[🎬🤖📺🎭]_dokng.com_566b18be
-  - 🇩🇪DE_101|1.5MB/s|K001-260618 [4d53191135c0]
-  - 🇩🇪DE_130|2.7MB/s|P002-260618 [a1fdb42c66f3]
-  - 🇳🇱NL_85|5.6MB/s|K001-260618 [378b1d5ed2ba]
+  - 🇳🇿NZ_75
+  - D🔴🇯🇵hos[🎬🤖📺🎭]_dokng.com_5802486e
+  - 🇩🇪DE_144|1.4MB/s|R002-260618 [97393c4aef2c]
+  - C🟠🇭🇰hos_dokng.com_db363b3a
+  - 🇳🇱NL_173|2.2MB/s|P002-260618 [cb3b6268d982]
+  - 🇳🇱NL_108|3.5MB/s|R002-260618 [95f78e841f29]
+  - 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
+  - 🇺🇸US_19|89KB/s|R002-260618 [39215ca34ddc]
   - D🔴🇨🇿hos[🎬🤖📺🎭]_dokng.com_9e50c1e6
-  - 🇳🇱NL_118|1.7MB/s|R002-260618 [e8525c922acc]
-  - 🇨🇭CH_48|1.1MB/s [2579f7044e34]
-  - 🇨🇭CH_9|605KB/s|P002-260618 [58b636345fb8]
-  - 🇮🇪IE_6|1.3MB/s|K001-260618 [ebe2b193bdbc]
-  - D🔴🇷🇸hos[🎬🤖📺🎭]_dokng.com_11a27838
-  - 🇺🇸US_219|217KB/s|R002-260618 [a4d3572ae220]
-  - 🇩🇪DE_8|2.7MB/s
   - A🟢🇩🇪res[🎬🤖📺🎭]_dokng.com_df239572
-  - 🇫🇷FR_25|1.6MB/s|K001-260618 [fb2a86c79033]
-  - 🇩🇪DE_51|5.2MB/s|P002-260618 [c242c75d0a6f]
-  - 🇵🇱PL_16|751KB/s|R002-260618 [096fe5ac3f15]
-  - 🇳🇱NL_153|6.8MB/s|R002-260618 [e136058b2502]
+  - 🇫🇷FR_56|4.0MB/s|P002-260618 [8342ff3bd32d]
+  - 🇫🇷FR_62|1.7MB/s|R002-260618 [39873ef4d996]
+  - 🇫🇷FR_84|1.1MB/s|R002-260618 [e5d47e171534]
   - 🇮🇪IE_5|4.4MB/s|R002-260618 [28e6899e674e]
   - C🟠🇫🇷hos[🎬🤖📺🎪]_dokng.com_789dbb5c
-  - D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_73f7e688
-  - 🇩🇪DE_9|3.4MB/s
-  - 🇩🇪DE_115|1.5MB/s|K001-260618 [8ac2b0d2624d]
-  - 🇺🇸US_303|691KB/s|R002-260618 [8cd4e6e1fb45]
-  - 🇺🇸US_91|1009KB/s|R002-260618 [f6ef7c53e70b]
-  - 🇬🇧GB_9|981KB/s|R002-260618 [b402a03388fc]
-  - 🇳🇱NL_166|3.2MB/s|R002-260618 [565ec6032e34]
-  - 🇳🇱NL_200|5.7MB/s|P002-260618 [f84dd5f92876]
+  - 🇳🇱NL_127|6.3MB/s|R002-260618 [02e64b2794c6]
+  - C🟠🇩🇪hos[🤖📺🎭🎪]_dokng.com_2b514860
+  - 🇩🇪DE_46|506KB/s|P002-260618 [3ddd56489581]
+  - 🇩🇪DE_56|900KB/s|P002-260618 [a01dd6dcc5e0]
+  - 🇯🇵JP_7|258KB/s|P002-260618 [6c3b615333c9]
+  - U⚪🏳️ukn_dokng.com_79f3708c
+  - A🟢🇬🇧res[🎬🤖📺🎭]_dokng.com_01f49dd6
+  - D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_10614c05
+  - 🇳🇱NL_193|3.3MB/s|P002-260618 [95c96fb6d441]
+  - 🇩🇪DE_36|4.4MB/s|R002-260618 [f8f3f9b23979]
+  - 🇺🇸US_43|992KB/s|P002-260618 [69335dd6b551]
+  - 🇧🇪BE_1|1.5MB/s|R002-260618 [25500d055da0]
+  - 🇳🇱NL_109|2.5MB/s|R002-260618 [aee8d229a5b3]
+  - 🇨🇭CH_48|1.1MB/s [2579f7044e34]
+  - 🇩🇪DE_7|1.8MB/s|R002-260618 [ba686855c77a]
+  - D🔴🇩🇰hos_dokng.com_58da35c6
+  - C🟠🇵🇹hos[🤖📺🎭🎪]_dokng.com_1db5bd58
+  - 🇬🇧GB_28|688KB/s|P002-260618 [bfd3763bfc45]
+  - 🇺🇸US_216|319KB/s|R002-260618 [535e13772931]
+  - 🇮🇪IE_6|1.3MB/s|K001-260618 [ebe2b193bdbc]
+  - 🇺🇸US_276|532KB/s|R002-260618 [42475c556145]
+  - 🇳🇱NL_107|2.9MB/s|P002-260618 [6aa08aa36e29]
+  - C🟠🇩🇪hos[🤖📺🎭🎪]_dokng.com_5ed03181
+  - 🇭🇷HR_1|220KB/s|R002-260618 [1616bd87aa96]
+  - 🇩🇪DE_32|2.4MB/s|R002-260618 [711ff06169bb]
+  - 🇩🇪DE_101|1.5MB/s|K001-260618 [4d53191135c0]
+  - 🇫🇷FR_69|2.1MB/s|R002-260618 [e9b65e97ef66]
+  - 🇳🇱NL_168|1.1MB/s|R002-260618 [11147645fc19]
+  - 🇳🇱NL_153|6.8MB/s|R002-260618 [e136058b2502]
+  - D🔴🇷🇸hos[🎬🤖📺🎭]_dokng.com_11a27838
+  - 🇳🇱NL_125|99KB/s|R002-260618 [212db84ab5aa]
+  - 🇫🇷FR_101|2.7MB/s|K001-260618 [9609525282db]
+  - D🔴🇸🇪hos[🎬🤖📺🎪]_dokng.com_a76b8647
+  - 🇸🇪SE_5|427KB/s|P002-260618 [d0e4839081bd]
+  - 🇳🇱NL_136|5.6MB/s|R002-260618 [cf19808e163e]
+  - 🇳🇱NL_124|5.9MB/s|P002-260618 [a1a43e85b47a]
+  - 🇦🇱AL_3|1.0MB/s|K001-260618 [eff7a552152d]
+  - D🔴🇮🇹hos[🎬🤖📺🎭]_dokng.com_b28387d2
+  - 🇱🇻LV_10|539KB/s|P002-260618 [62197c9c62e8]
+  - D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_e14a79a6
+  - 🇱🇻LV_8|886KB/s|R002-260618 [60e5a6f0e8e7]
+  - 🇦🇹AT_2|1.1MB/s|P002-260618 [eeaf8effdcb8]
+  - D🔴🇺🇸hos[🎬🤖📺🎭]_dokng.com_96845fbf
+  - 🇵🇱PL_2|1.2MB/s|R002-260618 [fc1b5675487f]
+  - D🔴🇭🇷hos[🤖📺🎭🎪]_dokng.com_842b3339
+  - 🇨🇭CH_9|605KB/s|P002-260618 [58b636345fb8]
+  - C🟠🇱🇺hos[🎬🤖📺🎭]_dokng.com_d227b762
+  - 🇺🇸US_433|734KB/s|K001-260618 [d3f40b887165]
+  - 🇳🇱NL_36|3.4MB/s|R002-260618 [f955e95e696e]
+  - 🇬🇧GB_14|1.1MB/s|R002-260618 [789ca315c621]
+  - D🔴🇩🇪hos[🎬🤖📺🎭]_dokng.com_cb6cfa3e
+  - 🇺🇸US_325|771KB/s|R002-260618 [fbfa57386da4]
+  - 🇳🇴NO_2|416KB/s|R002-260618 [65242b970d88]
+  - 🇺🇸US_180|207KB/s|R002-260618 [4832540fa4bc]
+  - 🇳🇱NL_104|5.1MB/s|P002-260618 [d77b65a8fb8a]
+  - 🇩🇪DE_17|861KB/s|R002-260618 [32dd9bd31301]
+  - D🔴🇭🇺hos[🎬🤖📺🎭]_dokng.com_58d0afef
+  - 🇩🇪DE_12|1.4MB/s|R002-260618 [a4490dd932b1]
   - 🇵🇹PT_2|405KB/s|R002-260618 [85927a0ef05f]
-  - 🇺🇸US_15|2.2MB/s
+  - 🇨🇿CZ_1|1.3MB/s
+  - A🟢🇨🇦res[🎬🤖📺🎭]_dokng.com_832debfd
+  - D🔴🇬🇧hos[🎬🤖📺🎭]_dokng.com_566b18be
+  - C🟠🇮🇱hos[📺🎭🎪🔍]_dokng.com_b9fb82b7
+  - 🇸🇪SE_8|620KB/s|R002-260618 [f52a0c7d7002]
+  - 🇬🇷GR_2|576KB/s|P002-260618 [9860957ab6cf]
+  - 🇺🇸US_469|702KB/s|R002-260618 [7ac6844fa31b]
+  - 🇫🇷FR_184|2.5MB/s|R002-260618 [b2efde442758]
+  - 🇩🇪DE_114|8.2MB/s [57c1bd082802]
+  - 🇷🇴RO_36|1.1MB/s|R002-260618 [955230628083]
+  - 🇪🇪EE_2|468KB/s|R002-260618 [6b8ca055dfef]
+  - 🇷🇴RO_80|1.8MB/s|R002-260618 [87cf0d33a9e0]
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT

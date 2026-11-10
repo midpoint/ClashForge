@@ -32,13 +32,6 @@ dns:
     - 240.0.0.0/4
     - 0.0.0.0/32
 proxies:
-- name: 美国 - 亚特兰大 - 2
-  server: 118.184.140.90
-  port: 58764
-  type: http
-  tls: true
-  skip-cert-verify: true
-  delay: 571
 - name: 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
   port: 3128
   server: 119.28.24.235
@@ -47,13 +40,31 @@ proxies:
   tls: true
   type: http
   udp: true
-- name: U⚪🏳️ukn[🎬📺🎭🎪]_dokng.com_12c6f9c9
-  password: None
-  port: 31343
-  server: 120.232.204.58
+- name: 美国 - 亚特兰大 - 2
+  server: 118.184.140.90
+  port: 58764
+  type: http
+  tls: true
   skip-cert-verify: true
+  delay: 571
+- name: 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
+  password: None
+  port: 443
+  server: 129.153.93.183
+  skip-cert-verify: true
+  sub_tag: P002-260618
   tls: true
   type: http
+  udp: true
+- name: 🇯🇵JP_7|258KB/s|P002-260618 [6c3b615333c9]
+  password: None
+  port: 343
+  server: 133.18.200.207
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
 - client-fingerprint: chrome
   name: U⚪🏳️ukn_dokng.com_79f3708c
   network: ws
@@ -69,76 +80,59 @@ proxies:
       User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36
         (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36
     path: /api
-- name: 🔥Join+Telegram:@Farah_VPN🟣-1OVA
-  type: vmess
-  server: 39.108.113.127
-  port: 10086
-  uuid: b0253c6c-0b96-4950-bde1-669f13bc1a01
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  sni: ''
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-- name: 🇳🇿NZ_79
+- name: 🇫🇷FR_56|4.0MB/s|P002-260618 [8342ff3bd32d]
+  password: None
+  port: 443
+  server: 172.64.68.89
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇳🇱NL_178|5.4MB/s|R002-260618 [ecbc8201cfbb]
+  password: 'null'
+  port: 9002
+  server: 84.17.47.149
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  username: 'null'
+- name: 🇺🇸US_275|805KB/s|R002-260618 [f3757137fc03]
+  port: 443
+  server: 129.153.93.183
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇮🇪IE_1|4.2MB/s|K001-260618 [9484e3e833d4]
+  password: None
+  port: 443
+  server: 34.249.214.108
+  skip-cert-verify: true
+  sub_tag: K001-260618
+  tls: true
+  type: http
+  udp: true
+  username: ''
+- name: 🇺🇸 US_88
   type: ss
-  server: 202.50.253.27
-  port: 19999
+  server: 154.36.158.197
+  port: 8388
   cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  password: BeaUf9c0AEWH40Pu
   udp: true
-- alpn:
-  - h3
-  - h2
-  - http/1.1
-  client-fingerprint: ios
-  encryption: none
-  name: 🇫🇷FR_88|1.3MB/s|R002-260618 [5e89fefb461a]
-  network: ws
-  packet-encoding: xudp
-  port: 2087
-  server: 104.18.1.1
-  servername: 1.proxy2.us.ci.
-  sub_tag: R002-260618
-  tls: true
-  type: vless
-  udp: true
-  uuid: 4859c235-2530-4062-9a0b-ea859cbbf861
-  ws-opts:
-    early-data-header-name: Sec-WebSocket-Protocol
-    headers:
-      Host: 1.proxy2.us.ci.
-    max-early-data: 2560
-    path: /
-- client-fingerprint: chrome
-  name: A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7
-  network: ws
+- name: 🇳🇱NL_116|652KB/s|R002-260618 [8befcd8cfe66]
   port: 443
-  server: 60.248.219.53
-  servername: ty986gfazs.cainiaohub.xyz
+  server: 185.246.153.42
   skip-cert-verify: true
-  tls: true
-  type: vless
-  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
-  ws-opts:
-    headers:
-      Host: ty986gfazs.cainiaohub.xyz
-    path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
-- name: 🇺🇸US_19|89KB/s|R002-260618 [39215ca34ddc]
-  port: 443
-  server: 137.175.22.72
-  skip-cert-verify: true
+  sni: 482c8436a1f7c908b48a1757abb5dd79-3791fb4df2db250b.apache-iv.com
   sub_tag: R002-260618
   tls: true
   type: http
   udp: true
-- name: D🔴🇭🇰hos[🎬📺🎭🔍]_dokng.com_ff9ee1ab
-  port: 443
-  server: 43.155.62.157
-  type: http
 - name: 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
   port: 8443
   server: 54.190.176.228
@@ -147,14 +141,6 @@ proxies:
   tls: true
   type: http
   udp: true
-- name: U⚪🏳️ukn[🎭✨🎞️]_dokng.com_0b409c03
-  port: 10800
-  server: 195.154.84.121
-  type: http
-- name: U⚪🏳️ukn_dokng.com_fa20483d
-  port: 999
-  server: 82.152.138.127
-  type: http
 - name: C🟠🇭🇰hos_dokng.com_db363b3a
   password: admin
   port: 8899
@@ -174,19 +160,18 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 美国 - 亚特兰大 - 2
   - 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
-  - U⚪🏳️ukn[🎬📺🎭🎪]_dokng.com_12c6f9c9
+  - 美国 - 亚特兰大 - 2
+  - 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
+  - 🇯🇵JP_7|258KB/s|P002-260618 [6c3b615333c9]
   - U⚪🏳️ukn_dokng.com_79f3708c
-  - 🔥Join+Telegram:@Farah_VPN🟣-1OVA
-  - 🇳🇿NZ_79
-  - 🇫🇷FR_88|1.3MB/s|R002-260618 [5e89fefb461a]
-  - A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7
-  - 🇺🇸US_19|89KB/s|R002-260618 [39215ca34ddc]
-  - D🔴🇭🇰hos[🎬📺🎭🔍]_dokng.com_ff9ee1ab
+  - 🇫🇷FR_56|4.0MB/s|P002-260618 [8342ff3bd32d]
+  - 🇳🇱NL_178|5.4MB/s|R002-260618 [ecbc8201cfbb]
+  - 🇺🇸US_275|805KB/s|R002-260618 [f3757137fc03]
+  - 🇮🇪IE_1|4.2MB/s|K001-260618 [9484e3e833d4]
+  - 🇺🇸 US_88
+  - 🇳🇱NL_116|652KB/s|R002-260618 [8befcd8cfe66]
   - 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
-  - U⚪🏳️ukn[🎭✨🎞️]_dokng.com_0b409c03
-  - U⚪🏳️ukn_dokng.com_fa20483d
   - C🟠🇭🇰hos_dokng.com_db363b3a
   url: http://www.gstatic.com/generate_204
   interval: 300
@@ -195,38 +180,36 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 美国 - 亚特兰大 - 2
   - 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
-  - U⚪🏳️ukn[🎬📺🎭🎪]_dokng.com_12c6f9c9
+  - 美国 - 亚特兰大 - 2
+  - 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
+  - 🇯🇵JP_7|258KB/s|P002-260618 [6c3b615333c9]
   - U⚪🏳️ukn_dokng.com_79f3708c
-  - 🔥Join+Telegram:@Farah_VPN🟣-1OVA
-  - 🇳🇿NZ_79
-  - 🇫🇷FR_88|1.3MB/s|R002-260618 [5e89fefb461a]
-  - A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7
-  - 🇺🇸US_19|89KB/s|R002-260618 [39215ca34ddc]
-  - D🔴🇭🇰hos[🎬📺🎭🔍]_dokng.com_ff9ee1ab
+  - 🇫🇷FR_56|4.0MB/s|P002-260618 [8342ff3bd32d]
+  - 🇳🇱NL_178|5.4MB/s|R002-260618 [ecbc8201cfbb]
+  - 🇺🇸US_275|805KB/s|R002-260618 [f3757137fc03]
+  - 🇮🇪IE_1|4.2MB/s|K001-260618 [9484e3e833d4]
+  - 🇺🇸 US_88
+  - 🇳🇱NL_116|652KB/s|R002-260618 [8befcd8cfe66]
   - 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
-  - U⚪🏳️ukn[🎭✨🎞️]_dokng.com_0b409c03
-  - U⚪🏳️ukn_dokng.com_fa20483d
   - C🟠🇭🇰hos_dokng.com_db363b3a
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - 美国 - 亚特兰大 - 2
   - 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
-  - U⚪🏳️ukn[🎬📺🎭🎪]_dokng.com_12c6f9c9
+  - 美国 - 亚特兰大 - 2
+  - 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
+  - 🇯🇵JP_7|258KB/s|P002-260618 [6c3b615333c9]
   - U⚪🏳️ukn_dokng.com_79f3708c
-  - 🔥Join+Telegram:@Farah_VPN🟣-1OVA
-  - 🇳🇿NZ_79
-  - 🇫🇷FR_88|1.3MB/s|R002-260618 [5e89fefb461a]
-  - A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7
-  - 🇺🇸US_19|89KB/s|R002-260618 [39215ca34ddc]
-  - D🔴🇭🇰hos[🎬📺🎭🔍]_dokng.com_ff9ee1ab
+  - 🇫🇷FR_56|4.0MB/s|P002-260618 [8342ff3bd32d]
+  - 🇳🇱NL_178|5.4MB/s|R002-260618 [ecbc8201cfbb]
+  - 🇺🇸US_275|805KB/s|R002-260618 [f3757137fc03]
+  - 🇮🇪IE_1|4.2MB/s|K001-260618 [9484e3e833d4]
+  - 🇺🇸 US_88
+  - 🇳🇱NL_116|652KB/s|R002-260618 [8befcd8cfe66]
   - 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
-  - U⚪🏳️ukn[🎭✨🎞️]_dokng.com_0b409c03
-  - U⚪🏳️ukn_dokng.com_fa20483d
   - C🟠🇭🇰hos_dokng.com_db363b3a
 rules:
 - DOMAIN,app.adjust.com,DIRECT

@@ -32,21 +32,6 @@ dns:
     - 240.0.0.0/4
     - 0.0.0.0/32
 proxies:
-- name: 美国 - 亚特兰大 - 2
-  server: 118.184.140.90
-  port: 58764
-  type: http
-  tls: true
-  skip-cert-verify: true
-  delay: 571
-- name: C🟠🇯🇵hos[🎬📺🎭🎪]_dokng.com_55d2834c
-  password: 'null'
-  port: 40583
-  server: 120.232.204.58
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: 'null'
 - name: U⚪🏳️ukn[🎬📺🎭🎪]_dokng.com_12c6f9c9
   password: None
   port: 31343
@@ -54,10 +39,21 @@ proxies:
   skip-cert-verify: true
   tls: true
   type: http
-- name: 🇲🇽MX_1|861KB/s|R002-260618 [83fece482178]
-  port: 999
-  server: 189.51.168.165
-  sub_tag: R002-260618
+- name: 🇯🇵JP_7|258KB/s|P002-260618 [6c3b615333c9]
+  password: None
+  port: 343
+  server: 133.18.200.207
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇯🇵JP_25|237KB/s|P002-260618 [43c1eca10f42]
+  port: 343
+  server: 133.18.200.207
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
   type: http
   udp: true
 - name: 🇫🇷FR_56|4.0MB/s|P002-260618 [8342ff3bd32d]
@@ -69,23 +65,6 @@ proxies:
   tls: true
   type: http
   udp: true
-- name: 🇫🇷FR_62|1.7MB/s|R002-260618 [39873ef4d996]
-  port: 443
-  server: 172.64.68.89
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
-  password: gs4BXwT6SW
-  port: 10988
-  server: 154.26.192.123
-  sub_tag: R002-260618
-  tls: false
-  type: http
-  udp: true
-  username: fQ67Dpe5dU
 - client-fingerprint: chrome
   name: A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7
   network: ws
@@ -100,17 +79,58 @@ proxies:
     headers:
       Host: ty986gfazs.cainiaohub.xyz
     path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
+- name: 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
+  password: gs4BXwT6SW
+  port: 10988
+  server: 154.26.192.123
+  sub_tag: R002-260618
+  tls: false
+  type: http
+  udp: true
+  username: fQ67Dpe5dU
+- name: 🇺🇸 US_98
+  type: ss
+  server: 154.36.158.197
+  port: 8388
+  cipher: aes-256-gcm
+  password: BeaUf9c0AEWH40Pu
+  udp: true
+- name: 🇲🇽MX_1|861KB/s|R002-260618 [83fece482178]
+  port: 999
+  server: 189.51.168.165
+  sub_tag: R002-260618
+  type: http
+  udp: true
+- name: 🇳🇱NL_116|652KB/s|R002-260618 [8befcd8cfe66]
+  port: 443
+  server: 185.246.153.42
+  skip-cert-verify: true
+  sni: 482c8436a1f7c908b48a1757abb5dd79-3791fb4df2db250b.apache-iv.com
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇫🇷FR_184|2.5MB/s|R002-260618 [b2efde442758]
+  password: 'null'
+  port: 6103
+  server: 87.98.174.157
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  username: 'null'
 - name: D🔴🇭🇰hos[🎬📺🎭🔍]_dokng.com_ff9ee1ab
   port: 443
   server: 43.155.62.157
   type: http
-- name: 🇲🇽MX_2|889KB/s|P002-260618 [a3038fd93823]
-  password: None
-  port: 999
-  server: 189.51.168.165
-  sub_tag: P002-260618
-  type: http
-  udp: true
+- name: C🟠🇭🇰hos_dokng.com_db363b3a
+  password: admin
+  port: 8899
+  server: 47.242.19.215
+  skip-cert-verify: true
+  type: socks5
+  username: admin
 proxy-groups:
 - name: 节点选择
   type: select
@@ -123,16 +143,18 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 美国 - 亚特兰大 - 2
-  - C🟠🇯🇵hos[🎬📺🎭🎪]_dokng.com_55d2834c
   - U⚪🏳️ukn[🎬📺🎭🎪]_dokng.com_12c6f9c9
-  - 🇲🇽MX_1|861KB/s|R002-260618 [83fece482178]
+  - 🇯🇵JP_7|258KB/s|P002-260618 [6c3b615333c9]
+  - 🇯🇵JP_25|237KB/s|P002-260618 [43c1eca10f42]
   - 🇫🇷FR_56|4.0MB/s|P002-260618 [8342ff3bd32d]
-  - 🇫🇷FR_62|1.7MB/s|R002-260618 [39873ef4d996]
-  - 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
   - A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7
+  - 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
+  - 🇺🇸 US_98
+  - 🇲🇽MX_1|861KB/s|R002-260618 [83fece482178]
+  - 🇳🇱NL_116|652KB/s|R002-260618 [8befcd8cfe66]
+  - 🇫🇷FR_184|2.5MB/s|R002-260618 [b2efde442758]
   - D🔴🇭🇰hos[🎬📺🎭🔍]_dokng.com_ff9ee1ab
-  - 🇲🇽MX_2|889KB/s|P002-260618 [a3038fd93823]
+  - C🟠🇭🇰hos_dokng.com_db363b3a
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
@@ -140,31 +162,35 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 美国 - 亚特兰大 - 2
-  - C🟠🇯🇵hos[🎬📺🎭🎪]_dokng.com_55d2834c
   - U⚪🏳️ukn[🎬📺🎭🎪]_dokng.com_12c6f9c9
-  - 🇲🇽MX_1|861KB/s|R002-260618 [83fece482178]
+  - 🇯🇵JP_7|258KB/s|P002-260618 [6c3b615333c9]
+  - 🇯🇵JP_25|237KB/s|P002-260618 [43c1eca10f42]
   - 🇫🇷FR_56|4.0MB/s|P002-260618 [8342ff3bd32d]
-  - 🇫🇷FR_62|1.7MB/s|R002-260618 [39873ef4d996]
-  - 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
   - A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7
+  - 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
+  - 🇺🇸 US_98
+  - 🇲🇽MX_1|861KB/s|R002-260618 [83fece482178]
+  - 🇳🇱NL_116|652KB/s|R002-260618 [8befcd8cfe66]
+  - 🇫🇷FR_184|2.5MB/s|R002-260618 [b2efde442758]
   - D🔴🇭🇰hos[🎬📺🎭🔍]_dokng.com_ff9ee1ab
-  - 🇲🇽MX_2|889KB/s|P002-260618 [a3038fd93823]
+  - C🟠🇭🇰hos_dokng.com_db363b3a
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - 美国 - 亚特兰大 - 2
-  - C🟠🇯🇵hos[🎬📺🎭🎪]_dokng.com_55d2834c
   - U⚪🏳️ukn[🎬📺🎭🎪]_dokng.com_12c6f9c9
-  - 🇲🇽MX_1|861KB/s|R002-260618 [83fece482178]
+  - 🇯🇵JP_7|258KB/s|P002-260618 [6c3b615333c9]
+  - 🇯🇵JP_25|237KB/s|P002-260618 [43c1eca10f42]
   - 🇫🇷FR_56|4.0MB/s|P002-260618 [8342ff3bd32d]
-  - 🇫🇷FR_62|1.7MB/s|R002-260618 [39873ef4d996]
-  - 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
   - A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_7c4ae4f7
+  - 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
+  - 🇺🇸 US_98
+  - 🇲🇽MX_1|861KB/s|R002-260618 [83fece482178]
+  - 🇳🇱NL_116|652KB/s|R002-260618 [8befcd8cfe66]
+  - 🇫🇷FR_184|2.5MB/s|R002-260618 [b2efde442758]
   - D🔴🇭🇰hos[🎬📺🎭🔍]_dokng.com_ff9ee1ab
-  - 🇲🇽MX_2|889KB/s|P002-260618 [a3038fd93823]
+  - C🟠🇭🇰hos_dokng.com_db363b3a
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT

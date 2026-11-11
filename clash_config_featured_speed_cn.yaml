@@ -32,6 +32,21 @@ dns:
     - 240.0.0.0/4
     - 0.0.0.0/32
 proxies:
+- name: 🇭🇰HK_1|5.1MB/s [c28c3ed8f5fb]
+  password: None
+  port: 31343
+  server: 120.232.204.58
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: 🇫🇷FR_62|1.7MB/s|R002-260618 [39873ef4d996]
+  port: 443
+  server: 172.64.68.89
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
 - name: 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
   port: 3128
   server: 119.28.24.235
@@ -40,32 +55,131 @@ proxies:
   tls: true
   type: http
   udp: true
-- down: 100 Mbps
-  name: 🇯🇵 日本 - 东京2号直连 [9343617ffd71]
-  password: 30f5e94a-3e13-4270-9f90-60827bef6671
+- name: 🔥Join+Telegram:@Farah_VPN🟣-JfJi
+  type: vmess
+  server: 39.108.113.127
+  port: 10086
+  uuid: 74e07df3-f82a-4791-987f-247c3c395866
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  sni: ''
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+- name: 🇺🇸US_275|805KB/s|R002-260618 [f3757137fc03]
   port: 443
-  ports: 443,8443
-  server: 141.147.160.26
+  server: 129.153.93.183
   skip-cert-verify: true
-  sni: bing.com
-  type: hysteria2
-  udp: false
-  up: 30 Mbps
-  x-toolall-mihomo: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇨🇳台湾 原生IP 4.33MB/s 182 linuxdo@onimaii [61859b18f887]
-  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
-  plugin: obfs
-  plugin-opts:
-    host: 88a027c.dl.microsoft.lu:14333
-    mode: tls
-  port: 2377
-  server: 118.163.198.43
-  type: ss
-  x-toolall-mihomo: true
-- name: 🇫🇷FR_62|1.7MB/s|R002-260618 [39873ef4d996]
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🔥Join+Telegram:@Farah_VPN🟣-e21E
+  type: vmess
+  server: 39.108.113.127
+  port: 10086
+  uuid: b0253c6c-0b96-4950-bde1-669f13bc1a01
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  sni: ''
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+- name: 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
+  password: None
   port: 443
-  server: 172.64.68.89
+  server: 129.153.93.183
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇩🇪DE_37|4.4MB/s|R002-260618 [008d816457ca]
+  port: 443
+  server: 116.202.172.99
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
+  port: 8443
+  server: 54.190.176.228
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇩🇪DE_144|1.4MB/s|R002-260618 [97393c4aef2c]
+  password: 'null'
+  port: 443
+  server: 116.202.172.99
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  username: 'null'
+- name: 🇯🇵JP_7|258KB/s|P002-260618 [6c3b615333c9]
+  password: None
+  port: 343
+  server: 133.18.200.207
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇯🇵JP_25|237KB/s|P002-260618 [43c1eca10f42]
+  port: 343
+  server: 133.18.200.207
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇩🇪DE_36|4.4MB/s|R002-260618 [f8f3f9b23979]
+  port: 443
+  server: 213.109.163.119
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: US_speednode_0040
+  port: 443
+  server: 38.247.141.135
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
+  password: gs4BXwT6SW
+  port: 10988
+  server: 154.26.192.123
+  sub_tag: R002-260618
+  tls: false
+  type: http
+  udp: true
+  username: fQ67Dpe5dU
+- name: 🇺🇸US_216|319KB/s|R002-260618 [535e13772931]
+  password: 'null'
+  port: 443
+  server: 38.28.193.188
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  username: 'null'
+- name: 🇺🇸US_219|217KB/s|R002-260618 [a4d3572ae220]
+  port: 443
+  server: 38.28.193.188
   skip-cert-verify: true
   sub_tag: R002-260618
   tls: true
@@ -86,56 +200,6 @@ proxies:
       Host: ty986gfazs.cainiaohub.xyz
     path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
   x-toolall-mihomo: true
-- name: 🇳🇱NL_138|3.1MB/s [faaf59d2e35f]
-  password: 'null'
-  port: 9002
-  server: 84.17.47.148
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  username: 'null'
-- name: 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
-  port: 8443
-  server: 54.190.176.228
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
-  password: None
-  port: 443
-  server: 129.153.93.183
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇩🇪DE_24|5.6MB/s|R002-260618 [eae87f7b4752]
-  port: 9002
-  server: 158.173.154.3
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇩🇪DE_37|4.4MB/s|R002-260618 [008d816457ca]
-  port: 443
-  server: 116.202.172.99
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇺🇸US_275|805KB/s|R002-260618 [f3757137fc03]
-  port: 443
-  server: 129.153.93.183
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
 proxy-groups:
 - name: 节点选择
   type: select
@@ -148,17 +212,24 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
-  - 🇯🇵 日本 - 东京2号直连 [9343617ffd71]
-  - 🇨🇳台湾 原生IP 4.33MB/s 182 linuxdo@onimaii [61859b18f887]
+  - 🇭🇰HK_1|5.1MB/s [c28c3ed8f5fb]
   - 🇫🇷FR_62|1.7MB/s|R002-260618 [39873ef4d996]
-  - 🇨🇳台湾 原生IP 0.16MB/s 491 linuxdo@onimaii [f866334e8b41]
-  - 🇳🇱NL_138|3.1MB/s [faaf59d2e35f]
-  - 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
-  - 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
-  - 🇩🇪DE_24|5.6MB/s|R002-260618 [eae87f7b4752]
-  - 🇩🇪DE_37|4.4MB/s|R002-260618 [008d816457ca]
+  - 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
+  - 🔥Join+Telegram:@Farah_VPN🟣-JfJi
   - 🇺🇸US_275|805KB/s|R002-260618 [f3757137fc03]
+  - 🔥Join+Telegram:@Farah_VPN🟣-e21E
+  - 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
+  - 🇩🇪DE_37|4.4MB/s|R002-260618 [008d816457ca]
+  - 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
+  - 🇩🇪DE_144|1.4MB/s|R002-260618 [97393c4aef2c]
+  - 🇯🇵JP_7|258KB/s|P002-260618 [6c3b615333c9]
+  - 🇯🇵JP_25|237KB/s|P002-260618 [43c1eca10f42]
+  - 🇩🇪DE_36|4.4MB/s|R002-260618 [f8f3f9b23979]
+  - US_speednode_0040
+  - 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
+  - 🇺🇸US_216|319KB/s|R002-260618 [535e13772931]
+  - 🇺🇸US_219|217KB/s|R002-260618 [a4d3572ae220]
+  - 🇨🇳台湾 原生IP 0.16MB/s 491 linuxdo@onimaii [f866334e8b41]
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
@@ -166,33 +237,47 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
-  - 🇯🇵 日本 - 东京2号直连 [9343617ffd71]
-  - 🇨🇳台湾 原生IP 4.33MB/s 182 linuxdo@onimaii [61859b18f887]
+  - 🇭🇰HK_1|5.1MB/s [c28c3ed8f5fb]
   - 🇫🇷FR_62|1.7MB/s|R002-260618 [39873ef4d996]
-  - 🇨🇳台湾 原生IP 0.16MB/s 491 linuxdo@onimaii [f866334e8b41]
-  - 🇳🇱NL_138|3.1MB/s [faaf59d2e35f]
-  - 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
-  - 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
-  - 🇩🇪DE_24|5.6MB/s|R002-260618 [eae87f7b4752]
-  - 🇩🇪DE_37|4.4MB/s|R002-260618 [008d816457ca]
+  - 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
+  - 🔥Join+Telegram:@Farah_VPN🟣-JfJi
   - 🇺🇸US_275|805KB/s|R002-260618 [f3757137fc03]
+  - 🔥Join+Telegram:@Farah_VPN🟣-e21E
+  - 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
+  - 🇩🇪DE_37|4.4MB/s|R002-260618 [008d816457ca]
+  - 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
+  - 🇩🇪DE_144|1.4MB/s|R002-260618 [97393c4aef2c]
+  - 🇯🇵JP_7|258KB/s|P002-260618 [6c3b615333c9]
+  - 🇯🇵JP_25|237KB/s|P002-260618 [43c1eca10f42]
+  - 🇩🇪DE_36|4.4MB/s|R002-260618 [f8f3f9b23979]
+  - US_speednode_0040
+  - 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
+  - 🇺🇸US_216|319KB/s|R002-260618 [535e13772931]
+  - 🇺🇸US_219|217KB/s|R002-260618 [a4d3572ae220]
+  - 🇨🇳台湾 原生IP 0.16MB/s 491 linuxdo@onimaii [f866334e8b41]
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
-  - 🇯🇵 日本 - 东京2号直连 [9343617ffd71]
-  - 🇨🇳台湾 原生IP 4.33MB/s 182 linuxdo@onimaii [61859b18f887]
+  - 🇭🇰HK_1|5.1MB/s [c28c3ed8f5fb]
   - 🇫🇷FR_62|1.7MB/s|R002-260618 [39873ef4d996]
-  - 🇨🇳台湾 原生IP 0.16MB/s 491 linuxdo@onimaii [f866334e8b41]
-  - 🇳🇱NL_138|3.1MB/s [faaf59d2e35f]
-  - 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
-  - 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
-  - 🇩🇪DE_24|5.6MB/s|R002-260618 [eae87f7b4752]
-  - 🇩🇪DE_37|4.4MB/s|R002-260618 [008d816457ca]
+  - 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
+  - 🔥Join+Telegram:@Farah_VPN🟣-JfJi
   - 🇺🇸US_275|805KB/s|R002-260618 [f3757137fc03]
+  - 🔥Join+Telegram:@Farah_VPN🟣-e21E
+  - 🇺🇸US_585|774KB/s|P002-260618 [8662975011c7]
+  - 🇩🇪DE_37|4.4MB/s|R002-260618 [008d816457ca]
+  - 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
+  - 🇩🇪DE_144|1.4MB/s|R002-260618 [97393c4aef2c]
+  - 🇯🇵JP_7|258KB/s|P002-260618 [6c3b615333c9]
+  - 🇯🇵JP_25|237KB/s|P002-260618 [43c1eca10f42]
+  - 🇩🇪DE_36|4.4MB/s|R002-260618 [f8f3f9b23979]
+  - US_speednode_0040
+  - 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
+  - 🇺🇸US_216|319KB/s|R002-260618 [535e13772931]
+  - 🇺🇸US_219|217KB/s|R002-260618 [a4d3572ae220]
+  - 🇨🇳台湾 原生IP 0.16MB/s 491 linuxdo@onimaii [f866334e8b41]
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT

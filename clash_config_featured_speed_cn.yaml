@@ -32,9 +32,9 @@ dns:
     - 240.0.0.0/4
     - 0.0.0.0/32
 proxies:
-- name: 🇫🇷FR_62|1.7MB/s|R002-260618 [39873ef4d996]
+- name: 🇫🇷FR_16|6.7MB/s|R002-260618 [a676be7daa09]
   port: 443
-  server: 172.64.68.89
+  server: 172.64.69.89
   skip-cert-verify: true
   sub_tag: R002-260618
   tls: true
@@ -48,97 +48,51 @@ proxies:
   tls: true
   type: http
   udp: true
-- name: 🇭🇰HK_1|5.1MB/s [c28c3ed8f5fb]
+- name: 🇫🇷FR_56|4.0MB/s|P002-260618 [8342ff3bd32d]
   password: None
-  port: 31343
-  server: 120.232.204.58
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: 🇳🇱NL_84|4.9MB/s|P002-260618 [5d22a4a266cd]
-  password: ''
-  port: 9002
-  server: 84.17.47.146
+  port: 443
+  server: 172.64.68.89
   skip-cert-verify: true
   sub_tag: P002-260618
   tls: true
   type: http
   udp: true
-  username: ''
-- name: 🔥Join+Telegram:@Farah_VPN🟣-bIBN
-  type: vmess
-  server: 39.108.113.127
-  port: 10086
-  uuid: b0253c6c-0b96-4950-bde1-669f13bc1a01
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  sni: ''
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-- name: 🇳🇿NZ_73
-  type: ss
-  server: 202.50.253.90
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-- name: 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
-  password: gs4BXwT6SW
-  port: 10988
-  server: 154.26.192.123
-  sub_tag: R002-260618
-  tls: false
-  type: http
-  udp: true
-  username: fQ67Dpe5dU
-- name: 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
-  port: 8443
-  server: 54.190.176.228
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇺🇸US_275|805KB/s|R002-260618 [f3757137fc03]
+- client-fingerprint: ios
+  flow: xtls-rprx-vision
+  name: 🇯🇵【亚洲】日本01丨Vless [60a04b2acd63]
   port: 443
-  server: 129.153.93.183
+  server: 18.181.238.222
+  servername: www.bing.com
   skip-cert-verify: true
-  sub_tag: R002-260618
+  tls: true
+  type: vless
+  udp: true
+  uuid: e0379de1-6712-4644-b41b-afde5fa30ad7
+  x-toolall-mihomo: true
+- name: KR - zhuhai.uk 02 [2f8956cc0b762858] [6b316d79c2c9]
+  port: 443
+  server: 152.69.230.221
+  skip-cert-verify: true
   tls: true
   type: http
-  udp: true
-- name: 🇳🇱NL_85|5.6MB/s|K001-260618 [378b1d5ed2ba]
+- name: 🇳🇱NL_135|6.2MB/s|K001-260618 [0314ff07d8b2]
   password: 'null'
-  port: 9002
-  server: 84.17.47.147
+  port: 23856
+  server: 51.159.225.196
   skip-cert-verify: true
   sub_tag: K001-260618
   tls: true
   type: http
   udp: true
   username: 'null'
-- name: 🇩🇪DE_144|1.4MB/s|R002-260618 [97393c4aef2c]
-  password: 'null'
+- name: 🇮🇪IE_5|4.4MB/s|R002-260618 [28e6899e674e]
   port: 443
-  server: 116.202.172.99
+  server: 34.249.214.108
   skip-cert-verify: true
   sub_tag: R002-260618
   tls: true
   type: http
   udp: true
-  username: 'null'
-- name: 🇺🇸US_22|1.7MB/s
-  password: 'null'
-  port: 443
-  server: 38.247.141.135
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: 'null'
 proxy-groups:
 - name: 节点选择
   type: select
@@ -151,18 +105,13 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇫🇷FR_62|1.7MB/s|R002-260618 [39873ef4d996]
+  - 🇫🇷FR_16|6.7MB/s|R002-260618 [a676be7daa09]
   - 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
-  - 🇭🇰HK_1|5.1MB/s [c28c3ed8f5fb]
-  - 🇳🇱NL_84|4.9MB/s|P002-260618 [5d22a4a266cd]
-  - 🔥Join+Telegram:@Farah_VPN🟣-bIBN
-  - 🇳🇿NZ_73
-  - 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
-  - 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
-  - 🇺🇸US_275|805KB/s|R002-260618 [f3757137fc03]
-  - 🇳🇱NL_85|5.6MB/s|K001-260618 [378b1d5ed2ba]
-  - 🇩🇪DE_144|1.4MB/s|R002-260618 [97393c4aef2c]
-  - 🇺🇸US_22|1.7MB/s
+  - 🇫🇷FR_56|4.0MB/s|P002-260618 [8342ff3bd32d]
+  - 🇯🇵【亚洲】日本01丨Vless [60a04b2acd63]
+  - KR - zhuhai.uk 02 [2f8956cc0b762858] [6b316d79c2c9]
+  - 🇳🇱NL_135|6.2MB/s|K001-260618 [0314ff07d8b2]
+  - 🇮🇪IE_5|4.4MB/s|R002-260618 [28e6899e674e]
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
@@ -170,35 +119,25 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇫🇷FR_62|1.7MB/s|R002-260618 [39873ef4d996]
+  - 🇫🇷FR_16|6.7MB/s|R002-260618 [a676be7daa09]
   - 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
-  - 🇭🇰HK_1|5.1MB/s [c28c3ed8f5fb]
-  - 🇳🇱NL_84|4.9MB/s|P002-260618 [5d22a4a266cd]
-  - 🔥Join+Telegram:@Farah_VPN🟣-bIBN
-  - 🇳🇿NZ_73
-  - 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
-  - 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
-  - 🇺🇸US_275|805KB/s|R002-260618 [f3757137fc03]
-  - 🇳🇱NL_85|5.6MB/s|K001-260618 [378b1d5ed2ba]
-  - 🇩🇪DE_144|1.4MB/s|R002-260618 [97393c4aef2c]
-  - 🇺🇸US_22|1.7MB/s
+  - 🇫🇷FR_56|4.0MB/s|P002-260618 [8342ff3bd32d]
+  - 🇯🇵【亚洲】日本01丨Vless [60a04b2acd63]
+  - KR - zhuhai.uk 02 [2f8956cc0b762858] [6b316d79c2c9]
+  - 🇳🇱NL_135|6.2MB/s|K001-260618 [0314ff07d8b2]
+  - 🇮🇪IE_5|4.4MB/s|R002-260618 [28e6899e674e]
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - 🇫🇷FR_62|1.7MB/s|R002-260618 [39873ef4d996]
+  - 🇫🇷FR_16|6.7MB/s|R002-260618 [a676be7daa09]
   - 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
-  - 🇭🇰HK_1|5.1MB/s [c28c3ed8f5fb]
-  - 🇳🇱NL_84|4.9MB/s|P002-260618 [5d22a4a266cd]
-  - 🔥Join+Telegram:@Farah_VPN🟣-bIBN
-  - 🇳🇿NZ_73
-  - 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
-  - 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
-  - 🇺🇸US_275|805KB/s|R002-260618 [f3757137fc03]
-  - 🇳🇱NL_85|5.6MB/s|K001-260618 [378b1d5ed2ba]
-  - 🇩🇪DE_144|1.4MB/s|R002-260618 [97393c4aef2c]
-  - 🇺🇸US_22|1.7MB/s
+  - 🇫🇷FR_56|4.0MB/s|P002-260618 [8342ff3bd32d]
+  - 🇯🇵【亚洲】日本01丨Vless [60a04b2acd63]
+  - KR - zhuhai.uk 02 [2f8956cc0b762858] [6b316d79c2c9]
+  - 🇳🇱NL_135|6.2MB/s|K001-260618 [0314ff07d8b2]
+  - 🇮🇪IE_5|4.4MB/s|R002-260618 [28e6899e674e]
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT

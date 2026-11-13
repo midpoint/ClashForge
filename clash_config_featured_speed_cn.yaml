@@ -32,63 +32,7 @@ dns:
     - 240.0.0.0/4
     - 0.0.0.0/32
 proxies:
-- name: 🇫🇷FR_62|1.7MB/s|R002-260618 [39873ef4d996]
-  port: 443
-  server: 172.64.68.89
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
-  port: 8443
-  server: 54.190.176.228
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇩🇪DE_32|2.4MB/s|R002-260618 [711ff06169bb]
-  port: 9002
-  server: 158.173.154.1
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇳🇱NL_124|5.9MB/s|P002-260618 [a1a43e85b47a]
-  password: None
-  port: 9002
-  server: 84.17.47.146
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇳🇱NL_162|6.0MB/s|R002-260618 [8c500b61ed4a]
-  password: 'null'
-  port: 9002
-  server: 84.17.47.146
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  username: 'null'
-- name: KR - zhuhai.uk 02 [2f8956cc0b762858] [6b316d79c2c9]
-  port: 443
-  server: 152.69.230.221
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: 🇮🇹 意大利2|@ripaojiedian
-  server: 202.50.253.27
-  port: 19999
-  type: ss
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-- name: 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
+- name: 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
   port: 3128
   server: 119.28.24.235
   skip-cert-verify: true
@@ -96,57 +40,64 @@ proxies:
   tls: true
   type: http
   udp: true
-- name: 🇳🇱NL_168|1.1MB/s|R002-260618 [11147645fc19]
-  password: 'null'
+- name: 🇫🇷FR_28|5.6MB/s|R002-260618 [a676be7daa09]
   port: 443
-  server: 103.97.88.154
+  server: 172.64.69.89
   skip-cert-verify: true
   sub_tag: R002-260618
   tls: true
   type: http
   udp: true
-  username: 'null'
-- name: 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
-  password: gs4BXwT6SW
-  port: 10988
-  server: 154.26.192.123
-  sub_tag: R002-260618
-  tls: false
-  type: http
-  udp: true
-  username: fQ67Dpe5dU
-- name: 🇺🇸US_216|319KB/s|R002-260618 [535e13772931]
-  password: 'null'
+- name: 🇳🇱NL_157|3.6MB/s|R002-260618 [fa52015dee35]
   port: 443
-  server: 38.28.193.188
+  server: 5.255.118.82
   skip-cert-verify: true
   sub_tag: R002-260618
   tls: true
   type: http
   udp: true
-  username: 'null'
-- client-fingerprint: chrome
-  name: 🇨🇦加拿大 广播IP 19.68MB/s 254 linuxdo@onimaii [f866334e8b41]
-  network: ws
+- name: 🇳🇱NL_212|1.5MB/s|R002-260618 [28e6f82e9549]
   port: 443
-  server: 60.248.219.53
-  servername: ty986gfazs.cainiaohub.xyz
+  server: 185.246.153.28
   skip-cert-verify: true
+  sni: 4a8c2906c96058315dffbc2b0e7ff19b-0c66a58858a795df.apache-iv.com
+  sub_tag: R002-260618
   tls: true
-  type: vless
-  uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
-  ws-opts:
-    headers:
-      Host: ty986gfazs.cainiaohub.xyz
-    path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
-  x-toolall-mihomo: true
-- name: 🇭🇰HK_3|5.0MB/s
-  password: admin
-  port: 8899
-  server: 47.242.19.215
+  type: http
+  udp: true
+- name: 🇺🇸US_296|819KB/s|R002-260618 [f3757137fc03]
+  port: 443
+  server: 129.153.93.183
   skip-cert-verify: true
-  type: socks5
-  username: admin
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇳🇱NL_93|5.8MB/s|R002-260618 [f955e95e696e]
+  port: 9002
+  server: 84.17.47.149
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇺🇸US_63|795KB/s|P002-260618 [8662975011c7]
+  password: None
+  port: 443
+  server: 129.153.93.183
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇩🇪DE_41|5.3MB/s|R002-260618 [f8f3f9b23979]
+  port: 443
+  server: 213.109.163.119
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
 proxy-groups:
 - name: 节点选择
   type: select
@@ -159,19 +110,14 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇫🇷FR_62|1.7MB/s|R002-260618 [39873ef4d996]
-  - 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
-  - 🇩🇪DE_32|2.4MB/s|R002-260618 [711ff06169bb]
-  - 🇳🇱NL_124|5.9MB/s|P002-260618 [a1a43e85b47a]
-  - 🇳🇱NL_162|6.0MB/s|R002-260618 [8c500b61ed4a]
-  - KR - zhuhai.uk 02 [2f8956cc0b762858] [6b316d79c2c9]
-  - 🇮🇹 意大利2|@ripaojiedian
-  - 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
-  - 🇳🇱NL_168|1.1MB/s|R002-260618 [11147645fc19]
-  - 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
-  - 🇺🇸US_216|319KB/s|R002-260618 [535e13772931]
-  - 🇨🇦加拿大 广播IP 19.68MB/s 254 linuxdo@onimaii [f866334e8b41]
-  - 🇭🇰HK_3|5.0MB/s
+  - 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
+  - 🇫🇷FR_28|5.6MB/s|R002-260618 [a676be7daa09]
+  - 🇳🇱NL_157|3.6MB/s|R002-260618 [fa52015dee35]
+  - 🇳🇱NL_212|1.5MB/s|R002-260618 [28e6f82e9549]
+  - 🇺🇸US_296|819KB/s|R002-260618 [f3757137fc03]
+  - 🇳🇱NL_93|5.8MB/s|R002-260618 [f955e95e696e]
+  - 🇺🇸US_63|795KB/s|P002-260618 [8662975011c7]
+  - 🇩🇪DE_41|5.3MB/s|R002-260618 [f8f3f9b23979]
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
@@ -179,37 +125,27 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇫🇷FR_62|1.7MB/s|R002-260618 [39873ef4d996]
-  - 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
-  - 🇩🇪DE_32|2.4MB/s|R002-260618 [711ff06169bb]
-  - 🇳🇱NL_124|5.9MB/s|P002-260618 [a1a43e85b47a]
-  - 🇳🇱NL_162|6.0MB/s|R002-260618 [8c500b61ed4a]
-  - KR - zhuhai.uk 02 [2f8956cc0b762858] [6b316d79c2c9]
-  - 🇮🇹 意大利2|@ripaojiedian
-  - 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
-  - 🇳🇱NL_168|1.1MB/s|R002-260618 [11147645fc19]
-  - 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
-  - 🇺🇸US_216|319KB/s|R002-260618 [535e13772931]
-  - 🇨🇦加拿大 广播IP 19.68MB/s 254 linuxdo@onimaii [f866334e8b41]
-  - 🇭🇰HK_3|5.0MB/s
+  - 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
+  - 🇫🇷FR_28|5.6MB/s|R002-260618 [a676be7daa09]
+  - 🇳🇱NL_157|3.6MB/s|R002-260618 [fa52015dee35]
+  - 🇳🇱NL_212|1.5MB/s|R002-260618 [28e6f82e9549]
+  - 🇺🇸US_296|819KB/s|R002-260618 [f3757137fc03]
+  - 🇳🇱NL_93|5.8MB/s|R002-260618 [f955e95e696e]
+  - 🇺🇸US_63|795KB/s|P002-260618 [8662975011c7]
+  - 🇩🇪DE_41|5.3MB/s|R002-260618 [f8f3f9b23979]
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - 🇫🇷FR_62|1.7MB/s|R002-260618 [39873ef4d996]
-  - 🇺🇸US_302|710KB/s|R002-260618 [4a813a8d418a]
-  - 🇩🇪DE_32|2.4MB/s|R002-260618 [711ff06169bb]
-  - 🇳🇱NL_124|5.9MB/s|P002-260618 [a1a43e85b47a]
-  - 🇳🇱NL_162|6.0MB/s|R002-260618 [8c500b61ed4a]
-  - KR - zhuhai.uk 02 [2f8956cc0b762858] [6b316d79c2c9]
-  - 🇮🇹 意大利2|@ripaojiedian
-  - 🇭🇰HK_33|658KB/s|P002-260618 [a3de63191023]
-  - 🇳🇱NL_168|1.1MB/s|R002-260618 [11147645fc19]
-  - 🇺🇸US_424|174KB/s|R002-260618 [793850fdf18c]
-  - 🇺🇸US_216|319KB/s|R002-260618 [535e13772931]
-  - 🇨🇦加拿大 广播IP 19.68MB/s 254 linuxdo@onimaii [f866334e8b41]
-  - 🇭🇰HK_3|5.0MB/s
+  - 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
+  - 🇫🇷FR_28|5.6MB/s|R002-260618 [a676be7daa09]
+  - 🇳🇱NL_157|3.6MB/s|R002-260618 [fa52015dee35]
+  - 🇳🇱NL_212|1.5MB/s|R002-260618 [28e6f82e9549]
+  - 🇺🇸US_296|819KB/s|R002-260618 [f3757137fc03]
+  - 🇳🇱NL_93|5.8MB/s|R002-260618 [f955e95e696e]
+  - 🇺🇸US_63|795KB/s|P002-260618 [8662975011c7]
+  - 🇩🇪DE_41|5.3MB/s|R002-260618 [f8f3f9b23979]
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT

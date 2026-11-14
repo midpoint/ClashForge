@@ -32,6 +32,12 @@ dns:
     - 240.0.0.0/4
     - 0.0.0.0/32
 proxies:
+- name: 🇺🇸US_1|3.3MB/s
+  port: 58764
+  server: 118.184.140.90
+  skip-cert-verify: true
+  tls: true
+  type: http
 - name: 🔥Join+Telegram:@Farah_VPN🟣-7U8v
   type: vmess
   server: 39.108.113.127
@@ -46,15 +52,36 @@ proxies:
     path: ''
     headers:
       Host: ''
-- name: 🇭🇰HK_1|1.2MB/s
-  port: 8443
-  server: 38.76.140.254
+- name: 🇫🇷FR_37|4.7MB/s|P002-260618 [8342ff3bd32d]
+  password: None
+  port: 443
+  server: 172.64.68.89
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇩🇪DE_5|2.3MB/s
+  password: 'null'
+  port: 443
+  server: 172.64.69.89
   skip-cert-verify: true
   tls: true
   type: http
-- name: 🇺🇸US_1|3.3MB/s
-  port: 58764
-  server: 118.184.140.90
+  udp: true
+  username: 'null'
+  x-toolall-mihomo: true
+- name: 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
+  port: 3128
+  server: 119.28.24.235
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇭🇰HK_1|1.2MB/s
+  port: 8443
+  server: 38.76.140.254
   skip-cert-verify: true
   tls: true
   type: http
@@ -72,34 +99,72 @@ proxies:
     path: ''
     headers:
       Host: ''
-- name: 🇺🇸US_296|819KB/s|R002-260618 [f3757137fc03]
-  port: 443
-  server: 129.153.93.183
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
-  port: 3128
-  server: 119.28.24.235
+- name: 🇯🇵JP_10|382KB/s|P002-260618 [6c3b615333c9]
+  password: None
+  port: 343
+  server: 133.18.200.207
   skip-cert-verify: true
   sub_tag: P002-260618
   tls: true
   type: http
   udp: true
-- name: KR - zhuhai.uk [2f8956cc0b762858] [6b316d79c2c9]
-  port: 443
-  server: 152.69.230.221
-  skip-cert-verify: true
-  tls: true
-  type: http
+- cipher: chacha20-ietf
+  name: 4Mohsen-25a3d07792 [2433c44b2dd1]
+  obfs: tls1.2_ticket_auth
+  password: dongtaiwang.com
+  port: 33336
+  protocol: auth_chain_a
+  server: 109.104.153.43
+  type: ssr
+  x-toolall-mihomo: true
 - name: 'C - 🇺🇸 US 36 TG: @nodpai [4e17894fc917]'
   password: gs4BXwT6SW
   port: 10988
   server: 154.26.192.123
   type: http
   username: fQ67Dpe5dU
+- name: 🇯🇵JP_15|315KB/s|P002-260618 [43c1eca10f42]
+  port: 343
+  server: 133.18.200.207
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇺🇸US_255|416KB/s|R002-260618 [f485c49773a6]
+  password: e4b72b531a2d10900519
+  port: 443
+  server: 162.243.146.243
+  sni: a2f392f3.acsnet.co
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  username: testuser1
+- name: 🇩🇪DE_87|4.2MB/s|R002-260618 [97393c4aef2c]
+  password: 'null'
+  port: 443
+  server: 116.202.172.99
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  username: 'null'
+- name: KR - zhuhai.uk [2f8956cc0b762858] [6b316d79c2c9]
+  port: 443
+  server: 152.69.230.221
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: 🇺🇸US_86|746KB/s|R002-260618 [4a813a8d418a]
+  port: 8443
+  server: 54.190.176.228
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
 proxy-groups:
 - name: 节点选择
   type: select
@@ -112,14 +177,21 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🔥Join+Telegram:@Farah_VPN🟣-7U8v
-  - 🇭🇰HK_1|1.2MB/s
   - 🇺🇸US_1|3.3MB/s
-  - 🔥Join+Telegram:@Farah_VPN🟣-sI7k
-  - 🇺🇸US_296|819KB/s|R002-260618 [f3757137fc03]
+  - 🔥Join+Telegram:@Farah_VPN🟣-7U8v
+  - 🇫🇷FR_37|4.7MB/s|P002-260618 [8342ff3bd32d]
+  - 🇩🇪DE_5|2.3MB/s
   - 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
-  - KR - zhuhai.uk [2f8956cc0b762858] [6b316d79c2c9]
+  - 🇭🇰HK_1|1.2MB/s
+  - 🔥Join+Telegram:@Farah_VPN🟣-sI7k
+  - 🇯🇵JP_10|382KB/s|P002-260618 [6c3b615333c9]
+  - 4Mohsen-25a3d07792 [2433c44b2dd1]
   - 'C - 🇺🇸 US 36 TG: @nodpai [4e17894fc917]'
+  - 🇯🇵JP_15|315KB/s|P002-260618 [43c1eca10f42]
+  - 🇺🇸US_255|416KB/s|R002-260618 [f485c49773a6]
+  - 🇩🇪DE_87|4.2MB/s|R002-260618 [97393c4aef2c]
+  - KR - zhuhai.uk [2f8956cc0b762858] [6b316d79c2c9]
+  - 🇺🇸US_86|746KB/s|R002-260618 [4a813a8d418a]
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
@@ -127,27 +199,41 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🔥Join+Telegram:@Farah_VPN🟣-7U8v
-  - 🇭🇰HK_1|1.2MB/s
   - 🇺🇸US_1|3.3MB/s
-  - 🔥Join+Telegram:@Farah_VPN🟣-sI7k
-  - 🇺🇸US_296|819KB/s|R002-260618 [f3757137fc03]
+  - 🔥Join+Telegram:@Farah_VPN🟣-7U8v
+  - 🇫🇷FR_37|4.7MB/s|P002-260618 [8342ff3bd32d]
+  - 🇩🇪DE_5|2.3MB/s
   - 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
-  - KR - zhuhai.uk [2f8956cc0b762858] [6b316d79c2c9]
+  - 🇭🇰HK_1|1.2MB/s
+  - 🔥Join+Telegram:@Farah_VPN🟣-sI7k
+  - 🇯🇵JP_10|382KB/s|P002-260618 [6c3b615333c9]
+  - 4Mohsen-25a3d07792 [2433c44b2dd1]
   - 'C - 🇺🇸 US 36 TG: @nodpai [4e17894fc917]'
+  - 🇯🇵JP_15|315KB/s|P002-260618 [43c1eca10f42]
+  - 🇺🇸US_255|416KB/s|R002-260618 [f485c49773a6]
+  - 🇩🇪DE_87|4.2MB/s|R002-260618 [97393c4aef2c]
+  - KR - zhuhai.uk [2f8956cc0b762858] [6b316d79c2c9]
+  - 🇺🇸US_86|746KB/s|R002-260618 [4a813a8d418a]
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - 🔥Join+Telegram:@Farah_VPN🟣-7U8v
-  - 🇭🇰HK_1|1.2MB/s
   - 🇺🇸US_1|3.3MB/s
-  - 🔥Join+Telegram:@Farah_VPN🟣-sI7k
-  - 🇺🇸US_296|819KB/s|R002-260618 [f3757137fc03]
+  - 🔥Join+Telegram:@Farah_VPN🟣-7U8v
+  - 🇫🇷FR_37|4.7MB/s|P002-260618 [8342ff3bd32d]
+  - 🇩🇪DE_5|2.3MB/s
   - 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
-  - KR - zhuhai.uk [2f8956cc0b762858] [6b316d79c2c9]
+  - 🇭🇰HK_1|1.2MB/s
+  - 🔥Join+Telegram:@Farah_VPN🟣-sI7k
+  - 🇯🇵JP_10|382KB/s|P002-260618 [6c3b615333c9]
+  - 4Mohsen-25a3d07792 [2433c44b2dd1]
   - 'C - 🇺🇸 US 36 TG: @nodpai [4e17894fc917]'
+  - 🇯🇵JP_15|315KB/s|P002-260618 [43c1eca10f42]
+  - 🇺🇸US_255|416KB/s|R002-260618 [f485c49773a6]
+  - 🇩🇪DE_87|4.2MB/s|R002-260618 [97393c4aef2c]
+  - KR - zhuhai.uk [2f8956cc0b762858] [6b316d79c2c9]
+  - 🇺🇸US_86|746KB/s|R002-260618 [4a813a8d418a]
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT

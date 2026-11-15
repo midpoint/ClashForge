@@ -32,12 +32,69 @@ dns:
     - 240.0.0.0/4
     - 0.0.0.0/32
 proxies:
+- name: 🇭🇰HK_1|1.7MB/s
+  password: 3b985d60-e252-4935-8e03-06afeb1144c9
+  port: 18000
+  server: 112.49.65.212
+  servername: www.biliimg.com
+  skip-cert-verify: true
+  sni: www.biliimg.com
+  tls: true
+  type: trojan
+- name: 🇺🇸US_336|241KB/s|P002-260618 [c3c3d303bffe]
+  password: None
+  port: 8443
+  server: 44.248.167.117
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇺🇸US_561|210KB/s|R002-260618 [11f5d32c4d36]
+  password: 'null'
+  port: 8443
+  server: 44.248.167.117
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  username: 'null'
 - name: 🇺🇸US_2|2.4MB/s [13bf47ac81cf]
   port: 58764
   server: 118.184.140.90
   skip-cert-verify: true
   tls: true
   type: http
+- name: 🇭🇰HK_1|1.9MB/s [bc33be128d2e7b14] [dc22a08c23af]
+  port: 8443
+  server: 38.76.140.254
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: 🔥Join+Telegram:@Farah_VPN🟣-4A6J
+  type: vless
+  server: 5.83.158.96
+  port: 43000
+  uuid: 0809eed6-5204-49b8-8312-b82a10024022
+  security: reality
+  tls: true
+  sni: 5.83.158.96
+  skip-cert-verify: false
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: U_dxFnbfesmgSwL-SlpvGYFbpY5vlJ1kb52knlCXkkI
+    short-id: '8cfe1563'
+- name: 🇳🇿NZ_76
+  type: ss
+  server: 202.50.253.54
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
 - name: 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
   port: 3128
   server: 119.28.24.235
@@ -45,40 +102,6 @@ proxies:
   sub_tag: P002-260618
   tls: true
   type: http
-  udp: true
-- name: 🇺🇸US_489|170KB/s|R002-260618 [475ea325156b]
-  port: 443
-  server: 137.175.22.29
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-- name: 🇺🇸US_718|804KB/s [56d314413081]
-  password: 'null'
-  port: 443
-  server: 129.153.93.183
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  username: 'null'
-  x-toolall-mihomo: true
-- name: 🇺🇸US_475|288KB/s|R002-260618 [713d9982d1a3]
-  port: 443
-  server: 137.175.22.88
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-MQhn
-  type: ss
-  server: 47.254.175.2
-  port: 443
-  cipher: 2022-blake3-chacha20-poly1305
-  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
   udp: true
 - name: 🇰🇷KR_51|442KB/s|R002-260618 [9cd8d735b2ac]
   port: 443
@@ -90,18 +113,82 @@ proxies:
   type: http
   udp: true
   x-toolall-mihomo: true
-- name: 🇩🇪DE_51|2.8MB/s|P002-260618 [c242c75d0a6f]
-  password: None
+- name: 🇺🇸US_330|322KB/s|R002-260618 [ea1befc94c60]
   port: 443
-  server: 213.109.163.119
+  server: 137.175.22.84
   skip-cert-verify: true
-  sub_tag: P002-260618
+  sub_tag: R002-260618
   tls: true
   type: http
   udp: true
-- name: 🇮🇪IE_3|3.1MB/s|R002-260618 [ad7d5a110359]
+- name: 🇺🇸US_560|118KB/s|R002-260618 [22a5f322cb38]
   port: 443
-  server: 18.200.158.139
+  server: 137.175.22.85
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇺🇸US_525|309KB/s|R002-260618 [886f746fa672]
+  port: 443
+  server: 137.175.22.96
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇺🇸US_526|246KB/s|R002-260618 [39215ca34ddc]
+  port: 443
+  server: 137.175.22.72
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇺🇸US_318|152KB/s|R002-260618 [83c31957de44]
+  port: 443
+  server: 137.175.22.40
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇺🇸US_487|271KB/s|R002-260618 [2f4c48c98642]
+  port: 443
+  server: 137.175.22.41
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  x-toolall-mihomo: true
+- name: 🇺🇸US_475|288KB/s|R002-260618 [713d9982d1a3]
+  port: 443
+  server: 137.175.22.88
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇺🇸US_529|277KB/s|R002-260618 [b92c1a4a1fb1]
+  port: 443
+  server: 137.175.22.89
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇺🇸US_548|332KB/s|R002-260618 [2c5b09e88ef7]
+  port: 443
+  server: 137.175.22.45
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇺🇸US_530|159KB/s|R002-260618 [3a0d63aae3da]
+  port: 443
+  server: 137.175.22.16
   skip-cert-verify: true
   sub_tag: R002-260618
   tls: true
@@ -119,15 +206,25 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
+  - 🇭🇰HK_1|1.7MB/s
+  - 🇺🇸US_336|241KB/s|P002-260618 [c3c3d303bffe]
+  - 🇺🇸US_561|210KB/s|R002-260618 [11f5d32c4d36]
   - 🇺🇸US_2|2.4MB/s [13bf47ac81cf]
+  - 🇭🇰HK_1|1.9MB/s [bc33be128d2e7b14] [dc22a08c23af]
+  - 🔥Join+Telegram:@Farah_VPN🟣-4A6J
+  - 🇳🇿NZ_76
   - 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
-  - 🇺🇸US_489|170KB/s|R002-260618 [475ea325156b]
-  - 🇺🇸US_718|804KB/s [56d314413081]
-  - 🇺🇸US_475|288KB/s|R002-260618 [713d9982d1a3]
-  - 🔥Join+Telegram:@Farah_VPN🟣-MQhn
   - 🇰🇷KR_51|442KB/s|R002-260618 [9cd8d735b2ac]
-  - 🇩🇪DE_51|2.8MB/s|P002-260618 [c242c75d0a6f]
-  - 🇮🇪IE_3|3.1MB/s|R002-260618 [ad7d5a110359]
+  - 🇺🇸US_330|322KB/s|R002-260618 [ea1befc94c60]
+  - 🇺🇸US_560|118KB/s|R002-260618 [22a5f322cb38]
+  - 🇺🇸US_525|309KB/s|R002-260618 [886f746fa672]
+  - 🇺🇸US_526|246KB/s|R002-260618 [39215ca34ddc]
+  - 🇺🇸US_318|152KB/s|R002-260618 [83c31957de44]
+  - 🇺🇸US_487|271KB/s|R002-260618 [2f4c48c98642]
+  - 🇺🇸US_475|288KB/s|R002-260618 [713d9982d1a3]
+  - 🇺🇸US_529|277KB/s|R002-260618 [b92c1a4a1fb1]
+  - 🇺🇸US_548|332KB/s|R002-260618 [2c5b09e88ef7]
+  - 🇺🇸US_530|159KB/s|R002-260618 [3a0d63aae3da]
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
@@ -135,29 +232,49 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
+  - 🇭🇰HK_1|1.7MB/s
+  - 🇺🇸US_336|241KB/s|P002-260618 [c3c3d303bffe]
+  - 🇺🇸US_561|210KB/s|R002-260618 [11f5d32c4d36]
   - 🇺🇸US_2|2.4MB/s [13bf47ac81cf]
+  - 🇭🇰HK_1|1.9MB/s [bc33be128d2e7b14] [dc22a08c23af]
+  - 🔥Join+Telegram:@Farah_VPN🟣-4A6J
+  - 🇳🇿NZ_76
   - 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
-  - 🇺🇸US_489|170KB/s|R002-260618 [475ea325156b]
-  - 🇺🇸US_718|804KB/s [56d314413081]
-  - 🇺🇸US_475|288KB/s|R002-260618 [713d9982d1a3]
-  - 🔥Join+Telegram:@Farah_VPN🟣-MQhn
   - 🇰🇷KR_51|442KB/s|R002-260618 [9cd8d735b2ac]
-  - 🇩🇪DE_51|2.8MB/s|P002-260618 [c242c75d0a6f]
-  - 🇮🇪IE_3|3.1MB/s|R002-260618 [ad7d5a110359]
+  - 🇺🇸US_330|322KB/s|R002-260618 [ea1befc94c60]
+  - 🇺🇸US_560|118KB/s|R002-260618 [22a5f322cb38]
+  - 🇺🇸US_525|309KB/s|R002-260618 [886f746fa672]
+  - 🇺🇸US_526|246KB/s|R002-260618 [39215ca34ddc]
+  - 🇺🇸US_318|152KB/s|R002-260618 [83c31957de44]
+  - 🇺🇸US_487|271KB/s|R002-260618 [2f4c48c98642]
+  - 🇺🇸US_475|288KB/s|R002-260618 [713d9982d1a3]
+  - 🇺🇸US_529|277KB/s|R002-260618 [b92c1a4a1fb1]
+  - 🇺🇸US_548|332KB/s|R002-260618 [2c5b09e88ef7]
+  - 🇺🇸US_530|159KB/s|R002-260618 [3a0d63aae3da]
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
+  - 🇭🇰HK_1|1.7MB/s
+  - 🇺🇸US_336|241KB/s|P002-260618 [c3c3d303bffe]
+  - 🇺🇸US_561|210KB/s|R002-260618 [11f5d32c4d36]
   - 🇺🇸US_2|2.4MB/s [13bf47ac81cf]
+  - 🇭🇰HK_1|1.9MB/s [bc33be128d2e7b14] [dc22a08c23af]
+  - 🔥Join+Telegram:@Farah_VPN🟣-4A6J
+  - 🇳🇿NZ_76
   - 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
-  - 🇺🇸US_489|170KB/s|R002-260618 [475ea325156b]
-  - 🇺🇸US_718|804KB/s [56d314413081]
-  - 🇺🇸US_475|288KB/s|R002-260618 [713d9982d1a3]
-  - 🔥Join+Telegram:@Farah_VPN🟣-MQhn
   - 🇰🇷KR_51|442KB/s|R002-260618 [9cd8d735b2ac]
-  - 🇩🇪DE_51|2.8MB/s|P002-260618 [c242c75d0a6f]
-  - 🇮🇪IE_3|3.1MB/s|R002-260618 [ad7d5a110359]
+  - 🇺🇸US_330|322KB/s|R002-260618 [ea1befc94c60]
+  - 🇺🇸US_560|118KB/s|R002-260618 [22a5f322cb38]
+  - 🇺🇸US_525|309KB/s|R002-260618 [886f746fa672]
+  - 🇺🇸US_526|246KB/s|R002-260618 [39215ca34ddc]
+  - 🇺🇸US_318|152KB/s|R002-260618 [83c31957de44]
+  - 🇺🇸US_487|271KB/s|R002-260618 [2f4c48c98642]
+  - 🇺🇸US_475|288KB/s|R002-260618 [713d9982d1a3]
+  - 🇺🇸US_529|277KB/s|R002-260618 [b92c1a4a1fb1]
+  - 🇺🇸US_548|332KB/s|R002-260618 [2c5b09e88ef7]
+  - 🇺🇸US_530|159KB/s|R002-260618 [3a0d63aae3da]
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT

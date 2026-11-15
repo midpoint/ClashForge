@@ -32,34 +32,12 @@ dns:
     - 240.0.0.0/4
     - 0.0.0.0/32
 proxies:
-- name: rocket-112.49.65.212
-  type: trojan
-  server: 112.49.65.212
-  port: 18000
-  password: 3b985d60-e252-4935-8e03-06afeb1144c9
-  sni: www.biliimg.com
+- name: 🇺🇸US_2|2.4MB/s [13bf47ac81cf]
+  port: 58764
+  server: 118.184.140.90
   skip-cert-verify: true
-  udp: true
-- name: 🇦🇹AT_2|4.3MB/s
-  port: 8080
-  server: 159.195.110.240
-  skip-cert-verify: true
-  type: http
-- name: 'C - 🇺🇸 US 36 TG: @nodpai [4e17894fc917]'
-  password: gs4BXwT6SW
-  port: 10988
-  server: 154.26.192.123
-  type: http
-  username: fQ67Dpe5dU
-- name: 🇺🇸US_63|795KB/s|P002-260618 [8662975011c7]
-  password: None
-  port: 443
-  server: 129.153.93.183
-  skip-cert-verify: true
-  sub_tag: P002-260618
   tls: true
   type: http
-  udp: true
 - name: 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
   port: 3128
   server: 119.28.24.235
@@ -68,50 +46,67 @@ proxies:
   tls: true
   type: http
   udp: true
-- name: 🇰🇷KR_3|2.8MB/s
-  port: 80
-  server: 211.188.55.218
-  skip-cert-verify: true
-  type: http
-- name: KR - zhuhai.uk [2f8956cc0b762858] [6b316d79c2c9]
+- name: 🇺🇸US_489|170KB/s|R002-260618 [475ea325156b]
   port: 443
-  server: 152.69.230.221
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: 🇰🇷KR_4|1.5MB/s
-  port: 80
-  server: 211.188.59.191
-  skip-cert-verify: true
-  type: http
-- name: 🇺🇸US_296|819KB/s|R002-260618 [f3757137fc03]
-  port: 443
-  server: 129.153.93.183
+  server: 137.175.22.29
   skip-cert-verify: true
   sub_tag: R002-260618
   tls: true
   type: http
   udp: true
-- name: 🇰🇷KR_2|4.6MB/s
-  port: 80
-  server: 211.188.60.84
-  skip-cert-verify: true
-  type: http
-- name: 🇰🇷KR_1|3.7MB/s
-  port: 80
-  server: 211.188.53.248
-  skip-cert-verify: true
-  type: http
-- name: 🇩🇪DE_78|4.6MB/s|R002-260618 [5af8b43bb3c2]
+  x-toolall-mihomo: true
+- name: 🇺🇸US_718|804KB/s [56d314413081]
   password: 'null'
   port: 443
-  server: 159.69.94.125
+  server: 129.153.93.183
   skip-cert-verify: true
-  sub_tag: R002-260618
   tls: true
   type: http
   udp: true
   username: 'null'
+  x-toolall-mihomo: true
+- name: 🇺🇸US_475|288KB/s|R002-260618 [713d9982d1a3]
+  port: 443
+  server: 137.175.22.88
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🔥Join+Telegram:@Farah_VPN🟣-MQhn
+  type: ss
+  server: 47.254.175.2
+  port: 443
+  cipher: 2022-blake3-chacha20-poly1305
+  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
+  udp: true
+- name: 🇰🇷KR_51|442KB/s|R002-260618 [9cd8d735b2ac]
+  port: 443
+  server: 152.69.230.221
+  skip-cert-verify: true
+  sni: 152.69.230.221
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  x-toolall-mihomo: true
+- name: 🇩🇪DE_51|2.8MB/s|P002-260618 [c242c75d0a6f]
+  password: None
+  port: 443
+  server: 213.109.163.119
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇮🇪IE_3|3.1MB/s|R002-260618 [ad7d5a110359]
+  port: 443
+  server: 18.200.158.139
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
 proxy-groups:
 - name: 节点选择
   type: select
@@ -124,18 +119,15 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - rocket-112.49.65.212
-  - 🇦🇹AT_2|4.3MB/s
-  - 'C - 🇺🇸 US 36 TG: @nodpai [4e17894fc917]'
-  - 🇺🇸US_63|795KB/s|P002-260618 [8662975011c7]
+  - 🇺🇸US_2|2.4MB/s [13bf47ac81cf]
   - 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
-  - 🇰🇷KR_3|2.8MB/s
-  - KR - zhuhai.uk [2f8956cc0b762858] [6b316d79c2c9]
-  - 🇰🇷KR_4|1.5MB/s
-  - 🇺🇸US_296|819KB/s|R002-260618 [f3757137fc03]
-  - 🇰🇷KR_2|4.6MB/s
-  - 🇰🇷KR_1|3.7MB/s
-  - 🇩🇪DE_78|4.6MB/s|R002-260618 [5af8b43bb3c2]
+  - 🇺🇸US_489|170KB/s|R002-260618 [475ea325156b]
+  - 🇺🇸US_718|804KB/s [56d314413081]
+  - 🇺🇸US_475|288KB/s|R002-260618 [713d9982d1a3]
+  - 🔥Join+Telegram:@Farah_VPN🟣-MQhn
+  - 🇰🇷KR_51|442KB/s|R002-260618 [9cd8d735b2ac]
+  - 🇩🇪DE_51|2.8MB/s|P002-260618 [c242c75d0a6f]
+  - 🇮🇪IE_3|3.1MB/s|R002-260618 [ad7d5a110359]
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
@@ -143,35 +135,29 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - rocket-112.49.65.212
-  - 🇦🇹AT_2|4.3MB/s
-  - 'C - 🇺🇸 US 36 TG: @nodpai [4e17894fc917]'
-  - 🇺🇸US_63|795KB/s|P002-260618 [8662975011c7]
+  - 🇺🇸US_2|2.4MB/s [13bf47ac81cf]
   - 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
-  - 🇰🇷KR_3|2.8MB/s
-  - KR - zhuhai.uk [2f8956cc0b762858] [6b316d79c2c9]
-  - 🇰🇷KR_4|1.5MB/s
-  - 🇺🇸US_296|819KB/s|R002-260618 [f3757137fc03]
-  - 🇰🇷KR_2|4.6MB/s
-  - 🇰🇷KR_1|3.7MB/s
-  - 🇩🇪DE_78|4.6MB/s|R002-260618 [5af8b43bb3c2]
+  - 🇺🇸US_489|170KB/s|R002-260618 [475ea325156b]
+  - 🇺🇸US_718|804KB/s [56d314413081]
+  - 🇺🇸US_475|288KB/s|R002-260618 [713d9982d1a3]
+  - 🔥Join+Telegram:@Farah_VPN🟣-MQhn
+  - 🇰🇷KR_51|442KB/s|R002-260618 [9cd8d735b2ac]
+  - 🇩🇪DE_51|2.8MB/s|P002-260618 [c242c75d0a6f]
+  - 🇮🇪IE_3|3.1MB/s|R002-260618 [ad7d5a110359]
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - rocket-112.49.65.212
-  - 🇦🇹AT_2|4.3MB/s
-  - 'C - 🇺🇸 US 36 TG: @nodpai [4e17894fc917]'
-  - 🇺🇸US_63|795KB/s|P002-260618 [8662975011c7]
+  - 🇺🇸US_2|2.4MB/s [13bf47ac81cf]
   - 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
-  - 🇰🇷KR_3|2.8MB/s
-  - KR - zhuhai.uk [2f8956cc0b762858] [6b316d79c2c9]
-  - 🇰🇷KR_4|1.5MB/s
-  - 🇺🇸US_296|819KB/s|R002-260618 [f3757137fc03]
-  - 🇰🇷KR_2|4.6MB/s
-  - 🇰🇷KR_1|3.7MB/s
-  - 🇩🇪DE_78|4.6MB/s|R002-260618 [5af8b43bb3c2]
+  - 🇺🇸US_489|170KB/s|R002-260618 [475ea325156b]
+  - 🇺🇸US_718|804KB/s [56d314413081]
+  - 🇺🇸US_475|288KB/s|R002-260618 [713d9982d1a3]
+  - 🔥Join+Telegram:@Farah_VPN🟣-MQhn
+  - 🇰🇷KR_51|442KB/s|R002-260618 [9cd8d735b2ac]
+  - 🇩🇪DE_51|2.8MB/s|P002-260618 [c242c75d0a6f]
+  - 🇮🇪IE_3|3.1MB/s|R002-260618 [ad7d5a110359]
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT

@@ -40,29 +40,25 @@ proxies:
   sni: www.biliimg.com
   skip-cert-verify: true
   udp: true
-- alterId: 0
-  cipher: auto
-  name: 4Kian-c35a2c563d [dcfd3f10e5f6]
-  network: ws
-  port: 10086
-  server: 39.108.113.127
-  type: vmess
-  uuid: d50cc563-0c03-4136-899f-85cbc0b02699
-  ws-opts:
-    path: /
-- name: ProxyPool | 🇺🇸 美国 | USA
-  server: 162.35.38.156
+- name: 🇦🇹AT_2|4.3MB/s
+  port: 8080
+  server: 159.195.110.240
+  skip-cert-verify: true
+  type: http
+- name: 'C - 🇺🇸 US 36 TG: @nodpai [4e17894fc917]'
+  password: gs4BXwT6SW
+  port: 10988
+  server: 154.26.192.123
+  type: http
+  username: fQ67Dpe5dU
+- name: 🇺🇸US_63|795KB/s|P002-260618 [8662975011c7]
+  password: None
   port: 443
-  type: vless
-  uuid: a88d4614-2134-404c-9479-6aba1ca9cdfd
+  server: 129.153.93.183
+  skip-cert-verify: true
+  sub_tag: P002-260618
   tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: UkUbCx7k5ykWTJTr1jqCOxns6TwvTAbfR0JvJzuALjM
-    short-id: 'a62b22480f962a1d'
-  servername: 2499dbt.us12.h1clayd.click
-  client-fingerprint: firefox
-  network: tcp
+  type: http
   udp: true
 - name: 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
   port: 3128
@@ -72,30 +68,9 @@ proxies:
   tls: true
   type: http
   udp: true
-- name: 🇭🇰HK_2|1.3MB/s
-  port: 3128
-  server: 119.12.161.248
-  skip-cert-verify: true
-  type: http
-- name: 'C - 🇺🇸 US 36 TG: @nodpai [4e17894fc917]'
-  password: gs4BXwT6SW
-  port: 10988
-  server: 154.26.192.123
-  type: http
-  username: fQ67Dpe5dU
 - name: 🇰🇷KR_3|2.8MB/s
   port: 80
   server: 211.188.55.218
-  skip-cert-verify: true
-  type: http
-- name: 🇰🇷KR_5|2.4MB/s
-  port: 80
-  server: 211.188.38.254
-  skip-cert-verify: true
-  type: http
-- name: 🇰🇷KR_6|4.6MB/s
-  port: 80
-  server: 211.188.69.153
   skip-cert-verify: true
   type: http
 - name: KR - zhuhai.uk [2f8956cc0b762858] [6b316d79c2c9]
@@ -104,6 +79,39 @@ proxies:
   skip-cert-verify: true
   tls: true
   type: http
+- name: 🇰🇷KR_4|1.5MB/s
+  port: 80
+  server: 211.188.59.191
+  skip-cert-verify: true
+  type: http
+- name: 🇺🇸US_296|819KB/s|R002-260618 [f3757137fc03]
+  port: 443
+  server: 129.153.93.183
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇰🇷KR_2|4.6MB/s
+  port: 80
+  server: 211.188.60.84
+  skip-cert-verify: true
+  type: http
+- name: 🇰🇷KR_1|3.7MB/s
+  port: 80
+  server: 211.188.53.248
+  skip-cert-verify: true
+  type: http
+- name: 🇩🇪DE_78|4.6MB/s|R002-260618 [5af8b43bb3c2]
+  password: 'null'
+  port: 443
+  server: 159.69.94.125
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+  username: 'null'
 proxy-groups:
 - name: 节点选择
   type: select
@@ -117,15 +125,17 @@ proxy-groups:
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
   - rocket-112.49.65.212
-  - 4Kian-c35a2c563d [dcfd3f10e5f6]
-  - ProxyPool | 🇺🇸 美国 | USA
-  - 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
-  - 🇭🇰HK_2|1.3MB/s
+  - 🇦🇹AT_2|4.3MB/s
   - 'C - 🇺🇸 US 36 TG: @nodpai [4e17894fc917]'
+  - 🇺🇸US_63|795KB/s|P002-260618 [8662975011c7]
+  - 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
   - 🇰🇷KR_3|2.8MB/s
-  - 🇰🇷KR_5|2.4MB/s
-  - 🇰🇷KR_6|4.6MB/s
   - KR - zhuhai.uk [2f8956cc0b762858] [6b316d79c2c9]
+  - 🇰🇷KR_4|1.5MB/s
+  - 🇺🇸US_296|819KB/s|R002-260618 [f3757137fc03]
+  - 🇰🇷KR_2|4.6MB/s
+  - 🇰🇷KR_1|3.7MB/s
+  - 🇩🇪DE_78|4.6MB/s|R002-260618 [5af8b43bb3c2]
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
@@ -134,30 +144,34 @@ proxy-groups:
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
   - rocket-112.49.65.212
-  - 4Kian-c35a2c563d [dcfd3f10e5f6]
-  - ProxyPool | 🇺🇸 美国 | USA
-  - 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
-  - 🇭🇰HK_2|1.3MB/s
+  - 🇦🇹AT_2|4.3MB/s
   - 'C - 🇺🇸 US 36 TG: @nodpai [4e17894fc917]'
+  - 🇺🇸US_63|795KB/s|P002-260618 [8662975011c7]
+  - 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
   - 🇰🇷KR_3|2.8MB/s
-  - 🇰🇷KR_5|2.4MB/s
-  - 🇰🇷KR_6|4.6MB/s
   - KR - zhuhai.uk [2f8956cc0b762858] [6b316d79c2c9]
+  - 🇰🇷KR_4|1.5MB/s
+  - 🇺🇸US_296|819KB/s|R002-260618 [f3757137fc03]
+  - 🇰🇷KR_2|4.6MB/s
+  - 🇰🇷KR_1|3.7MB/s
+  - 🇩🇪DE_78|4.6MB/s|R002-260618 [5af8b43bb3c2]
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
   - rocket-112.49.65.212
-  - 4Kian-c35a2c563d [dcfd3f10e5f6]
-  - ProxyPool | 🇺🇸 美国 | USA
-  - 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
-  - 🇭🇰HK_2|1.3MB/s
+  - 🇦🇹AT_2|4.3MB/s
   - 'C - 🇺🇸 US 36 TG: @nodpai [4e17894fc917]'
+  - 🇺🇸US_63|795KB/s|P002-260618 [8662975011c7]
+  - 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
   - 🇰🇷KR_3|2.8MB/s
-  - 🇰🇷KR_5|2.4MB/s
-  - 🇰🇷KR_6|4.6MB/s
   - KR - zhuhai.uk [2f8956cc0b762858] [6b316d79c2c9]
+  - 🇰🇷KR_4|1.5MB/s
+  - 🇺🇸US_296|819KB/s|R002-260618 [f3757137fc03]
+  - 🇰🇷KR_2|4.6MB/s
+  - 🇰🇷KR_1|3.7MB/s
+  - 🇩🇪DE_78|4.6MB/s|R002-260618 [5af8b43bb3c2]
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT

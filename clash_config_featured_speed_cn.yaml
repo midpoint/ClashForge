@@ -32,63 +32,23 @@ dns:
     - 240.0.0.0/4
     - 0.0.0.0/32
 proxies:
-- name: D🔴🇭🇰hos[🧩📺🎭🎵]_dokng.com_d82b6f51
-  password: ''
-  port: 8443
-  server: 38.76.140.254
+- name: 🇺🇸US_2|2.1MB/s
+  port: 58764
+  server: 118.184.140.90
   skip-cert-verify: true
   tls: true
   type: http
-  udp: true
-  username: ''
-  x-toolall-mihomo: true
 - name: A🟢🇹🇭res_dokng.com_8be67b1a
   password: YlRoWvE0dL_cUqS94wPeKnA4
   port: 62000
   server: 87.84.49.140
   type: socks5
   username: ks878449260d
-- name: 🇺🇸US_1|3.4MB/s
-  port: 58764
-  server: 118.184.140.90
+- name: 🇳🇱NL_157|3.6MB/s|R002-260618 [fa52015dee35]
+  port: 443
+  server: 5.255.118.82
   skip-cert-verify: true
-  tls: true
-  type: http
-- name: 🇸🇪 瑞典 | SWE 4
-  server: 195.72.62.7
-  port: 443
-  type: vless
-  uuid: 8197b9b9-8945-460f-99c9-325ef8a8a7c3
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: GQC47B2ZbBygpgJap7Em9lZmCZZkzlckiadXWXlVxGU
-    short-id: '2a67748b0d641e16'
-  servername: fexzoo.net
-  client-fingerprint: firefox
-  network: tcp
-  udp: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-Q2jl
-  type: ss
-  server: 47.85.201.22
-  port: 443
-  cipher: 2022-blake3-chacha20-poly1305
-  password: 3NBsnBLanPfG6i3S2GTHineswr6EeSJPb0PCeMQoGoA=
-  udp: true
-- cipher: 2022-blake3-chacha20-poly1305
-  name: D🔴🇩🇪mob[🤖💬🔮🧩]_dokng.com_0774f701
-  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
-  port: 443
-  server: 47.254.175.2
-  type: ss
-  udp: true
-  x-toolall-mihomo: true
-- name: 🇯🇵JP_10|382KB/s|P002-260618 [6c3b615333c9]
-  password: None
-  port: 343
-  server: 133.18.200.207
-  skip-cert-verify: true
-  sub_tag: P002-260618
+  sub_tag: R002-260618
   tls: true
   type: http
   udp: true
@@ -103,6 +63,46 @@ proxies:
   server: 109.104.153.43
   type: ssr
   x-toolall-mihomo: true
+- name: 🇮🇹 意大利2|@ripaojiedian
+  server: 202.50.253.27
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+- name: 🇫🇷FR_28|5.6MB/s|R002-260618 [a676be7daa09]
+  port: 443
+  server: 172.64.69.89
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: C🟠🇰🇷hos_dokng.com_f97f0545
+  port: 80
+  server: 211.188.60.84
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  type: http
+  udp: true
+  x-toolall-mihomo: true
+- name: D🔴🇻🇳hos[🤖💬🔮📺]_dokng.com_c355101a
+  password: ''
+  port: 8443
+  server: 14.225.71.128
+  skip-cert-verify: true
+  sub_tag: K001-260618
+  tls: true
+  type: http
+  udp: true
+  username: ''
+  x-toolall-mihomo: true
+- name: D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
+  password: gs4BXwT6SW
+  port: 10988
+  server: 154.26.192.123
+  type: http
+  username: fQ67Dpe5dU
 - name: C🟠🇺🇸hos[🎭🎞️🐙]_dokng.com_f7d7792e
   password: ''
   port: 9480
@@ -113,40 +113,6 @@ proxies:
   udp: true
   username: ''
   x-toolall-mihomo: true
-- name: C🟠🇰🇷hos_dokng.com_f97f0545
-  port: 80
-  server: 211.188.60.84
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-- name: A🟢🇻🇳res[📺]_dokng.com_11eacb89
-  password: jHsK2gqs
-  port: 62000
-  server: 103.184.113.190
-  type: socks5
-  username: qT46DZLv
-- name: D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
-  password: gs4BXwT6SW
-  port: 10988
-  server: 154.26.192.123
-  type: http
-  username: fQ67Dpe5dU
-- name: 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
-  port: 3128
-  server: 119.28.24.235
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-- name: C🟠🇭🇰hos_dokng.com_ea9b4f4c
-  password: admin
-  port: 8899
-  server: 47.242.19.215
-  type: socks5
-  username: admin
 proxy-groups:
 - name: 节点选择
   type: select
@@ -159,20 +125,16 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - D🔴🇭🇰hos[🧩📺🎭🎵]_dokng.com_d82b6f51
+  - 🇺🇸US_2|2.1MB/s
   - A🟢🇹🇭res_dokng.com_8be67b1a
-  - 🇺🇸US_1|3.4MB/s
-  - 🇸🇪 瑞典 | SWE 4
-  - 🔥Join+Telegram:@Farah_VPN🟣-Q2jl
-  - D🔴🇩🇪mob[🤖💬🔮🧩]_dokng.com_0774f701
-  - 🇯🇵JP_10|382KB/s|P002-260618 [6c3b615333c9]
+  - 🇳🇱NL_157|3.6MB/s|R002-260618 [fa52015dee35]
   - A🟢🇳🇱res[🤖💬📺🎵]_dokng.com_ad12022f
-  - C🟠🇺🇸hos[🎭🎞️🐙]_dokng.com_f7d7792e
+  - 🇮🇹 意大利2|@ripaojiedian
+  - 🇫🇷FR_28|5.6MB/s|R002-260618 [a676be7daa09]
   - C🟠🇰🇷hos_dokng.com_f97f0545
-  - A🟢🇻🇳res[📺]_dokng.com_11eacb89
+  - D🔴🇻🇳hos[🤖💬🔮📺]_dokng.com_c355101a
   - D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
-  - 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
-  - C🟠🇭🇰hos_dokng.com_ea9b4f4c
+  - C🟠🇺🇸hos[🎭🎞️🐙]_dokng.com_f7d7792e
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
@@ -180,39 +142,31 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - D🔴🇭🇰hos[🧩📺🎭🎵]_dokng.com_d82b6f51
+  - 🇺🇸US_2|2.1MB/s
   - A🟢🇹🇭res_dokng.com_8be67b1a
-  - 🇺🇸US_1|3.4MB/s
-  - 🇸🇪 瑞典 | SWE 4
-  - 🔥Join+Telegram:@Farah_VPN🟣-Q2jl
-  - D🔴🇩🇪mob[🤖💬🔮🧩]_dokng.com_0774f701
-  - 🇯🇵JP_10|382KB/s|P002-260618 [6c3b615333c9]
+  - 🇳🇱NL_157|3.6MB/s|R002-260618 [fa52015dee35]
   - A🟢🇳🇱res[🤖💬📺🎵]_dokng.com_ad12022f
-  - C🟠🇺🇸hos[🎭🎞️🐙]_dokng.com_f7d7792e
+  - 🇮🇹 意大利2|@ripaojiedian
+  - 🇫🇷FR_28|5.6MB/s|R002-260618 [a676be7daa09]
   - C🟠🇰🇷hos_dokng.com_f97f0545
-  - A🟢🇻🇳res[📺]_dokng.com_11eacb89
+  - D🔴🇻🇳hos[🤖💬🔮📺]_dokng.com_c355101a
   - D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
-  - 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
-  - C🟠🇭🇰hos_dokng.com_ea9b4f4c
+  - C🟠🇺🇸hos[🎭🎞️🐙]_dokng.com_f7d7792e
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - D🔴🇭🇰hos[🧩📺🎭🎵]_dokng.com_d82b6f51
+  - 🇺🇸US_2|2.1MB/s
   - A🟢🇹🇭res_dokng.com_8be67b1a
-  - 🇺🇸US_1|3.4MB/s
-  - 🇸🇪 瑞典 | SWE 4
-  - 🔥Join+Telegram:@Farah_VPN🟣-Q2jl
-  - D🔴🇩🇪mob[🤖💬🔮🧩]_dokng.com_0774f701
-  - 🇯🇵JP_10|382KB/s|P002-260618 [6c3b615333c9]
+  - 🇳🇱NL_157|3.6MB/s|R002-260618 [fa52015dee35]
   - A🟢🇳🇱res[🤖💬📺🎵]_dokng.com_ad12022f
-  - C🟠🇺🇸hos[🎭🎞️🐙]_dokng.com_f7d7792e
+  - 🇮🇹 意大利2|@ripaojiedian
+  - 🇫🇷FR_28|5.6MB/s|R002-260618 [a676be7daa09]
   - C🟠🇰🇷hos_dokng.com_f97f0545
-  - A🟢🇻🇳res[📺]_dokng.com_11eacb89
+  - D🔴🇻🇳hos[🤖💬🔮📺]_dokng.com_c355101a
   - D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
-  - 🇭🇰HK_40|104KB/s|P002-260618 [a3de63191023]
-  - C🟠🇭🇰hos_dokng.com_ea9b4f4c
+  - C🟠🇺🇸hos[🎭🎞️🐙]_dokng.com_f7d7792e
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT

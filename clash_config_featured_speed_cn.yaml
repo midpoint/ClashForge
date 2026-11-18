@@ -32,52 +32,25 @@ dns:
     - 240.0.0.0/4
     - 0.0.0.0/32
 proxies:
-- name: 🔥Join+Telegram:@Farah_VPN🟣-FkTH
-  type: vmess
-  server: 39.108.113.127
-  port: 10086
-  uuid: a625d148-e988-4008-b957-e9051a6371d2
-  alterId: 0
-  cipher: auto
-  network: ws
-  tls: false
-  sni: ''
-  ws-opts:
-    path: ''
-    headers:
-      Host: ''
-- name: 🔥Join+Telegram:@Farah_VPN🟣-5OG8
+- name: A🟢🇹🇭res_dokng.com_021435aa
+  password: YlRoWvE0dL_cUqS94wPeKnA4
+  port: 62000
+  server: 87.84.49.245
+  type: socks5
+  username: ks878449260d
+- name: 🇳🇿NZ_74
   type: ss
-  server: 47.85.162.44
-  port: 443
-  cipher: 2022-blake3-chacha20-poly1305
-  password: 3NBsnBLanPfG6i3S2GTHineswr6EeSJPb0PCeMQoGoA=
-  udp: true
-- name: 🇯🇵JP_15|315KB/s|P002-260618 [43c1eca10f42]
-  port: 343
-  server: 133.18.200.207
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-- cipher: aes-256-gcm
-  name: 🇮🇹IT意大利丨yoyapai.com (2)
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  server: 202.50.253.99
   port: 19999
-  server: 202.50.253.36
-  skip-cert-verify: false
-  tls: false
-  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
-- name: 🇳🇱NL_97|961KB/s|R002-260618 [511bc38da784]
-  port: 443
-  server: 185.140.209.235
-  skip-cert-verify: true
-  sni: 482c8436a1f7c908b48a1757abb5dd79-ce85c45206570905.apache-iv.com
-  sub_tag: R002-260618
-  tls: true
-  type: http
+- name: 🇳🇿NZ_69
+  type: ss
+  server: 202.50.253.18
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
 - name: 🇺🇸US_296|819KB/s|R002-260618 [f3757137fc03]
   port: 443
@@ -87,20 +60,26 @@ proxies:
   tls: true
   type: http
   udp: true
-- name: 🇫🇷FR_8|7.5MB/s|P002-260618 [8820c091f4cd]
+- name: 🇳🇿NZ_75
+  type: ss
+  server: 202.50.253.81
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+- name: 🔥Join+Telegram:@Farah_VPN🟣-5OG8
+  type: ss
+  server: 47.85.162.44
+  port: 443
+  cipher: 2022-blake3-chacha20-poly1305
+  password: 3NBsnBLanPfG6i3S2GTHineswr6EeSJPb0PCeMQoGoA=
+  udp: true
+- name: 🇯🇵JP_10|382KB/s|P002-260618 [6c3b615333c9]
   password: None
-  port: 6103
-  server: 87.98.174.157
+  port: 343
+  server: 133.18.200.207
   skip-cert-verify: true
   sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇺🇸US_86|746KB/s|R002-260618 [4a813a8d418a]
-  port: 8443
-  server: 54.190.176.228
-  skip-cert-verify: true
-  sub_tag: R002-260618
   tls: true
   type: http
   udp: true
@@ -111,16 +90,34 @@ proxies:
   cipher: aes-256-gcm
   password: Lpq5UPVHtQYiuB9jEUNc2WkeIYCUH9DE
   udp: true
-- name: 🇳🇱NL_21|1.2MB/s|R002-260618 [11147645fc19]
-  password: 'null'
-  port: 443
-  server: 103.97.88.154
+- cipher: aes-256-gcm
+  name: '🇮🇹 意大利 | ITA #1'
+  password: itzvpn@321
+  port: 8388
+  server: 57.131.27.21
+  type: ss
+  udp: true
+- name: 🇯🇵JP_15|315KB/s|P002-260618 [43c1eca10f42]
+  port: 343
+  server: 133.18.200.207
   skip-cert-verify: true
-  sub_tag: R002-260618
+  sub_tag: P002-260618
   tls: true
   type: http
   udp: true
-  username: 'null'
+- name: D🔴🇺🇸hos[🎮🐙]_dokng.com_4e17894f
+  password: gs4BXwT6SW
+  port: 10988
+  server: 154.26.192.123
+  type: http
+  username: fQ67Dpe5dU
+- name: 🇺🇸 US_87
+  type: ss
+  server: 154.36.158.197
+  port: 8388
+  cipher: aes-256-gcm
+  password: BeaUf9c0AEWH40Pu
+  udp: true
 proxy-groups:
 - name: 节点选择
   type: select
@@ -133,16 +130,18 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🔥Join+Telegram:@Farah_VPN🟣-FkTH
-  - 🔥Join+Telegram:@Farah_VPN🟣-5OG8
-  - 🇯🇵JP_15|315KB/s|P002-260618 [43c1eca10f42]
-  - 🇮🇹IT意大利丨yoyapai.com (2)
-  - 🇳🇱NL_97|961KB/s|R002-260618 [511bc38da784]
+  - A🟢🇹🇭res_dokng.com_021435aa
+  - 🇳🇿NZ_74
+  - 🇳🇿NZ_69
   - 🇺🇸US_296|819KB/s|R002-260618 [f3757137fc03]
-  - 🇫🇷FR_8|7.5MB/s|P002-260618 [8820c091f4cd]
-  - 🇺🇸US_86|746KB/s|R002-260618 [4a813a8d418a]
+  - 🇳🇿NZ_75
+  - 🔥Join+Telegram:@Farah_VPN🟣-5OG8
+  - 🇯🇵JP_10|382KB/s|P002-260618 [6c3b615333c9]
   - 🇺🇸US_100
-  - 🇳🇱NL_21|1.2MB/s|R002-260618 [11147645fc19]
+  - '🇮🇹 意大利 | ITA #1'
+  - 🇯🇵JP_15|315KB/s|P002-260618 [43c1eca10f42]
+  - D🔴🇺🇸hos[🎮🐙]_dokng.com_4e17894f
+  - 🇺🇸 US_87
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
@@ -150,31 +149,35 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🔥Join+Telegram:@Farah_VPN🟣-FkTH
-  - 🔥Join+Telegram:@Farah_VPN🟣-5OG8
-  - 🇯🇵JP_15|315KB/s|P002-260618 [43c1eca10f42]
-  - 🇮🇹IT意大利丨yoyapai.com (2)
-  - 🇳🇱NL_97|961KB/s|R002-260618 [511bc38da784]
+  - A🟢🇹🇭res_dokng.com_021435aa
+  - 🇳🇿NZ_74
+  - 🇳🇿NZ_69
   - 🇺🇸US_296|819KB/s|R002-260618 [f3757137fc03]
-  - 🇫🇷FR_8|7.5MB/s|P002-260618 [8820c091f4cd]
-  - 🇺🇸US_86|746KB/s|R002-260618 [4a813a8d418a]
+  - 🇳🇿NZ_75
+  - 🔥Join+Telegram:@Farah_VPN🟣-5OG8
+  - 🇯🇵JP_10|382KB/s|P002-260618 [6c3b615333c9]
   - 🇺🇸US_100
-  - 🇳🇱NL_21|1.2MB/s|R002-260618 [11147645fc19]
+  - '🇮🇹 意大利 | ITA #1'
+  - 🇯🇵JP_15|315KB/s|P002-260618 [43c1eca10f42]
+  - D🔴🇺🇸hos[🎮🐙]_dokng.com_4e17894f
+  - 🇺🇸 US_87
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - 🔥Join+Telegram:@Farah_VPN🟣-FkTH
-  - 🔥Join+Telegram:@Farah_VPN🟣-5OG8
-  - 🇯🇵JP_15|315KB/s|P002-260618 [43c1eca10f42]
-  - 🇮🇹IT意大利丨yoyapai.com (2)
-  - 🇳🇱NL_97|961KB/s|R002-260618 [511bc38da784]
+  - A🟢🇹🇭res_dokng.com_021435aa
+  - 🇳🇿NZ_74
+  - 🇳🇿NZ_69
   - 🇺🇸US_296|819KB/s|R002-260618 [f3757137fc03]
-  - 🇫🇷FR_8|7.5MB/s|P002-260618 [8820c091f4cd]
-  - 🇺🇸US_86|746KB/s|R002-260618 [4a813a8d418a]
+  - 🇳🇿NZ_75
+  - 🔥Join+Telegram:@Farah_VPN🟣-5OG8
+  - 🇯🇵JP_10|382KB/s|P002-260618 [6c3b615333c9]
   - 🇺🇸US_100
-  - 🇳🇱NL_21|1.2MB/s|R002-260618 [11147645fc19]
+  - '🇮🇹 意大利 | ITA #1'
+  - 🇯🇵JP_15|315KB/s|P002-260618 [43c1eca10f42]
+  - D🔴🇺🇸hos[🎮🐙]_dokng.com_4e17894f
+  - 🇺🇸 US_87
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT

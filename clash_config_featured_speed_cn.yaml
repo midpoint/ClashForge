@@ -32,26 +32,6 @@ dns:
     - 240.0.0.0/4
     - 0.0.0.0/32
 proxies:
-- name: 🇯🇵 日本 | JPN
-  server: 77.67.18.254
-  port: 25680
-  type: vless
-  uuid: af8e3c87-2a75-44fa-9a8b-0227a9d2cb82
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: hARhHGV09mnEUWA1a7pG6_K4lztUhKCK3iGeboGGP2g
-    short-id: '7ce8c8e1'
-  servername: apple.com
-  client-fingerprint: chrome
-  network: tcp
-  udp: true
-- name: A🟢🇹🇭res_dokng.com_021435aa
-  password: YlRoWvE0dL_cUqS94wPeKnA4
-  port: 62000
-  server: 87.84.49.245
-  type: socks5
-  username: ks878449260d
 - name: 🇩🇪DE_6|3.0MB/s
   password: 'null'
   port: 443
@@ -60,33 +40,32 @@ proxies:
   tls: true
   type: http
   username: 'null'
-- name: 🇮🇹 意大利2|@ripaojiedian
-  server: 202.50.253.27
-  port: 19999
-  type: ss
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-9rFd
-  type: ss
-  server: 47.85.162.44
+- name: D🔴🇯🇵hos_dokng.com_4900a88a
+  password: EGJDy5Kg
+  port: 42000
+  server: 103.248.150.50
+  type: socks5
+  username: paZFN3JA
+- name: 🇻🇳VN_1|2.8MB/s
   port: 443
-  cipher: 2022-blake3-chacha20-poly1305
-  password: 3NBsnBLanPfG6i3S2GTHineswr6EeSJPb0PCeMQoGoA=
-  udp: true
-- name: D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_9986f45d
-  port: 9002
-  server: 84.17.47.148
+  server: 14.225.71.128
   skip-cert-verify: true
-  sni: 84.17.47.148
   tls: true
   type: http
-- name: D🔴🇺🇸hos[🎮🐙]_dokng.com_4e17894f
-  password: gs4BXwT6SW
-  port: 10988
-  server: 154.26.192.123
+- name: FR_speednode_0011
+  port: 23856
+  server: 51.159.225.196
+  skip-cert-verify: true
+  tls: true
   type: http
-  username: fQ67Dpe5dU
+  udp: true
+- name: DK_speednode_0005
+  port: 9002
+  server: 158.173.154.5
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
 - name: 🇳🇱NL_2|533KB/s|R002-260618 [ef760e5bc4d6]
   password: 'null'
   port: 443
@@ -103,45 +82,12 @@ proxies:
   server: 103.184.113.190
   type: socks5
   username: qT46DZLv
-- name: D🔴🇯🇵hos_dokng.com_4900a88a
-  password: EGJDy5Kg
-  port: 42000
-  server: 103.248.150.50
-  type: socks5
-  username: paZFN3JA
-- name: 🇳🇱NL_37|352KB/s|R002-260618 [11147645fc19]
-  password: 'null'
-  port: 443
-  server: 103.97.88.154
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
+- name: D🔴🇺🇸hos[🎮🐙]_dokng.com_4e17894f
+  password: gs4BXwT6SW
+  port: 10988
+  server: 154.26.192.123
   type: http
-  udp: true
-  username: 'null'
-- name: NL_speednode_0023
-  port: 9002
-  server: 84.17.47.124
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: DE_speednode_0004
-  port: 443
-  server: 213.109.163.119
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-- name: D🔴🇳🇱hos[🤖💬🔮📦]_dokng.com_5a16ef58
-  password: None
-  port: 9002
-  server: 84.17.47.123
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
+  username: fQ67Dpe5dU
 proxy-groups:
 - name: 节点选择
   type: select
@@ -154,20 +100,14 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇯🇵 日本 | JPN
-  - A🟢🇹🇭res_dokng.com_021435aa
   - 🇩🇪DE_6|3.0MB/s
-  - 🇮🇹 意大利2|@ripaojiedian
-  - 🔥Join+Telegram:@Farah_VPN🟣-9rFd
-  - D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_9986f45d
-  - D🔴🇺🇸hos[🎮🐙]_dokng.com_4e17894f
+  - D🔴🇯🇵hos_dokng.com_4900a88a
+  - 🇻🇳VN_1|2.8MB/s
+  - FR_speednode_0011
+  - DK_speednode_0005
   - 🇳🇱NL_2|533KB/s|R002-260618 [ef760e5bc4d6]
   - A🟢🇻🇳res_dokng.com_11eacb89
-  - D🔴🇯🇵hos_dokng.com_4900a88a
-  - 🇳🇱NL_37|352KB/s|R002-260618 [11147645fc19]
-  - NL_speednode_0023
-  - DE_speednode_0004
-  - D🔴🇳🇱hos[🤖💬🔮📦]_dokng.com_5a16ef58
+  - D🔴🇺🇸hos[🎮🐙]_dokng.com_4e17894f
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
@@ -175,39 +115,27 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇯🇵 日本 | JPN
-  - A🟢🇹🇭res_dokng.com_021435aa
   - 🇩🇪DE_6|3.0MB/s
-  - 🇮🇹 意大利2|@ripaojiedian
-  - 🔥Join+Telegram:@Farah_VPN🟣-9rFd
-  - D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_9986f45d
-  - D🔴🇺🇸hos[🎮🐙]_dokng.com_4e17894f
+  - D🔴🇯🇵hos_dokng.com_4900a88a
+  - 🇻🇳VN_1|2.8MB/s
+  - FR_speednode_0011
+  - DK_speednode_0005
   - 🇳🇱NL_2|533KB/s|R002-260618 [ef760e5bc4d6]
   - A🟢🇻🇳res_dokng.com_11eacb89
-  - D🔴🇯🇵hos_dokng.com_4900a88a
-  - 🇳🇱NL_37|352KB/s|R002-260618 [11147645fc19]
-  - NL_speednode_0023
-  - DE_speednode_0004
-  - D🔴🇳🇱hos[🤖💬🔮📦]_dokng.com_5a16ef58
+  - D🔴🇺🇸hos[🎮🐙]_dokng.com_4e17894f
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - 🇯🇵 日本 | JPN
-  - A🟢🇹🇭res_dokng.com_021435aa
   - 🇩🇪DE_6|3.0MB/s
-  - 🇮🇹 意大利2|@ripaojiedian
-  - 🔥Join+Telegram:@Farah_VPN🟣-9rFd
-  - D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_9986f45d
-  - D🔴🇺🇸hos[🎮🐙]_dokng.com_4e17894f
+  - D🔴🇯🇵hos_dokng.com_4900a88a
+  - 🇻🇳VN_1|2.8MB/s
+  - FR_speednode_0011
+  - DK_speednode_0005
   - 🇳🇱NL_2|533KB/s|R002-260618 [ef760e5bc4d6]
   - A🟢🇻🇳res_dokng.com_11eacb89
-  - D🔴🇯🇵hos_dokng.com_4900a88a
-  - 🇳🇱NL_37|352KB/s|R002-260618 [11147645fc19]
-  - NL_speednode_0023
-  - DE_speednode_0004
-  - D🔴🇳🇱hos[🤖💬🔮📦]_dokng.com_5a16ef58
+  - D🔴🇺🇸hos[🎮🐙]_dokng.com_4e17894f
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT

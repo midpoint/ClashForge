@@ -32,79 +32,34 @@ dns:
     - 240.0.0.0/4
     - 0.0.0.0/32
 proxies:
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸US_48|258KB/s|B007-260618 [1e4cf35bc8fc]
-  network: tcp
-  packet-encoding: xudp
-  port: 18000
-  server: 84.17.41.2
-  servername: bj1aa2zyjxyamyuk.v%3dns.vip
-  skip-cert-verify: false
-  sub_tag: B007-260618
-  tls: false
-  type: vmess
-  udp: true
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  xudp: true
-- name: 🇺🇸US_70
-  type: ss
-  server: 149.22.95.183
+- type: ss
+  name: 🇺🇸_美国 (36)
+  server: 156.146.38.169
   port: 443
-  cipher: aes-128-gcm
   password: shadowsocks
+  cipher: aes-128-gcm
   udp: true
-- cipher: aes-256-gcm
-  name: ❓Other_28|97KB/s|M003-260806 [8741a1f6093f]
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 38.143.66.146
-  sub_tag: M003-260806
-  type: ss
-  udp: true
-- name: D🔴🇺🇸hos[🤖🧩📺🎭]_dokng.com_6103d5ef
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇺🇸_美国 (37)
+  server: 156.146.38.170
   port: 443
-  server: 172.64.68.89
-  skip-cert-verify: true
-  sni: 172.64.68.89
-  sub_tag: P002-260618
-  tls: true
-  type: http
+  password: shadowsocks
+  cipher: aes-128-gcm
   udp: true
-  x-toolall-mihomo: true
-- name: D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_c22e83dc
-  password: 'null'
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇺🇸_美国 (39)
+  server: 156.146.38.168
   port: 443
-  server: 172.64.69.89
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: 'null'
-- name: 🇺🇸US_59|378KB/s|R002-260618 [13dede6e3b21]
-  port: 443
-  server: 149.22.88.65
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
+  password: shadowsocks
+  cipher: aes-128-gcm
   udp: true
-- cipher: rc4-md5
-  name: 🇺🇸US_4|299KB/s|M003-260806 [6364b2c615d5]
-  password: 14fFPrbezE3HDZzsMOr6
-  port: 8080
-  server: 23.251.121.242
-  sub_tag: M003-260806
-  type: ss
-  udp: true
-- name: 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
-  port: 443
-  server: 172.64.69.89
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_d9f747e4
+  tls: false
+  skip-cert-verify: false
+- name: 🇩🇪DE_2|1.4MB/s|P002-260618
   password: None
   port: 443
   server: 172.64.68.89
@@ -114,22 +69,167 @@ proxies:
   type: http
   udp: true
   x-toolall-mihomo: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-IaDT
-  type: vless
-  server: 188.114.98.0
-  port: 443
-  uuid: 53bbdad4-2f4e-45db-8df4-fa491a6a7227
-  security: tls
-  tls: true
-  sni: freeceshi6.frii.site
-  skip-cert-verify: false
-  network: ws
+- cipher: rc4-md5
+  name: 🇨🇦CA_1|195KB/s|A004-260618 [3770023c3c83]
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 137.184.174.93
+  sub_tag: A004-260618
+  type: ss
   udp: true
-  client-fingerprint: unsafe
-  ws-opts:
-    path: /proxyip=ProxyIP.JP.CMLiussss.net
-    headers:
-      Host: freeceshi6.frii.site
+- type: ss
+  name: 🇺🇸_美国 (48)
+  server: 216.106.178.169
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- cipher: aes-256-gcm
+  name: ❓Other_8|148KB/s|A004-260618 [60a9d50d005d]
+  password: FoOiGlkAA9yPEGP
+  port: 7307
+  server: 15.204.246.132
+  sub_tag: A004-260618
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: 🇺🇸US_63|484KB/s|B007-260618 [958dcf82a6bb]
+  password: lGqs95QkFHo2NV
+  port: 5498
+  server: 15.204.246.111
+  sub_tag: B007-260618
+  type: ss
+  udp: true
+- name: 🔥Join+Telegram:@Farah_VPN🟣-5K2U
+  type: ss
+  server: 15.204.233.41
+  port: 8882
+  cipher: aes-256-gcm
+  password: kDWvXYZoTBcGkC4
+  udp: true
+- type: ss
+  name: 🇺🇸_美国 (51)
+  server: 67.220.73.178
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- name: 🔥Join+Telegram:@Farah_VPN🟣-79KP
+  type: ss
+  server: 135.148.42.13
+  port: 8388
+  cipher: aes-256-gcm
+  password: itzvpn@321
+  udp: true
+- type: ss
+  name: 🇺🇸_美国 (43)
+  server: 38.128.66.32
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- cipher: aes-256-gcm
+  name: ❓Other_17|109KB/s|M003-260806 [c778053e3664]
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 38.64.138.135
+  sub_tag: M003-260806
+  type: ss
+  udp: true
+- name: 🔥Join+Telegram:@Farah_VPN🟣-PkmJ
+  type: ss
+  server: 40.160.86.43
+  port: 8388
+  cipher: aes-256-gcm
+  password: itzvpn@321
+  udp: true
+- name: 🔥Join+Telegram:@Farah_VPN🟣-LdxM
+  type: ss
+  server: 98.98.79.198
+  port: 8080
+  cipher: rc4-md5
+  password: 14fFPrbezE3HDZzsMOr6
+  udp: true
+- type: ss
+  name: 🇺🇸_美国 (47)
+  server: 198.98.53.130
+  port: 443
+  password: eDfN7SODQceIOmIAbtJJtK
+  cipher: chacha20-ietf-poly1305
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇺🇸_美国 (12)
+  server: 37.19.198.243
+  port: 443
+  password: shadowsocks
+  cipher: aes-128-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇺🇸_美国 (21)
+  server: 193.151.163.18
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- cipher: aes-256-gcm
+  name: ❓Other_98|276KB/s|B007-260618 [901ef66a7fa3]
+  password: itzvpn@321
+  port: 8388
+  server: 192.99.151.230
+  sub_tag: B007-260618
+  type: ss
+  udp: true
+- name: 🇩🇪DE_1|3.7MB/s
+  password: 'null'
+  port: 443
+  server: 172.64.69.89
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: 'null'
+- cipher: aes-256-gcm
+  name: 🇨🇦CA_6|235KB/s|A004-260618 [10726e1af58a]
+  password: zDNVedRFPQexG9v
+  port: 445
+  server: 51.222.12.127
+  sub_tag: A004-260618
+  type: ss
+  udp: true
+- name: 🔥Join+Telegram:@Farah_VPN🟣-D0UU
+  type: ss
+  server: 51.222.141.125
+  port: 445
+  cipher: aes-256-gcm
+  password: zDNVedRFPQexG9v
+  udp: true
+- name: 🔥Join+Telegram:@Farah_VPN🟣-RYPd
+  type: ss
+  server: 134.195.198.163
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: PmCqK98WqhSC
+  udp: true
+- type: ss
+  name: 🇺🇸_美国 (16)
+  server: 37.19.198.236
+  port: 443
+  password: shadowsocks
+  cipher: aes-128-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
 - name: SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-107.151.182.253:8080
   type: ssr
   server: 107.151.182.253
@@ -138,783 +238,150 @@ proxies:
   cipher: rc4-md5
   protocol: origin
   obfs: plain
-- name: D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_41c9dcd3
-  password: 'null'
+- type: ss
+  name: 🇺🇸_美国 (15)
+  server: 37.19.198.160
   port: 443
-  server: 172.64.68.89
-  skip-cert-verify: true
-  tls: true
-  type: http
+  password: shadowsocks
+  cipher: aes-128-gcm
   udp: true
-  username: 'null'
-  x-toolall-mihomo: true
-- name: CF官方优选12
-  server: 104.17.26.220
-  port: 443
-  type: vless
-  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
-  tls: true
+  tls: false
   skip-cert-verify: false
-  servername: myfire.midpoint-e55.workers.dev
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: myfire.midpoint-e55.workers.dev
-- name: 🔥Join+Telegram:@Farah_VPN🟣-Zmq1
-  type: ss
-  server: 104.238.140.45
-  port: 11051
-  cipher: chacha20-ietf-poly1305
-  password: JUXsy78dSs6ROkasikmoaL
-  udp: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-xzm4
-  type: ss
-  server: 23.150.152.38
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-- name: CF官方优选16
-  server: 141.101.113.150
-  port: 2083
-  type: vless
-  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
-  tls: true
-  skip-cert-verify: false
-  servername: myfire.midpoint-e55.workers.dev
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: myfire.midpoint-e55.workers.dev
-- name: CF官方优选15
-  server: 172.67.156.100
-  port: 443
-  type: vless
-  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
-  tls: true
-  skip-cert-verify: false
-  servername: myfire.midpoint-e55.workers.dev
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: myfire.midpoint-e55.workers.dev
-- name: CF官方优选11
-  server: 104.18.47.35
-  port: 8443
-  type: vless
-  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
-  tls: true
-  skip-cert-verify: false
-  servername: myfire.midpoint-e55.workers.dev
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: myfire.midpoint-e55.workers.dev
-- alterId: '0'
-  cipher: auto
-  name: ❓Other_40|144KB/s|C002-260622 [36581dfe601e]
-  network: raw
-  packet-encoding: xudp
+- type: vmess
+  name: 🇨🇦_加拿大 (6)
+  server: 134.195.196.211
   port: 18000
-  server: 169.197.142.22
-  skip-cert-verify: false
-  sub_tag: C002-260622
-  tls: false
-  type: vmess
-  udp: true
   uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  xudp: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-c54T
-  type: vless
-  server: 172.64.154.113
-  port: 8443
-  uuid: 53bbdad4-2f4e-45db-8df4-fa491a6a7227
-  security: tls
-  tls: true
-  sni: freeceshi6.frii.site
-  skip-cert-verify: false
-  network: ws
-  udp: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /?TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=512
-    headers:
-      Host: freeceshi6.frii.site
-- cipher: aes-256-gcm
-  name: 🇺🇸US_49|116KB/s|M003-260806 [3de23dd74123]
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 137.184.89.151
-  sub_tag: M003-260806
-  type: ss
-  udp: true
-- name: D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_fb6ab23c
-  port: 443
-  server: fan.365747.xyz
-  skip-cert-verify: true
-  sni: fan.365747.xyz
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-SRIg
-  type: ss
-  server: 95.215.201.18
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-- name: D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_1a8c4f1c
-  port: 443
-  server: 137.175.22.45
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-- name: D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_fa48c427
-  port: 443
-  server: 137.175.22.40
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-- name: D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_d9357b07
-  port: 443
-  server: 137.175.22.52
-  skip-cert-verify: true
-  sni: 137.175.22.52
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-- name: CF官方优选10
-  server: 172.67.154.124
-  port: 2096
-  type: vless
-  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
-  tls: true
-  skip-cert-verify: false
-  servername: myfire.midpoint-e55.workers.dev
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: myfire.midpoint-e55.workers.dev
-- name: 🇺🇸US_54|136KB/s|R002-260618 [ea1befc94c60]
-  port: 443
-  server: 137.175.22.84
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_6272ab77
-  port: 443
-  server: 137.175.22.72
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-- name: D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_cc0b62b7
-  port: 443
-  server: 137.175.22.96
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-Y4jT
-  type: ss
-  server: 147.224.251.204
-  port: 50356
-  cipher: 2022-blake3-chacha20-poly1305
-  password: ZF5zVVjNvtcTkEWiK1sNAzCVZB+Hgu9hHzeOdjBoKMQ=
-  udp: true
-- name: D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_e8a5e243
-  port: 443
-  server: 137.175.22.56
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-- name: ⚙️75@oneclickvpnkeys
-  password: 0b396097d052915ef304b40d2bda6a2d
-  port: 8443
-  server: 179.254.94.184
-  skip-cert-verify: true
-  sni: www.bing.com
-  tls: false
-  type: hysteria2
-- name: ❓Other_54|111KB/s|R002-260618 [22a5f322cb38]
-  port: 443
-  server: 137.175.22.85
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇺🇸US_63
-  type: ss
-  server: 173.244.56.6
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-- name: 🇺🇸US_73
-  type: ss
-  server: 173.244.56.9
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-- name: CF官方优选8
-  server: 104.19.42.78
-  port: 443
-  type: vless
-  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
-  tls: true
-  skip-cert-verify: false
-  servername: myfire.midpoint-e55.workers.dev
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: myfire.midpoint-e55.workers.dev
-- name: CF官方优选9
-  server: 172.64.159.111
-  port: 2083
-  type: vless
-  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
-  tls: true
-  skip-cert-verify: false
-  servername: myfire.midpoint-e55.workers.dev
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: myfire.midpoint-e55.workers.dev
-- name: D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_b7625f20
-  port: 443
-  server: 137.175.22.16
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-- name: CF官方优选4
-  server: 104.16.254.123
-  port: 443
-  type: vless
-  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
-  tls: true
-  skip-cert-verify: false
-  servername: myfire.midpoint-e55.workers.dev
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: myfire.midpoint-e55.workers.dev
-- name: 🔥Join+Telegram:@Farah_VPN🟣-mwZO
-  type: trojan
-  server: 167.88.61.198
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: cdn.browseseniorrolesandenhanceyourcareertoday.com
-  skip-cert-verify: false
-- name: 🔥Join+Telegram:@Farah_VPN🟣-uDej
-  type: trojan
-  server: 167.88.61.20
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: api.browseseniorrolesandenhanceyourcareertoday.com
-  skip-cert-verify: false
-- name: 🇺🇸 美国 | USA 3
-  server: 205.186.112.19
-  port: 443
-  type: vless
-  uuid: f1a04d4c-56b3-4f93-a4ec-91a5039a48bd
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: cwao9PnlNhUTd19WxIKAOdAjkaqVJihY0d2WOR8I2WY
-    short-id: 'cce23a6bce3bc925'
-  servername: www.amazon.com
-  client-fingerprint: chrome
-  network: tcp
-  udp: true
-- name: CF官方优选7
-  server: 104.19.46.215
-  port: 2087
-  type: vless
-  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
-  tls: true
-  skip-cert-verify: false
-  servername: myfire.midpoint-e55.workers.dev
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: myfire.midpoint-e55.workers.dev
-- name: '@V2rayNPVTConfig'
-  password: AIcYjw5Oc9Rrrr9SGDUBbBIC
-  port: 36712
-  server: 38.76.150.108
-  skip-cert-verify: true
-  tls: false
-  type: hysteria2
-- name: CF官方优选13
-  server: 104.16.153.245
-  port: 2053
-  type: vless
-  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
-  tls: true
-  skip-cert-verify: false
-  servername: myfire.midpoint-e55.workers.dev
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: myfire.midpoint-e55.workers.dev
-- name: 🔥Join+Telegram:@Farah_VPN🟣-G04p
-  type: trojan
-  server: 167.88.61.52
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: courses.browseseniorrolesandenhanceyourcareertoday.com
-  skip-cert-verify: false
-- name: D🔴🇺🇸hos[🤖💬🧩🎵]_dokng.com_3fd501ee
-  password: 'null'
-  port: 9002
-  server: 138.199.35.218
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-  username: 'null'
-  x-toolall-mihomo: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-vqUi
-  type: ss
-  server: 3.146.200.226
-  port: 2083
-  cipher: chacha20-ietf-poly1305
-  password: 32ba834682c3f77d9b7e4851e38ac18b
-  udp: true
-- name: 🇺🇸US_72
-  type: ss
-  server: 156.146.38.170
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-- name: D🔴🇺🇸hos[🤖💬🧩🎵]_dokng.com_555e78e1
-  password: None
-  port: 9002
-  server: 138.199.35.206
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-- name: D🔴🇺🇸hos[🤖💬🧩🎵]_dokng.com_8f481182
-  password: None
-  port: 9002
-  server: 138.199.35.204
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-asmL
-  type: ss
-  server: 156.146.38.169
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-- name: 🇺🇸US_40|335KB/s|P002-260618 [2066bdd63838]
-  password: None
-  port: 9002
-  server: 138.199.35.199
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇺🇸US_39|228KB/s|P002-260618 [6c613d96f69b]
-  password: 'null'
-  port: 9002
-  server: 138.199.35.209
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-  username: 'null'
-- name: D🔴🇺🇸hos[💬🧩📺🎵]_dokng.com_807a4c2c
-  password: None
-  port: 9002
-  server: 138.199.35.218
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-- name: 🇺🇸US_14|2.8MB/s
-  password: None
-  port: 9002
-  server: 138.199.35.216
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: 'null'
-- name: 🇺🇸US_30|364KB/s|P002-260618 [e842f77422a7]
-  password: None
-  port: 9002
-  server: 138.199.35.207
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇺🇸US_35|355KB/s [f658df7df711]
-  password: ''
-  port: 9002
-  server: 138.199.35.218
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  username: ''
-- name: D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_cf54b49d
-  password: 'null'
-  port: 9002
-  server: 138.199.35.206
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: 'null'
-- name: 🔥Join+Telegram:@Farah_VPN🟣-jY3v
-  type: ss
-  server: 167.88.62.203
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-- name: 🇺🇸US_64
-  type: ss
-  server: 156.146.38.168
-  port: 443
-  cipher: aes-128-gcm
-  password: shadowsocks
-  udp: true
-- name: ❓Other_41|374KB/s|P002-260618 [cc2d161c221c]
-  password: None
-  port: 9002
-  server: 138.199.35.219
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-- name: ❓Other_57|126KB/s|R002-260618 [ffc0819f735f]
-  port: 9002
-  server: 138.199.35.195
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: D🔴🇺🇸hos[💬🧩📺🎵]_dokng.com_652faead
-  port: 9002
-  server: 138.199.35.206
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-- name: D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_ac31ab95
-  password: None
-  port: 9002
-  server: 138.199.35.211
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-- name: D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_e25ed24c
-  password: 'null'
-  port: 9002
-  server: 138.199.35.211
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-  username: 'null'
-  x-toolall-mihomo: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-D4wT
-  type: ss
-  server: 169.197.142.68
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-- name: CF官方优选5
-  server: 8.39.125.179
-  port: 2083
-  type: vless
-  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
-  tls: true
-  skip-cert-verify: false
-  servername: myfire.midpoint-e55.workers.dev
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: myfire.midpoint-e55.workers.dev
-- name: D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_022e1256
-  port: 9002
-  server: 138.199.35.216
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-sDQ2
-  type: trojan
-  server: 167.88.61.175
-  port: 443
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: blog.browseseniorrolesandenhanceyourcareertoday.com
-  skip-cert-verify: false
-- name: CF官方优选6
-  server: 104.18.42.140
-  port: 2083
-  type: vless
-  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
-  tls: true
-  skip-cert-verify: false
-  servername: myfire.midpoint-e55.workers.dev
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: myfire.midpoint-e55.workers.dev
-- name: 🇺🇸US_37|164KB/s|P002-260618 [e4aa9a3f16af]
-  password: 'null'
-  port: 9002
-  server: 138.199.35.215
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-  username: 'null'
-- name: D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_bcada574
-  port: 9002
-  server: 138.199.35.211
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-weLG
-  type: vmess
-  server: 129.146.77.248
-  port: 39495
-  uuid: f836c736-87fc-4fde-aabc-00857ecdff3e
-  alterId: 0
   cipher: auto
-  network: ws
+  alterId: 0
+  udp: true
   tls: false
-  sni: ''
-  ws-opts:
-    path: /cctv13.m3u8
-    headers:
-      Host: ''
-- name: 🇺🇸US_41|238KB/s|K001-260618 [c6e1aea44c4a]
-  password: None
-  port: 9002
-  server: 138.199.35.203
-  skip-cert-verify: true
-  sub_tag: K001-260618
-  tls: true
-  type: http
-  udp: true
-  username: ''
-- name: 🔥Join+Telegram:@Farah_VPN🟣-xZwP
-  type: ss
-  server: 167.88.62.56
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-ZdFs
-  type: ss
-  server: 67.220.73.247
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: DGjtV63aPW3E
-  udp: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-STtQ
-  type: ss
-  server: 67.220.73.178
-  port: 19999
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  udp: true
-- name: D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_4cc7e454
-  password: ''
-  port: 9443
-  server: 38.95.111.226
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  username: ''
-  x-toolall-mihomo: true
-- cipher: aes-256-gcm
-  name: 🇺🇸US_22|238KB/s|M003-260806 [0c4b7a94cbdd]
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  port: 19999
-  server: 38.91.100.39
-  sub_tag: M003-260806
-  type: ss
-  udp: true
-- name: 🇺🇸US_15|2.4MB/s
-  port: 9002
-  server: 138.199.35.200
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: D🔴🇺🇸hos[🤖💬🧩🎵]_dokng.com_4451c444
-  password: 'null'
-  port: 9002
-  server: 138.199.35.216
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  username: 'null'
-  x-toolall-mihomo: true
-- name: CF官方优选3
-  server: 104.19.46.44
-  port: 2083
-  type: vless
-  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
-  tls: true
   skip-cert-verify: false
-  servername: myfire.midpoint-e55.workers.dev
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: myfire.midpoint-e55.workers.dev
-- name: 🔥Join+Telegram:@Farah_VPN🟣-VFlS
-  type: ss
+- type: ss
+  name: 🇺🇸_美国 (2)
+  server: 149.40.57.134
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇺🇸_美国 (59)
+  server: 185.230.230.18
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇺🇸_美国 (10)
   server: 149.40.57.138
   port: 19999
-  cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
   udp: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-PdqD
-  type: ss
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇺🇸_美国 (13)
+  server: 149.40.57.133
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- type: vmess
+  name: 🇺🇸_美国 (11) (2)
+  server: 67.220.85.46
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  cipher: auto
+  alterId: 0
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇺🇸_美国 (3)
   server: 149.40.57.135
   port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
-- name: CF官方优选2
-  server: 162.159.138.237
-  port: 443
-  type: vless
-  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
-  tls: true
+  tls: false
   skip-cert-verify: false
-  servername: myfire.midpoint-e55.workers.dev
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: myfire.midpoint-e55.workers.dev
-- cipher: aes-256-gcm
-  name: ❓Other_21|262KB/s|S004-260618 [6e6fc41e104d]
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- type: ss
+  name: 🇺🇸_美国 (25)
+  server: 23.150.152.38
   port: 19999
-  server: 149.40.57.134
-  sub_tag: S004-260618
-  type: ss
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
   udp: true
-- name: 🇺🇸US_12|291KB/s|P002-260618 [3d6858c0edb1]
-  password: 'null'
-  port: 9002
-  server: 138.199.35.202
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-  username: 'null'
-- name: CF官方优选1
-  server: 8.35.211.174
-  port: 2096
-  type: vless
-  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
-  tls: true
+  tls: false
   skip-cert-verify: false
-  servername: myfire.midpoint-e55.workers.dev
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: myfire.midpoint-e55.workers.dev
-- name: 🔥Join+Telegram:@Farah_VPN🟣-NoGM
+- name: 🔥Join+Telegram:@Farah_VPN🟣-FOjW
   type: ss
-  server: 98.98.79.198
-  port: 8080
-  cipher: rc4-md5
-  password: 14fFPrbezE3HDZzsMOr6
+  server: 200.102.179.179
+  port: 8388
+  cipher: aes-256-gcm
+  password: itzvpn@321
   udp: true
+- type: ss
+  name: 🇺🇸_美国 (41)
+  server: 67.220.73.247
+  port: 443
+  password: DGjtV63aPW3E
+  cipher: chacha20-ietf-poly1305
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇺🇸_美国 (26)
+  server: 38.91.100.39
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇺🇸_美国 (60)
+  server: 45.86.51.18
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇺🇸_美国 (31)
+  server: 95.215.201.18
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇺🇸_美国 (42)
+  server: 172.111.38.72
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇺🇸_美国 (24)
+  server: 104.238.140.45
+  port: 11051
+  password: JUXsy78dSs6ROkasikmoaL
+  cipher: chacha20-ietf-poly1305
+  udp: true
+  tls: false
+  skip-cert-verify: false
 - alterId: '0'
   cipher: aes-128-gcm
   name: 🇺🇸US_11|355KB/s|C002-260622 [26ff6d036c73]
@@ -929,66 +396,601 @@ proxies:
   udp: true
   uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
   xudp: true
-- cipher: aes-256-gcm
-  name: ❓Other_98|276KB/s|B007-260618 [901ef66a7fa3]
-  password: itzvpn@321
-  port: 8388
-  server: 192.99.151.230
-  sub_tag: B007-260618
-  type: ss
-  udp: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-AYqY
-  type: ss
-  server: 51.79.85.185
-  port: 8118
+- type: ss
+  name: 🇨🇦_加拿大 (11)
+  server: 158.51.121.221
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   cipher: aes-256-gcm
-  password: cdBIDV42DCwnfIN
   udp: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-WHO0
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇺🇸_美国 (27)
+  server: 173.244.56.6
+  port: 443
+  password: shadowsocks
+  cipher: aes-128-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- type: vmess
+  name: 🇺🇸_美国 (23) (2)
+  server: 84.17.41.2
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  cipher: auto
+  alterId: 0
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- name: 🇺🇸US_2|269KB/s|A004-260618 [399f506ba4a6]
+  network: ws
+  packet-encoding: xudp
+  port: 14430
+  server: 45.138.100.248
+  sub_tag: A004-260618
+  type: vless
+  udp: true
+  uuid: ae908ff5-f749-402c-af25-e6e9aef4d6bb
+  ws-opts:
+    headers:
+      Host: 45.138.100.248
+      User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/67.0.3396.99 Safari/537.36
+    path: /vless
+  xudp: true
+- name: CF官方优选7-1EyO
+  server: 172.64.159.190
+  port: 2053
+  type: vless
+  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
+  tls: true
+  skip-cert-verify: false
+  servername: myfire.midpoint-e55.workers.dev
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: myfire.midpoint-e55.workers.dev
+- name: 🔥Join+Telegram:@Farah_VPN🟣-pXto
   type: ss
-  server: 193.151.163.18
+  server: 129.146.200.49
+  port: 50356
+  cipher: 2022-blake3-chacha20-poly1305
+  password: 011mfoSmYFVhBNbKk0V5DxqGs9PwrsqY+9EAhOll+58=
+  udp: true
+- cipher: aes-256-gcm
+  name: ❓Other_28|97KB/s|M003-260806 [8741a1f6093f]
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 38.143.66.146
+  sub_tag: M003-260806
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: ❓Other_64|278KB/s|A004-260618 [911c7a890941]
+  password: Y6R9pAtvxxzmGC
+  port: 8888
+  server: 15.204.246.107
+  sub_tag: A004-260618
+  type: ss
+  udp: true
+- name: CF官方优选16-seYx
+  server: 162.159.138.66
+  port: 2096
+  type: vless
+  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
+  tls: true
+  skip-cert-verify: false
+  servername: myfire.midpoint-e55.workers.dev
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: myfire.midpoint-e55.workers.dev
+- name: CF官方优选11
+  server: 104.16.247.108
+  port: 2053
+  type: vless
+  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
+  tls: true
+  skip-cert-verify: false
+  servername: myfire.midpoint-e55.workers.dev
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: myfire.midpoint-e55.workers.dev
+- name: 美国 293
+  type: vmess
+  network: tcp
+  server: 67.220.95.3
+  port: 18000
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  tls: false
+  alterId: 0
+  cipher: aes-128-gcm
+- name: 🔥Join+Telegram:@Farah_VPN🟣-Pajv
+  type: ss
+  server: 185.215.132.9
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
-- name: D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_ff574ef6
-  port: 9002
-  server: 138.199.35.204
+- type: ss
+  name: 🇺🇸_美国 (32)
+  server: 173.244.56.9
+  port: 443
+  password: shadowsocks
+  cipher: aes-128-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- name: CF官方优选1-WoWu
+  server: 172.64.159.137
+  port: 8443
+  type: vless
+  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
+  tls: true
+  skip-cert-verify: false
+  servername: myfire.midpoint-e55.workers.dev
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: myfire.midpoint-e55.workers.dev
+- name: D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_6103d5ef
+  port: 443
+  server: 172.64.68.89
+  skip-cert-verify: true
+  sni: 172.64.68.89
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+  x-toolall-mihomo: true
+- name: D🔴🇺🇸hos[📺]_dokng.com_016d9dc7
+  password: ''
+  port: 443
+  server: 149.88.21.129
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  username: ''
+  x-toolall-mihomo: true
+- type: ss
+  name: 🇨🇦_加拿大 (2)
+  server: 149.22.95.183
+  port: 443
+  password: shadowsocks
+  cipher: aes-128-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- name: 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
+  port: 443
+  server: 172.64.69.89
   skip-cert-verify: true
   sub_tag: R002-260618
   tls: true
   type: http
   udp: true
-  x-toolall-mihomo: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-UJZR
+- name: CF官方优选2-Snm3
+  server: 104.19.2.37
+  port: 2087
+  type: vless
+  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
+  tls: true
+  skip-cert-verify: false
+  servername: myfire.midpoint-e55.workers.dev
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: myfire.midpoint-e55.workers.dev
+- name: 🇨🇦CA_5|314KB/s|R002-260618 [e0b6eacb1061]
+  port: 443
+  server: 206.223.183.16
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: CF官方优选15-LSDt
+  server: 162.159.236.174
+  port: 2096
+  type: vless
+  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
+  tls: true
+  skip-cert-verify: false
+  servername: myfire.midpoint-e55.workers.dev
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: myfire.midpoint-e55.workers.dev
+- cipher: rc4-md5
+  name: 🇺🇸US_4|299KB/s|M003-260806 [6364b2c615d5]
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 23.251.121.242
+  sub_tag: M003-260806
   type: ss
-  server: 158.51.121.221
+  udp: true
+- type: ss
+  name: 🇺🇸_美国 (28)
+  server: 137.184.89.151
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- name: 🔥Join+Telegram:@Farah_VPN🟣-XFVo
+  type: ss
+  server: 185.215.132.18
   port: 19999
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-2rbN
-  type: ss
-  server: 51.222.141.125
-  port: 445
-  cipher: aes-256-gcm
-  password: zDNVedRFPQexG9v
-  udp: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-sGok
-  type: ss
-  server: 172.111.38.72
+- type: ss
+  name: 🇺🇸_美国 (49)
+  server: 38.121.43.225
   port: 19999
-  cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
   udp: true
+  tls: false
+  skip-cert-verify: false
+- name: CF官方优选13-QKrG
+  server: 172.64.154.23
+  port: 2087
+  type: vless
+  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
+  tls: true
+  skip-cert-verify: false
+  servername: myfire.midpoint-e55.workers.dev
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: myfire.midpoint-e55.workers.dev
 - cipher: aes-256-gcm
-  name: ❓Other_8|148KB/s|A004-260618 [60a9d50d005d]
-  password: FoOiGlkAA9yPEGP
-  port: 7307
-  server: 15.204.246.132
-  sub_tag: A004-260618
+  name: ❓Other_53|70KB/s|M003-260806 [c396cf27095f]
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 38.22.17.219
+  sub_tag: M003-260806
   type: ss
   udp: true
+- type: ss
+  name: 🇺🇸_美国 (58)
+  server: 167.88.63.99
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- name: 🔥Join+Telegram:@Farah_VPN🟣-Waop
+  type: vless
+  server: 172.64.154.113
+  port: 8443
+  uuid: 53bbdad4-2f4e-45db-8df4-fa491a6a7227
+  security: tls
+  tls: true
+  sni: freeceshi6.frii.site
+  skip-cert-verify: false
+  network: ws
+  udp: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /proxyip=ProxyIP.JP.CMLiussss.net
+    headers:
+      Host: freeceshi6.frii.site
+- name: CF官方优选9
+  server: 162.159.138.119
+  port: 443
+  type: vless
+  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
+  tls: true
+  skip-cert-verify: false
+  servername: myfire.midpoint-e55.workers.dev
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: myfire.midpoint-e55.workers.dev
+- name: CF官方优选14
+  server: 104.18.42.168
+  port: 443
+  type: vless
+  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
+  tls: true
+  skip-cert-verify: false
+  servername: myfire.midpoint-e55.workers.dev
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: myfire.midpoint-e55.workers.dev
+- type: ss
+  name: 🇺🇸_美国 (33)
+  server: 169.197.142.68
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇺🇸_美国 (44)
+  server: 38.121.43.231
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- name: 🔥Join+Telegram:@Farah_VPN🟣-pk0o
+  type: ss
+  server: 38.121.43.18
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+- name: D🔴🇺🇸hos[🤖💬🧩🎵]_dokng.com_847f2db1
+  password: 'null'
+  port: 9002
+  server: 138.199.35.220
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: 'null'
+- name: D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_cf54b49d
+  password: 'null'
+  port: 9002
+  server: 138.199.35.206
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: 'null'
+- name: CF官方优选12
+  server: 104.16.240.144
+  port: 2053
+  type: vless
+  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
+  tls: true
+  skip-cert-verify: false
+  servername: myfire.midpoint-e55.workers.dev
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: myfire.midpoint-e55.workers.dev
+- name: D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_df2b9dfe
+  password: ''
+  port: 9002
+  server: 138.199.35.201
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  username: ''
+  x-toolall-mihomo: true
+- cipher: aes-256-gcm
+  name: ❓Other_16|288KB/s|M003-260806 [b0e338154f81]
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 38.22.17.129
+  sub_tag: M003-260806
+  type: ss
+  udp: true
+- name: 🔥Join+Telegram:@Farah_VPN🟣-X7er
+  type: ss
+  server: 184.107.106.78
+  port: 8388
+  cipher: aes-256-gcm
+  password: itzvpn@321
+  udp: true
+- type: ss
+  name: 🇺🇸_美国 (51) (2)
+  server: 172.111.36.123
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- name: 🇺🇸US_12|291KB/s|P002-260618 [3d6858c0edb1]
+  password: 'null'
+  port: 9002
+  server: 138.199.35.202
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+  username: 'null'
+- name: D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_cc9cfe69
+  password: ''
+  port: 9002
+  server: 138.199.35.200
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  username: ''
+  x-toolall-mihomo: true
+- name: 🇺🇸US_41|238KB/s|K001-260618 [c6e1aea44c4a]
+  password: None
+  port: 9002
+  server: 138.199.35.203
+  skip-cert-verify: true
+  sub_tag: K001-260618
+  tls: true
+  type: http
+  udp: true
+  username: ''
+- name: 🇺🇸US_30|364KB/s|P002-260618 [e842f77422a7]
+  password: None
+  port: 9002
+  server: 138.199.35.207
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: CF官方优选5-qyc7
+  server: 104.17.208.142
+  port: 2083
+  type: vless
+  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
+  tls: true
+  skip-cert-verify: false
+  servername: myfire.midpoint-e55.workers.dev
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: myfire.midpoint-e55.workers.dev
+- name: 🇺🇸US_39|228KB/s|P002-260618 [6c613d96f69b]
+  password: 'null'
+  port: 9002
+  server: 138.199.35.209
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+  username: 'null'
+- name: 🇺🇸US_40|335KB/s|P002-260618 [2066bdd63838]
+  password: None
+  port: 9002
+  server: 138.199.35.199
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+- name: D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_ddf71604
+  password: None
+  port: 9002
+  server: 138.199.35.196
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+  x-toolall-mihomo: true
+- type: ss
+  name: 🇺🇸_美国 (52)
+  server: 38.22.17.214
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: false
+- type: vless
+  name: 🇺🇸_美国 (17) (2)
+  server: 216.106.185.158
+  port: 443
+  uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+  udp: true
+  tls: true
+  servername: kuruish.org
+  sni: kuruish.org
+  skip-cert-verify: false
+- name: 🔥Join+Telegram:@Farah_VPN🟣-MCl6
+  type: ss
+  server: 193.151.160.18
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+- name: CF官方优选14-LqTm
+  server: 104.19.32.214
+  port: 2083
+  type: vless
+  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
+  tls: true
+  skip-cert-verify: false
+  servername: myfire.midpoint-e55.workers.dev
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: myfire.midpoint-e55.workers.dev
+- name: D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_4cc7e454
+  password: ''
+  port: 9443
+  server: 38.95.111.226
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  username: ''
+  x-toolall-mihomo: true
+- name: 🔥Join+Telegram:@Farah_VPN🟣-Qxlb
+  type: ss
+  server: 193.151.160.9
+  port: 19999
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+- name: 🇺🇸US_37|164KB/s|P002-260618 [e4aa9a3f16af]
+  password: 'null'
+  port: 9002
+  server: 138.199.35.215
+  skip-cert-verify: true
+  sub_tag: P002-260618
+  tls: true
+  type: http
+  udp: true
+  username: 'null'
+- name: CF官方优选8
+  server: 104.17.209.230
+  port: 2087
+  type: vless
+  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
+  tls: true
+  skip-cert-verify: false
+  servername: myfire.midpoint-e55.workers.dev
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: myfire.midpoint-e55.workers.dev
+- name: CF官方优选12-BCnD
+  server: 104.17.140.165
+  port: 2083
+  type: vless
+  uuid: 5954d46d-4a5b-404f-8fb2-5deb43d24a6a
+  tls: true
+  skip-cert-verify: false
+  servername: myfire.midpoint-e55.workers.dev
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: myfire.midpoint-e55.workers.dev
 proxy-groups:
 - name: 节点选择
   type: select
@@ -1001,106 +1003,106 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇺🇸US_48|258KB/s|B007-260618 [1e4cf35bc8fc]
-  - 🇺🇸US_70
-  - ❓Other_28|97KB/s|M003-260806 [8741a1f6093f]
-  - D🔴🇺🇸hos[🤖🧩📺🎭]_dokng.com_6103d5ef
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_c22e83dc
-  - 🇺🇸US_59|378KB/s|R002-260618 [13dede6e3b21]
-  - 🇺🇸US_4|299KB/s|M003-260806 [6364b2c615d5]
-  - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_d9f747e4
-  - 🔥Join+Telegram:@Farah_VPN🟣-IaDT
-  - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-107.151.182.253:8080
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_41c9dcd3
-  - CF官方优选12
-  - 🔥Join+Telegram:@Farah_VPN🟣-Zmq1
-  - 🔥Join+Telegram:@Farah_VPN🟣-xzm4
-  - CF官方优选16
-  - CF官方优选15
-  - CF官方优选11
-  - ❓Other_40|144KB/s|C002-260622 [36581dfe601e]
-  - 🔥Join+Telegram:@Farah_VPN🟣-c54T
-  - 🇺🇸US_49|116KB/s|M003-260806 [3de23dd74123]
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_fb6ab23c
-  - 🔥Join+Telegram:@Farah_VPN🟣-SRIg
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_1a8c4f1c
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_fa48c427
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_d9357b07
-  - CF官方优选10
-  - 🇺🇸US_54|136KB/s|R002-260618 [ea1befc94c60]
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_6272ab77
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_cc0b62b7
-  - 🔥Join+Telegram:@Farah_VPN🟣-Y4jT
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_e8a5e243
-  - ⚙️75@oneclickvpnkeys
-  - ❓Other_54|111KB/s|R002-260618 [22a5f322cb38]
-  - 🇺🇸US_63
-  - 🇺🇸US_73
-  - CF官方优选8
-  - CF官方优选9
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_b7625f20
-  - CF官方优选4
-  - 🔥Join+Telegram:@Farah_VPN🟣-mwZO
-  - 🔥Join+Telegram:@Farah_VPN🟣-uDej
-  - 🇺🇸 美国 | USA 3
-  - CF官方优选7
-  - '@V2rayNPVTConfig'
-  - CF官方优选13
-  - 🔥Join+Telegram:@Farah_VPN🟣-G04p
-  - D🔴🇺🇸hos[🤖💬🧩🎵]_dokng.com_3fd501ee
-  - 🔥Join+Telegram:@Farah_VPN🟣-vqUi
-  - 🇺🇸US_72
-  - D🔴🇺🇸hos[🤖💬🧩🎵]_dokng.com_555e78e1
-  - D🔴🇺🇸hos[🤖💬🧩🎵]_dokng.com_8f481182
-  - 🔥Join+Telegram:@Farah_VPN🟣-asmL
-  - 🇺🇸US_40|335KB/s|P002-260618 [2066bdd63838]
-  - 🇺🇸US_39|228KB/s|P002-260618 [6c613d96f69b]
-  - D🔴🇺🇸hos[💬🧩📺🎵]_dokng.com_807a4c2c
-  - 🇺🇸US_14|2.8MB/s
-  - 🇺🇸US_30|364KB/s|P002-260618 [e842f77422a7]
-  - 🇺🇸US_35|355KB/s [f658df7df711]
-  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_cf54b49d
-  - 🔥Join+Telegram:@Farah_VPN🟣-jY3v
-  - 🇺🇸US_64
-  - ❓Other_41|374KB/s|P002-260618 [cc2d161c221c]
-  - ❓Other_57|126KB/s|R002-260618 [ffc0819f735f]
-  - D🔴🇺🇸hos[💬🧩📺🎵]_dokng.com_652faead
-  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_ac31ab95
-  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_e25ed24c
-  - 🔥Join+Telegram:@Farah_VPN🟣-D4wT
-  - CF官方优选5
-  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_022e1256
-  - 🔥Join+Telegram:@Farah_VPN🟣-sDQ2
-  - CF官方优选6
-  - 🇺🇸US_37|164KB/s|P002-260618 [e4aa9a3f16af]
-  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_bcada574
-  - 🔥Join+Telegram:@Farah_VPN🟣-weLG
-  - 🇺🇸US_41|238KB/s|K001-260618 [c6e1aea44c4a]
-  - 🔥Join+Telegram:@Farah_VPN🟣-xZwP
-  - 🔥Join+Telegram:@Farah_VPN🟣-ZdFs
-  - 🔥Join+Telegram:@Farah_VPN🟣-STtQ
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_4cc7e454
-  - 🇺🇸US_22|238KB/s|M003-260806 [0c4b7a94cbdd]
-  - 🇺🇸US_15|2.4MB/s
-  - D🔴🇺🇸hos[🤖💬🧩🎵]_dokng.com_4451c444
-  - CF官方优选3
-  - 🔥Join+Telegram:@Farah_VPN🟣-VFlS
-  - 🔥Join+Telegram:@Farah_VPN🟣-PdqD
-  - CF官方优选2
-  - ❓Other_21|262KB/s|S004-260618 [6e6fc41e104d]
-  - 🇺🇸US_12|291KB/s|P002-260618 [3d6858c0edb1]
-  - CF官方优选1
-  - 🔥Join+Telegram:@Farah_VPN🟣-NoGM
-  - 🇺🇸US_11|355KB/s|C002-260622 [26ff6d036c73]
-  - ❓Other_98|276KB/s|B007-260618 [901ef66a7fa3]
-  - 🔥Join+Telegram:@Farah_VPN🟣-AYqY
-  - 🔥Join+Telegram:@Farah_VPN🟣-WHO0
-  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_ff574ef6
-  - 🔥Join+Telegram:@Farah_VPN🟣-UJZR
-  - 🔥Join+Telegram:@Farah_VPN🟣-2rbN
-  - 🔥Join+Telegram:@Farah_VPN🟣-sGok
+  - 🇺🇸_美国 (36)
+  - 🇺🇸_美国 (37)
+  - 🇺🇸_美国 (39)
+  - 🇩🇪DE_2|1.4MB/s|P002-260618
+  - 🇨🇦CA_1|195KB/s|A004-260618 [3770023c3c83]
+  - 🇺🇸_美国 (48)
   - ❓Other_8|148KB/s|A004-260618 [60a9d50d005d]
+  - 🇺🇸US_63|484KB/s|B007-260618 [958dcf82a6bb]
+  - 🔥Join+Telegram:@Farah_VPN🟣-5K2U
+  - 🇺🇸_美国 (51)
+  - 🔥Join+Telegram:@Farah_VPN🟣-79KP
+  - 🇺🇸_美国 (43)
+  - ❓Other_17|109KB/s|M003-260806 [c778053e3664]
+  - 🔥Join+Telegram:@Farah_VPN🟣-PkmJ
+  - 🔥Join+Telegram:@Farah_VPN🟣-LdxM
+  - 🇺🇸_美国 (47)
+  - 🇺🇸_美国 (12)
+  - 🇺🇸_美国 (21)
+  - ❓Other_98|276KB/s|B007-260618 [901ef66a7fa3]
+  - 🇩🇪DE_1|3.7MB/s
+  - 🇨🇦CA_6|235KB/s|A004-260618 [10726e1af58a]
+  - 🔥Join+Telegram:@Farah_VPN🟣-D0UU
+  - 🔥Join+Telegram:@Farah_VPN🟣-RYPd
+  - 🇺🇸_美国 (16)
+  - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-107.151.182.253:8080
+  - 🇺🇸_美国 (15)
+  - 🇨🇦_加拿大 (6)
+  - 🇺🇸_美国 (2)
+  - 🇺🇸_美国 (59)
+  - 🇺🇸_美国 (10)
+  - 🇺🇸_美国 (13)
+  - 🇺🇸_美国 (11) (2)
+  - 🇺🇸_美国 (3)
+  - 🇺🇸_美国 (25)
+  - 🔥Join+Telegram:@Farah_VPN🟣-FOjW
+  - 🇺🇸_美国 (41)
+  - 🇺🇸_美国 (26)
+  - 🇺🇸_美国 (60)
+  - 🇺🇸_美国 (31)
+  - 🇺🇸_美国 (42)
+  - 🇺🇸_美国 (24)
+  - 🇺🇸US_11|355KB/s|C002-260622 [26ff6d036c73]
+  - 🇨🇦_加拿大 (11)
+  - 🇺🇸_美国 (27)
+  - 🇺🇸_美国 (23) (2)
+  - 🇺🇸US_2|269KB/s|A004-260618 [399f506ba4a6]
+  - CF官方优选7-1EyO
+  - 🔥Join+Telegram:@Farah_VPN🟣-pXto
+  - ❓Other_28|97KB/s|M003-260806 [8741a1f6093f]
+  - ❓Other_64|278KB/s|A004-260618 [911c7a890941]
+  - CF官方优选16-seYx
+  - CF官方优选11
+  - 美国 293
+  - 🔥Join+Telegram:@Farah_VPN🟣-Pajv
+  - 🇺🇸_美国 (32)
+  - CF官方优选1-WoWu
+  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_6103d5ef
+  - D🔴🇺🇸hos[📺]_dokng.com_016d9dc7
+  - 🇨🇦_加拿大 (2)
+  - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
+  - CF官方优选2-Snm3
+  - 🇨🇦CA_5|314KB/s|R002-260618 [e0b6eacb1061]
+  - CF官方优选15-LSDt
+  - 🇺🇸US_4|299KB/s|M003-260806 [6364b2c615d5]
+  - 🇺🇸_美国 (28)
+  - 🔥Join+Telegram:@Farah_VPN🟣-XFVo
+  - 🇺🇸_美国 (49)
+  - CF官方优选13-QKrG
+  - ❓Other_53|70KB/s|M003-260806 [c396cf27095f]
+  - 🇺🇸_美国 (58)
+  - 🔥Join+Telegram:@Farah_VPN🟣-Waop
+  - CF官方优选9
+  - CF官方优选14
+  - 🇺🇸_美国 (33)
+  - 🇺🇸_美国 (44)
+  - 🔥Join+Telegram:@Farah_VPN🟣-pk0o
+  - D🔴🇺🇸hos[🤖💬🧩🎵]_dokng.com_847f2db1
+  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_cf54b49d
+  - CF官方优选12
+  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_df2b9dfe
+  - ❓Other_16|288KB/s|M003-260806 [b0e338154f81]
+  - 🔥Join+Telegram:@Farah_VPN🟣-X7er
+  - 🇺🇸_美国 (51) (2)
+  - 🇺🇸US_12|291KB/s|P002-260618 [3d6858c0edb1]
+  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_cc9cfe69
+  - 🇺🇸US_41|238KB/s|K001-260618 [c6e1aea44c4a]
+  - 🇺🇸US_30|364KB/s|P002-260618 [e842f77422a7]
+  - CF官方优选5-qyc7
+  - 🇺🇸US_39|228KB/s|P002-260618 [6c613d96f69b]
+  - 🇺🇸US_40|335KB/s|P002-260618 [2066bdd63838]
+  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_ddf71604
+  - 🇺🇸_美国 (52)
+  - 🇺🇸_美国 (17) (2)
+  - 🔥Join+Telegram:@Farah_VPN🟣-MCl6
+  - CF官方优选14-LqTm
+  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_4cc7e454
+  - 🔥Join+Telegram:@Farah_VPN🟣-Qxlb
+  - 🇺🇸US_37|164KB/s|P002-260618 [e4aa9a3f16af]
+  - CF官方优选8
+  - CF官方优选12-BCnD
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
@@ -1108,211 +1110,211 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇺🇸US_48|258KB/s|B007-260618 [1e4cf35bc8fc]
-  - 🇺🇸US_70
-  - ❓Other_28|97KB/s|M003-260806 [8741a1f6093f]
-  - D🔴🇺🇸hos[🤖🧩📺🎭]_dokng.com_6103d5ef
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_c22e83dc
-  - 🇺🇸US_59|378KB/s|R002-260618 [13dede6e3b21]
-  - 🇺🇸US_4|299KB/s|M003-260806 [6364b2c615d5]
-  - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_d9f747e4
-  - 🔥Join+Telegram:@Farah_VPN🟣-IaDT
-  - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-107.151.182.253:8080
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_41c9dcd3
-  - CF官方优选12
-  - 🔥Join+Telegram:@Farah_VPN🟣-Zmq1
-  - 🔥Join+Telegram:@Farah_VPN🟣-xzm4
-  - CF官方优选16
-  - CF官方优选15
-  - CF官方优选11
-  - ❓Other_40|144KB/s|C002-260622 [36581dfe601e]
-  - 🔥Join+Telegram:@Farah_VPN🟣-c54T
-  - 🇺🇸US_49|116KB/s|M003-260806 [3de23dd74123]
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_fb6ab23c
-  - 🔥Join+Telegram:@Farah_VPN🟣-SRIg
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_1a8c4f1c
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_fa48c427
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_d9357b07
-  - CF官方优选10
-  - 🇺🇸US_54|136KB/s|R002-260618 [ea1befc94c60]
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_6272ab77
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_cc0b62b7
-  - 🔥Join+Telegram:@Farah_VPN🟣-Y4jT
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_e8a5e243
-  - ⚙️75@oneclickvpnkeys
-  - ❓Other_54|111KB/s|R002-260618 [22a5f322cb38]
-  - 🇺🇸US_63
-  - 🇺🇸US_73
-  - CF官方优选8
-  - CF官方优选9
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_b7625f20
-  - CF官方优选4
-  - 🔥Join+Telegram:@Farah_VPN🟣-mwZO
-  - 🔥Join+Telegram:@Farah_VPN🟣-uDej
-  - 🇺🇸 美国 | USA 3
-  - CF官方优选7
-  - '@V2rayNPVTConfig'
-  - CF官方优选13
-  - 🔥Join+Telegram:@Farah_VPN🟣-G04p
-  - D🔴🇺🇸hos[🤖💬🧩🎵]_dokng.com_3fd501ee
-  - 🔥Join+Telegram:@Farah_VPN🟣-vqUi
-  - 🇺🇸US_72
-  - D🔴🇺🇸hos[🤖💬🧩🎵]_dokng.com_555e78e1
-  - D🔴🇺🇸hos[🤖💬🧩🎵]_dokng.com_8f481182
-  - 🔥Join+Telegram:@Farah_VPN🟣-asmL
-  - 🇺🇸US_40|335KB/s|P002-260618 [2066bdd63838]
-  - 🇺🇸US_39|228KB/s|P002-260618 [6c613d96f69b]
-  - D🔴🇺🇸hos[💬🧩📺🎵]_dokng.com_807a4c2c
-  - 🇺🇸US_14|2.8MB/s
-  - 🇺🇸US_30|364KB/s|P002-260618 [e842f77422a7]
-  - 🇺🇸US_35|355KB/s [f658df7df711]
-  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_cf54b49d
-  - 🔥Join+Telegram:@Farah_VPN🟣-jY3v
-  - 🇺🇸US_64
-  - ❓Other_41|374KB/s|P002-260618 [cc2d161c221c]
-  - ❓Other_57|126KB/s|R002-260618 [ffc0819f735f]
-  - D🔴🇺🇸hos[💬🧩📺🎵]_dokng.com_652faead
-  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_ac31ab95
-  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_e25ed24c
-  - 🔥Join+Telegram:@Farah_VPN🟣-D4wT
-  - CF官方优选5
-  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_022e1256
-  - 🔥Join+Telegram:@Farah_VPN🟣-sDQ2
-  - CF官方优选6
-  - 🇺🇸US_37|164KB/s|P002-260618 [e4aa9a3f16af]
-  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_bcada574
-  - 🔥Join+Telegram:@Farah_VPN🟣-weLG
-  - 🇺🇸US_41|238KB/s|K001-260618 [c6e1aea44c4a]
-  - 🔥Join+Telegram:@Farah_VPN🟣-xZwP
-  - 🔥Join+Telegram:@Farah_VPN🟣-ZdFs
-  - 🔥Join+Telegram:@Farah_VPN🟣-STtQ
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_4cc7e454
-  - 🇺🇸US_22|238KB/s|M003-260806 [0c4b7a94cbdd]
-  - 🇺🇸US_15|2.4MB/s
-  - D🔴🇺🇸hos[🤖💬🧩🎵]_dokng.com_4451c444
-  - CF官方优选3
-  - 🔥Join+Telegram:@Farah_VPN🟣-VFlS
-  - 🔥Join+Telegram:@Farah_VPN🟣-PdqD
-  - CF官方优选2
-  - ❓Other_21|262KB/s|S004-260618 [6e6fc41e104d]
-  - 🇺🇸US_12|291KB/s|P002-260618 [3d6858c0edb1]
-  - CF官方优选1
-  - 🔥Join+Telegram:@Farah_VPN🟣-NoGM
-  - 🇺🇸US_11|355KB/s|C002-260622 [26ff6d036c73]
-  - ❓Other_98|276KB/s|B007-260618 [901ef66a7fa3]
-  - 🔥Join+Telegram:@Farah_VPN🟣-AYqY
-  - 🔥Join+Telegram:@Farah_VPN🟣-WHO0
-  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_ff574ef6
-  - 🔥Join+Telegram:@Farah_VPN🟣-UJZR
-  - 🔥Join+Telegram:@Farah_VPN🟣-2rbN
-  - 🔥Join+Telegram:@Farah_VPN🟣-sGok
+  - 🇺🇸_美国 (36)
+  - 🇺🇸_美国 (37)
+  - 🇺🇸_美国 (39)
+  - 🇩🇪DE_2|1.4MB/s|P002-260618
+  - 🇨🇦CA_1|195KB/s|A004-260618 [3770023c3c83]
+  - 🇺🇸_美国 (48)
   - ❓Other_8|148KB/s|A004-260618 [60a9d50d005d]
+  - 🇺🇸US_63|484KB/s|B007-260618 [958dcf82a6bb]
+  - 🔥Join+Telegram:@Farah_VPN🟣-5K2U
+  - 🇺🇸_美国 (51)
+  - 🔥Join+Telegram:@Farah_VPN🟣-79KP
+  - 🇺🇸_美国 (43)
+  - ❓Other_17|109KB/s|M003-260806 [c778053e3664]
+  - 🔥Join+Telegram:@Farah_VPN🟣-PkmJ
+  - 🔥Join+Telegram:@Farah_VPN🟣-LdxM
+  - 🇺🇸_美国 (47)
+  - 🇺🇸_美国 (12)
+  - 🇺🇸_美国 (21)
+  - ❓Other_98|276KB/s|B007-260618 [901ef66a7fa3]
+  - 🇩🇪DE_1|3.7MB/s
+  - 🇨🇦CA_6|235KB/s|A004-260618 [10726e1af58a]
+  - 🔥Join+Telegram:@Farah_VPN🟣-D0UU
+  - 🔥Join+Telegram:@Farah_VPN🟣-RYPd
+  - 🇺🇸_美国 (16)
+  - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-107.151.182.253:8080
+  - 🇺🇸_美国 (15)
+  - 🇨🇦_加拿大 (6)
+  - 🇺🇸_美国 (2)
+  - 🇺🇸_美国 (59)
+  - 🇺🇸_美国 (10)
+  - 🇺🇸_美国 (13)
+  - 🇺🇸_美国 (11) (2)
+  - 🇺🇸_美国 (3)
+  - 🇺🇸_美国 (25)
+  - 🔥Join+Telegram:@Farah_VPN🟣-FOjW
+  - 🇺🇸_美国 (41)
+  - 🇺🇸_美国 (26)
+  - 🇺🇸_美国 (60)
+  - 🇺🇸_美国 (31)
+  - 🇺🇸_美国 (42)
+  - 🇺🇸_美国 (24)
+  - 🇺🇸US_11|355KB/s|C002-260622 [26ff6d036c73]
+  - 🇨🇦_加拿大 (11)
+  - 🇺🇸_美国 (27)
+  - 🇺🇸_美国 (23) (2)
+  - 🇺🇸US_2|269KB/s|A004-260618 [399f506ba4a6]
+  - CF官方优选7-1EyO
+  - 🔥Join+Telegram:@Farah_VPN🟣-pXto
+  - ❓Other_28|97KB/s|M003-260806 [8741a1f6093f]
+  - ❓Other_64|278KB/s|A004-260618 [911c7a890941]
+  - CF官方优选16-seYx
+  - CF官方优选11
+  - 美国 293
+  - 🔥Join+Telegram:@Farah_VPN🟣-Pajv
+  - 🇺🇸_美国 (32)
+  - CF官方优选1-WoWu
+  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_6103d5ef
+  - D🔴🇺🇸hos[📺]_dokng.com_016d9dc7
+  - 🇨🇦_加拿大 (2)
+  - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
+  - CF官方优选2-Snm3
+  - 🇨🇦CA_5|314KB/s|R002-260618 [e0b6eacb1061]
+  - CF官方优选15-LSDt
+  - 🇺🇸US_4|299KB/s|M003-260806 [6364b2c615d5]
+  - 🇺🇸_美国 (28)
+  - 🔥Join+Telegram:@Farah_VPN🟣-XFVo
+  - 🇺🇸_美国 (49)
+  - CF官方优选13-QKrG
+  - ❓Other_53|70KB/s|M003-260806 [c396cf27095f]
+  - 🇺🇸_美国 (58)
+  - 🔥Join+Telegram:@Farah_VPN🟣-Waop
+  - CF官方优选9
+  - CF官方优选14
+  - 🇺🇸_美国 (33)
+  - 🇺🇸_美国 (44)
+  - 🔥Join+Telegram:@Farah_VPN🟣-pk0o
+  - D🔴🇺🇸hos[🤖💬🧩🎵]_dokng.com_847f2db1
+  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_cf54b49d
+  - CF官方优选12
+  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_df2b9dfe
+  - ❓Other_16|288KB/s|M003-260806 [b0e338154f81]
+  - 🔥Join+Telegram:@Farah_VPN🟣-X7er
+  - 🇺🇸_美国 (51) (2)
+  - 🇺🇸US_12|291KB/s|P002-260618 [3d6858c0edb1]
+  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_cc9cfe69
+  - 🇺🇸US_41|238KB/s|K001-260618 [c6e1aea44c4a]
+  - 🇺🇸US_30|364KB/s|P002-260618 [e842f77422a7]
+  - CF官方优选5-qyc7
+  - 🇺🇸US_39|228KB/s|P002-260618 [6c613d96f69b]
+  - 🇺🇸US_40|335KB/s|P002-260618 [2066bdd63838]
+  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_ddf71604
+  - 🇺🇸_美国 (52)
+  - 🇺🇸_美国 (17) (2)
+  - 🔥Join+Telegram:@Farah_VPN🟣-MCl6
+  - CF官方优选14-LqTm
+  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_4cc7e454
+  - 🔥Join+Telegram:@Farah_VPN🟣-Qxlb
+  - 🇺🇸US_37|164KB/s|P002-260618 [e4aa9a3f16af]
+  - CF官方优选8
+  - CF官方优选12-BCnD
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - 🇺🇸US_48|258KB/s|B007-260618 [1e4cf35bc8fc]
-  - 🇺🇸US_70
-  - ❓Other_28|97KB/s|M003-260806 [8741a1f6093f]
-  - D🔴🇺🇸hos[🤖🧩📺🎭]_dokng.com_6103d5ef
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_c22e83dc
-  - 🇺🇸US_59|378KB/s|R002-260618 [13dede6e3b21]
-  - 🇺🇸US_4|299KB/s|M003-260806 [6364b2c615d5]
-  - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_d9f747e4
-  - 🔥Join+Telegram:@Farah_VPN🟣-IaDT
-  - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-107.151.182.253:8080
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_41c9dcd3
-  - CF官方优选12
-  - 🔥Join+Telegram:@Farah_VPN🟣-Zmq1
-  - 🔥Join+Telegram:@Farah_VPN🟣-xzm4
-  - CF官方优选16
-  - CF官方优选15
-  - CF官方优选11
-  - ❓Other_40|144KB/s|C002-260622 [36581dfe601e]
-  - 🔥Join+Telegram:@Farah_VPN🟣-c54T
-  - 🇺🇸US_49|116KB/s|M003-260806 [3de23dd74123]
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_fb6ab23c
-  - 🔥Join+Telegram:@Farah_VPN🟣-SRIg
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_1a8c4f1c
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_fa48c427
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_d9357b07
-  - CF官方优选10
-  - 🇺🇸US_54|136KB/s|R002-260618 [ea1befc94c60]
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_6272ab77
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_cc0b62b7
-  - 🔥Join+Telegram:@Farah_VPN🟣-Y4jT
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_e8a5e243
-  - ⚙️75@oneclickvpnkeys
-  - ❓Other_54|111KB/s|R002-260618 [22a5f322cb38]
-  - 🇺🇸US_63
-  - 🇺🇸US_73
-  - CF官方优选8
-  - CF官方优选9
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_b7625f20
-  - CF官方优选4
-  - 🔥Join+Telegram:@Farah_VPN🟣-mwZO
-  - 🔥Join+Telegram:@Farah_VPN🟣-uDej
-  - 🇺🇸 美国 | USA 3
-  - CF官方优选7
-  - '@V2rayNPVTConfig'
-  - CF官方优选13
-  - 🔥Join+Telegram:@Farah_VPN🟣-G04p
-  - D🔴🇺🇸hos[🤖💬🧩🎵]_dokng.com_3fd501ee
-  - 🔥Join+Telegram:@Farah_VPN🟣-vqUi
-  - 🇺🇸US_72
-  - D🔴🇺🇸hos[🤖💬🧩🎵]_dokng.com_555e78e1
-  - D🔴🇺🇸hos[🤖💬🧩🎵]_dokng.com_8f481182
-  - 🔥Join+Telegram:@Farah_VPN🟣-asmL
-  - 🇺🇸US_40|335KB/s|P002-260618 [2066bdd63838]
-  - 🇺🇸US_39|228KB/s|P002-260618 [6c613d96f69b]
-  - D🔴🇺🇸hos[💬🧩📺🎵]_dokng.com_807a4c2c
-  - 🇺🇸US_14|2.8MB/s
-  - 🇺🇸US_30|364KB/s|P002-260618 [e842f77422a7]
-  - 🇺🇸US_35|355KB/s [f658df7df711]
-  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_cf54b49d
-  - 🔥Join+Telegram:@Farah_VPN🟣-jY3v
-  - 🇺🇸US_64
-  - ❓Other_41|374KB/s|P002-260618 [cc2d161c221c]
-  - ❓Other_57|126KB/s|R002-260618 [ffc0819f735f]
-  - D🔴🇺🇸hos[💬🧩📺🎵]_dokng.com_652faead
-  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_ac31ab95
-  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_e25ed24c
-  - 🔥Join+Telegram:@Farah_VPN🟣-D4wT
-  - CF官方优选5
-  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_022e1256
-  - 🔥Join+Telegram:@Farah_VPN🟣-sDQ2
-  - CF官方优选6
-  - 🇺🇸US_37|164KB/s|P002-260618 [e4aa9a3f16af]
-  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_bcada574
-  - 🔥Join+Telegram:@Farah_VPN🟣-weLG
-  - 🇺🇸US_41|238KB/s|K001-260618 [c6e1aea44c4a]
-  - 🔥Join+Telegram:@Farah_VPN🟣-xZwP
-  - 🔥Join+Telegram:@Farah_VPN🟣-ZdFs
-  - 🔥Join+Telegram:@Farah_VPN🟣-STtQ
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_4cc7e454
-  - 🇺🇸US_22|238KB/s|M003-260806 [0c4b7a94cbdd]
-  - 🇺🇸US_15|2.4MB/s
-  - D🔴🇺🇸hos[🤖💬🧩🎵]_dokng.com_4451c444
-  - CF官方优选3
-  - 🔥Join+Telegram:@Farah_VPN🟣-VFlS
-  - 🔥Join+Telegram:@Farah_VPN🟣-PdqD
-  - CF官方优选2
-  - ❓Other_21|262KB/s|S004-260618 [6e6fc41e104d]
-  - 🇺🇸US_12|291KB/s|P002-260618 [3d6858c0edb1]
-  - CF官方优选1
-  - 🔥Join+Telegram:@Farah_VPN🟣-NoGM
-  - 🇺🇸US_11|355KB/s|C002-260622 [26ff6d036c73]
-  - ❓Other_98|276KB/s|B007-260618 [901ef66a7fa3]
-  - 🔥Join+Telegram:@Farah_VPN🟣-AYqY
-  - 🔥Join+Telegram:@Farah_VPN🟣-WHO0
-  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_ff574ef6
-  - 🔥Join+Telegram:@Farah_VPN🟣-UJZR
-  - 🔥Join+Telegram:@Farah_VPN🟣-2rbN
-  - 🔥Join+Telegram:@Farah_VPN🟣-sGok
+  - 🇺🇸_美国 (36)
+  - 🇺🇸_美国 (37)
+  - 🇺🇸_美国 (39)
+  - 🇩🇪DE_2|1.4MB/s|P002-260618
+  - 🇨🇦CA_1|195KB/s|A004-260618 [3770023c3c83]
+  - 🇺🇸_美国 (48)
   - ❓Other_8|148KB/s|A004-260618 [60a9d50d005d]
+  - 🇺🇸US_63|484KB/s|B007-260618 [958dcf82a6bb]
+  - 🔥Join+Telegram:@Farah_VPN🟣-5K2U
+  - 🇺🇸_美国 (51)
+  - 🔥Join+Telegram:@Farah_VPN🟣-79KP
+  - 🇺🇸_美国 (43)
+  - ❓Other_17|109KB/s|M003-260806 [c778053e3664]
+  - 🔥Join+Telegram:@Farah_VPN🟣-PkmJ
+  - 🔥Join+Telegram:@Farah_VPN🟣-LdxM
+  - 🇺🇸_美国 (47)
+  - 🇺🇸_美国 (12)
+  - 🇺🇸_美国 (21)
+  - ❓Other_98|276KB/s|B007-260618 [901ef66a7fa3]
+  - 🇩🇪DE_1|3.7MB/s
+  - 🇨🇦CA_6|235KB/s|A004-260618 [10726e1af58a]
+  - 🔥Join+Telegram:@Farah_VPN🟣-D0UU
+  - 🔥Join+Telegram:@Farah_VPN🟣-RYPd
+  - 🇺🇸_美国 (16)
+  - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-107.151.182.253:8080
+  - 🇺🇸_美国 (15)
+  - 🇨🇦_加拿大 (6)
+  - 🇺🇸_美国 (2)
+  - 🇺🇸_美国 (59)
+  - 🇺🇸_美国 (10)
+  - 🇺🇸_美国 (13)
+  - 🇺🇸_美国 (11) (2)
+  - 🇺🇸_美国 (3)
+  - 🇺🇸_美国 (25)
+  - 🔥Join+Telegram:@Farah_VPN🟣-FOjW
+  - 🇺🇸_美国 (41)
+  - 🇺🇸_美国 (26)
+  - 🇺🇸_美国 (60)
+  - 🇺🇸_美国 (31)
+  - 🇺🇸_美国 (42)
+  - 🇺🇸_美国 (24)
+  - 🇺🇸US_11|355KB/s|C002-260622 [26ff6d036c73]
+  - 🇨🇦_加拿大 (11)
+  - 🇺🇸_美国 (27)
+  - 🇺🇸_美国 (23) (2)
+  - 🇺🇸US_2|269KB/s|A004-260618 [399f506ba4a6]
+  - CF官方优选7-1EyO
+  - 🔥Join+Telegram:@Farah_VPN🟣-pXto
+  - ❓Other_28|97KB/s|M003-260806 [8741a1f6093f]
+  - ❓Other_64|278KB/s|A004-260618 [911c7a890941]
+  - CF官方优选16-seYx
+  - CF官方优选11
+  - 美国 293
+  - 🔥Join+Telegram:@Farah_VPN🟣-Pajv
+  - 🇺🇸_美国 (32)
+  - CF官方优选1-WoWu
+  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_6103d5ef
+  - D🔴🇺🇸hos[📺]_dokng.com_016d9dc7
+  - 🇨🇦_加拿大 (2)
+  - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
+  - CF官方优选2-Snm3
+  - 🇨🇦CA_5|314KB/s|R002-260618 [e0b6eacb1061]
+  - CF官方优选15-LSDt
+  - 🇺🇸US_4|299KB/s|M003-260806 [6364b2c615d5]
+  - 🇺🇸_美国 (28)
+  - 🔥Join+Telegram:@Farah_VPN🟣-XFVo
+  - 🇺🇸_美国 (49)
+  - CF官方优选13-QKrG
+  - ❓Other_53|70KB/s|M003-260806 [c396cf27095f]
+  - 🇺🇸_美国 (58)
+  - 🔥Join+Telegram:@Farah_VPN🟣-Waop
+  - CF官方优选9
+  - CF官方优选14
+  - 🇺🇸_美国 (33)
+  - 🇺🇸_美国 (44)
+  - 🔥Join+Telegram:@Farah_VPN🟣-pk0o
+  - D🔴🇺🇸hos[🤖💬🧩🎵]_dokng.com_847f2db1
+  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_cf54b49d
+  - CF官方优选12
+  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_df2b9dfe
+  - ❓Other_16|288KB/s|M003-260806 [b0e338154f81]
+  - 🔥Join+Telegram:@Farah_VPN🟣-X7er
+  - 🇺🇸_美国 (51) (2)
+  - 🇺🇸US_12|291KB/s|P002-260618 [3d6858c0edb1]
+  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_cc9cfe69
+  - 🇺🇸US_41|238KB/s|K001-260618 [c6e1aea44c4a]
+  - 🇺🇸US_30|364KB/s|P002-260618 [e842f77422a7]
+  - CF官方优选5-qyc7
+  - 🇺🇸US_39|228KB/s|P002-260618 [6c613d96f69b]
+  - 🇺🇸US_40|335KB/s|P002-260618 [2066bdd63838]
+  - D🔴🇺🇸hos[🤖💬🧩📺]_dokng.com_ddf71604
+  - 🇺🇸_美国 (52)
+  - 🇺🇸_美国 (17) (2)
+  - 🔥Join+Telegram:@Farah_VPN🟣-MCl6
+  - CF官方优选14-LqTm
+  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_4cc7e454
+  - 🔥Join+Telegram:@Farah_VPN🟣-Qxlb
+  - 🇺🇸US_37|164KB/s|P002-260618 [e4aa9a3f16af]
+  - CF官方优选8
+  - CF官方优选12-BCnD
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT

@@ -32,70 +32,30 @@ dns:
     - 240.0.0.0/4
     - 0.0.0.0/32
 proxies:
-- name: 🇰🇷KR_1|3.5MB/s
-  port: 1080
-  server: 59.11.209.162
-  skip-cert-verify: true
-  type: socks5
-- name: 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
-  port: 443
-  server: 172.64.69.89
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇩🇪DE_1|3.7MB/s
-  password: 'null'
-  port: 443
-  server: 172.64.69.89
-  skip-cert-verify: true
-  tls: true
-  type: http
-  username: 'null'
-- name: 🇩🇪DE_2|1.4MB/s|P002-260618
+- name: 🇳🇱NL_10|423KB/s|K001-260618 [e3405c0a6209]
   password: None
-  port: 443
-  server: 172.64.68.89
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-- name: D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_6103d5ef
-  port: 443
-  server: 172.64.68.89
-  skip-cert-verify: true
-  sni: 172.64.68.89
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-- name: D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_5a16ef58
-  password: None
-  port: 9002
-  server: 84.17.47.123
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-- name: 🇳🇱NL_38|1.8MB/s|K001-260618 [1a33049d81fc]
-  password: None
-  port: 9002
-  server: 84.17.47.149
+  port: 9443
+  server: 149.36.51.161
   skip-cert-verify: true
   sub_tag: K001-260618
   tls: true
   type: http
   udp: true
   username: ''
-- name: FR_speednode_0007
-  port: 6103
-  server: 87.98.174.157
+- name: D🔴🇩🇪hos[🤖💬🧩📺]_dokng.com_4bdd61b7
+  password: None
+  port: 443
+  server: 149.36.50.1
   skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  x-toolall-mihomo: true
+- name: 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
+  port: 443
+  server: 172.64.69.89
+  skip-cert-verify: true
+  sub_tag: R002-260618
   tls: true
   type: http
   udp: true
@@ -106,6 +66,14 @@ proxies:
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
+- name: 🇩🇪DE_1|3.7MB/s
+  password: 'null'
+  port: 443
+  server: 172.64.69.89
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: 'null'
 - name: 🇬🇧 英国 | GBR 2
   server: 196.196.208.22
   port: 443
@@ -123,33 +91,50 @@ proxies:
     host: 9303d6x.fi-p1b.h1clayd.click
     mode: auto
   udp: true
-- http-opts:
-    headers:
-      Host:
-      - fast.com
-    method: GET
-    path:
-    - /
-  name: '🇬🇧 英国 | GBR #4'
-  network: http
-  port: 443
-  server: 64.227.41.219
-  tls: false
-  type: vless
+- name: D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_f03b1640
+  port: 9002
+  server: 84.17.47.124
+  skip-cert-verify: true
+  tls: true
+  type: http
   udp: true
-  uuid: 40992c2a-513e-4837-9594-23411fd42afd
+  x-toolall-mihomo: true
 - name: D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
   password: gs4BXwT6SW
   port: 10988
   server: 154.26.192.123
   type: http
   username: fQ67Dpe5dU
-- name: C🟠🇭🇰hos_dokng.com_47d8185d
-  password: '111'
-  port: 11211
-  server: 47.243.173.50
+- name: NL_speednode_0016
+  password: 'null'
+  port: 9002
+  server: 84.17.47.125
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+  username: 'null'
+- name: D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_33ffe908
+  password: 'null'
+  port: 9002
+  server: 84.17.47.146
+  skip-cert-verify: true
+  tls: true
+  type: http
+  username: 'null'
+- name: 🇰🇷KR-121.169.46.116-0528
+  server: 121.169.46.116
+  port: 1090
   type: socks5
-  username: '111'
+  username: T2clM0QlM0Q6
+  skip-cert-verify: false
+- name: FR_speednode_0007
+  port: 6103
+  server: 87.98.174.157
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
 proxy-groups:
 - name: 节点选择
   type: select
@@ -162,19 +147,18 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇰🇷KR_1|3.5MB/s
+  - 🇳🇱NL_10|423KB/s|K001-260618 [e3405c0a6209]
+  - D🔴🇩🇪hos[🤖💬🧩📺]_dokng.com_4bdd61b7
   - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
-  - 🇩🇪DE_1|3.7MB/s
-  - 🇩🇪DE_2|1.4MB/s|P002-260618
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_6103d5ef
-  - D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_5a16ef58
-  - 🇳🇱NL_38|1.8MB/s|K001-260618 [1a33049d81fc]
-  - FR_speednode_0007
   - 🇮🇹 意大利2|@ripaojiedian
+  - 🇩🇪DE_1|3.7MB/s
   - 🇬🇧 英国 | GBR 2
-  - '🇬🇧 英国 | GBR #4'
+  - D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_f03b1640
   - D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
-  - C🟠🇭🇰hos_dokng.com_47d8185d
+  - NL_speednode_0016
+  - D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_33ffe908
+  - 🇰🇷KR-121.169.46.116-0528
+  - FR_speednode_0007
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
@@ -182,37 +166,35 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇰🇷KR_1|3.5MB/s
+  - 🇳🇱NL_10|423KB/s|K001-260618 [e3405c0a6209]
+  - D🔴🇩🇪hos[🤖💬🧩📺]_dokng.com_4bdd61b7
   - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
-  - 🇩🇪DE_1|3.7MB/s
-  - 🇩🇪DE_2|1.4MB/s|P002-260618
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_6103d5ef
-  - D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_5a16ef58
-  - 🇳🇱NL_38|1.8MB/s|K001-260618 [1a33049d81fc]
-  - FR_speednode_0007
   - 🇮🇹 意大利2|@ripaojiedian
+  - 🇩🇪DE_1|3.7MB/s
   - 🇬🇧 英国 | GBR 2
-  - '🇬🇧 英国 | GBR #4'
+  - D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_f03b1640
   - D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
-  - C🟠🇭🇰hos_dokng.com_47d8185d
+  - NL_speednode_0016
+  - D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_33ffe908
+  - 🇰🇷KR-121.169.46.116-0528
+  - FR_speednode_0007
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - 🇰🇷KR_1|3.5MB/s
+  - 🇳🇱NL_10|423KB/s|K001-260618 [e3405c0a6209]
+  - D🔴🇩🇪hos[🤖💬🧩📺]_dokng.com_4bdd61b7
   - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
-  - 🇩🇪DE_1|3.7MB/s
-  - 🇩🇪DE_2|1.4MB/s|P002-260618
-  - D🔴🇺🇸hos[🤖💬🔮🧩]_dokng.com_6103d5ef
-  - D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_5a16ef58
-  - 🇳🇱NL_38|1.8MB/s|K001-260618 [1a33049d81fc]
-  - FR_speednode_0007
   - 🇮🇹 意大利2|@ripaojiedian
+  - 🇩🇪DE_1|3.7MB/s
   - 🇬🇧 英国 | GBR 2
-  - '🇬🇧 英国 | GBR #4'
+  - D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_f03b1640
   - D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
-  - C🟠🇭🇰hos_dokng.com_47d8185d
+  - NL_speednode_0016
+  - D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_33ffe908
+  - 🇰🇷KR-121.169.46.116-0528
+  - FR_speednode_0007
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT

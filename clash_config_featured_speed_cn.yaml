@@ -32,13 +32,12 @@ dns:
     - 240.0.0.0/4
     - 0.0.0.0/32
 proxies:
-- name: D🔴🇺🇸hos[🎵]_dokng.com_a6052a43
-  password: l1tlrdx52v
-  port: 62000
-  server: 66.253.2.69
+- name: 🇰🇷KR-218.52.200.62-0531
+  server: 218.52.200.62
+  port: 1080
   type: socks5
-  username: u_rb1dba2
-- name: 🇩🇪DE_8|3.0MB/s|P002-260618
+  skip-cert-verify: false
+- name: 🇩🇪DE_5|2.3MB/s
   port: 443
   server: 172.64.68.89
   skip-cert-verify: true
@@ -48,45 +47,79 @@ proxies:
   type: http
   udp: true
   x-toolall-mihomo: true
-- name: 🇷🇴RO_11|1012KB/s|P002-260618 [6ae474347dac]
-  password: None
-  port: 9002
-  server: 193.176.84.29
+- name: 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
+  port: 443
+  server: 172.64.69.89
   skip-cert-verify: true
-  sub_tag: P002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇸🇬SG_1|447KB/s|P002-260618 [7385d869a22b]
-  port: 9090
-  server: 128.199.113.85
-  skip-cert-verify: true
-  sub_tag: P002-260618
-  type: http
-  udp: true
-- name: 🇹🇭TH_1|215KB/s|R002-260618 [849ebc43c563]
-  password: mpbK00Pl
-  port: 42000
-  server: 192.204.15.135
   sub_tag: R002-260618
-  type: socks5
+  tls: true
+  type: http
   udp: true
-  username: X3s3JteD
-- name: ❓Other_31|1.3MB/s|P002-260618 [9df9da325a6f]
-  password: ''
-  port: 9002
-  server: 193.176.84.16
+- name: 🇩🇪DE_1|1.3MB/s|P002-260618
+  password: None
+  port: 443
+  server: 172.64.68.89
   skip-cert-verify: true
   sub_tag: P002-260618
   tls: true
   type: http
   udp: true
-  username: ''
-- name: 🇸🇬SG_1|1.5MB/s
-  port: 9090
-  server: 128.199.116.219
+  x-toolall-mihomo: true
+- name: 🇫🇷FR_8|165KB/s|R002-260618 [b2efde442758]
+  password: 'null'
+  port: 6103
+  server: 87.98.174.157
   skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
   type: http
+  udp: true
+  username: 'null'
+- type: ss
+  name: 🇮🇹_意大利 (9)
+  server: 202.50.253.63
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: true
+- client-fingerprint: chrome
+  name: '🇷🇺 俄罗斯 | RUS #5'
+  network: xhttp
+  port: 2053
+  server: 78.159.240.62
+  servername: polarladder.com
+  tls: true
+  type: vless
+  udp: true
+  uuid: 37af0181-5598-4aad-a040-d926bcb65757
+  xhttp-opts:
+    host: polarladder.com
+    mode: auto
+    path: /api/v1/upload
+- name: FR_speednode_0007
+  port: 6103
+  server: 87.98.174.157
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
+  password: gs4BXwT6SW
+  port: 10988
+  server: 154.26.192.123
+  type: http
+  username: fQ67Dpe5dU
+- type: ss
+  name: 🇮🇹_意大利 (3)
+  server: 202.50.253.99
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: true
 proxy-groups:
 - name: 节点选择
   type: select
@@ -99,13 +132,16 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - D🔴🇺🇸hos[🎵]_dokng.com_a6052a43
-  - 🇩🇪DE_8|3.0MB/s|P002-260618
-  - 🇷🇴RO_11|1012KB/s|P002-260618 [6ae474347dac]
-  - 🇸🇬SG_1|447KB/s|P002-260618 [7385d869a22b]
-  - 🇹🇭TH_1|215KB/s|R002-260618 [849ebc43c563]
-  - ❓Other_31|1.3MB/s|P002-260618 [9df9da325a6f]
-  - 🇸🇬SG_1|1.5MB/s
+  - 🇰🇷KR-218.52.200.62-0531
+  - 🇩🇪DE_5|2.3MB/s
+  - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
+  - 🇩🇪DE_1|1.3MB/s|P002-260618
+  - 🇫🇷FR_8|165KB/s|R002-260618 [b2efde442758]
+  - 🇮🇹_意大利 (9)
+  - '🇷🇺 俄罗斯 | RUS #5'
+  - FR_speednode_0007
+  - D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
+  - 🇮🇹_意大利 (3)
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
@@ -113,25 +149,31 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - D🔴🇺🇸hos[🎵]_dokng.com_a6052a43
-  - 🇩🇪DE_8|3.0MB/s|P002-260618
-  - 🇷🇴RO_11|1012KB/s|P002-260618 [6ae474347dac]
-  - 🇸🇬SG_1|447KB/s|P002-260618 [7385d869a22b]
-  - 🇹🇭TH_1|215KB/s|R002-260618 [849ebc43c563]
-  - ❓Other_31|1.3MB/s|P002-260618 [9df9da325a6f]
-  - 🇸🇬SG_1|1.5MB/s
+  - 🇰🇷KR-218.52.200.62-0531
+  - 🇩🇪DE_5|2.3MB/s
+  - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
+  - 🇩🇪DE_1|1.3MB/s|P002-260618
+  - 🇫🇷FR_8|165KB/s|R002-260618 [b2efde442758]
+  - 🇮🇹_意大利 (9)
+  - '🇷🇺 俄罗斯 | RUS #5'
+  - FR_speednode_0007
+  - D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
+  - 🇮🇹_意大利 (3)
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - D🔴🇺🇸hos[🎵]_dokng.com_a6052a43
-  - 🇩🇪DE_8|3.0MB/s|P002-260618
-  - 🇷🇴RO_11|1012KB/s|P002-260618 [6ae474347dac]
-  - 🇸🇬SG_1|447KB/s|P002-260618 [7385d869a22b]
-  - 🇹🇭TH_1|215KB/s|R002-260618 [849ebc43c563]
-  - ❓Other_31|1.3MB/s|P002-260618 [9df9da325a6f]
-  - 🇸🇬SG_1|1.5MB/s
+  - 🇰🇷KR-218.52.200.62-0531
+  - 🇩🇪DE_5|2.3MB/s
+  - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
+  - 🇩🇪DE_1|1.3MB/s|P002-260618
+  - 🇫🇷FR_8|165KB/s|R002-260618 [b2efde442758]
+  - 🇮🇹_意大利 (9)
+  - '🇷🇺 俄罗斯 | RUS #5'
+  - FR_speednode_0007
+  - D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
+  - 🇮🇹_意大利 (3)
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT

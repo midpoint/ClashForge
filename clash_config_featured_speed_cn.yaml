@@ -32,72 +32,75 @@ dns:
     - 240.0.0.0/4
     - 0.0.0.0/32
 proxies:
-- name: A🟢🇹🇭res[📺]_dokng.com_021435aa
-  password: YlRoWvE0dL_cUqS94wPeKnA4
-  port: 62000
-  server: 87.84.49.245
-  type: socks5
-  username: ks878449260d
-- name: 🇩🇪DE_1|1.8MB/s|P002-260618
-  password: None
+- name: 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
+  port: 443
+  server: 172.64.69.89
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇩🇪DE_8|3.0MB/s|P002-260618
   port: 443
   server: 172.64.68.89
   skip-cert-verify: true
+  sni: 172.64.68.89
   sub_tag: P002-260618
   tls: true
   type: http
   udp: true
   x-toolall-mihomo: true
-- type: ss
-  name: 🇩🇪_德国 (14)
-  server: 47.254.128.109
+- name: 🇳🇱NL_24|73KB/s|R002-260618 [28e6f82e9549]
   port: 443
-  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
-  cipher: 2022-blake3-chacha20-poly1305
+  server: 185.246.153.28
+  skip-cert-verify: true
+  sni: 4a8c2906c96058315dffbc2b0e7ff19b-0c66a58858a795df.apache-iv.com
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
+  password: gs4BXwT6SW
+  port: 10988
+  server: 154.26.192.123
+  type: http
+  username: fQ67Dpe5dU
+- type: ss
+  name: 🇯🇵_日本 (11)
+  server: 8.216.7.10
+  port: 6666
+  password: '123456'
+  cipher: aes-256-gcm
   udp: true
   tls: false
   skip-cert-verify: true
-- name: NL_speednode_0018
+- name: 🇰🇷KR_3|3.5MB/s
+  port: 443
+  server: 152.69.230.221
+  skip-cert-verify: true
+  tls: true
+  type: http
+- name: D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_47dbdd00
   password: 'null'
   port: 9002
   server: 84.17.47.147
   skip-cert-verify: true
+  sni: 84.17.47.147
   tls: true
   type: http
-  udp: true
   username: 'null'
-- name: ❓Other_38|211KB/s|R002-260618 [955230628083]
+- name: 🇳🇱NL_10|3.2MB/s
   password: 'null'
-  port: 9002
-  server: 193.176.84.26
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  username: 'null'
-- name: 🇷🇴RO_9|301KB/s|R002-260618 [c6283ad90b98]
-  port: 9002
-  server: 193.176.84.30
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: 🇳🇱NL_38|1.8MB/s|K001-260618 [1a33049d81fc]
-  password: None
   port: 9002
   server: 84.17.47.149
   skip-cert-verify: true
-  sub_tag: K001-260618
   tls: true
   type: http
-  udp: true
-  username: ''
-- name: D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_33ffe908
+  username: 'null'
+- name: 🇳🇱NL_9|3.6MB/s
   password: 'null'
   port: 9002
-  server: 84.17.47.146
+  server: 84.17.47.123
   skip-cert-verify: true
   tls: true
   type: http
@@ -114,14 +117,15 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - A🟢🇹🇭res[📺]_dokng.com_021435aa
-  - 🇩🇪DE_1|1.8MB/s|P002-260618
-  - 🇩🇪_德国 (14)
-  - NL_speednode_0018
-  - ❓Other_38|211KB/s|R002-260618 [955230628083]
-  - 🇷🇴RO_9|301KB/s|R002-260618 [c6283ad90b98]
-  - 🇳🇱NL_38|1.8MB/s|K001-260618 [1a33049d81fc]
-  - D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_33ffe908
+  - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
+  - 🇩🇪DE_8|3.0MB/s|P002-260618
+  - 🇳🇱NL_24|73KB/s|R002-260618 [28e6f82e9549]
+  - D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
+  - 🇯🇵_日本 (11)
+  - 🇰🇷KR_3|3.5MB/s
+  - D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_47dbdd00
+  - 🇳🇱NL_10|3.2MB/s
+  - 🇳🇱NL_9|3.6MB/s
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
@@ -129,27 +133,29 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - A🟢🇹🇭res[📺]_dokng.com_021435aa
-  - 🇩🇪DE_1|1.8MB/s|P002-260618
-  - 🇩🇪_德国 (14)
-  - NL_speednode_0018
-  - ❓Other_38|211KB/s|R002-260618 [955230628083]
-  - 🇷🇴RO_9|301KB/s|R002-260618 [c6283ad90b98]
-  - 🇳🇱NL_38|1.8MB/s|K001-260618 [1a33049d81fc]
-  - D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_33ffe908
+  - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
+  - 🇩🇪DE_8|3.0MB/s|P002-260618
+  - 🇳🇱NL_24|73KB/s|R002-260618 [28e6f82e9549]
+  - D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
+  - 🇯🇵_日本 (11)
+  - 🇰🇷KR_3|3.5MB/s
+  - D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_47dbdd00
+  - 🇳🇱NL_10|3.2MB/s
+  - 🇳🇱NL_9|3.6MB/s
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - A🟢🇹🇭res[📺]_dokng.com_021435aa
-  - 🇩🇪DE_1|1.8MB/s|P002-260618
-  - 🇩🇪_德国 (14)
-  - NL_speednode_0018
-  - ❓Other_38|211KB/s|R002-260618 [955230628083]
-  - 🇷🇴RO_9|301KB/s|R002-260618 [c6283ad90b98]
-  - 🇳🇱NL_38|1.8MB/s|K001-260618 [1a33049d81fc]
-  - D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_33ffe908
+  - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
+  - 🇩🇪DE_8|3.0MB/s|P002-260618
+  - 🇳🇱NL_24|73KB/s|R002-260618 [28e6f82e9549]
+  - D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
+  - 🇯🇵_日本 (11)
+  - 🇰🇷KR_3|3.5MB/s
+  - D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_47dbdd00
+  - 🇳🇱NL_10|3.2MB/s
+  - 🇳🇱NL_9|3.6MB/s
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT

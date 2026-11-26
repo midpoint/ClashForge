@@ -32,6 +32,11 @@ dns:
     - 240.0.0.0/4
     - 0.0.0.0/32
 proxies:
+- name: 🇰🇷KR_2|1.7MB/s
+  port: 1080
+  server: 183.106.215.208
+  skip-cert-verify: true
+  type: socks5
 - name: 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
   port: 443
   server: 172.64.69.89
@@ -40,81 +45,43 @@ proxies:
   tls: true
   type: http
   udp: true
-- name: 🇰🇷KR_2|1.7MB/s
-  port: 1080
-  server: 183.106.215.208
-  skip-cert-verify: true
-  type: socks5
-- type: ss
-  name: 🇮🇹_意大利 (9)
-  server: 202.50.253.63
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: true
-- name: 🇳🇱NL_53|1.8MB/s|R002-260618 [206e55a559c1]
+- name: 🇩🇪DE_13|3.6MB/s
   password: 'null'
-  port: 9002
-  server: 84.17.47.126
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  username: 'null'
-- type: vless
-  name: 🇷🇺_俄罗斯
-  server: 136.148.83.70
   port: 443
-  uuid: 00000000-0000-0001-0000-000000000000
-  udp: true
-  tls: true
-  servername: aszbk-ru-78dc.my-fade.cloud
-  sni: aszbk-ru-78dc.my-fade.cloud
-  skip-cert-verify: true
-- name: 🇩🇪DE_10|1.5MB/s|R002-260618 [379f30666176]
-  port: 9002
-  server: 158.173.154.2
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-- name: FR_speednode_0007
-  port: 6103
-  server: 87.98.174.157
+  server: 172.64.69.89
   skip-cert-verify: true
   tls: true
   type: http
-  udp: true
+  username: 'null'
 - name: D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
   password: gs4BXwT6SW
   port: 10988
   server: 154.26.192.123
   type: http
   username: fQ67Dpe5dU
-- name: NL_speednode_0022
-  port: 9002
-  server: 84.17.47.124
+- name: 🇫🇷FR_8|165KB/s|R002-260618 [b2efde442758]
+  password: 'null'
+  port: 6103
+  server: 87.98.174.157
   skip-cert-verify: true
+  sub_tag: R002-260618
   tls: true
   type: http
   udp: true
+  username: 'null'
 - name: 🇺🇸US_14|1.2MB/s
   port: 8443
   server: 74.208.250.147
   skip-cert-verify: true
   tls: true
   type: http
-- name: 🔥Join+Telegram:@Farah_VPN🟣-czDK
-  type: ss
-  server: 47.91.16.50
-  port: 5555
-  cipher: aes-256-gcm
-  password: '123456'
-  udp: true
+- name: 🇷🇴RO_13|1.1MB/s
+  port: 9002
+  server: 193.176.84.38
+  skip-cert-verify: true
+  sni: www.bing.com
+  tls: true
+  type: http
 proxy-groups:
 - name: 节点选择
   type: select
@@ -127,17 +94,13 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
   - 🇰🇷KR_2|1.7MB/s
-  - 🇮🇹_意大利 (9)
-  - 🇳🇱NL_53|1.8MB/s|R002-260618 [206e55a559c1]
-  - 🇷🇺_俄罗斯
-  - 🇩🇪DE_10|1.5MB/s|R002-260618 [379f30666176]
-  - FR_speednode_0007
+  - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
+  - 🇩🇪DE_13|3.6MB/s
   - D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
-  - NL_speednode_0022
+  - 🇫🇷FR_8|165KB/s|R002-260618 [b2efde442758]
   - 🇺🇸US_14|1.2MB/s
-  - 🔥Join+Telegram:@Farah_VPN🟣-czDK
+  - 🇷🇴RO_13|1.1MB/s
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
@@ -145,33 +108,25 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
   - 🇰🇷KR_2|1.7MB/s
-  - 🇮🇹_意大利 (9)
-  - 🇳🇱NL_53|1.8MB/s|R002-260618 [206e55a559c1]
-  - 🇷🇺_俄罗斯
-  - 🇩🇪DE_10|1.5MB/s|R002-260618 [379f30666176]
-  - FR_speednode_0007
+  - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
+  - 🇩🇪DE_13|3.6MB/s
   - D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
-  - NL_speednode_0022
+  - 🇫🇷FR_8|165KB/s|R002-260618 [b2efde442758]
   - 🇺🇸US_14|1.2MB/s
-  - 🔥Join+Telegram:@Farah_VPN🟣-czDK
+  - 🇷🇴RO_13|1.1MB/s
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
   - 🇰🇷KR_2|1.7MB/s
-  - 🇮🇹_意大利 (9)
-  - 🇳🇱NL_53|1.8MB/s|R002-260618 [206e55a559c1]
-  - 🇷🇺_俄罗斯
-  - 🇩🇪DE_10|1.5MB/s|R002-260618 [379f30666176]
-  - FR_speednode_0007
+  - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
+  - 🇩🇪DE_13|3.6MB/s
   - D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
-  - NL_speednode_0022
+  - 🇫🇷FR_8|165KB/s|R002-260618 [b2efde442758]
   - 🇺🇸US_14|1.2MB/s
-  - 🔥Join+Telegram:@Farah_VPN🟣-czDK
+  - 🇷🇴RO_13|1.1MB/s
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT

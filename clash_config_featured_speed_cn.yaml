@@ -32,56 +32,70 @@ dns:
     - 240.0.0.0/4
     - 0.0.0.0/32
 proxies:
-- name: 🇰🇷KR_2|1.7MB/s
-  port: 1080
-  server: 183.106.215.208
-  skip-cert-verify: true
-  type: socks5
-- name: 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
+- name: '🇺🇸 美国 | USA #7'
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
   port: 443
-  server: 172.64.69.89
+  server: 66.163.114.106
+  skip-cert-verify: true
+  sni: www.findconnectwithemployersandbuildprofessionalnetwork.com
+  type: trojan
+  udp: true
+- client-fingerprint: chrome
+  name: 🇺🇸US_18|833KB/s|C002-260622 [d7c61c0ced09]
+  network: tcp
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  port: 443
+  server: 66.163.114.114
+  skip-cert-verify: true
+  sni: 66.163.114.114
+  sub_tag: C002-260622
+  type: trojan
+  udp: true
+- name: 北美地区+V2CROSS.COM
+  server: 23.141.172.229
+  port: 50541
+  type: hysteria2
+  password: ePPsH1bMFD
+  auth: ePPsH1bMFD
+  sni: is1-ssl.mzstatic.com
+  skip-cert-verify: true
+  client-fingerprint: chrome
+- name: ❓Other_54|111KB/s|R002-260618 [22a5f322cb38]
+  port: 443
+  server: 137.175.22.85
   skip-cert-verify: true
   sub_tag: R002-260618
   tls: true
   type: http
   udp: true
-- name: 🇩🇪DE_13|3.6MB/s
-  password: 'null'
+- name: 🔥Join+Telegram:@Farah_VPN🟣-Wvxt
+  type: vmess
+  server: 120.48.133.162
+  port: 10086
+  uuid: c89f8a9e-a2c4-480e-b9af-debc1998b725
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  sni: ''
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+- name: 🇺🇸US_54|136KB/s|R002-260618 [ea1befc94c60]
   port: 443
-  server: 172.64.69.89
+  server: 137.175.22.84
   skip-cert-verify: true
+  sub_tag: R002-260618
   tls: true
   type: http
-  username: 'null'
+  udp: true
 - name: D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
   password: gs4BXwT6SW
   port: 10988
   server: 154.26.192.123
   type: http
   username: fQ67Dpe5dU
-- name: 🇫🇷FR_8|165KB/s|R002-260618 [b2efde442758]
-  password: 'null'
-  port: 6103
-  server: 87.98.174.157
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  username: 'null'
-- name: 🇺🇸US_14|1.2MB/s
-  port: 8443
-  server: 74.208.250.147
-  skip-cert-verify: true
-  tls: true
-  type: http
-- name: 🇷🇴RO_13|1.1MB/s
-  port: 9002
-  server: 193.176.84.38
-  skip-cert-verify: true
-  sni: www.bing.com
-  tls: true
-  type: http
 proxy-groups:
 - name: 节点选择
   type: select
@@ -94,13 +108,13 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇰🇷KR_2|1.7MB/s
-  - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
-  - 🇩🇪DE_13|3.6MB/s
+  - '🇺🇸 美国 | USA #7'
+  - 🇺🇸US_18|833KB/s|C002-260622 [d7c61c0ced09]
+  - 北美地区+V2CROSS.COM
+  - ❓Other_54|111KB/s|R002-260618 [22a5f322cb38]
+  - 🔥Join+Telegram:@Farah_VPN🟣-Wvxt
+  - 🇺🇸US_54|136KB/s|R002-260618 [ea1befc94c60]
   - D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
-  - 🇫🇷FR_8|165KB/s|R002-260618 [b2efde442758]
-  - 🇺🇸US_14|1.2MB/s
-  - 🇷🇴RO_13|1.1MB/s
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
@@ -108,25 +122,25 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇰🇷KR_2|1.7MB/s
-  - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
-  - 🇩🇪DE_13|3.6MB/s
+  - '🇺🇸 美国 | USA #7'
+  - 🇺🇸US_18|833KB/s|C002-260622 [d7c61c0ced09]
+  - 北美地区+V2CROSS.COM
+  - ❓Other_54|111KB/s|R002-260618 [22a5f322cb38]
+  - 🔥Join+Telegram:@Farah_VPN🟣-Wvxt
+  - 🇺🇸US_54|136KB/s|R002-260618 [ea1befc94c60]
   - D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
-  - 🇫🇷FR_8|165KB/s|R002-260618 [b2efde442758]
-  - 🇺🇸US_14|1.2MB/s
-  - 🇷🇴RO_13|1.1MB/s
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - 🇰🇷KR_2|1.7MB/s
-  - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
-  - 🇩🇪DE_13|3.6MB/s
+  - '🇺🇸 美国 | USA #7'
+  - 🇺🇸US_18|833KB/s|C002-260622 [d7c61c0ced09]
+  - 北美地区+V2CROSS.COM
+  - ❓Other_54|111KB/s|R002-260618 [22a5f322cb38]
+  - 🔥Join+Telegram:@Farah_VPN🟣-Wvxt
+  - 🇺🇸US_54|136KB/s|R002-260618 [ea1befc94c60]
   - D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
-  - 🇫🇷FR_8|165KB/s|R002-260618 [b2efde442758]
-  - 🇺🇸US_14|1.2MB/s
-  - 🇷🇴RO_13|1.1MB/s
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT

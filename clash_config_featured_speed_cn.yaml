@@ -32,6 +32,20 @@ dns:
     - 240.0.0.0/4
     - 0.0.0.0/32
 proxies:
+- name: 🇰🇷KR_1|5.0MB/s
+  port: 1080
+  server: 59.11.209.162
+  skip-cert-verify: true
+  type: socks5
+- type: ss
+  name: 🇮🇹_意大利 (5)
+  server: 202.50.253.72
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  udp: true
+  tls: false
+  skip-cert-verify: true
 - name: 🇫🇷FR_8|165KB/s|R002-260618 [b2efde442758]
   password: 'null'
   port: 6103
@@ -42,53 +56,23 @@ proxies:
   type: http
   udp: true
   username: 'null'
-- type: ss
-  name: 🇮🇹_意大利 (8)
-  server: 202.50.253.99
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  udp: true
-  tls: false
-  skip-cert-verify: true
-- name: D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_86fd6822
-  port: 9002
-  server: 84.17.47.125
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  x-toolall-mihomo: true
-- name: NL_speednode_0016
+- name: 🇳🇱NL_53|1.8MB/s|R002-260618 [206e55a559c1]
   password: 'null'
   port: 9002
-  server: 84.17.47.125
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
-  username: 'null'
-- name: 🇳🇱NL_2|533KB/s|R002-260618 [ef760e5bc4d6]
-  password: 'null'
-  port: 443
-  server: 51.158.243.91
+  server: 84.17.47.126
   skip-cert-verify: true
   sub_tag: R002-260618
   tls: true
   type: http
   udp: true
   username: 'null'
-- type: vless
-  name: 🇷🇺_俄罗斯 (14)
-  server: 136.148.83.70
-  port: 443
-  uuid: 00000000-0000-0001-0000-000000000000
-  udp: true
-  tls: true
-  servername: aszbk-ru-78dc.my-fade.cloud
-  sni: aszbk-ru-78dc.my-fade.cloud
+- name: FR_speednode_0007
+  port: 6103
+  server: 87.98.174.157
   skip-cert-verify: true
-  client-fingerprint: qq
+  tls: true
+  type: http
+  udp: true
 proxy-groups:
 - name: 节点选择
   type: select
@@ -101,12 +85,11 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
+  - 🇰🇷KR_1|5.0MB/s
+  - 🇮🇹_意大利 (5)
   - 🇫🇷FR_8|165KB/s|R002-260618 [b2efde442758]
-  - 🇮🇹_意大利 (8)
-  - D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_86fd6822
-  - NL_speednode_0016
-  - 🇳🇱NL_2|533KB/s|R002-260618 [ef760e5bc4d6]
-  - 🇷🇺_俄罗斯 (14)
+  - 🇳🇱NL_53|1.8MB/s|R002-260618 [206e55a559c1]
+  - FR_speednode_0007
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
@@ -114,23 +97,21 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
+  - 🇰🇷KR_1|5.0MB/s
+  - 🇮🇹_意大利 (5)
   - 🇫🇷FR_8|165KB/s|R002-260618 [b2efde442758]
-  - 🇮🇹_意大利 (8)
-  - D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_86fd6822
-  - NL_speednode_0016
-  - 🇳🇱NL_2|533KB/s|R002-260618 [ef760e5bc4d6]
-  - 🇷🇺_俄罗斯 (14)
+  - 🇳🇱NL_53|1.8MB/s|R002-260618 [206e55a559c1]
+  - FR_speednode_0007
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
+  - 🇰🇷KR_1|5.0MB/s
+  - 🇮🇹_意大利 (5)
   - 🇫🇷FR_8|165KB/s|R002-260618 [b2efde442758]
-  - 🇮🇹_意大利 (8)
-  - D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_86fd6822
-  - NL_speednode_0016
-  - 🇳🇱NL_2|533KB/s|R002-260618 [ef760e5bc4d6]
-  - 🇷🇺_俄罗斯 (14)
+  - 🇳🇱NL_53|1.8MB/s|R002-260618 [206e55a559c1]
+  - FR_speednode_0007
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT

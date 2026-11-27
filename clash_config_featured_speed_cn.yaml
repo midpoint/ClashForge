@@ -32,47 +32,75 @@ dns:
     - 240.0.0.0/4
     - 0.0.0.0/32
 proxies:
-- name: 🇰🇷KR_1|5.0MB/s
+- name: 🇰🇷KR_1|4.7MB/s
   port: 1080
   server: 59.11.209.162
   skip-cert-verify: true
   type: socks5
+- name: 🇳🇱 荷兰 | NLD
+  server: 185.16.110.62
+  port: 2052
+  type: vless
+  uuid: 85432578-96fd-4613-a255-e235a81cc94b
+  tls: false
+  network: ws
+  ws-opts:
+    path: /?ed=2052
+    headers:
+      Host: cd90.u8o.lol
+  udp: true
+- name: 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
+  port: 443
+  server: 172.64.69.89
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇺🇸US_23|2.5MB/s
+  port: 18080
+  server: 52.128.238.98
+  skip-cert-verify: true
+  type: http
+- name: DK_speednode_0006
+  port: 9002
+  server: 158.173.154.5
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: IE_speednode_0009
+  port: 443
+  server: 34.249.214.108
+  skip-cert-verify: true
+  tls: true
+  type: http
+  udp: true
+- name: 🇯🇵JP-103.248.150.50-0494
+  server: 103.248.150.50
+  port: 42000
+  type: socks5
+  username: paZFN3JA
+  password: EGJDy5Kg
+  skip-cert-verify: false
 - type: ss
-  name: 🇮🇹_意大利 (5)
-  server: 202.50.253.72
+  name: 🇮🇹_意大利 (8)
+  server: 202.50.253.45
   port: 19999
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   cipher: aes-256-gcm
   udp: true
   tls: false
   skip-cert-verify: true
-- name: 🇫🇷FR_8|165KB/s|R002-260618 [b2efde442758]
-  password: 'null'
-  port: 6103
-  server: 87.98.174.157
-  skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
+- type: ss
+  name: 🇩🇪_德国 (15)
+  server: 47.254.128.109
+  port: 443
+  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
+  cipher: 2022-blake3-chacha20-poly1305
   udp: true
-  username: 'null'
-- name: 🇳🇱NL_53|1.8MB/s|R002-260618 [206e55a559c1]
-  password: 'null'
-  port: 9002
-  server: 84.17.47.126
+  tls: false
   skip-cert-verify: true
-  sub_tag: R002-260618
-  tls: true
-  type: http
-  udp: true
-  username: 'null'
-- name: FR_speednode_0007
-  port: 6103
-  server: 87.98.174.157
-  skip-cert-verify: true
-  tls: true
-  type: http
-  udp: true
 proxy-groups:
 - name: 节点选择
   type: select
@@ -85,11 +113,15 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇰🇷KR_1|5.0MB/s
-  - 🇮🇹_意大利 (5)
-  - 🇫🇷FR_8|165KB/s|R002-260618 [b2efde442758]
-  - 🇳🇱NL_53|1.8MB/s|R002-260618 [206e55a559c1]
-  - FR_speednode_0007
+  - 🇰🇷KR_1|4.7MB/s
+  - 🇳🇱 荷兰 | NLD
+  - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
+  - 🇺🇸US_23|2.5MB/s
+  - DK_speednode_0006
+  - IE_speednode_0009
+  - 🇯🇵JP-103.248.150.50-0494
+  - 🇮🇹_意大利 (8)
+  - 🇩🇪_德国 (15)
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
@@ -97,21 +129,29 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇰🇷KR_1|5.0MB/s
-  - 🇮🇹_意大利 (5)
-  - 🇫🇷FR_8|165KB/s|R002-260618 [b2efde442758]
-  - 🇳🇱NL_53|1.8MB/s|R002-260618 [206e55a559c1]
-  - FR_speednode_0007
+  - 🇰🇷KR_1|4.7MB/s
+  - 🇳🇱 荷兰 | NLD
+  - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
+  - 🇺🇸US_23|2.5MB/s
+  - DK_speednode_0006
+  - IE_speednode_0009
+  - 🇯🇵JP-103.248.150.50-0494
+  - 🇮🇹_意大利 (8)
+  - 🇩🇪_德国 (15)
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - 🇰🇷KR_1|5.0MB/s
-  - 🇮🇹_意大利 (5)
-  - 🇫🇷FR_8|165KB/s|R002-260618 [b2efde442758]
-  - 🇳🇱NL_53|1.8MB/s|R002-260618 [206e55a559c1]
-  - FR_speednode_0007
+  - 🇰🇷KR_1|4.7MB/s
+  - 🇳🇱 荷兰 | NLD
+  - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
+  - 🇺🇸US_23|2.5MB/s
+  - DK_speednode_0006
+  - IE_speednode_0009
+  - 🇯🇵JP-103.248.150.50-0494
+  - 🇮🇹_意大利 (8)
+  - 🇩🇪_德国 (15)
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT

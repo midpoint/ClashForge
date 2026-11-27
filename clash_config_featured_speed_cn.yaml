@@ -32,43 +32,57 @@ dns:
     - 240.0.0.0/4
     - 0.0.0.0/32
 proxies:
-- name: '🇺🇸 美国 | USA #7'
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  port: 443
-  server: 66.163.114.106
-  skip-cert-verify: true
-  sni: www.findconnectwithemployersandbuildprofessionalnetwork.com
-  type: trojan
-  udp: true
-- client-fingerprint: chrome
-  name: 🇺🇸US_18|833KB/s|C002-260622 [d7c61c0ced09]
+- client-fingerprint: firefox
+  encryption: none
+  name: 🇯🇵JP_1|1.1MB/s
   network: tcp
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
   port: 443
-  server: 66.163.114.114
-  skip-cert-verify: true
-  sni: 66.163.114.114
-  sub_tag: C002-260622
-  type: trojan
+  server: 50.7.159.242
+  servername: jp.reddotcorp.org
+  tls: true
+  type: vless
   udp: true
-- name: 北美地区+V2CROSS.COM
-  server: 23.141.172.229
-  port: 50541
-  type: hysteria2
-  password: ePPsH1bMFD
-  auth: ePPsH1bMFD
-  sni: is1-ssl.mzstatic.com
-  skip-cert-verify: true
-  client-fingerprint: chrome
-- name: ❓Other_54|111KB/s|R002-260618 [22a5f322cb38]
+  uuid: 8840fac2-5361-4cb6-b887-cd1b95092394
+  xudp: true
+- client-fingerprint: chrome
+  name: U⚪🇺🇸ukn[🤖💬🔮🧩]_dokng.com_4effd5ed
+  network: tcp
+  packet-encoding: xudp
+  port: 8443
+  reality-opts:
+    public-key: 4g6gX0ueJap7pY_iTDx23h6bzo3KIOTcFzP1Uacn0QA
+    short-id: '4ad2e4e660550e43'
+  server: 156.229.167.109
+  servername: github.githubassets.com
+  tls: true
+  type: vless
+  uuid: eb8c97f7-a154-4442-91b0-54c0d055ad0b
+  x-toolall-mihomo: true
+- name: 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
   port: 443
-  server: 137.175.22.85
+  server: 172.64.69.89
   skip-cert-verify: true
   sub_tag: R002-260618
   tls: true
   type: http
   udp: true
-- name: 🔥Join+Telegram:@Farah_VPN🟣-Wvxt
+- name: 🔥Join+Telegram:@Farah_VPN🟣-XJk0
+  type: trojan
+  server: 66.163.114.166
+  port: 443
+  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+  sni: blog.findconnectwithemployersandbuildprofessionalnetwork.com
+  skip-cert-verify: false
+- cipher: aes-256-gcm
+  name: 🇮🇹IT意大利丨yoyapai.com (3)
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  port: 19999
+  server: 202.50.253.90
+  skip-cert-verify: false
+  tls: false
+  type: ss
+  udp: true
+- name: 🔥Join+Telegram:@Farah_VPN🟣-UhNo
   type: vmess
   server: 120.48.133.162
   port: 10086
@@ -82,20 +96,25 @@ proxies:
     path: ''
     headers:
       Host: ''
-- name: 🇺🇸US_54|136KB/s|R002-260618 [ea1befc94c60]
-  port: 443
-  server: 137.175.22.84
+- name: NL_speednode_0015
+  password: 'null'
+  port: 9002
+  server: 84.17.47.148
   skip-cert-verify: true
-  sub_tag: R002-260618
   tls: true
   type: http
   udp: true
-- name: D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
-  password: gs4BXwT6SW
-  port: 10988
-  server: 154.26.192.123
-  type: http
-  username: fQ67Dpe5dU
+  username: 'null'
+- type: vless
+  name: 🇷🇺_俄罗斯 (13)
+  server: 136.148.83.71
+  port: 443
+  uuid: 00000000-0000-0001-0000-000000000000
+  udp: true
+  tls: true
+  servername: wccfu-ru-79dc.my-fade.cloud
+  sni: wccfu-ru-79dc.my-fade.cloud
+  skip-cert-verify: true
 proxy-groups:
 - name: 节点选择
   type: select
@@ -108,13 +127,14 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - '🇺🇸 美国 | USA #7'
-  - 🇺🇸US_18|833KB/s|C002-260622 [d7c61c0ced09]
-  - 北美地区+V2CROSS.COM
-  - ❓Other_54|111KB/s|R002-260618 [22a5f322cb38]
-  - 🔥Join+Telegram:@Farah_VPN🟣-Wvxt
-  - 🇺🇸US_54|136KB/s|R002-260618 [ea1befc94c60]
-  - D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
+  - 🇯🇵JP_1|1.1MB/s
+  - U⚪🇺🇸ukn[🤖💬🔮🧩]_dokng.com_4effd5ed
+  - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
+  - 🔥Join+Telegram:@Farah_VPN🟣-XJk0
+  - 🇮🇹IT意大利丨yoyapai.com (3)
+  - 🔥Join+Telegram:@Farah_VPN🟣-UhNo
+  - NL_speednode_0015
+  - 🇷🇺_俄罗斯 (13)
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
@@ -122,25 +142,27 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - '🇺🇸 美国 | USA #7'
-  - 🇺🇸US_18|833KB/s|C002-260622 [d7c61c0ced09]
-  - 北美地区+V2CROSS.COM
-  - ❓Other_54|111KB/s|R002-260618 [22a5f322cb38]
-  - 🔥Join+Telegram:@Farah_VPN🟣-Wvxt
-  - 🇺🇸US_54|136KB/s|R002-260618 [ea1befc94c60]
-  - D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
+  - 🇯🇵JP_1|1.1MB/s
+  - U⚪🇺🇸ukn[🤖💬🔮🧩]_dokng.com_4effd5ed
+  - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
+  - 🔥Join+Telegram:@Farah_VPN🟣-XJk0
+  - 🇮🇹IT意大利丨yoyapai.com (3)
+  - 🔥Join+Telegram:@Farah_VPN🟣-UhNo
+  - NL_speednode_0015
+  - 🇷🇺_俄罗斯 (13)
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - '🇺🇸 美国 | USA #7'
-  - 🇺🇸US_18|833KB/s|C002-260622 [d7c61c0ced09]
-  - 北美地区+V2CROSS.COM
-  - ❓Other_54|111KB/s|R002-260618 [22a5f322cb38]
-  - 🔥Join+Telegram:@Farah_VPN🟣-Wvxt
-  - 🇺🇸US_54|136KB/s|R002-260618 [ea1befc94c60]
-  - D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
+  - 🇯🇵JP_1|1.1MB/s
+  - U⚪🇺🇸ukn[🤖💬🔮🧩]_dokng.com_4effd5ed
+  - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
+  - 🔥Join+Telegram:@Farah_VPN🟣-XJk0
+  - 🇮🇹IT意大利丨yoyapai.com (3)
+  - 🔥Join+Telegram:@Farah_VPN🟣-UhNo
+  - NL_speednode_0015
+  - 🇷🇺_俄罗斯 (13)
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT

@@ -32,11 +32,14 @@ dns:
     - 240.0.0.0/4
     - 0.0.0.0/32
 proxies:
-- name: 🇰🇷KR-59.11.209.162-0545
-  server: 59.11.209.162
-  port: 1080
-  type: socks5
-  skip-cert-verify: false
+- name: 🇫🇷FR_7|826KB/s|R002-260618 [11547d29f85c]
+  port: 9443
+  server: 213.139.9.142
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
 - name: 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
   port: 443
   server: 172.64.69.89
@@ -45,48 +48,95 @@ proxies:
   tls: true
   type: http
   udp: true
-- name: DK_speednode_0005
-  password: None
-  port: 9002
-  server: 158.173.154.4
-  skip-cert-verify: true
-  tls: true
-  type: http
+- name: 🔥Join+Telegram:@Farah_VPN🟣-UwTQ
+  type: vmess
+  server: 120.48.133.162
+  port: 10086
+  uuid: c89f8a9e-a2c4-480e-b9af-debc1998b725
+  alterId: 0
+  cipher: auto
+  network: ws
+  tls: false
+  sni: ''
+  ws-opts:
+    path: ''
+    headers:
+      Host: ''
+- type: vless
+  name: 🇻🇳_越南
+  server: 221.133.21.135
+  port: 8444
+  uuid: 2144e802-a64f-4261-af53-41309fee1d99
   udp: true
+  tls: true
+  servername: www.bing.com
+  sni: www.bing.com
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /tk
+    headers:
+      Host: 221.133.21.135
+- name: 🇮🇩 印尼 | IDN
+  server: 130.94.95.126
+  port: 443
+  type: vless
+  uuid: ed94398f-893f-40c6-b14c-bf02b5f6be16
+  tls: true
+  packet-encoding: xudp
+  reality-opts:
+    public-key: UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc
+    short-id: '2da72ce6'
+  servername: navi.bankrate.com
+  client-fingerprint: chrome
+  network: tcp
 - name: D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
   password: gs4BXwT6SW
   port: 10988
   server: 154.26.192.123
   type: http
   username: fQ67Dpe5dU
-- name: 🇳🇱NL_16|3.8MB/s
+- name: 🇮🇪IE_2|162KB/s|R002-260618 [ad7d5a110359]
   port: 443
-  server: 89.150.35.94
+  server: 18.200.158.139
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: 🇷🇴RO_9|301KB/s|R002-260618 [c6283ad90b98]
+  port: 9002
+  server: 193.176.84.30
+  skip-cert-verify: true
+  sub_tag: R002-260618
+  tls: true
+  type: http
+  udp: true
+- name: D🔴🇷🇴hos[🤖💬🔮🧩]_dokng.com_4b2bbcd9
+  port: 9002
+  server: 193.176.84.24
   skip-cert-verify: true
   tls: true
   type: http
-- name: D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_5a16ef58
-  password: None
+- name: D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_f03b1640
   port: 9002
-  server: 84.17.47.123
+  server: 84.17.47.124
   skip-cert-verify: true
   tls: true
   type: http
   udp: true
   x-toolall-mihomo: true
-- name: 🇳🇱NL_15|3.3MB/s
+- name: 🇳🇱NL_38|1.8MB/s|K001-260618 [1a33049d81fc]
+  password: None
   port: 9002
-  server: 84.17.47.146
+  server: 84.17.47.149
   skip-cert-verify: true
-  tls: true
-  type: http
-- name: FR_speednode_0007
-  port: 6103
-  server: 87.98.174.157
-  skip-cert-verify: true
+  sub_tag: K001-260618
   tls: true
   type: http
   udp: true
+  username: ''
 proxy-groups:
 - name: 节点选择
   type: select
@@ -99,14 +149,17 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇰🇷KR-59.11.209.162-0545
+  - 🇫🇷FR_7|826KB/s|R002-260618 [11547d29f85c]
   - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
-  - DK_speednode_0005
+  - 🔥Join+Telegram:@Farah_VPN🟣-UwTQ
+  - 🇻🇳_越南
+  - 🇮🇩 印尼 | IDN
   - D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
-  - 🇳🇱NL_16|3.8MB/s
-  - D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_5a16ef58
-  - 🇳🇱NL_15|3.3MB/s
-  - FR_speednode_0007
+  - 🇮🇪IE_2|162KB/s|R002-260618 [ad7d5a110359]
+  - 🇷🇴RO_9|301KB/s|R002-260618 [c6283ad90b98]
+  - D🔴🇷🇴hos[🤖💬🔮🧩]_dokng.com_4b2bbcd9
+  - D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_f03b1640
+  - 🇳🇱NL_38|1.8MB/s|K001-260618 [1a33049d81fc]
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
@@ -114,27 +167,33 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇰🇷KR-59.11.209.162-0545
+  - 🇫🇷FR_7|826KB/s|R002-260618 [11547d29f85c]
   - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
-  - DK_speednode_0005
+  - 🔥Join+Telegram:@Farah_VPN🟣-UwTQ
+  - 🇻🇳_越南
+  - 🇮🇩 印尼 | IDN
   - D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
-  - 🇳🇱NL_16|3.8MB/s
-  - D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_5a16ef58
-  - 🇳🇱NL_15|3.3MB/s
-  - FR_speednode_0007
+  - 🇮🇪IE_2|162KB/s|R002-260618 [ad7d5a110359]
+  - 🇷🇴RO_9|301KB/s|R002-260618 [c6283ad90b98]
+  - D🔴🇷🇴hos[🤖💬🔮🧩]_dokng.com_4b2bbcd9
+  - D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_f03b1640
+  - 🇳🇱NL_38|1.8MB/s|K001-260618 [1a33049d81fc]
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - 🇰🇷KR-59.11.209.162-0545
+  - 🇫🇷FR_7|826KB/s|R002-260618 [11547d29f85c]
   - 🇺🇸US_34|287KB/s|R002-260618 [a676be7daa09]
-  - DK_speednode_0005
+  - 🔥Join+Telegram:@Farah_VPN🟣-UwTQ
+  - 🇻🇳_越南
+  - 🇮🇩 印尼 | IDN
   - D🔴🇺🇸hos[🐙]_dokng.com_4e17894f
-  - 🇳🇱NL_16|3.8MB/s
-  - D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_5a16ef58
-  - 🇳🇱NL_15|3.3MB/s
-  - FR_speednode_0007
+  - 🇮🇪IE_2|162KB/s|R002-260618 [ad7d5a110359]
+  - 🇷🇴RO_9|301KB/s|R002-260618 [c6283ad90b98]
+  - D🔴🇷🇴hos[🤖💬🔮🧩]_dokng.com_4b2bbcd9
+  - D🔴🇳🇱hos[🤖💬🔮🧩]_dokng.com_f03b1640
+  - 🇳🇱NL_38|1.8MB/s|K001-260618 [1a33049d81fc]
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT
